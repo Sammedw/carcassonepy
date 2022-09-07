@@ -100,7 +100,7 @@ class TileFeature():
         self.type = type
         self.sides = sides
         self.attributes = attributes
-        self.meeple: Meeple = None
+        self.meeple: Optional[Meeple]
 
     def __str__(self):
         return f"TileFeature<{str(self.type)} | {[str(side) for side in self.sides]}>"
