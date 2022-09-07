@@ -66,12 +66,18 @@ class Coordinates():
     def __str__(self):
         return f"({self.x}, {self.y})"
 
+    def __eq__(self, other):
+        return self.x == other.x and self.y == other.y
+
 
 class Location():
 
     def __init__(self, x: int, y: int, side: Side):
         self.coordinates = Coordinates(x, y)
         self.side = side
+    
+    def __eq__(self, other):
+        return self.coordinates == other.coordinates and self.side == other.side
 
 
 class TileAttribute(Enum):
@@ -109,9 +115,6 @@ class Tile():
 
     def __str__(self):
         return f"Tile<{[str(side) for side in self.sides.values()]} | {[str(feature) for feature in self.features]}>"
-
-    def get_sides(self) -> dict[Side, ConnectionType]:
-        return self.sides
 
     def rotate_clockwise(self, times: int):
         if times <= 0:
