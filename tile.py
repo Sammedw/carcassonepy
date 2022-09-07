@@ -24,14 +24,25 @@ class FeatureType(Enum):
 
 class Side(Enum):
     TOP = "top"
-    TOPRIGHT = "topright"
     RIGHT = "right"
-    BOTTOMRIGHT = "bottomright"
     BOTTOM = "bottom"
-    BOTTOMLEFT = "bottomleft"
     LEFT = "left"
-    TOPLEFT = "topleft"
     CENTER = "center"
+
+    # farms
+    TOPRIGHT = "topright"
+    BOTTOMRIGHT = "bottomright"
+    BOTTOMLEFT = "bottomleft"
+    TOPLEFT = "topleft"
+
+    TOPRIGHTTOP = "toprighttop"
+    TOPRIGHTRIGHT = "toprightright"
+    BOTTOMRIGHTRIGHT = "bottomrightright"
+    BOTTOMRIGHTBOTTOM = "bottomrightbottom"
+    BOTTOMLEFTBOTTOM = "bottomleftbottom"
+    BOTTOMLEFTLEFT = "bottomleftleft"
+    TOPLEFTLEFT = "topleftleft"
+    TOPLEFTTOP = "toplefttop"
 
     def __str__(self):
         return self.name
@@ -54,6 +65,22 @@ class Side(Enum):
                 return Side.TOP
             case "TOPLEFT":
                 return Side.TOPRIGHT
+            case "TOPRIGHTTOP":
+                return Side.BOTTOMRIGHTRIGHT
+            case "TOPRIGHTRIGHT":
+                return Side.BOTTOMRIGHTBOTTOM
+            case "BOTTOMRIGHTRIGHT":
+                return Side.BOTTOMLEFTBOTTOM
+            case "BOTTOMRIGHTBOTTOM":
+                return Side.BOTTOMLEFTLEFT
+            case "BOTTOMLEFTBOTTOM":
+                return Side.TOPLEFTLEFT
+            case "BOTTOMLEFTLEFT":
+                return Side.TOPLEFTTOP
+            case "TOPLEFTLEFT":
+                return Side.TOPRIGHTTOP
+            case "TOPLEFTTOP":
+                return Side.TOPRIGHTRIGHT
 
         return Side.CENTER
 

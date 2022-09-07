@@ -1,3 +1,4 @@
+from abc import abstractmethod
 from ntpath import join
 from tile import Location, TileFeature, Coordinates, Side
 from meeple import Meeple
@@ -31,5 +32,17 @@ class Feature():
     def is_complete(self) -> bool:
         return (len(self.frontier_locations) == 0)
 
+    @abstractmethod
+    def score(self):
+        pass
 
 
+class City(Feature):
+
+    def __init__(self):
+        super().__init__();
+        self.shield_count: int = 0
+
+    def score(self):
+        if self.is_complete():
+            return 
