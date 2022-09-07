@@ -1,6 +1,5 @@
-from email.policy import default
 from enum import Enum
-from tkinter import CENTER
+from meeple import Meeple
 
 class ConnectionType(Enum):
     CITY = "city"
@@ -16,6 +15,7 @@ class FeatureType(Enum):
     CITY = "city"
     ROAD = "road"
     FIELD = "field"
+    MONASTERY = "monastery"
 
     def __str__(self):
         return self.name
@@ -81,7 +81,6 @@ class Location():
 
 
 class TileAttribute(Enum):
-    MONASTERY = "monastery"
 
     def __str__(self):
         return self.name
@@ -100,6 +99,7 @@ class TileFeature():
         self.type = type
         self.sides = sides
         self.attributes = attributes
+        self.meeple: Meeple 
 
     def __str__(self):
         return f"TileFeature<{str(self.type)} | {[str(side) for side in self.sides]}>"
