@@ -1,6 +1,6 @@
 from enum import Enum
 from meeple import Meeple
-from typing import OP
+from typing import Optional
 
 class ConnectionType(Enum):
     CITY = "city"
