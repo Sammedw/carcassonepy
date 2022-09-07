@@ -1,6 +1,5 @@
-from abc import abstractmethod
-from ntpath import join
-from tile import Location, TileFeature, Coordinates, Side
+from typing import Type
+from tile import Location, TileFeature, Coordinates, Side, TileFarm
 from meeple import Meeple
 
 class Feature():
@@ -12,11 +11,13 @@ class Feature():
 
     def merge_features(self, tile_feature: TileFeature, tile_feature_coordinates: Coordinates, joining_sides: list[Side], other_features = []):
         # merge tile feature
+        tile_feature.parent_feature = self
         self.tile_count += 1
         # add locations of tile feature to frontier that are not involved with connection
         for side in tile_feature.sides:
             if side not in joining_sides:
                 self.frontier_locations.append(Location(tile_feature_coordinates.x, tile_feature_coordinates.y, side))
+
 
         # merge other features
         for other_feature in other_features:
@@ -62,4 +63,11 @@ class Farm(Feature):
 
     def __init__(self):
         super().__init__()
+        self.adjacent_cities: set[City] = []
 
+    def merge_features(self, tile_feature, tile_feature_coordinates: Coordinates, joining_sides: list[Side], other_features=[]):
+        super().merge_features(tile_feature, tile_feature_coordinates, joining_sides, other_features)
+        # merge adjacent cities
+        self.adjacent_cities.union(tile_feature.adjacent_cities)
+        for other_feature in other_features:
+            self.adjacent_cities.union(other_feature.adjacent_cities)

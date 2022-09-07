@@ -16,7 +16,7 @@ class ConnectionType(Enum):
 class FeatureType(Enum):
     CITY = "city"
     ROAD = "road"
-    FIELD = "field"
+    FARM = "farm"
     MONASTERY = "monastery"
 
     def __str__(self):
@@ -138,23 +138,23 @@ class TileFeature():
         return f"TileFeature<{str(self.type)} | {[str(side) for side in self.sides]}>"
 
 
-class TileField(TileFeature):
+class TileFarm(TileFeature):
 
-    def __init__(self, sides: list[Side], attributes: list[TileFeatureAttribute], adjacent_cities: list[TileFeature] = []):
-        super().__init__(FeatureType.FIELD, sides, attributes)
+    def __init__(self, sides: list[Side], attributes: list[TileFeatureAttribute], adjacent_cities: set[TileFeature] = set()):
+        super().__init__(FeatureType.FARM, sides, attributes)
         self.adjacent_cities = adjacent_cities
 
 
 class Tile():
 
     def __init__(self, top_type: ConnectionType, right_type: ConnectionType, bottom_type: ConnectionType, left_type: ConnectionType, 
-                cities: list[TileFeature] = [], roads: list[TileFeature] = [], monastery: Optional[TileFeature] = None, fields: list[TileField] = [],
+                cities: list[TileFeature] = [], roads: list[TileFeature] = [], monastery: Optional[TileFeature] = None, farms: list[TileFarm] = [],
                 attributes: list[TileAttribute] = []):        
         self.sides: dict[Side, ConnectionType] = {Side.TOP: top_type, Side.RIGHT: right_type, Side.BOTTOM: bottom_type, Side.LEFT: left_type}
         self.cities = cities
         self.roads = roads
         self.monastery = monastery
-        self.fields = fields
+        self.farms = farms
         self.attributes = attributes
 
     def __str__(self):
