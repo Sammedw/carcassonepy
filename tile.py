@@ -1,5 +1,6 @@
 from enum import Enum
 from meeple import Meeple
+from typing import OP
 
 class ConnectionType(Enum):
     CITY = "city"
@@ -99,7 +100,7 @@ class TileFeature():
         self.type = type
         self.sides = sides
         self.attributes = attributes
-        self.meeple: Meeple 
+        self.meeple: Meeple = None
 
     def __str__(self):
         return f"TileFeature<{str(self.type)} | {[str(side) for side in self.sides]}>"
