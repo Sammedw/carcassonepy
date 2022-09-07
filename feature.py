@@ -8,7 +8,7 @@ class Feature():
     def __init__(self):
         self.frontier_locations: list[Location] = []
         self.meeples: list[Meeple] = []
-        self.tile_count = 0
+        self.tile_count = 1
 
     def merge_features(self, tile_feature: TileFeature, tile_feature_coordinates: Coordinates, joining_sides: list[Side], other_features = []):
         # merge tile feature
@@ -29,9 +29,8 @@ class Feature():
     def is_complete(self) -> bool:
         return (len(self.frontier_locations) == 0)
 
-    @abstractmethod
     def score(self):
-        pass
+        return self.tile_count
 
 
 class City(Feature):
@@ -40,6 +39,26 @@ class City(Feature):
         super().__init__();
         self.shield_count: int = 0
 
-    def score(self):
+    def score(self) -> int:
+        score: int = self.tile_count + self.shield_count
         if self.is_complete():
-            return 
+            score *= 2
+        return score
+
+
+class Road(Feature):
+
+    def __init__(self):
+        super().__init__()
+
+
+class Monastery(Feature):
+
+    def __init__(self):
+        super().__init__()
+
+
+class Farm(Feature):
+
+    def __init__(self):
+        super().__init__()
