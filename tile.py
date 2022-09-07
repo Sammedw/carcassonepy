@@ -1,5 +1,6 @@
 from enum import Enum
 from meeple import Meeple
+from feature import Feature
 from typing import Optional
 
 class ConnectionType(Enum):
@@ -84,6 +85,9 @@ class Side(Enum):
 
         return Side.CENTER
 
+    def get_opposite(self):
+        return self.rotate_clockwise().rotate_clockwise()
+
 
 class Coordinates():
 
@@ -127,7 +131,8 @@ class TileFeature():
         self.type = type
         self.sides = sides
         self.attributes = attributes
-        self.meeple: Optional[Meeple]
+        self.meeple: Optional[Meeple] = None
+        self.parent_feature: Optional[Feature] = None
 
     def __str__(self):
         return f"TileFeature<{str(self.type)} | {[str(side) for side in self.sides]}>"

@@ -20,9 +20,13 @@ city2.frontier_locations = [2]
 city2.meeples = [3,4]
 city2.tile_count = 3
 
-city1.merge_features("tile feature", [city2])
+city1.merge_features(TileFeature(FeatureType.CITY, [], []), Coordinates(1,2), [], [city2])
 
 print(city1.frontier_locations)
 print(city1.meeples)
 print(city1.tile_count)
 print(city2.meeples)
+
+side = Side.BOTTOM
+
+print(side.get_opposite())
