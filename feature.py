@@ -1,6 +1,27 @@
-from typing import Type
-from tile import Location, TileFeature, Coordinates, Side, TileFarm
+from typing import Optional
+from location import Location, Coordinates
+from enums import FeatureType, Side, TileFeatureAttribute
 from meeple import Meeple
+
+
+class TileFeature():
+
+    def __init__(self, type: FeatureType, sides: list[Side], attributes: list[TileFeatureAttribute] = []):
+        self.type = type
+        self.sides = sides
+        self.attributes = attributes
+        self.meeple: Optional[Meeple] = None
+        self.parent_feature: Optional[Feature] = None
+
+    def __str__(self):
+        return f"TileFeature<{str(self.type)} | {[str(side) for side in self.sides]}>"
+
+
+class TileFarm(TileFeature):
+
+    def __init__(self, sides: list[Side], attributes: list[TileFeatureAttribute], adjacent_cities: set[TileFeature] = set()):
+        super().__init__(FeatureType.FARM, sides, attributes)
+        self.adjacent_cities = adjacent_cities
 
 class Feature():
 
@@ -70,4 +91,11 @@ class Farm(Feature):
         # merge adjacent cities
         self.adjacent_cities.union(tile_feature.adjacent_cities)
         for other_feature in other_features:
-            self.adjacent_cities.union(other_feature.adjacent_cities)
+            self.adjacent_cities = self.adjacent_cities.union(other_feature.adjacent_cities)
+
+    def score(self) -> int:
+        score: int = 0
+        for city in self.adjacent_cities:
+            if (city.is_complete()):
+                score += 3
+        return score
