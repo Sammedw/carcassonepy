@@ -29,7 +29,7 @@ class Feature():
     def is_complete(self) -> bool:
         return (len(self.frontier_locations) == 0)
 
-    def score(self):
+    def score(self) -> int:
         return self.tile_count
 
 
@@ -62,3 +62,4 @@ class Farm(Feature):
 
     def __init__(self):
         super().__init__()
+
