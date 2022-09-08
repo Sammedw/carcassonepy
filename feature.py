@@ -23,6 +23,7 @@ class TileFarm(TileFeature):
         super().__init__(FeatureType.FARM, sides, attributes)
         self.adjacent_cities = adjacent_cities
 
+
 class Feature():
 
     def __init__(self):
