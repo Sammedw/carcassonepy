@@ -1,15 +1,19 @@
+from copy import deepcopy
 from enum import Enum
+from tracemalloc import start
 from typing import Optional, Type
 from enums import *
 from location import *
 from feature import TileFeature
+from random import shuffle
 
 
 class Tile():
 
-    def __init__(self, top_type: ConnectionType, right_type: ConnectionType, bottom_type: ConnectionType, left_type: ConnectionType, 
+    def __init__(self, name: str, top_type: ConnectionType, right_type: ConnectionType, bottom_type: ConnectionType, left_type: ConnectionType, 
                 cities: list[Type[TileFeature]] = [], roads: list[Type[TileFeature]] = [], monastery: Optional[Type[TileFeature]] = None, farms: list[Type[TileFeature]] = [],
-                attributes: list[TileAttribute] = []):        
+                attributes: list[TileAttribute] = []):     
+        self.name = name   
         self.sides: dict[Side, ConnectionType] = {Side.TOP: top_type, Side.RIGHT: right_type, Side.BOTTOM: bottom_type, Side.LEFT: left_type}
         self.cities = cities
         self.roads = roads
@@ -36,3 +40,59 @@ class Tile():
         if self.monastery:
             features.append(self.monastery)
         return features
+
+
+class TileSet():
+
+    def __init__(self, name: str,  tiles: dict[Tile, int], start_tile: Optional[Tile] = None, end_tile: Optional[Tile] = None):
+        self.name = name
+        self.tiles = tiles
+        self.start_tile = start_tile
+        self.end_tile = end_tile
+
+    def return_tile_list(self) -> list[Tile]:
+        tile_list: list[Tile] = []
+        # add tiles to list depending on their qty
+        for tile, qty in self.tiles.items():
+            for _ in range(qty):
+                tile_list.append(deepcopy(tile))
+        return tile_list
+
+
+class Deck():
+
+    def __init__(self, base_tile_set: TileSet, additional_tile_sets: list[TileSet]):
+        self.tiles: list[Tile] = []
+        # look for river set
+        for tile_set in additional_tile_sets:
+            if tile_set.name == "river":
+                # add river to start of deck
+                assert isinstance(tile_set.start_tile, Tile), "River must include a start tile"
+                self.tiles.append(tile_set.start_tile)
+                river_tiles = tile_set.return_tile_list()
+                shuffle(river_tiles)
+                self.tiles += river_tiles
+                assert isinstance(tile_set.end_tile, Tile), "River must include an end tile"
+                self.tiles.append(tile_set.end_tile)
+                additional_tile_sets.pop(additional_tile_sets.index(tile_set))
+                break
+        else:
+            # no river found, add normal start tile
+            assert isinstance(base_tile_set.start_tile, Tile), "Base set must include a start tile"
+            self.tiles.append(base_tile_set.start_tile)
+
+        # add rest of tiles
+        tile_list: list[Tile] = base_tile_set.return_tile_list()
+        for additional_tile_set in additional_tile_sets:
+            tile_list += additional_tile_set.return_tile_list()
+        shuffle(tile_list)
+        self.tiles += tile_list
+        self.next_tile = 0
+
+    def get_next_tile(self) -> Tile:
+        next_tile_obj = self.tiles[self.next_tile]
+        self.next_tile += 1
+        return next_tile_obj
+
+    def peak_next_tile(self) -> Tile:
+        return self.tiles[self.next_tile]
