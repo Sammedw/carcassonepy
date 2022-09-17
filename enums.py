@@ -98,11 +98,3 @@ class TileAttribute(Enum):
 
     def __str__(self):
         return self.name
-
-
-class GamePhase(Enum):
-    TILE = "tile"
-    MEEPLE = "meeple"
-
-    def __str__(self):
-        return self.name

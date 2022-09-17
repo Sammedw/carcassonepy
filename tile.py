@@ -1,17 +1,15 @@
 from copy import deepcopy
-from enum import Enum
-from tracemalloc import start
 from typing import Optional, Type
 from enums import *
 from location import *
-from feature import TileFeature
+from feature import *
 from random import shuffle
 
 
 class Tile():
 
     def __init__(self, name: str, top_type: ConnectionType, right_type: ConnectionType, bottom_type: ConnectionType, left_type: ConnectionType, 
-                cities: list[Type[TileFeature]] = [], roads: list[Type[TileFeature]] = [], monastery: Optional[Type[TileFeature]] = None, farms: list[Type[TileFeature]] = [],
+                cities: list[TileCity] = [], roads: list[TileRoad] = [], monastery: Optional[TileMonastery] = None, farms: list[TileFarm] = [],
                 attributes: list[TileAttribute] = []):     
         self.name = name   
         self.sides: dict[Side, ConnectionType] = {Side.TOP: top_type, Side.RIGHT: right_type, Side.BOTTOM: bottom_type, Side.LEFT: left_type}
@@ -22,7 +20,7 @@ class Tile():
         self.attributes = attributes
 
     def __str__(self):
-        return f"Tile<{[str(side) for side in self.sides.values()]} | {[str(feature) for feature in self.get_features()]}>"
+        return self.name
 
     def rotate_clockwise(self, times: int):
         if times <= 0:
@@ -30,16 +28,14 @@ class Tile():
         # rotate sides
         self.sides = {Side.TOP: self.sides[Side.LEFT], Side.RIGHT: self.sides[Side.TOP], Side.BOTTOM: self.sides[Side.RIGHT], Side.LEFT: self.sides[Side.BOTTOM]}
         # rotate features
-        for feature in self.cities + self.roads + self.farms:
-            feature.sides = [side.rotate_clockwise() for side in feature.sides]
+        for city in self.cities:
+            city.sides = [side.rotate_clockwise() for side in city.sides]
+        for road in self.roads:
+            road.sides = [side.rotate_clockwise() for side in road.sides]
+        for farm in self.farms:
+            farm.sides = [side.rotate_clockwise() for side in farm.sides]
         # rotate n-1 more times    
         self.rotate_clockwise(times-1);
-
-    def get_features(self) -> list[Type[TileFeature]]:
-        features = (self.cities + self.roads + self.farms)
-        if self.monastery:
-            features.append(self.monastery)
-        return features
 
 
 class TileSet():
@@ -61,7 +57,7 @@ class TileSet():
 
 class Deck():
 
-    def __init__(self, base_tile_set: TileSet, additional_tile_sets: list[TileSet]):
+    def __init__(self, base_tile_set: TileSet, additional_tile_sets: list[TileSet] = []):
         self.tiles: list[Tile] = []
         # look for river set
         for tile_set in additional_tile_sets:
