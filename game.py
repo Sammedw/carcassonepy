@@ -1,3 +1,4 @@
+from action import Action
 from location import Coordinates
 from tile import Deck, Tile, TileSet
 from meeple import Meeple
@@ -37,13 +38,27 @@ class Game():
             self.roads.append(road.generate_parent_feature(Coordinates(0,0)))
         self.monasteries = []
         if start_tile.monastery:
-            self.monasteries.append(start_tile.monastery)
+            self.monasteries.append(start_tile.monastery.generate_parent_feature(Coordinates(0,0), []))
         self.farms = []
         for farm in start_tile.farms:
             self.farms.append(farm.generate_parent_feature(Coordinates(0,0)))
 
+    def get_adjacent_tiles(self, coordinates: Coordinates):
+        # return  
+        for coordinate in coordinates.get_adjacent():
+            if coordinate in self.board:
+                pass
+    
+    def is_action_valid(self, action: Action):
+        # check if tile fits at location
+        action.tile.rotate_clockwise(action.rotation)
+
+
 
 game = Game(2)
 print(game.cities)
+print(game.deck.get_next_tile())
+print(game.deck.get_next_tile())
+print(game.deck.get_next_tile())
 
         
