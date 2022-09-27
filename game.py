@@ -1,4 +1,6 @@
+from typing import Optional
 from action import Action
+from enums import FeatureType, Side
 from location import Coordinates
 from tile import Deck, Tile, TileSet
 from meeple import Meeple
@@ -43,12 +45,35 @@ class Game():
         for farm in start_tile.farms:
             self.farms.append(farm.generate_parent_feature(Coordinates(0,0)))
 
-    def get_adjacent_tiles(self, coordinates: Coordinates):
-        # return  
+    def get_adjacent_tiles(self, coordinates: Coordinates) -> list[Optional[Tile]]:
+        # return adjacent tiles (TRBL)
+        adjacent: list[Optional[Tile]] = []
         for coordinate in coordinates.get_adjacent():
             if coordinate in self.board:
-                pass
-    
+                adjacent.append(self.board[coordinate])
+            else:
+                adjacent.append(None)
+        return adjacent
+
+    def does_tile_fit(self, tile: Tile, coordinates: Coordinates) -> bool:
+        # check if given tile fits at given coordinates
+        if not coordinates in self.frontier:
+            return False
+        adjacent_tiles = self.get_adjacent_tiles(coordinates)
+        # check each side
+        if (not adjacent_tiles[0]) or adjacent_tiles[0].sides[Side.BOTTOM] == tile.sides[Side.TOP]: 
+            return False
+        if (not adjacent_tiles[1]) or adjacent_tiles[1].sides[Side.LEFT] == tile.sides[Side.RIGHT]: 
+            return False
+        if (not adjacent_tiles[2]) or adjacent_tiles[2].sides[Side.TOP] == tile.sides[Side.BOTTOM]: 
+            return False
+        if (not adjacent_tiles[3]) or adjacent_tiles[3].sides[Side.RIGHT] == tile.sides[Side.LEFT]: 
+            return False
+        return True
+
+    def can_place_meeple(self, player: int, feature_type: FeatureType, feature_number: int = 0):
+        pass
+        
     def is_action_valid(self, action: Action):
         # check if tile fits at location
         action.tile.rotate_clockwise(action.rotation)

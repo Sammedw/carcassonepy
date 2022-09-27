@@ -3,8 +3,8 @@ from enums import Side
 class Coordinates():
 
     def __init__(self, x: int, y: int):
-        self.x = x;
-        self.y = y;
+        self.x = x
+        self.y = y
 
     def __str__(self):
         return f"({self.x}, {self.y})"
@@ -16,7 +16,7 @@ class Coordinates():
         return hash(f"({self.x}, {self.y})")
 
     def get_adjacent(self):
-        return {Coordinates(self.x + 1, self.y), Coordinates(self.x, self.y + 1), Coordinates(self.x - 1, self.y), Coordinates(self.x, self.y - 1)}
+        return {Coordinates(self.x, self.y + 1), Coordinates(self.x + 1, self.y), Coordinates(self.x, self.y - 1), Coordinates(self.x - 1, self.y)}
 
     def get_location(self, side: Side):
         return Location(self.x, self.y, side)

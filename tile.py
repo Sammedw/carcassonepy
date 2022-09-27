@@ -35,7 +35,7 @@ class Tile():
         for farm in self.farms:
             farm.sides = [side.rotate_clockwise() for side in farm.sides]
         # rotate n-1 more times    
-        self.rotate_clockwise(times-1);
+        self.rotate_clockwise(times-1)
 
 
 class TileSet():
