@@ -39,6 +39,8 @@ class Tile():
 
     def get_tile_feature_from_side(self, side: Side, feature_type: FeatureType):
         assert not side == Side.CENTER, "Cannot find feature in center"
+        assert (not feature_type == FeatureType.FARM) or (side == Side.TOP or side == Side.RIGHT or side == Side.BOTTOM or side == Side.LEFT)
+        
 
 
 class TileSet():
