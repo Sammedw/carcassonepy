@@ -71,8 +71,24 @@ class Game():
             return False
         return True
 
-    def can_place_meeple(self, player: int, feature_type: FeatureType, feature_number: int = 0):
-        pass
+    def can_place_meeple(self, tile: Tile, player: int, feature_type: FeatureType, feature_number: int = 0):
+        # check if given feature exists
+        feature_count = 0
+        if feature_type == FeatureType.CITY:
+            feature_count = len(tile.cities)
+        elif feature_type == FeatureType.ROAD:
+            feature_count = len(tile.roads)
+        elif feature_type == FeatureType.FARM:
+            feature_count = len(tile.farms)
+        elif tile.monastery is None:
+            return False
+        
+        if feature_number >= feature_count:
+            return False
+
+        # check all connections to feature and check for existing meeples
+        
+        
         
     def is_action_valid(self, action: Action):
         # check if tile fits at location

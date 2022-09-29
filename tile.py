@@ -37,6 +37,9 @@ class Tile():
         # rotate n-1 more times    
         self.rotate_clockwise(times-1)
 
+    def get_tile_feature_from_side(self, side: Side, feature_type: FeatureType):
+        assert not side == Side.CENTER, "Cannot find feature in center"
+
 
 class TileSet():
 
