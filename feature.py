@@ -109,6 +109,9 @@ class Feature():
     def is_complete(self) -> bool:
         return (len(self.frontier_locations) == 0)
 
+    def has_meeples(self) -> bool:
+        return len(self.meeples) > 0
+
     def score(self) -> int:
         return self.tile_count
 
