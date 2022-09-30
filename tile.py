@@ -37,10 +37,23 @@ class Tile():
         # rotate n-1 more times    
         self.rotate_clockwise(times-1)
 
-    def get_tile_feature_from_side(self, side: Side, feature_type: FeatureType):
+    def get_tile_feature_from_side(self, side: Side, feature_type: FeatureType) -> Optional[TileFeature]:
         assert not side == Side.CENTER, "Cannot find feature in center"
+        assert not feature_type == FeatureType.MONASTERY, "Monasteries are always in the center"
         assert (not feature_type == FeatureType.FARM) or (side == Side.TOP or side == Side.RIGHT or side == Side.BOTTOM or side == Side.LEFT)
         
+        if feature_type == FeatureType.CITY:
+            feature_list = self.cities
+        elif feature_type == FeatureType.ROAD:
+            feature_list = self.roads
+        elif feature_type == FeatureType.FARM:
+            feature_list = self.farms
+        
+        for feature in feature_list:
+            if side in feature.sides:
+                return feature
+        
+        return None
 
 
 class TileSet():

@@ -98,7 +98,9 @@ class Game():
 
 game = Game(2)
 print(game.cities)
-print(game.deck.get_next_tile())
+next = game.deck.get_next_tile()
+print(next)
+print(next.get_tile_feature_from_side(Side.RIGHT, FeatureType.CITY))
 print(game.deck.get_next_tile())
 print(game.deck.get_next_tile())
 
