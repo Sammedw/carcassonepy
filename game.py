@@ -45,9 +45,9 @@ class Game():
         for farm in start_tile.farms:
             self.farms.append(farm.generate_parent_feature(Coordinates(0,0)))
 
-    def get_adjacent_tiles(self, coordinates: Coordinates) -> list[Optional[Tile]]:
+    def get_adjacent_tiles(self, coordinates: Coordinates) -> dict[Side, Optional[Tile]]:
         # return adjacent tiles (TRBL)
-        adjacent: list[Optional[Tile]] = []
+        adjacent: dict[Side, Optional[Tile]] = {}
         for coordinate in coordinates.get_adjacent():
             if coordinate in self.board:
                 adjacent.append(self.board[coordinate])
@@ -88,14 +88,10 @@ class Game():
             feature_list = tile.farms
         elif tile.monastery is None:
             return False
-        
         if feature_number >= feature_count:
             return False
-
         # check all connections to feature and check for existing meeples
         adjacent_tiles = self.get_adjacent_tiles(coordinates)
-        for side in feature_list[feature_count].sides:
-            pass
         
         
     def is_action_valid(self, action: Action):
