@@ -86,7 +86,10 @@ class Game():
         if feature_number >= feature_count:
             return False
         # check all connections to feature and check for existing meeples
+        tile_feature = feature_list[feature_number]
         adjacent_tiles = self.get_adjacent_tiles(coordinates)
+        for side in tile_feature.sides:
+            
         
         
     def is_action_valid(self, action: Action):

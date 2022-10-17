@@ -45,6 +45,20 @@ class Side(Enum):
 
     def __str__(self):
         return self.name
+    
+    # decomposes a corner into its two half sides
+    def decompose(self):
+        match self.name:
+            case "TOPRIGHT":
+                return [Side.TOPRIGHTTOP, Side.TOPRIGHTRIGHT]
+            case "BOTTOMRIGHT":
+                return [Side.BOTTOMRIGHTRIGHT, Side.BOTTOMRIGHTBOTTOM]
+            case "BOTTOMLEFT":
+                return [Side.BOTTOMLEFTBOTTOM, Side.BOTTOMLEFTLEFT]
+            case "TOPLEFT":
+                return [Side.TOPLEFTLEFT, Side.TOPLEFTTOP]
+        return self
+
 
     def rotate_clockwise(self):
         match self.name:
