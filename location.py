@@ -16,7 +16,7 @@ class Coordinates():
         return hash(f"({self.x}, {self.y})")
 
     def get_adjacent(self):
-        return {Coordinates(self.x, self.y + 1), Coordinates(self.x + 1, self.y), Coordinates(self.x, self.y - 1), Coordinates(self.x - 1, self.y)}
+        return {Side.TOP: Coordinates(self.x, self.y + 1), Side.RIGHT: Coordinates(self.x + 1, self.y), Side.BOTTOM: Coordinates(self.x, self.y - 1), Side.LEFT: Coordinates(self.x - 1, self.y)}
 
     def get_location(self, side: Side):
         return Location(self.x, self.y, side)

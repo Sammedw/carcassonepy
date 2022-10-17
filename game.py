@@ -47,13 +47,12 @@ class Game():
 
     def get_adjacent_tiles(self, coordinates: Coordinates) -> dict[Side, Optional[Tile]]:
         # return adjacent tiles (TRBL)
-        adjacent: dict[Side, Optional[Tile]] = {}
-        for coordinate in coordinates.get_adjacent():
-            if coordinate in self.board:
-                adjacent.append(self.board[coordinate])
-            else:
-                adjacent.append(None)
-        return adjacent
+        adjacent_tiles: dict[Side, Optional[Tile]] = {Side.TOP: None, Side.RIGHT: None, Side.BOTTOM: None, Side.LEFT: None}
+        adjacent_coordinates = coordinates.get_adjacent()
+        for side in adjacent_coordinates.keys():
+            if adjacent_coordinates[side] in self.board:
+                adjacent_tiles[side] = self.board[adjacent_coordinates[side]]
+        return adjacent_tiles
 
     def does_tile_fit(self, tile: Tile, coordinates: Coordinates) -> bool:
         # check if given tile fits at given coordinates
@@ -61,14 +60,10 @@ class Game():
             return False
         adjacent_tiles = self.get_adjacent_tiles(coordinates)
         # check each side
-        if (not adjacent_tiles[0]) or adjacent_tiles[0].sides[Side.BOTTOM] == tile.sides[Side.TOP]: 
-            return False
-        if (not adjacent_tiles[1]) or adjacent_tiles[1].sides[Side.LEFT] == tile.sides[Side.RIGHT]: 
-            return False
-        if (not adjacent_tiles[2]) or adjacent_tiles[2].sides[Side.TOP] == tile.sides[Side.BOTTOM]: 
-            return False
-        if (not adjacent_tiles[3]) or adjacent_tiles[3].sides[Side.RIGHT] == tile.sides[Side.LEFT]: 
-            return False
+        for side in adjacent_tiles.keys():
+            if (adjacent_tiles[side]):
+                if adjacent_tiles[side].sides[side.get_opposite()] == tile.sides[side]: 
+                    return False
         return True
 
     def can_place_meeple(self, tile: Tile, coordinates: Coordinates, player: int, feature_type: FeatureType, feature_number: int = 0) -> bool:
