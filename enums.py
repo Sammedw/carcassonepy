@@ -59,7 +59,6 @@ class Side(Enum):
                 return [Side.TOPLEFTLEFT, Side.TOPLEFTTOP]
         return self
 
-
     def rotate_clockwise(self):
         match self.name:
             case "TOP":
@@ -94,12 +93,35 @@ class Side(Enum):
                 return Side.TOPRIGHTTOP
             case "TOPLEFTTOP":
                 return Side.TOPRIGHTRIGHT
-
         return Side.CENTER
 
     def get_opposite(self):
-        return self.rotate_clockwise().rotate_clockwise()
-
+        match self.name:
+            case "TOP":
+                return Side.BOTTOM
+            case "RIGHT":
+                return Side.LEFT
+            case "BOTTOM":
+                return Side.TOP
+            case "LEFT":
+                return Side.RIGHT
+            case "TOPRIGHTTOP":
+                return Side.BOTTOMRIGHTBOTTOM
+            case "TOPRIGHTRIGHT":
+                return Side.TOPLEFTLEFT
+            case "BOTTOMRIGHTRIGHT":
+                return Side.BOTTOMLEFTLEFT
+            case "BOTTOMRIGHTBOTTOM":
+                return Side.TOPRIGHTTOP
+            case "BOTTOMLEFTBOTTOM":
+                return Side.TOPLEFTTOP
+            case "BOTTOMLEFTLEFT":
+                return Side.BOTTOMRIGHTRIGHT
+            case "TOPLEFTLEFT":
+                return Side.TOPRIGHTRIGHT
+            case "TOPLEFTTOP":
+                return Side.BOTTOMLEFTBOTTOM
+        return Side.CENTER
 
 class TileFeatureAttribute(Enum):
     SHIELD = "shield"
