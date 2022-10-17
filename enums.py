@@ -57,7 +57,7 @@ class Side(Enum):
                 return [Side.BOTTOMLEFTBOTTOM, Side.BOTTOMLEFTLEFT]
             case "TOPLEFT":
                 return [Side.TOPLEFTLEFT, Side.TOPLEFTTOP]
-        return self
+        return [self]
 
     def rotate_clockwise(self):
         match self.name:

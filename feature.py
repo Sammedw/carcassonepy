@@ -12,6 +12,9 @@ class TileFeature():
         self.meeple: Optional[Meeple] = None
         self.parent_feature: Optional[Feature] = None
 
+    def get_sides(self):
+        return self.sides
+
 
 class TileCity(TileFeature):
 
@@ -80,6 +83,13 @@ class TileFarm(TileFeature):
         new_farm.adjacent_cities = self.adjacent_cities
         self.parent_feature = new_farm
         return new_farm
+    
+    def get_sides(self):
+        feature_sides: list[Side] = []
+        # break down corners into half sides for farms
+        for side in self.sides():
+            feature_sides += side.decompose()
+        return feature_sides
 
 
 class Feature():

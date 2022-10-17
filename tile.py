@@ -50,7 +50,7 @@ class Tile():
             feature_list = self.farms
         
         for feature in feature_list:
-            if side in feature.sides:
+            if side in feature.get_sides():
                 return feature
         
         return None
