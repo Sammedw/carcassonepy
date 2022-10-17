@@ -91,9 +91,16 @@ class Game():
 
         # check for features on adjacent tiles that already have meeples
         for side in tile_feature.get_sides():
-            connecting_feature = adjacent_tiles
-
-        
+            if feature_type == FeatureType.FARM:
+                side = side.facing()
+            if adjacent_tiles[side]:
+                connecting_feature = adjacent_tiles[side].get_tile_feature_from_side(side.get_opposite(), feature_type)
+                if not connecting_feature:
+                    continue
+                if connecting_feature.parent_feature:
+                    if connecting_feature.parent_feature.has_meeples():
+                        return False
+        return True            
         
     def is_action_valid(self, action: Action):
         # check if tile fits at location

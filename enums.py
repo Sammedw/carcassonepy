@@ -1,4 +1,5 @@
 from enum import Enum
+from re import L
 
 
 class ConnectionType(Enum):
@@ -58,6 +59,18 @@ class Side(Enum):
             case "TOPLEFT":
                 return [Side.TOPLEFTLEFT, Side.TOPLEFTTOP]
         return [self]
+
+    # returns the main side of a half side
+    def facing(self):
+        if self.name.endswith("TOP"):
+            return Side.TOP
+        elif self.name.endswith("RIGHT"):
+            return Side.RIGHT
+        elif self.name.endswith("BOTTOM"):
+            return Side.BOTTOM
+        else:
+            return Side.LEFT
+            
 
     def rotate_clockwise(self):
         match self.name:
