@@ -90,7 +90,8 @@ class Game():
         adjacent_tiles = self.get_adjacent_tiles(coordinates)
 
         # check for features on adjacent tiles that already have meeples
-
+        for side in tile_feature.get_sides():
+            connecting_feature = adjacent_tiles
 
         
         
