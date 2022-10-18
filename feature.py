@@ -87,7 +87,7 @@ class TileFarm(TileFeature):
     def get_sides(self):
         feature_sides: list[Side] = []
         # break down corners into half sides for farms
-        for side in self.sides():
+        for side in self.sides:
             feature_sides += side.decompose()
         return feature_sides
 

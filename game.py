@@ -1,3 +1,5 @@
+from calendar import c
+from msilib.schema import Feature
 from typing import Optional
 from action import Action
 from enums import FeatureType, Side
@@ -28,9 +30,9 @@ class Game():
         self.deck = Deck(base_set, self.additional_tile_sets)
         start_tile: Tile = self.deck.get_next_tile()
         self.board = {Coordinates(0,0): start_tile}
-        self.frontier = Coordinates(0,0).get_adjacent()
+        self.frontier: list[Coordinates] = list(Coordinates(0,0).get_adjacent().values())
         self.current_player = 0
-        self.free_meeples = [Meeple(player) for _ in range(7) for player in range(self.player_count)]
+        self.free_meeples = [[Meeple(player) for _ in range(7)] for player in range(self.player_count)]
         # generate initial features
         self.cities = []
         for city in start_tile.cities:
@@ -62,7 +64,7 @@ class Game():
         # check each side
         for side in adjacent_tiles.keys():
             if (adjacent_tiles[side]):
-                if adjacent_tiles[side].sides[side.get_opposite()] == tile.sides[side]: 
+                if adjacent_tiles[side].sides[side.get_opposite()] != tile.sides[side]: 
                     return False
         return True
 
@@ -81,8 +83,8 @@ class Game():
         elif feature_type == FeatureType.FARM:
             feature_count = len(tile.farms)
             feature_list = tile.farms
-        elif tile.monastery is None:
-            return False
+        elif tile.monastery is not None:
+            return True
         if feature_number >= feature_count:
             return False
         # check all connections to feature and check for existing meeples
@@ -102,18 +104,61 @@ class Game():
                         return False
         return True            
         
-    def is_action_valid(self, action: Action):
+    def is_action_valid(self, action: Action) -> bool:
         # check if tile fits at location
+        valid = False
         action.tile.rotate_clockwise(action.rotation)
+        if self.does_tile_fit(action.tile, action.coordinates):
+            # check if the meeple can be placed
+            if (action.meeple_feature_type):
+                if self.can_place_meeple(action.tile, action.coordinates, self.current_player, action.meeple_feature_type, action.meeple_feature_number):
+                    valid = True
+            else:
+                valid = True
+        if action.rotation != 0:
+            action.tile.rotate_clockwise(4 - action.rotation)
+        return valid
+        
 
+    def get_valid_actions(self) -> list[Action]:
+        next_tile = self.deck.peak_next_tile()
+        valid_actions: list[Action] = []
+        # iterate over all possible actions and check if they are valid
+        for coordinates in self.frontier:
+            # calculate number of rotations needed based on symmetry of tile
+            for rotation in range(next_tile.get_unique_rotations()):
+                for feature_num in range(len(next_tile.cities)):
+                    new_action = Action(next_tile, rotation, coordinates, FeatureType.CITY, feature_num)
+                    if self.is_action_valid(new_action):
+                        valid_actions.append(new_action)
+
+                for feature_num in range(len(next_tile.roads)):
+                    new_action = Action(next_tile, rotation, coordinates, FeatureType.ROAD, feature_num)
+                    if self.is_action_valid(new_action):
+                        valid_actions.append(new_action)
+
+                for feature_num in range(len(next_tile.farms)):
+                    new_action = Action(next_tile, rotation, coordinates, FeatureType.FARM, feature_num)
+                    if self.is_action_valid(new_action):
+                        valid_actions.append(new_action)
+
+                if next_tile.monastery:
+                    new_action = Action(next_tile, rotation, coordinates, FeatureType.MONASTERY, feature_num)
+                    if self.is_action_valid(new_action):
+                        valid_actions.append(new_action)
+
+                new_action = Action(next_tile, rotation, coordinates)
+                if self.is_action_valid(new_action):
+                    valid_actions.append(new_action)
+
+        return valid_actions
+                
 
 
 game = Game(2)
-print(game.cities)
-next = game.deck.get_next_tile()
-print(next)
-print(next.get_tile_feature_from_side(Side.RIGHT, FeatureType.CITY))
-print(game.deck.get_next_tile())
-print(game.deck.get_next_tile())
+print(game.deck)
+print(game.board)
+for action in game.get_valid_actions():
+    print(action)
 
         

@@ -54,6 +54,14 @@ class Tile():
                 return feature
         return None
 
+    def get_unique_rotations(self) -> int:
+        if self.sides[Side.TOP] == self.sides[Side.BOTTOM]:
+            if self.sides[Side.RIGHT] == self.sides[Side.LEFT]:
+                return 1
+        elif self.sides[Side.RIGHT] == self.sides[Side.LEFT]:
+            return 2
+        return 4
+
 
 class TileSet():
 
