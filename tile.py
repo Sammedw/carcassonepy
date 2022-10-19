@@ -36,12 +36,13 @@ class Tile():
             farm.sides = [side.rotate_clockwise() for side in farm.sides]
         # rotate n-1 more times    
         self.rotate_clockwise(times-1)
-
+    
     def get_tile_feature_from_side(self, side: Side, feature_type: FeatureType) -> Optional[TileFeature]:
         assert not side == Side.CENTER, "Cannot find feature in center"
         assert not feature_type == FeatureType.MONASTERY, "Monasteries are always in the center"
         assert (not feature_type == FeatureType.FARM) or (side == Side.TOP or side == Side.RIGHT or side == Side.BOTTOM or side == Side.LEFT)
         
+        feature_list: list[TileCity] | list[TileRoad] | list[TileFarm]
         if feature_type == FeatureType.CITY:
             feature_list = self.cities
         elif feature_type == FeatureType.ROAD:
@@ -52,6 +53,26 @@ class Tile():
         for feature in feature_list:
             if side in feature.get_sides():
                 return feature
+        return None
+    
+    def get_tile_feature_by_num(self, num: int, feature_type: FeatureType) -> Optional[TileFeature]:
+         # check if given feature exists
+        feature_count = 0
+        feature_list: list[TileCity] | list[TileRoad] | list[TileFarm]
+        if feature_type == FeatureType.CITY:
+            feature_count = len(self.cities)
+            feature_list = self.cities
+        elif feature_type == FeatureType.ROAD:
+            feature_count = len(self.roads)
+            feature_list = self.roads
+        elif feature_type == FeatureType.FARM:
+            feature_count = len(self.farms)
+            feature_list = self.farms
+        elif self.monastery is not None:
+            return self.monastery
+        # return it
+        if num < feature_count:
+            return feature_list[num]
         return None
 
     def get_unique_rotations(self) -> int:

@@ -72,26 +72,15 @@ class Game():
         # check player has enough meeples
         if not len(self.free_meeples[player]) > 0:
             return False
-        # check if given feature exists
-        feature_count = 0
-        if feature_type == FeatureType.CITY:
-            feature_count = len(tile.cities)
-            feature_list = tile.cities
-        elif feature_type == FeatureType.ROAD:
-            feature_count = len(tile.roads)
-            feature_list = tile.roads
-        elif feature_type == FeatureType.FARM:
-            feature_count = len(tile.farms)
-            feature_list = tile.farms
-        elif tile.monastery is not None:
+        # can place meeple on monastery
+        if tile.monastery is not None:
             return True
-        if feature_number >= feature_count:
+        # check if given feature exists
+        tile_feature = tile.get_tile_feature_by_num(feature_number, feature_type)
+        if tile_feature is None:
             return False
         # check all connections to feature and check for existing meeples
-        tile_feature = feature_list[feature_number]
         adjacent_tiles = self.get_adjacent_tiles(coordinates)
-
-        # check for features on adjacent tiles that already have meeples
         feature_sides = tile_feature.get_sides()
         if Side.CENTER in feature_sides:
             feature_sides.remove(Side.CENTER)
@@ -111,18 +100,18 @@ class Game():
         # check if tile fits at location
         valid = False
         action.tile.rotate_clockwise(action.rotation)
-        if self.does_tile_fit(action.tile, action.coordinates):
-            # check if the meeple can be placed
-            if (action.meeple_feature_type):
-                if self.can_place_meeple(action.tile, action.coordinates, self.current_player, action.meeple_feature_type, action.meeple_feature_number):
+        if action.tile is self.deck.peak_next_tile():
+            if self.does_tile_fit(action.tile, action.coordinates):
+                # check if the meeple can be placed
+                if (action.meeple_feature_type):
+                    if self.can_place_meeple(action.tile, action.coordinates, self.current_player, action.meeple_feature_type, action.meeple_feature_number):
+                        valid = True
+                else:
                     valid = True
-            else:
-                valid = True
         if action.rotation != 0:
             action.tile.rotate_clockwise(4 - action.rotation)
         return valid
         
-
     def get_valid_actions(self) -> list[Action]:
         next_tile = self.deck.peak_next_tile()
         valid_actions: list[Action] = []
@@ -155,7 +144,21 @@ class Game():
                     valid_actions.append(new_action)
 
         return valid_actions
-                
+
+    def make_action(self, action: Action) -> bool:
+        if (self.is_action_valid(action)):
+            # place tile
+            self.board[action.coordinates] = action.tile.rotate_clockwise(action.rotation)
+            # place meeple
+            if action.meeple_feature_type is not None:
+                tile_feature = action.tile.get_tile_feature_by_num(action.meeple_feature_number, action.meeple_feature_type)
+                if tile_feature is not None:
+                    tile_feature.meeple = self.free_meeples[self.current_player].pop()
+            # merge roads and cities
+            adjacent_tiles = self.get_adjacent_tiles(action.coordinates)
+            for tile_feature in action.tile.cities + action.tile.farms:
+                pass
+
 
 
 game = Game(2)

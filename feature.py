@@ -103,6 +103,8 @@ class Feature():
         # merge tile feature
         tile_feature.parent_feature = self
         self.tile_count += 1
+        if (tile_feature.meeple):
+            self.meeples.append(tile_feature.meeple)
         # add locations of tile feature to frontier that are not involved with connection
         for side in tile_feature.sides:
             if side not in joining_sides:
