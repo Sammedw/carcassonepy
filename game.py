@@ -92,7 +92,10 @@ class Game():
         adjacent_tiles = self.get_adjacent_tiles(coordinates)
 
         # check for features on adjacent tiles that already have meeples
-        for side in tile_feature.get_sides():
+        feature_sides = tile_feature.get_sides()
+        if Side.CENTER in feature_sides:
+            feature_sides.remove(Side.CENTER)
+        for side in feature_sides:
             if feature_type == FeatureType.FARM:
                 side = side.facing()
             if adjacent_tiles[side]:
