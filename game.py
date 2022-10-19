@@ -149,7 +149,7 @@ class Game():
         if (self.is_action_valid(action)):
             # place tile
             self.board[action.coordinates] = action.tile.rotate_clockwise(action.rotation)
-            # place meeple
+            # place meeple MAKE INTO FUNCTION THAT ALSO UPDATES MEEPLE LOCATION
             if action.meeple_feature_type is not None:
                 tile_feature = action.tile.get_tile_feature_by_num(action.meeple_feature_number, action.meeple_feature_type)
                 if tile_feature is not None:
