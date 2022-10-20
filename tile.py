@@ -83,6 +83,11 @@ class Tile():
             return 2
         return 4
 
+    def place_meeple(self, meeple: Meeple, coordinates: Coordinates, feature_number: int, feature_type: FeatureType):
+        tile_feature = self.get_tile_feature_by_num(feature_number, feature_type)
+        if tile_feature is not None:
+            tile_feature.place_meeple(meeple, coordinates)
+
 
 class TileSet():
 

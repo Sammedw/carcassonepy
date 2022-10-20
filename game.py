@@ -3,7 +3,7 @@ from msilib.schema import Feature
 from typing import Optional
 from action import Action
 from enums import FeatureType, Side
-from location import Coordinates
+from location import Coordinates, Location
 from tile import Deck, Tile, TileSet
 from meeple import Meeple
 from feature import City, Road, Monastery, Farm
@@ -149,11 +149,10 @@ class Game():
         if (self.is_action_valid(action)):
             # place tile
             self.board[action.coordinates] = action.tile.rotate_clockwise(action.rotation)
-            # place meeple MAKE INTO FUNCTION THAT ALSO UPDATES MEEPLE LOCATION
+            # place meeple
             if action.meeple_feature_type is not None:
-                tile_feature = action.tile.get_tile_feature_by_num(action.meeple_feature_number, action.meeple_feature_type)
-                if tile_feature is not None:
-                    tile_feature.meeple = self.free_meeples[self.current_player].pop()
+                # choose location for meeple
+                action.tile.place_meeple(self.free_meeples[self.current_player].pop(), action.coordinates, action.meeple_feature_number, action.meeple_feature_type)
             # merge roads and cities
             adjacent_tiles = self.get_adjacent_tiles(action.coordinates)
             for tile_feature in action.tile.cities + action.tile.farms:
@@ -166,5 +165,3 @@ print(game.deck)
 print(game.board)
 for action in game.get_valid_actions():
     print(action)
-
-        
