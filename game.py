@@ -79,15 +79,13 @@ class Game():
         tile_feature = tile.get_tile_feature_by_num(feature_number, feature_type)
         if tile_feature is None:
             return False
-        # check all connections to feature and check for existing meeples
+        # check all connections to feature and check for existing meeples BUG WITH FARMS
         adjacent_tiles = self.get_adjacent_tiles(coordinates)
         feature_sides = tile_feature.get_sides()
         if Side.CENTER in feature_sides:
             feature_sides.remove(Side.CENTER)
         for side in feature_sides:
-            if feature_type == FeatureType.FARM:
-                side = side.facing()
-            if adjacent_tiles[side]:
+            if adjacent_tiles[side.facing()]:
                 connecting_feature = adjacent_tiles[side].get_tile_feature_from_side(side.get_opposite(), feature_type)
                 if not connecting_feature:
                     continue
@@ -153,17 +151,23 @@ class Game():
             if action.meeple_feature_type is not None:
                 action.tile.place_meeple(self.free_meeples[self.current_player].pop(), action.coordinates, action.meeple_feature_number, action.meeple_feature_type)
             adjacent_tiles = self.get_adjacent_tiles(action.coordinates)
-            for tile_feature in action.tile.cities + action.tile.roads + action.tile.farms:
+            for tile_feature_type, tile_feature in [(FeatureType.CITY, city) for city in action.tile.cities] + [(FeatureType.ROAD, road) for road in action.tile.roads] + [(FeatureType.FARM, farm) for farm in action.tile.farms]:
                 for tile_feature_side in tile_feature.get_sides():
                     connecting_sides: list[Side] = []
                     merging_features = []
                     if adjacent_tiles[tile_feature_side.facing()] is not None:
                         connecting_sides.append(tile_feature_side)
                         # get adjacent parent feature
-                        merging_feature = adjacent_tiles[tile_feature_side.facing()].get_tile_feature_from_side(tile_feature_side.get_opposite())
+                        merging_feature = adjacent_tiles[tile_feature_side.facing()].get_tile_feature_from_side(tile_feature_side.get_opposite(), tile_feature_type).parent_feature
                         merging_features.append(merging_feature)
-
-
+                    # connect features
+                    if len(merging_features) > 0:
+                        merging_features.pop()
+                    # create new feature
+                    else:
+                        new_feature = tile_feature.generate_parent_feature(action.coordinates)
+                        match 
+                    
 
 game = Game(2)
 print(game.deck)

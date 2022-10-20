@@ -75,7 +75,7 @@ class Tile():
             return feature_list[num]
         return None
 
-    def get_unique_rotations(self) -> int:
+    def get_unique_rotations(self) -> int: #BUG
         if self.sides[Side.TOP] == self.sides[Side.BOTTOM]:
             if self.sides[Side.RIGHT] == self.sides[Side.LEFT]:
                 return 1

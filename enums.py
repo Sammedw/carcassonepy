@@ -71,7 +71,6 @@ class Side(Enum):
         else:
             return Side.LEFT
             
-
     def rotate_clockwise(self):
         match self.name:
             case "TOP":
