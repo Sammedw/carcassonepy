@@ -1,3 +1,4 @@
+import random
 from typing import Optional
 from location import Location, Coordinates
 from enums import Side, TileFeatureAttribute
@@ -18,8 +19,10 @@ class TileFeature():
     def place_meeple(self, meeple: Meeple, coordinates: Coordinates):
         if self.meeple is None:
             self.meeple = meeple
-            meeple_sides = 
-            meeple.location = Location(coordinates.x, coordinates.y, self.)
+            meeple_sides = list(self.sides)
+            if Side.CENTER in meeple_sides:
+                meeple_sides.remove(Side.CENTER)
+            meeple.location = Location(coordinates.x, coordinates.y, random.choice(meeple_sides))
 
 
 class TileCity(TileFeature):

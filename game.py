@@ -151,12 +151,17 @@ class Game():
             self.board[action.coordinates] = action.tile.rotate_clockwise(action.rotation)
             # place meeple
             if action.meeple_feature_type is not None:
-                # choose location for meeple
                 action.tile.place_meeple(self.free_meeples[self.current_player].pop(), action.coordinates, action.meeple_feature_number, action.meeple_feature_type)
-            # merge roads and cities
             adjacent_tiles = self.get_adjacent_tiles(action.coordinates)
-            for tile_feature in action.tile.cities + action.tile.farms:
-                pass
+            for tile_feature in action.tile.cities + action.tile.roads + action.tile.farms:
+                for tile_feature_side in tile_feature.get_sides():
+                    connecting_sides: list[Side] = []
+                    merging_features = []
+                    if adjacent_tiles[tile_feature_side.facing()] is not None:
+                        connecting_sides.append(tile_feature_side)
+                        # get adjacent parent feature
+                        merging_feature = adjacent_tiles[tile_feature_side.facing()].get_tile_feature_from_side(tile_feature_side.get_opposite())
+                        merging_features.append(merging_feature)
 
 
 
