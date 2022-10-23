@@ -1,10 +1,11 @@
+import random
 from typing import Optional
 from action import Action
 from enums import FeatureType, Side
 from location import Coordinates, Location
 from tile import Deck, Tile, TileSet
 from meeple import Meeple
-from feature import City, Road, Monastery, Farm, Feature
+from feature import City, Road, Farm, Feature, TileMonastery
 from sets import base_set
 
 class Game():
@@ -20,7 +21,7 @@ class Game():
         self.free_meeples: list[list[Meeple]]
         self.cities: list[City]
         self.roads: list[Road]
-        self.monasteries: list[Monastery]
+        self.monasteries: list[TileMonastery]
         self.farms: list[Farm]
         self.reset()
 
@@ -45,10 +46,10 @@ class Game():
         for farm in start_tile.farms:
             self.farms.append(farm.generate_parent_feature(Coordinates(0,0)))
 
-    def get_adjacent_tiles(self, coordinates: Coordinates) -> dict[Side, Optional[Tile]]:
+    def get_adjacent_tiles(self, coordinates: Coordinates, corners: bool = False) -> dict[Side, Optional[Tile]]:
         # return adjacent tiles (TRBL)
         adjacent_tiles: dict[Side, Optional[Tile]] = {Side.TOP: None, Side.RIGHT: None, Side.BOTTOM: None, Side.LEFT: None}
-        adjacent_coordinates = coordinates.get_adjacent()
+        adjacent_coordinates = coordinates.get_adjacent(corners=corners)
         for side in adjacent_coordinates.keys():
             if adjacent_coordinates[side] in self.board:
                 adjacent_tiles[side] = self.board[adjacent_coordinates[side]]
@@ -84,7 +85,7 @@ class Game():
             feature_sides.remove(Side.CENTER)
         for side in feature_sides:
             if adjacent_tiles[side.facing()]:
-                connecting_feature = adjacent_tiles[side].get_tile_feature_from_side(side.get_opposite(), feature_type)
+                connecting_feature = adjacent_tiles[side.facing()].get_tile_feature_from_side(side.get_opposite(), feature_type)
                 if not connecting_feature:
                     continue
                 if connecting_feature.parent_feature:
@@ -167,11 +168,21 @@ class Game():
                         new_feature = tile_feature.generate_parent_feature(action.coordinates)
                         match tile_feature_type:
                             case FeatureType.CITY:
-                                self.cities
-                    
+                                self.cities.append(new_feature)
+                            case FeatureType.ROAD:
+                                self.roads.append(new_feature)
+                            case FeatureType.FARM:
+                                self.farms.append(new_feature)
+            # track monastery if meeple placed on it
+            if (action.meeple_feature_type == FeatureType.MONASTERY):
+                self.monasteries.append(action.tile.monastery)
+          
 
 game = Game(2)
 print(game.deck)
 print(game.board)
-for action in game.get_valid_actions():
-    print(action)
+for i in range(2):
+    for action in game.get_valid_actions():
+        print(action)
+    selected = random.choice(game.get_valid_actions())
+    print(f"--- Selected: {selected}")

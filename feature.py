@@ -20,7 +20,7 @@ class TileFeature():
         if self.meeple is None:
             self.meeple = meeple
             meeple_sides = list(self.sides)
-            if Side.CENTER in meeple_sides:
+            if Side.CENTER in meeple_sides and len(meeple_sides) > 1:
                 meeple_sides.remove(Side.CENTER)
             meeple.location = Location(coordinates.x, coordinates.y, random.choice(meeple_sides))
 
@@ -66,15 +66,7 @@ class TileMonastery(TileFeature):
 
     def __str__(self):
         return f"TileMonastery"
-
-    def generate_parent_feature(self, coordinates: Coordinates, joining_sides: list[Side]):
-        sides = list({Side.TOP, Side.RIGHT, Side.BOTTOM, Side.LEFT} - set(joining_sides))
-        new_monastery = Monastery([coordinates.get_location(side) for side in sides])
-        if self.meeple:
-            new_monastery.meeples = [self.meeple]
-        self.parent_feature = new_monastery
-        return new_monastery
-
+        
 
 class TileFarm(TileFeature):
 
@@ -151,12 +143,6 @@ class City(Feature):
 
 
 class Road(Feature):
-
-    def __init__(self, frontier_locations: list[Location] = []):
-        super().__init__(frontier_locations)
-
-
-class Monastery(Feature):
 
     def __init__(self, frontier_locations: list[Location] = []):
         super().__init__(frontier_locations)

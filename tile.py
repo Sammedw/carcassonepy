@@ -40,7 +40,7 @@ class Tile():
     def get_tile_feature_from_side(self, side: Side, feature_type: FeatureType) -> Optional[TileFeature]:
         assert not side == Side.CENTER, "Cannot find feature in center"
         assert not feature_type == FeatureType.MONASTERY, "Monasteries are always in the center"
-        assert (not feature_type == FeatureType.FARM) or (side == Side.TOP or side == Side.RIGHT or side == Side.BOTTOM or side == Side.LEFT)
+        assert (feature_type == FeatureType.FARM) or (side == Side.TOP or side == Side.RIGHT or side == Side.BOTTOM or side == Side.LEFT)
         
         feature_list: list[TileCity] | list[TileRoad] | list[TileFarm]
         if feature_type == FeatureType.CITY:

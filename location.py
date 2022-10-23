@@ -15,9 +15,12 @@ class Coordinates():
     def __hash__(self):
         return hash(f"({self.x}, {self.y})")
 
-    def get_adjacent(self):
-        return {Side.TOP: Coordinates(self.x, self.y + 1), Side.RIGHT: Coordinates(self.x + 1, self.y), Side.BOTTOM: Coordinates(self.x, self.y - 1), Side.LEFT: Coordinates(self.x - 1, self.y)}
-
+    def get_adjacent(self, corners: bool=False):
+        adjacent = {Side.TOP: Coordinates(self.x, self.y + 1), Side.RIGHT: Coordinates(self.x + 1, self.y), Side.BOTTOM: Coordinates(self.x, self.y - 1), Side.LEFT: Coordinates(self.x - 1, self.y)}
+        if corners:
+            adjacent.update({Side.TOPRIGHT: Coordinates(self.x + 1, self.y + 1), Side.BOTTOMRIGHT: Coordinates(self.x + 1, self.y - 1), Side.BOTTOMLEFT: Coordinates(self.x - 1, self.y - 1), Side.TOPLEFT: Coordinates(self.x - 1, self.y + 1)})
+        return adjacent
+        
     def get_location(self, side: Side):
         return Location(self.x, self.y, side)
 
