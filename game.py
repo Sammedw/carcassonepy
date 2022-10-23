@@ -1,12 +1,10 @@
-from calendar import c
-from msilib.schema import Feature
 from typing import Optional
 from action import Action
 from enums import FeatureType, Side
 from location import Coordinates, Location
 from tile import Deck, Tile, TileSet
 from meeple import Meeple
-from feature import City, Road, Monastery, Farm
+from feature import City, Road, Monastery, Farm, Feature
 from sets import base_set
 
 class Game():
@@ -153,20 +151,23 @@ class Game():
             adjacent_tiles = self.get_adjacent_tiles(action.coordinates)
             for tile_feature_type, tile_feature in [(FeatureType.CITY, city) for city in action.tile.cities] + [(FeatureType.ROAD, road) for road in action.tile.roads] + [(FeatureType.FARM, farm) for farm in action.tile.farms]:
                 for tile_feature_side in tile_feature.get_sides():
-                    connecting_sides: list[Side] = []
-                    merging_features = []
+                    joining_sides: list[Side] = []
+                    merging_features: list[Feature] = []
                     if adjacent_tiles[tile_feature_side.facing()] is not None:
-                        connecting_sides.append(tile_feature_side)
+                        joining_sides.append(tile_feature_side)
                         # get adjacent parent feature
                         merging_feature = adjacent_tiles[tile_feature_side.facing()].get_tile_feature_from_side(tile_feature_side.get_opposite(), tile_feature_type).parent_feature
                         merging_features.append(merging_feature)
                     # connect features
                     if len(merging_features) > 0:
-                        merging_features.pop()
+                        merging_feature = merging_features.pop()
+                        merging_feature.merge_features(tile_feature, action.coordinates, joining_sides, merging_features)
                     # create new feature
                     else:
                         new_feature = tile_feature.generate_parent_feature(action.coordinates)
-                        match 
+                        match tile_feature_type:
+                            case FeatureType.CITY:
+                                self.cities
                     
 
 game = Game(2)
