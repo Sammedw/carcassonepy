@@ -160,11 +160,15 @@ class Game():
             # merge features
             for tile_feature_type, tile_feature in [(FeatureType.CITY, city) for city in action.tile.cities] + [(FeatureType.ROAD, road) for road in action.tile.roads] + [(FeatureType.FARM, farm) for farm in action.tile.farms]:
                 for tile_feature_side in tile_feature.get_sides():
+                    # ignore side.center
+                    if tile_feature_side == Side.CENTER:
+                        continue
                     joining_sides: list[Side] = []
                     merging_features: list[Feature] = []
                     if adjacent_tiles[tile_feature_side.facing()] is not None:
                         joining_sides.append(tile_feature_side)
                         # get adjacent parent feature
+                        print(f"--- Merge --- side: {tile_feature_side.facing()}, type: {tile_feature_type}, feature_sides: {tile_feature.get_sides()}")
                         merging_feature = adjacent_tiles[tile_feature_side.facing()].get_tile_feature_from_side(tile_feature_side.get_opposite(), tile_feature_type).parent_feature
                         merging_features.append(merging_feature)
                     # connect features
@@ -205,7 +209,7 @@ class Game():
 game = Game(2)
 print(game.deck)
 print(game.board)
-for i in range(2):
+for i in range(5):
     for action in game.get_valid_actions():
         print(action)
     selected = random.choice(game.get_valid_actions())

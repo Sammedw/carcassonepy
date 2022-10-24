@@ -17,7 +17,7 @@ base_set = TileSet("base",
     {Tile("monastery_road", ConnectionType.GRASS, ConnectionType.GRASS, ConnectionType.ROAD, ConnectionType.GRASS,
         roads = [feature_entrance],
         monastery = monastery,
-        farms = [TileFarm([Side.TOPLEFT, Side.TOPRIGHT, Side.BOTTOMRIGHT, Side.BOTTOMLEFT, Side.LEFT])]): 2, 
+        farms = [TileFarm([Side.TOPLEFT, Side.TOPRIGHT, Side.BOTTOMRIGHT, Side.BOTTOMLEFT])]): 2, 
         
     Tile("monastery", ConnectionType.GRASS, ConnectionType.GRASS, ConnectionType.GRASS, ConnectionType.GRASS,
         monastery = monastery,

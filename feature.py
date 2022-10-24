@@ -72,6 +72,7 @@ class TileFarm(TileFeature):
 
     def __init__(self, sides: list[Side], attributes: list[TileFeatureAttribute] = [], adjacent_cities = set()):
         super().__init__(sides, attributes)
+        assert Side.TOP not in sides and Side.RIGHT not in sides and Side.BOTTOM not in sides and Side.LEFT not in sides, "Farms must be defined using corners"
         self.adjacent_cities = adjacent_cities
 
     def __str__(self):

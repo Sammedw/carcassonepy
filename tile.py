@@ -78,9 +78,10 @@ class Tile():
     def get_unique_rotations(self) -> int: #BUG
         if self.sides[Side.TOP] == self.sides[Side.BOTTOM]:
             if self.sides[Side.RIGHT] == self.sides[Side.LEFT]:
-                return 1
-        elif self.sides[Side.RIGHT] == self.sides[Side.LEFT]:
-            return 2
+                if self.sides[Side.TOP] == self.sides[Side.RIGHT]:
+                    return 1
+                else:
+                    return 2
         return 4
 
     def place_meeple(self, meeple: Meeple, coordinates: Coordinates, feature_number: int, feature_type: FeatureType):
