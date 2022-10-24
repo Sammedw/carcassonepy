@@ -171,6 +171,15 @@ class Game():
                     if len(merging_features) > 0:
                         merging_feature = merging_features.pop()
                         merging_feature.merge_features(tile_feature, action.coordinates, joining_sides, merging_features)
+                        # remove old features
+                        for old_feature in merging_features:
+                            match tile_feature_type:
+                                case FeatureType.CITY:
+                                    self.cities.remove(old_feature)
+                                case FeatureType.ROAD:
+                                    self.roads.remove(old_feature)
+                                case FeatureType.FARM:
+                                    self.farms.remove(old_feature)
                     # create new feature
                     else:
                         new_feature = tile_feature.generate_parent_feature(action.coordinates)
