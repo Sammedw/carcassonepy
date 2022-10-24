@@ -29,7 +29,7 @@ class Game():
         self.deck = Deck(base_set, self.additional_tile_sets)
         start_tile: Tile = self.deck.get_next_tile()
         self.board = {Coordinates(0,0): start_tile}
-        self.frontier: list[Coordinates] = list(Coordinates(0,0).get_adjacent().values())
+        self.frontier: set[Coordinates] = set(Coordinates(0,0).get_adjacent().values())
         self.current_player = 0
         self.free_meeples = [[Meeple(player) for _ in range(7)] for player in range(self.player_count)]
         # generate initial features
@@ -145,11 +145,19 @@ class Game():
     def make_action(self, action: Action) -> bool:
         if (self.is_action_valid(action)):
             # place tile
-            self.board[action.coordinates] = action.tile.rotate_clockwise(action.rotation)
+            action.tile.rotate_clockwise(action.rotation)
+            self.board[action.coordinates] = action.tile
+            # update frontier
+            self.frontier.remove(action.coordinates)
+            adjacent_tiles = self.get_adjacent_tiles(action.coordinates)
+            adjacent_coordiantes = action.coordinates.get_adjacent()
+            for side, tile in adjacent_tiles.items():
+                if tile is None:
+                    self.frontier.add(adjacent_coordiantes[side])
             # place meeple
             if action.meeple_feature_type is not None:
                 action.tile.place_meeple(self.free_meeples[self.current_player].pop(), action.coordinates, action.meeple_feature_number, action.meeple_feature_type)
-            adjacent_tiles = self.get_adjacent_tiles(action.coordinates)
+            # merge features
             for tile_feature_type, tile_feature in [(FeatureType.CITY, city) for city in action.tile.cities] + [(FeatureType.ROAD, road) for road in action.tile.roads] + [(FeatureType.FARM, farm) for farm in action.tile.farms]:
                 for tile_feature_side in tile_feature.get_sides():
                     joining_sides: list[Side] = []
@@ -176,6 +184,13 @@ class Game():
             # track monastery if meeple placed on it
             if (action.meeple_feature_type == FeatureType.MONASTERY):
                 self.monasteries.append(action.tile.monastery)
+            # remove tile from deck
+            self.deck.tiles.remove(action.tile)
+            # update player
+            self.current_player = (self.current_player + 1) % self.player_count
+            return True
+        else:
+            return False
           
 
 game = Game(2)
@@ -186,3 +201,6 @@ for i in range(2):
         print(action)
     selected = random.choice(game.get_valid_actions())
     print(f"--- Selected: {selected}")
+    game.make_action(selected)
+    print(game.board)
+    print("------------------------------------")
