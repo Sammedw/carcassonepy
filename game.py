@@ -18,6 +18,7 @@ class Game():
         self.board: dict[Coordinates, Tile]
         self.frontier: set[Coordinates]
         self.current_player: int
+        self.scores: list[int]
         self.free_meeples: list[list[Meeple]]
         self.cities: list[City]
         self.roads: list[Road]
@@ -31,6 +32,7 @@ class Game():
         self.board = {Coordinates(0,0): start_tile}
         self.frontier: set[Coordinates] = set(Coordinates(0,0).get_adjacent().values())
         self.current_player = 0
+        self.scores = [0 for _ in self.player_count]
         self.free_meeples = [[Meeple(player) for _ in range(7)] for player in range(self.player_count)]
         # generate initial features
         self.cities = []
@@ -159,41 +161,41 @@ class Game():
                 action.tile.place_meeple(self.free_meeples[self.current_player].pop(), action.coordinates, action.meeple_feature_number, action.meeple_feature_type)
             # merge features
             for tile_feature_type, tile_feature in [(FeatureType.CITY, city) for city in action.tile.cities] + [(FeatureType.ROAD, road) for road in action.tile.roads] + [(FeatureType.FARM, farm) for farm in action.tile.farms]:
+                joining_sides: list[Side] = []
+                merging_features: set[Feature] = set()
                 for tile_feature_side in tile_feature.get_sides():
                     # ignore side.center
                     if tile_feature_side == Side.CENTER:
                         continue
-                    joining_sides: list[Side] = []
-                    merging_features: list[Feature] = []
                     if adjacent_tiles[tile_feature_side.facing()] is not None:
                         joining_sides.append(tile_feature_side)
                         # get adjacent parent feature
-                        print(f"--- Merge --- side: {tile_feature_side.facing()}, type: {tile_feature_type}, feature_sides: {tile_feature.get_sides()}")
+                        #print(f"--- Merge --- side: {tile_feature_side.facing()}, type: {tile_feature_type}, feature_sides: {tile_feature.get_sides()}")
                         merging_feature = adjacent_tiles[tile_feature_side.facing()].get_tile_feature_from_side(tile_feature_side.get_opposite(), tile_feature_type).parent_feature
-                        merging_features.append(merging_feature)
-                    # connect features
-                    if len(merging_features) > 0:
-                        merging_feature = merging_features.pop()
-                        merging_feature.merge_features(tile_feature, action.coordinates, joining_sides, merging_features)
-                        # remove old features
-                        for old_feature in merging_features:
-                            match tile_feature_type:
-                                case FeatureType.CITY:
-                                    self.cities.remove(old_feature)
-                                case FeatureType.ROAD:
-                                    self.roads.remove(old_feature)
-                                case FeatureType.FARM:
-                                    self.farms.remove(old_feature)
-                    # create new feature
-                    else:
-                        new_feature = tile_feature.generate_parent_feature(action.coordinates)
+                        merging_features.add(merging_feature)
+                # connect features
+                if len(merging_features) > 0:
+                    merging_feature = merging_features.pop()
+                    merging_feature.merge_features(tile_feature, action.coordinates, joining_sides, merging_features)
+                    # remove old features
+                    for old_feature in merging_features:
                         match tile_feature_type:
                             case FeatureType.CITY:
-                                self.cities.append(new_feature)
+                                self.cities.remove(old_feature)
                             case FeatureType.ROAD:
-                                self.roads.append(new_feature)
+                                self.roads.remove(old_feature)
                             case FeatureType.FARM:
-                                self.farms.append(new_feature)
+                                self.farms.remove(old_feature)
+                # create new feature
+                else:
+                    new_feature = tile_feature.generate_parent_feature(action.coordinates)
+                    match tile_feature_type:
+                        case FeatureType.CITY:
+                            self.cities.append(new_feature)
+                        case FeatureType.ROAD:
+                            self.roads.append(new_feature)
+                        case FeatureType.FARM:
+                            self.farms.append(new_feature)
             # track monastery if meeple placed on it
             if (action.meeple_feature_type == FeatureType.MONASTERY):
                 self.monasteries.append(action.tile.monastery)
@@ -209,11 +211,17 @@ class Game():
 game = Game(2)
 print(game.deck)
 print(game.board)
+#print("Cities: ", len(game.cities))
+#print("Roads: ", len(game.roads))
+#print("Farms: ", len(game.farms))
 for i in range(5):
-    for action in game.get_valid_actions():
-        print(action)
+    #for action in game.get_valid_actions():
+    #    print(action)
     selected = random.choice(game.get_valid_actions())
     print(f"--- Selected: {selected}")
     game.make_action(selected)
-    print(game.board)
+    #print("Cities: ", len(game.cities))
+    #print("Roads: ", len(game.roads))
+    #print("Farms: ", len(game.farms))
+    print("Monasteries: ", len(game.monasteries))
     print("------------------------------------")
