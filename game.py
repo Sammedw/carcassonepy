@@ -186,6 +186,11 @@ class Game():
                                 self.roads.remove(old_feature)
                             case FeatureType.FARM:
                                 self.farms.remove(old_feature)
+                    # check if feature is complete
+                    if merging_feature.is_complete():
+                        # find meeple majority
+                        controlling_players = merging_feature.get_controlling_player(self.player_count)
+                            
                 # create new feature
                 else:
                     new_feature = tile_feature.generate_parent_feature(action.coordinates)

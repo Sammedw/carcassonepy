@@ -126,6 +126,22 @@ class Feature():
     def has_meeples(self) -> bool:
         return len(self.meeples) > 0
 
+    def get_controlling_player(self, player_count: int) -> list[int]:
+        if not self.has_meeples():
+            return []
+        meeple_counts = [0 for _ in range(player_count)]
+        for meeple in self.meeples:
+            meeple_counts[meeple.player] += 1
+        controlling_players: list[int] = []
+        max_meeples: int = 1
+        for player, player_meeple_count in enumerate(meeple_counts):
+            if player_meeple_count > max_meeples:
+                max_meeples = player_meeple_count
+                controlling_players = []
+            if player_meeple_count >= max_meeples:
+                controlling_players.append(player)
+        return controlling_players
+
     def score(self) -> int:
         return self.tile_count
 
@@ -161,6 +177,9 @@ class Farm(Feature):
         self.adjacent_cities.union(tile_feature.adjacent_cities)
         for other_feature in other_features:
             self.adjacent_cities = self.adjacent_cities.union(other_feature.adjacent_cities)
+
+    def is_complete(self) -> bool:
+        return False
 
     def score(self) -> int:
         score: int = 0
