@@ -32,7 +32,7 @@ class Game():
         self.board = {Coordinates(0,0): start_tile}
         self.frontier: set[Coordinates] = set(Coordinates(0,0).get_adjacent().values())
         self.current_player = 0
-        self.scores = [0 for _ in self.player_count]
+        self.scores = [0 for _ in range(self.player_count)]
         self.free_meeples = [[Meeple(player) for _ in range(7)] for player in range(self.player_count)]
         # generate initial features
         self.cities = []
@@ -173,6 +173,7 @@ class Game():
                         #print(f"--- Merge --- side: {tile_feature_side.facing()}, type: {tile_feature_type}, feature_sides: {tile_feature.get_sides()}")
                         merging_feature = adjacent_tiles[tile_feature_side.facing()].get_tile_feature_from_side(tile_feature_side.get_opposite(), tile_feature_type).parent_feature
                         merging_features.add(merging_feature)
+                print(merging_features)
                 # connect features
                 if len(merging_features) > 0:
                     merging_feature = merging_features.pop()
@@ -190,6 +191,10 @@ class Game():
                     if merging_feature.is_complete():
                         # find meeple majority
                         controlling_players = merging_feature.get_controlling_player(self.player_count)
+                        # add score
+                        score = merging_feature.score()
+                        for player in controlling_players:
+                            self.scores[player] += score
                             
                 # create new feature
                 else:
@@ -228,5 +233,5 @@ for i in range(5):
     #print("Cities: ", len(game.cities))
     #print("Roads: ", len(game.roads))
     #print("Farms: ", len(game.farms))
-    print("Monasteries: ", len(game.monasteries))
+    print("Scores: ", game.scores)
     print("------------------------------------")
