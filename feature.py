@@ -1,5 +1,5 @@
 import random
-from typing import Optional
+from typing import Any, Optional, Type
 from location import Location, Coordinates
 from enums import Side, TileFeatureAttribute
 from meeple import Meeple
@@ -11,7 +11,6 @@ class TileFeature():
         self.sides = sides
         self.attributes = attributes
         self.meeple: Optional[Meeple] = None
-        self.parent_feature: Optional[Feature] = None
 
     def get_sides(self):
         return self.sides
@@ -39,7 +38,6 @@ class TileCity(TileFeature):
             new_city.shield_count = 1
         if self.meeple:
             new_city.meeples = [self.meeple]
-        self.parent_feature = new_city
         return new_city
 
 
@@ -55,7 +53,6 @@ class TileRoad(TileFeature):
         new_road = Road([coordinates.get_location(side) for side in self.sides])
         if self.meeple:
             new_road.meeples = [self.meeple]
-        self.parent_feature = new_road
         return new_road
 
 
@@ -83,7 +80,6 @@ class TileFarm(TileFeature):
         if self.meeple:
             new_farm.meeples = [self.meeple]
         new_farm.adjacent_cities = self.adjacent_cities
-        self.parent_feature = new_farm
         return new_farm
     
     def get_sides(self):
@@ -103,7 +99,6 @@ class Feature():
 
     def merge_features(self, tile_feature: TileFeature, tile_feature_coordinates: Coordinates, joining_sides: list[Side], other_features = []):
         # merge tile feature
-        tile_feature.parent_feature = self
         self.tile_count += 1
         if (tile_feature.meeple):
             self.meeples.append(tile_feature.meeple)
@@ -111,7 +106,6 @@ class Feature():
         for side in tile_feature.sides:
             if side not in joining_sides:
                 self.frontier_locations.append(Location(tile_feature_coordinates.x, tile_feature_coordinates.y, side))
-
         # merge other features
         for other_feature in other_features:
             # merge frontiers and meeples
@@ -125,6 +119,12 @@ class Feature():
 
     def has_meeples(self) -> bool:
         return len(self.meeples) > 0
+
+    def in_frontier(self, location: Location) -> bool:
+        for frontier_location in self.frontier_locations:
+            if frontier_location == location:
+                return True
+        return False
 
     def get_controlling_player(self, player_count: int) -> list[int]:
         if not self.has_meeples():
@@ -187,3 +187,38 @@ class Farm(Feature):
             if (city.is_complete()):
                 score += 3
         return score
+
+
+class FeatureManager:
+
+    def __init__(self):
+        self.features: dict[Any, set[Feature]]
+        self.monasteries: set[TileMonastery]
+        self.child_tile_features: dict[Feature, set[TileFeature]]
+        self.parent_feature: dict[TileFeature, Feature]
+        self.reset()
+
+    def reset(self):
+        self.features = dict()
+        self.child_tile_features = dict()
+        self.parent_feature = dict()
+
+    def add_feature(self, new_feature: Feature, child_tile_feature: TileFeature):
+        self.features[type(new_feature)].add(new_feature)
+        self.child_tile_features[new_feature] = set([child_tile_feature])
+        self.parent_feature[child_tile_feature] = new_feature
+
+    def add_monastery(self, new_monastery):
+        self.monasteries.add(new_monastery)
+
+    def merge_features(self, tile_feature: TileFeature, tile_feature_coordinates: Coordinates, joining_sides: list[Side], merging_features: set[Feature]) -> Feature:
+        assert len(merging_features) >= 1, "There must be atleast one merging feature"
+        # merge features
+        merging_feature = merging_features.pop()
+        merging_feature.merge_features(tile_feature, tile_feature_coordinates, joining_sides, merging_features)
+        # remove old features
+        for old_feature in merging_features:
+            self.features[type(old_feature)].remove(old_feature)
+        # update child and parent features
+        
+        return merging_feature

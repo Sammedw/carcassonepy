@@ -1,7 +1,7 @@
 import random
 from typing import Optional
 from action import Action
-from enums import FeatureType, Side
+from enums import ConnectionType, FeatureType, Side
 from location import Coordinates, Location
 from tile import Deck, Tile, TileSet
 from meeple import Meeple
@@ -80,7 +80,7 @@ class Game():
         tile_feature = tile.get_tile_feature_by_num(feature_number, feature_type)
         if tile_feature is None:
             return False
-        # check all connections to feature and check for existing meeples BUG WITH FARMS
+        # check all connections to feature and check for existing meeples
         adjacent_tiles = self.get_adjacent_tiles(coordinates)
         feature_sides = tile_feature.get_sides()
         if Side.CENTER in feature_sides:
