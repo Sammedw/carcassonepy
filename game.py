@@ -5,7 +5,8 @@ from enums import ConnectionType, FeatureType, Side
 from location import Coordinates, Location
 from tile import Deck, Tile, TileSet
 from meeple import Meeple
-from feature import City, FeatureManager, Road, Farm, Feature, TileMonastery
+from feature import City, Road, Farm, Feature, TileMonastery
+from featuremanager import FeatureManager
 from sets import base_set
 
 class Game():
@@ -192,17 +193,17 @@ class Game():
 game = Game(2)
 print(game.deck)
 print(game.board)
-#print("Cities: ", len(game.cities))
-#print("Roads: ", len(game.roads))
-#print("Farms: ", len(game.farms))
+print("Cities: ", len(game.feature_manager.features[City]))
+print("Roads: ", len(game.feature_manager.features[Road]))
+print("Farms: ", len(game.feature_manager.features[Farm]))
 for i in range(5):
-    #for action in game.get_valid_actions():
-    #    print(action)
+    for action in game.get_valid_actions():
+        print(action)
     selected = random.choice(game.get_valid_actions())
     print(f"--- Selected: {selected}")
     game.make_action(selected)
-    #print("Cities: ", len(game.cities))
-    #print("Roads: ", len(game.roads))
-    #print("Farms: ", len(game.farms))
+    print("Cities: ", len(game.feature_manager.features[City]))
+    print("Roads: ", len(game.feature_manager.features[Road]))
+    print("Farms: ", len(game.feature_manager.features[Farm]))
     print("Scores: ", game.scores)
     print("------------------------------------")
