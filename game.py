@@ -32,19 +32,7 @@ class Game():
         self.scores = [0 for _ in range(self.player_count)]
         self.free_meeples = [[Meeple(player) for _ in range(7)] for player in range(self.player_count)]
         # generate initial features
-        self.feature_manager = FeatureManager()
-        self.cities = []
-        for city in start_tile.cities:
-            self.cities.append(city.generate_parent_feature(Coordinates(0,0)))
-        self.roads = []
-        for road in start_tile.roads:
-            self.roads.append(road.generate_parent_feature(Coordinates(0,0)))
-        self.monasteries = []
-        if start_tile.monastery:
-            self.monasteries.append(start_tile.monastery.generate_parent_feature(Coordinates(0,0), []))
-        self.farms = []
-        for farm in start_tile.farms:
-            self.farms.append(farm.generate_parent_feature(Coordinates(0,0)))
+        self.feature_manager = FeatureManager(start_tile)
 
     def get_adjacent_tiles(self, coordinates: Coordinates, corners: bool = False) -> dict[Side, Optional[Tile]]:
         # return adjacent tiles (TRBL)
@@ -85,11 +73,12 @@ class Game():
             feature_sides.remove(Side.CENTER)
         for side in feature_sides:
             if adjacent_tiles[side.facing()]:
-                connecting_feature = adjacent_tiles[side.facing()].get_tile_feature_from_side(side.get_opposite())
-                if not connecting_feature:
+                connecting_tile_feature = adjacent_tiles[side.facing()].get_tile_feature_from_side(side.get_opposite())
+                if not connecting_tile_feature:
                     continue
-                if connecting_feature.parent_feature:
-                    if connecting_feature.parent_feature.has_meeples():
+                parent_feature = self.feature_manager.get_parent_feature(connecting_tile_feature)
+                if parent_feature:
+                    if parent_feature.has_meeples():
                         return False
         return True            
         
