@@ -229,3 +229,7 @@ class FeatureManager:
             self.child_tile_features[merging_feature].union(child_features)
             del self.child_tile_features[other_feature]
         return merging_feature
+    
+    def generate_parent_feature(self, tile_feature: TileCity | TileRoad | TileFarm, coordinates: Coordinates):
+        new_feature = tile_feature.generate_parent_feature(coordinates)
+        self.add_feature(new_feature, tile_feature)

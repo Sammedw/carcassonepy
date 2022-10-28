@@ -5,7 +5,7 @@ from enums import ConnectionType, FeatureType, Side
 from location import Coordinates, Location
 from tile import Deck, Tile, TileSet
 from meeple import Meeple
-from feature import City, Road, Farm, Feature, TileMonastery
+from feature import City, FeatureManager, Road, Farm, Feature, TileMonastery
 from sets import base_set
 
 class Game():
@@ -20,10 +20,7 @@ class Game():
         self.current_player: int
         self.scores: list[int]
         self.free_meeples: list[list[Meeple]]
-        self.cities: list[City]
-        self.roads: list[Road]
-        self.monasteries: list[TileMonastery]
-        self.farms: list[Farm]
+        self.feature_manager: FeatureManager
         self.reset()
 
     def reset(self):
@@ -35,6 +32,7 @@ class Game():
         self.scores = [0 for _ in range(self.player_count)]
         self.free_meeples = [[Meeple(player) for _ in range(7)] for player in range(self.player_count)]
         # generate initial features
+        self.feature_manager = FeatureManager()
         self.cities = []
         for city in start_tile.cities:
             self.cities.append(city.generate_parent_feature(Coordinates(0,0)))
@@ -87,7 +85,7 @@ class Game():
             feature_sides.remove(Side.CENTER)
         for side in feature_sides:
             if adjacent_tiles[side.facing()]:
-                connecting_feature = adjacent_tiles[side.facing()].get_tile_feature_from_side(side.get_opposite(), feature_type)
+                connecting_feature = adjacent_tiles[side.facing()].get_tile_feature_from_side(side.get_opposite())
                 if not connecting_feature:
                     continue
                 if connecting_feature.parent_feature:
