@@ -158,44 +158,28 @@ class Game():
                         joining_sides.append(tile_feature_side)
                         # get adjacent parent feature
                         #print(f"--- Merge --- side: {tile_feature_side.facing()}, type: {tile_feature_type}, feature_sides: {tile_feature.get_sides()}")
-                        merging_feature = adjacent_tiles[tile_feature_side.facing()].get_tile_feature_from_side(tile_feature_side.get_opposite(), tile_feature_type).parent_feature
+                        merging_feature = self.feature_manager.get_parent_feature(adjacent_tiles[tile_feature_side.facing()].get_tile_feature_from_side(tile_feature_side.get_opposite()))
                         merging_features.add(merging_feature)
                 print(merging_features)
                 # connect features
                 if len(merging_features) > 0:
-                    merging_feature = merging_features.pop()
-                    merging_feature.merge_features(tile_feature, action.coordinates, joining_sides, merging_features)
-                    # remove old features
-                    for old_feature in merging_features:
-                        match tile_feature_type:
-                            case FeatureType.CITY:
-                                self.cities.remove(old_feature)
-                            case FeatureType.ROAD:
-                                self.roads.remove(old_feature)
-                            case FeatureType.FARM:
-                                self.farms.remove(old_feature)
+                    combined_feature = self.feature_manager.merge_features(tile_feature, action.coordinates, joining_sides, merging_features)
                     # check if feature is complete
-                    if merging_feature.is_complete():
+                    if combined_feature.is_complete():
                         # find meeple majority
-                        controlling_players = merging_feature.get_controlling_player(self.player_count)
+                        controlling_players = combined_feature.get_controlling_player(self.player_count)
                         # add score
-                        score = merging_feature.score()
+                        score = combined_feature.score()
                         for player in controlling_players:
                             self.scores[player] += score
                             
                 # create new feature
                 else:
-                    new_feature = tile_feature.generate_parent_feature(action.coordinates)
-                    match tile_feature_type:
-                        case FeatureType.CITY:
-                            self.cities.append(new_feature)
-                        case FeatureType.ROAD:
-                            self.roads.append(new_feature)
-                        case FeatureType.FARM:
-                            self.farms.append(new_feature)
+                    self.feature_manager.generate_parent_feature(tile_feature, action.coordinates)
+
             # track monastery if meeple placed on it
             if (action.meeple_feature_type == FeatureType.MONASTERY):
-                self.monasteries.append(action.tile.monastery)
+                self.feature_manager.add_monastery(action.tile.monastery)
             # remove tile from deck
             self.deck.tiles.remove(action.tile)
             # update player
