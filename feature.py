@@ -220,5 +220,12 @@ class FeatureManager:
         for old_feature in merging_features:
             self.features[type(old_feature)].remove(old_feature)
         # update child and parent features
-        
+        self.parent_feature[tile_feature] = merging_feature
+        self.child_tile_features[merging_feature].add(tile_feature)
+        for other_feature in merging_features:
+            child_features = self.child_tile_features[other_feature]
+            for child_feature in child_features:
+                self.parent_feature[child_feature] = merging_feature
+            self.child_tile_features[merging_feature].union(child_features)
+            del self.child_tile_features[other_feature]
         return merging_feature
