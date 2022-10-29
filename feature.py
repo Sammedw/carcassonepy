@@ -50,7 +50,10 @@ class TileRoad(TileFeature):
         return f"TileRoad<{[str(side) for side in self.sides]}>"
 
     def generate_parent_feature(self, coordinates: Coordinates):
-        new_road = Road([coordinates.get_location(side) for side in self.sides])
+        sides = list(self.sides)
+        if Side.CENTER in self.sides:
+            sides.remove(Side.CENTER)
+        new_road = Road([coordinates.get_location(side) for side in sides])
         if self.meeple:
             new_road.meeples = [self.meeple]
         return new_road
