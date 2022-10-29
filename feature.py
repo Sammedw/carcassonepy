@@ -109,6 +109,7 @@ class Feature():
         for side in tile_feature.sides:
             if side not in joining_sides:
                 self.frontier_locations.append(Location(tile_feature_coordinates.x, tile_feature_coordinates.y, side))
+        # remove locations no longer on frontier
         # merge other features
         for other_feature in other_features:
             # merge frontiers and meeples

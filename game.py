@@ -148,7 +148,7 @@ class Game():
             if action.meeple_feature_type is not None:
                 action.tile.place_meeple(self.free_meeples[self.current_player].pop(), action.coordinates, action.meeple_feature_number, action.meeple_feature_type)
             # merge features
-            for tile_feature_type, tile_feature in [(FeatureType.CITY, city) for city in action.tile.cities] + [(FeatureType.ROAD, road) for road in action.tile.roads] + [(FeatureType.FARM, farm) for farm in action.tile.farms]:
+            for tile_feature in action.tile.cities + action.tile.roads + action.tile.farms:
                 joining_sides: list[Side] = []
                 merging_features: set[Feature] = set()
                 for tile_feature_side in tile_feature.get_sides():
@@ -205,7 +205,7 @@ for i in range(5):
     #print("Cities: ", len(game.feature_manager.features[City]))
     #print("Roads: ", len(game.feature_manager.features[Road]))
     #print("Farms: ", len(game.feature_manager.features[Farm]))
-    for road in game.feature_manager.features[Road]:
-        print(road.frontier_locations)
-    #print("Scores: ", game.scores)
+    #for road in game.feature_manager.features[Road]:
+    #    print(road.frontier_locations)
+    print("Scores: ", game.scores)
     print("------------------------------------")
