@@ -5,7 +5,7 @@ from enums import ConnectionType, FeatureType, Side
 from location import Coordinates, Location
 from tile import Deck, Tile, TileSet
 from meeple import Meeple
-from feature import City, Road, Farm, Feature, TileMonastery
+from feature import City, Road, Farm, Feature, TileFarm, TileMonastery
 from featuremanager import FeatureManager
 from sets import base_set
 
@@ -38,6 +38,8 @@ class Game():
     def get_adjacent_tiles(self, coordinates: Coordinates, corners: bool = False) -> dict[Side, Optional[Tile]]:
         # return adjacent tiles (TRBL)
         adjacent_tiles: dict[Side, Optional[Tile]] = {Side.TOP: None, Side.RIGHT: None, Side.BOTTOM: None, Side.LEFT: None}
+        if corners:
+            adjacent_tiles.update({Side.TOPRIGHT: None, Side.BOTTOMRIGHT: None,  Side.BOTTOMLEFT: None, Side.TOPLEFT: None})
         adjacent_coordinates = coordinates.get_adjacent(corners=corners)
         for side in adjacent_coordinates.keys():
             if adjacent_coordinates[side] in self.board:
@@ -84,6 +86,9 @@ class Game():
         return True            
         
     def is_action_valid(self, action: Action) -> bool:
+        # check if tile exists in the deck
+        if action.tile not in self.deck.tiles:
+            return False
         # check if tile fits at location
         valid = False
         action.tile.rotate_clockwise(action.rotation)
@@ -99,8 +104,7 @@ class Game():
             action.tile.rotate_clockwise(4 - action.rotation)
         return valid
         
-    def get_valid_actions(self) -> list[Action]:
-        next_tile = self.deck.peak_next_tile()
+    def get_valid_actions(self, next_tile: Tile) -> list[Action]:
         valid_actions: list[Action] = []
         # iterate over all possible actions and check if they are valid
         for coordinates in self.frontier:
@@ -156,9 +160,11 @@ class Game():
                     if tile_feature_side == Side.CENTER:
                         continue
                     if adjacent_tiles[tile_feature_side.facing()] is not None:
-                        joining_sides.append(tile_feature_side)
+                        if type(tile_feature) == TileFarm:
+                            joining_sides += tile_feature_side.decompose()
+                        else:
+                            joining_sides.append(tile_feature_side)
                         # get adjacent parent feature
-                        #print(f"--- Merge --- side: {tile_feature_side.facing()}, type: {tile_feature_type}, feature_sides: {tile_feature.get_sides()}")
                         merging_feature = self.feature_manager.get_parent_feature(adjacent_tiles[tile_feature_side.facing()].get_tile_feature_from_side(tile_feature_side.get_opposite()))
                         merging_features.add(merging_feature)
                 print(merging_features)
@@ -172,15 +178,20 @@ class Game():
                         # add score
                         score = combined_feature.score()
                         for player in controlling_players:
-                            self.scores[player] += score
-                            
+                            self.scores[player] += score                    
                 # create new feature
                 else:
                     self.feature_manager.generate_parent_feature(tile_feature, action.coordinates)
 
             # track monastery if meeple placed on it
             if (action.meeple_feature_type == FeatureType.MONASTERY):
-                self.feature_manager.add_monastery(action.tile.monastery)
+                self.feature_manager.add_monastery(action.tile.monastery, action.coordinates)
+            # check for complete monasteries
+            for monastery, coordinates in list(self.feature_manager.monasteries.items()):
+                if None not in game.get_adjacent_tiles(coordinates, corners=True).values():
+                    # score completed monastery
+                    self.scores[self.current_player] += 9
+                    del self.feature_manager.monasteries[monastery]
             # remove tile from deck
             self.deck.tiles.remove(action.tile)
             # update player
@@ -196,15 +207,15 @@ print(game.board)
 print("Cities: ", len(game.feature_manager.features[City]))
 print("Roads: ", len(game.feature_manager.features[Road]))
 print("Farms: ", len(game.feature_manager.features[Farm]))
-for i in range(5):
-    for action in game.get_valid_actions():
+for i in range(20):
+    for action in game.get_valid_actions(game.deck.peak_next_tile()):
         print(action)
-    selected = random.choice(game.get_valid_actions())
+    selected = random.choice(game.get_valid_actions(game.deck.peak_next_tile()))
     print(f"--- Selected: {selected}")
     game.make_action(selected)
-    #print("Cities: ", len(game.feature_manager.features[City]))
-    #print("Roads: ", len(game.feature_manager.features[Road]))
-    #print("Farms: ", len(game.feature_manager.features[Farm]))
+    print("Cities: ", len(game.feature_manager.features[City]))
+    print("Roads: ", len(game.feature_manager.features[Road]))
+    print("Farms: ", len(game.feature_manager.features[Farm]))
     #for road in game.feature_manager.features[Road]:
     #    print(road.frontier_locations)
     print("Scores: ", game.scores)

@@ -32,7 +32,7 @@ class Location():
         self.side = side
 
     def __str__(self):
-        return 
+        return f"({self.coordinates.x}, {self.coordinates.y}): {self.side}"
     
     def __eq__(self, other):
         return self.coordinates == other.coordinates and self.side == other.side

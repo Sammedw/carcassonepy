@@ -79,7 +79,10 @@ class TileFarm(TileFeature):
         return f"TileFarm<{[str(side) for side in self.sides]}>"
 
     def generate_parent_feature(self, coordinates: Coordinates):
-        new_farm = Farm([coordinates.get_location(side) for side in self.sides])
+        decomposed_sides = []
+        for side in self.sides:
+            decomposed_sides += side.decompose()
+        new_farm = Farm([coordinates.get_location(halfside) for halfside in decomposed_sides])
         if self.meeple:
             new_farm.meeples = [self.meeple]
         new_farm.adjacent_cities = self.adjacent_cities
@@ -106,10 +109,9 @@ class Feature():
         if (tile_feature.meeple):
             self.meeples.append(tile_feature.meeple)
         # add locations of tile feature to frontier that are not involved with connection
-        for side in tile_feature.sides:
-            if side not in joining_sides:
+        for side in tile_feature.get_sides():
+            if side not in joining_sides and side != Side.CENTER:
                 self.frontier_locations.append(Location(tile_feature_coordinates.x, tile_feature_coordinates.y, side))
-        # remove locations no longer on frontier
         # merge other features
         for other_feature in other_features:
             # merge frontiers and meeples
@@ -117,6 +119,11 @@ class Feature():
             self.meeples += other_feature.meeples
             # add tile count
             self.tile_count += other_feature.tile_count
+        # remove locations no longer on frontier
+        adjacent_coordinates = tile_feature_coordinates.get_adjacent()
+        for side in joining_sides:
+            adjacent_coordinate = adjacent_coordinates[side.facing()]
+            self.frontier_locations.remove(Location(adjacent_coordinate.x, adjacent_coordinate.y, side.get_opposite()))
 
     def is_complete(self) -> bool:
         return (len(self.frontier_locations) == 0)

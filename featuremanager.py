@@ -5,14 +5,14 @@ class FeatureManager:
 
     def __init__(self, start_tile: Tile):
         self.features: dict[Any, set[Feature]]
-        self.monasteries: set[TileMonastery]
+        self.monasteries: dict[TileMonastery, Coordinates]
         self.child_tile_features: dict[Feature, set[TileFeature]]
         self.parent_feature: dict[TileFeature, Feature]
         self.reset(start_tile)
 
     def reset(self, start_tile: Tile):
         self.features = {feature_type:set() for feature_type in [City, Road, Farm]}
-        self.monasteries = set()
+        self.monasteries = dict()
         self.child_tile_features = dict()
         self.parent_feature = dict()
 
@@ -27,8 +27,8 @@ class FeatureManager:
         self.child_tile_features[new_feature] = set([child_tile_feature])
         self.parent_feature[child_tile_feature] = new_feature
 
-    def add_monastery(self, new_monastery):
-        self.monasteries.add(new_monastery)
+    def add_monastery(self, new_monastery: TileMonastery, coordinates: Coordinates):
+        self.monasteries[new_monastery] = coordinates           
 
     def merge_features(self, tile_feature: TileFeature, tile_feature_coordinates: Coordinates, joining_sides: list[Side], merging_features: set[Feature]) -> Feature:
         assert len(merging_features) >= 1, "There must be atleast one merging feature"
