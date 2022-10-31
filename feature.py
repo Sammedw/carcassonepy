@@ -1,5 +1,6 @@
 import random
 from typing import Any, Optional, Type
+from game import Game
 from location import Location, Coordinates
 from enums import Side, TileFeatureAttribute
 from meeple import Meeple
