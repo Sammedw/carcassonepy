@@ -220,9 +220,10 @@ class Game():
         # iterate over incomplete monasteries
         for monastery, coordinates in self.feature_manager.monasteries.items():
             final_scores[monastery.meeple.player] += len(list(filter(None, game.get_adjacent_tiles(coordinates, corners=True).values())))
-        # add current scores
+        # add current scores and farm scores
+        farm_scores = self.feature_manager.score_farms(self.player_count)
         for player, score in enumerate(self.scores):
-            final_scores[player] += score
+            final_scores[player] += score + farm_scores[player]
         return final_scores
         
 

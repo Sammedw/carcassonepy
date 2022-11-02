@@ -59,7 +59,7 @@ class FeatureManager:
         else:
             return None
 
-    def score_farms(self, player_count: int):
+    def score_farms(self, player_count: int) -> list[int]:
         scores = [0 for _ in range(player_count)]
         for farm in self.features[Farm]:
             # check if anyone controls farm
@@ -77,4 +77,4 @@ class FeatureManager:
             # add score to each controlling player
             for player in controlling_players:
                 scores[player] += score
-            return score
+        return scores
