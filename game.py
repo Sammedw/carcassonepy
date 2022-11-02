@@ -63,7 +63,7 @@ class Game():
         if not len(self.free_meeples[player]) > 0:
             return False
         # can place meeple on monastery
-        if tile.monastery is not None:
+        if tile.monastery is not None and feature_type == FeatureType.MONASTERY:
             return True
         # check if given feature exists
         tile_feature = tile.get_tile_feature_by_num(feature_number, feature_type)
@@ -75,7 +75,7 @@ class Game():
         if Side.CENTER in feature_sides:
             feature_sides.remove(Side.CENTER)
         for side in feature_sides:
-            if adjacent_tiles[side.facing()]:
+            if adjacent_tiles[side.facing()]: 
                 connecting_tile_feature = adjacent_tiles[side.facing()].get_tile_feature_from_side(side.get_opposite())
                 if not connecting_tile_feature:
                     continue
@@ -207,20 +207,19 @@ class Game():
             return True
 
     def compute_final_score(self) -> list[int]:
+        final_scores = [0 for _ in range(self.player_count)]
         # iterate over incomplete features
-        for _, feature_set in self.feature_manager.features.items():
-            for feature in feature_set:
-                if not feature.is_complete():
-                    # find meeple majority
-                    controlling_players = feature.get_controlling_player(self.player_count)
-                    # add score
-                    score = feature.score()
-                    final_scores = [0 for _ in range(self.player_count)]
-                    for player in controlling_players:
-                        final_scores[player] += score 
+        for feature in self.feature_manager.features[City].union(self.feature_manager.features[Road]):
+            if not feature.is_complete():
+                # find meeple majority
+                controlling_players = feature.get_controlling_player(self.player_count)
+                # add score
+                score = feature.score()
+                for player in controlling_players:
+                    final_scores[player] += score 
         # iterate over incomplete monasteries
         for monastery, coordinates in self.feature_manager.monasteries.items():
-            final_scores[monastery.meeple.player] += len(filter(None, game.get_adjacent_tiles(coordinates, corners=True).values()))
+            final_scores[monastery.meeple.player] += len(list(filter(None, game.get_adjacent_tiles(coordinates, corners=True).values())))
         # add current scores
         for player, score in enumerate(self.scores):
             final_scores[player] += score
@@ -233,7 +232,7 @@ print(game.board)
 print("Cities: ", len(game.feature_manager.features[City]))
 print("Roads: ", len(game.feature_manager.features[Road]))
 print("Farms: ", len(game.feature_manager.features[Farm]))
-for i in range(len(game.deck.tiles) - 1):
+for i in range(5):
     for action in game.get_valid_actions(game.deck.peak_next_tile()):
         print(action)
     selected = random.choice(game.get_valid_actions(game.deck.peak_next_tile()))

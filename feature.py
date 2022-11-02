@@ -1,6 +1,5 @@
 import random
 from typing import Any, Optional, Type
-from game import Game
 from location import Location, Coordinates
 from enums import Side, TileFeatureAttribute
 from meeple import Meeple
@@ -181,7 +180,7 @@ class Farm(Feature):
 
     def __init__(self, frontier_locations: list[Location] = []):
         super().__init__(frontier_locations)
-        self.adjacent_cities: set[City] = set()
+        self.adjacent_cities: set[TileCity] = set()
         
     def merge_features(self, tile_feature, tile_feature_coordinates: Coordinates, joining_sides: list[Side], other_features=[]):
         super().merge_features(tile_feature, tile_feature_coordinates, joining_sides, other_features)
@@ -194,8 +193,4 @@ class Farm(Feature):
         return False
 
     def score(self) -> int:
-        score: int = 0
-        for city in self.adjacent_cities:
-            if (city.is_complete()):
-                score += 3
-        return score
+        return 0

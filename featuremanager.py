@@ -58,3 +58,23 @@ class FeatureManager:
             return self.parent_feature[tile_feature]
         else:
             return None
+
+    def score_farms(self, player_count: int):
+        scores = [0 for _ in range(player_count)]
+        for farm in self.features[Farm]:
+            # check if anyone controls farm
+            controlling_players = farm.get_controlling_player(player_count)
+            if len(controlling_players) == 0:
+                continue
+            # add 3 points per completed city adjacent to farm
+            score = 0
+            scored_cities = []
+            for tile_city in farm.adjacent_cities: 
+                city = self.get_parent_feature(tile_city)
+                if (city.is_complete() and city not in scored_cities):
+                    scored_cities.append(city)
+                    score += 3
+            # add score to each controlling player
+            for player in controlling_players:
+                scores[player] += score
+            return score

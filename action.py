@@ -1,4 +1,3 @@
-from re import M
 from typing import Optional
 from enums import FeatureType
 from location import Coordinates
