@@ -77,4 +77,4 @@ class FeatureManager:
             # add score to each controlling player
             for player in controlling_players:
                 scores[player] += score
-            return score
+        return scores

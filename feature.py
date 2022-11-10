@@ -169,6 +169,14 @@ class City(Feature):
             score *= 2
         return score
 
+    def merge_features(self, tile_feature: TileFeature, tile_feature_coordinates: Coordinates, joining_sides: list[Side], other_features = []):
+        super().merge_features(tile_feature, tile_feature_coordinates, joining_sides, other_features)
+        # add shields from other cities
+        if TileFeatureAttribute.SHIELD in tile_feature.attributes:
+            self.shield_count += 1
+        for other_feature in other_features:
+            self.shield_count += other_feature.shield_count
+
 
 class Road(Feature):
 
