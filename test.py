@@ -2,7 +2,6 @@
 from itertools import cycle
 from agents.randomagent import RandomAgent
 from game import Game
-from location import Coordinates
 
 
 game = Game(2);

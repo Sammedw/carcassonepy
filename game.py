@@ -248,4 +248,4 @@ if __name__ == "__main__":
         print(f"--- Selected: {selected}")
         game.make_action(selected)
 
-    game.print_game_state();
+    game.print_game_state()
