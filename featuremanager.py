@@ -19,8 +19,6 @@ class FeatureManager:
         for tile_feature in start_tile.cities + start_tile.roads + start_tile.farms:
             # generate start feature
             self.generate_parent_feature(tile_feature, Coordinates(0,0))
-        if start_tile.monastery:
-            self.add_monastery(start_tile.monastery)
 
     def add_feature(self, new_feature: Feature, child_tile_feature: TileFeature):
         self.features[type(new_feature)].add(new_feature)

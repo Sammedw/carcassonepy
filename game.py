@@ -92,14 +92,13 @@ class Game():
         # check if tile fits at location
         valid = False
         action.tile.rotate_clockwise(action.rotation)
-        if action.tile is self.deck.peak_next_tile():
-            if self.does_tile_fit(action.tile, action.coordinates):
-                # check if the meeple can be placed
-                if (action.meeple_feature_type):
-                    if self.can_place_meeple(action.tile, action.coordinates, self.current_player, action.meeple_feature_type, action.meeple_feature_number):
-                        valid = True
-                else:
+        if self.does_tile_fit(action.tile, action.coordinates):
+            # check if the meeple can be placed
+            if (action.meeple_feature_type):
+                if self.can_place_meeple(action.tile, action.coordinates, self.current_player, action.meeple_feature_type, action.meeple_feature_number):
                     valid = True
+            else:
+                valid = True
         if action.rotation != 0:
             action.tile.rotate_clockwise(4 - action.rotation)
         return valid
@@ -133,7 +132,9 @@ class Game():
                 new_action = Action(next_tile, rotation, coordinates)
                 if self.is_action_valid(new_action):
                     valid_actions.append(new_action)
-
+        # discard tile if no valid actions
+        if len(valid_actions) == 0 and next_tile in self.deck.tiles:
+            self.deck.tiles.remove(next_tile)
         return valid_actions
 
     def make_action(self, action: Action) -> bool:
@@ -187,7 +188,7 @@ class Game():
                 self.feature_manager.add_monastery(action.tile.monastery, action.coordinates)
             # check for complete monasteries
             for monastery, coordinates in list(self.feature_manager.monasteries.items()):
-                if None not in game.get_adjacent_tiles(coordinates, corners=True).values():
+                if None not in self.get_adjacent_tiles(coordinates, corners=True).values():
                     # score completed monastery
                     self.scores[monastery.meeple.player] += 9
                     del self.feature_manager.monasteries[monastery]
@@ -211,7 +212,7 @@ class Game():
         # iterate over incomplete features
         for feature in self.feature_manager.features[City].union(self.feature_manager.features[Road]):
             if not feature.is_complete():
-                print(f"Incomplete: {feature} - {feature.score()}")
+                # print(f"Incomplete: {feature} - {feature.score()}")
                 # find meeple majority
                 controlling_players = feature.get_controlling_player(self.player_count)
                 # add score
@@ -220,29 +221,31 @@ class Game():
                     final_scores[player] += score 
         # iterate over incomplete monasteries
         for monastery, coordinates in self.feature_manager.monasteries.items():
-            print(f"Monastery - {len(list(filter(None, game.get_adjacent_tiles(coordinates, corners=True).values()))) + 1}")
-            final_scores[monastery.meeple.player] += len(list(filter(None, game.get_adjacent_tiles(coordinates, corners=True).values()))) + 1
+            #print(f"Monastery - {len(list(filter(None, self.get_adjacent_tiles(coordinates, corners=True).values()))) + 1}")
+            final_scores[monastery.meeple.player] += len(list(filter(None, self.get_adjacent_tiles(coordinates, corners=True).values()))) + 1
         # add current scores and farm scores
         farm_scores = self.feature_manager.score_farms(self.player_count)
-        print(f"FARM SCORES: {farm_scores}")
         for player in range(self.player_count):
             final_scores[player] += self.scores[player] + farm_scores[player]
 
         return final_scores
-        
 
-game = Game(2)
-print(game.deck)
-print(game.board)
+    def print_game_state(self):
+        print("Cities: ", len(self.feature_manager.features[City]))
+        print("Roads: ", len(self.feature_manager.features[Road]))
+        print("Farms: ", len(self.feature_manager.features[Farm]))
+        print("FINAL SCORES: ", self.compute_final_score())
 
-for i in range(5):
-    #for action in game.get_valid_actions(game.deck.peak_next_tile()):
-    #    print(action)
-    selected = random.choice(game.get_valid_actions(game.deck.peak_next_tile()))
-    print(f"--- Selected: {selected}")
-    game.make_action(selected)
+if __name__ == "__main__":
+    game = Game(2)
+    print(game.deck)
+    print(game.board)
 
-print("Cities: ", len(game.feature_manager.features[City]))
-print("Roads: ", len(game.feature_manager.features[Road]))
-print("Farms: ", len(game.feature_manager.features[Farm]))
-print("FINAL SCORES: ", game.compute_final_score())
+    for i in range(5):
+        #for action in game.get_valid_actions(game.deck.peak_next_tile()):
+        #    print(action)
+        selected = random.choice(game.get_valid_actions(game.deck.peak_next_tile()))
+        print(f"--- Selected: {selected}")
+        game.make_action(selected)
+
+    game.print_game_state();

@@ -127,12 +127,13 @@ class Deck():
             tile_list += additional_tile_set.return_tile_list()
         shuffle(tile_list)
         self.tiles += tile_list
-        self.next_tile = 0
 
-    def get_next_tile(self) -> Tile:
-        next_tile_obj = self.tiles[self.next_tile]
-        self.next_tile += 1
-        return next_tile_obj
+    def get_next_tile(self) ->Optional[Tile]:
+        if (len(self.tiles) > 0):
+            return self.tiles.pop(0)
+        return None
 
-    def peak_next_tile(self) -> Tile:
-        return self.tiles[self.next_tile]
+    def peak_next_tile(self) -> Optional[Tile]:
+        if (len(self.tiles) > 0):
+            return self.tiles[0]
+        return None

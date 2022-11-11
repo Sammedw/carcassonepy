@@ -10,4 +10,6 @@ class RandomAgent(BaseAgent):
 
     def make_move(self, next_tile: Tile):
         valid_actions = super().make_move(next_tile)
-        self.game.make_action(random.choice(valid_actions))
+        action = random.choice(valid_actions)
+        self.game.make_action(action)
+        print(action)
