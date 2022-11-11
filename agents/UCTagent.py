@@ -9,6 +9,8 @@ class Tree:
     def __init__(self, state: Game):
         self.state = state
         self.children: list[Tree] = []
+        self.visit_rate = 0
+        self.total_reward = 0
 
     def add_child(self, child: Tree):
         self.children.append(child)
