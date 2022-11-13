@@ -35,6 +35,10 @@ class Game():
         # generate initial features
         self.feature_manager = FeatureManager(start_tile)
 
+    def get_random_tile(self):
+        # return a random tile remaining from the deck
+        return random.choice(self.deck.tiles)
+
     def get_adjacent_tiles(self, coordinates: Coordinates, corners: bool = False) -> dict[Side, Optional[Tile]]:
         # return adjacent tiles (TRBL)
         adjacent_tiles: dict[Side, Optional[Tile]] = {Side.TOP: None, Side.RIGHT: None, Side.BOTTOM: None, Side.LEFT: None}
