@@ -1,5 +1,6 @@
 import copy
 import random
+from action import Action
 from agents.baseagent import BaseAgent
 from game import Game
 from tile import Tile
@@ -11,6 +12,8 @@ class Tree:
         self.children: list[Tree] = []
         self.visit_rate = 0
         self.total_reward = 0
+        self.incoming_action
+        self.expandable_actions: list[Action] = []
 
     def add_child(self, child: Tree):
         self.children.append(child)
