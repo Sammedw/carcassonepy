@@ -6,11 +6,17 @@ from agents.baseagent import BaseAgent
 from game import Game
 from tile import Tile
 
+class ChanceNode(Tree):
+    
+    def __init__(self):
+        super().__init__(self)
+
 class Tree:
 
-    def __init__(self, state: Game, incoming_action: Optional[Action], next_tile: Tile):
+    def __init__(self, state: Game, next_tile: Tile, incoming_action: Optional[Action]):
         # current game state object
         self.state = state
+        self.next_tile = next_tile
         # action taken to reach the current state
         self.incoming_action = incoming_action
         # list of explored children
@@ -29,6 +35,8 @@ class Tree:
 
     def has_expandable_actions(self):
         return len(self.expandable_actions) > 0
+
+
 
 
 class UCTAgent(BaseAgent):
