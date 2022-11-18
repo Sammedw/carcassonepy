@@ -1,5 +1,5 @@
 import random
-from agents.baseagent import BaseAgent
+from baseagent import BaseAgent
 from game import Game
 from tile import Tile
 

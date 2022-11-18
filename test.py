@@ -1,11 +1,12 @@
 
 from itertools import cycle
-from agents.randomagent import RandomAgent
+from UCTagent import UCTAgent
+from randomagent import RandomAgent
 from game import Game
 
 
 game = Game(2);
-players = [RandomAgent(p, game) for p in range(2)]
+players = [UCTAgent(0, game), RandomAgent(1, game)]
 
 player_cycle = cycle(players)
 while(not game.is_game_over()):
