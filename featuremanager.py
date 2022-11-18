@@ -34,7 +34,9 @@ class FeatureManager:
         merging_feature = merging_features.pop()
         merging_feature.merge_features(tile_feature, tile_feature_coordinates, joining_sides, merging_features)
         # remove old features
+        print(self.features[Farm])
         for old_feature in merging_features:
+            print(f"REMOVE: {old_feature}")
             self.features[type(old_feature)].remove(old_feature)
         # update child and parent features
         self.parent_feature[tile_feature] = merging_feature

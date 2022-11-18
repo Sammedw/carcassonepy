@@ -5,7 +5,8 @@ from randomagent import RandomAgent
 from game import Game
 
 
-game = Game(2);
+game = Game(2)
+#players = [RandomAgent(0, game), RandomAgent(1, game)] #UCTAgent(0, game)
 players = [UCTAgent(0, game), RandomAgent(1, game)]
 
 player_cycle = cycle(players)

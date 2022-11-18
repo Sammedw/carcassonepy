@@ -137,3 +137,9 @@ class Deck():
         if (len(self.tiles) > 0):
             return self.tiles[0]
         return None
+
+    def get_tile_by_name(self, name: str) -> Optional[Tile]:
+        for tile in self.tiles:
+            if name == tile.name:
+                return tile
+        return None
