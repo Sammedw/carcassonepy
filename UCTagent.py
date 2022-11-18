@@ -25,6 +25,7 @@ class ChoiceNode:
         self.total_reward = 0
         # list of actions from given state that have not been explored
         if next_tile is not None:
+            print(self.state.board)
             self.expandable_actions = self.state.get_valid_actions(next_tile)
         else:
             self.expandable_actions = []
@@ -66,7 +67,6 @@ class ChanceNode:
                 new_child = ChoiceNode(self.state, tile, self.incoming_action, self)
                 self.children[tile] = new_child
                 return new_child
-
 
 
 class UCTAgent(BaseAgent):
