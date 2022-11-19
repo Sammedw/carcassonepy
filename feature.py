@@ -193,7 +193,7 @@ class Farm(Feature):
     def merge_features(self, tile_feature, tile_feature_coordinates: Coordinates, joining_sides: list[Side], other_features=[]):
         super().merge_features(tile_feature, tile_feature_coordinates, joining_sides, other_features)
         # merge adjacent cities
-        self.adjacent_cities.union(tile_feature.adjacent_cities)
+        self.adjacent_cities = self.adjacent_cities.union(tile_feature.adjacent_cities)
         for other_feature in other_features:
             self.adjacent_cities = self.adjacent_cities.union(other_feature.adjacent_cities)
 

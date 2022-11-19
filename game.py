@@ -23,6 +23,8 @@ class Game():
         self.free_meeples: list[list[Meeple]]
         self.feature_manager: FeatureManager
         self.reset()
+        # action sequence
+        self.action_sequence: list[Action]
 
     def reset(self):
         self.deck = Deck(base_set, self.additional_tile_sets)
@@ -34,6 +36,7 @@ class Game():
         self.free_meeples = [[Meeple(player) for _ in range(7)] for player in range(self.player_count)]
         # generate initial features
         self.feature_manager = FeatureManager(start_tile)
+        self.action_sequence = []
 
     def get_random_tile(self):
         # return a random tile remaining from the deck
@@ -173,7 +176,14 @@ class Game():
                         merging_feature = self.feature_manager.get_parent_feature(adjacent_tiles[tile_feature_side.facing()].get_tile_feature_from_side(tile_feature_side.get_opposite()))
                         merging_features.add(merging_feature)
                 # connect features
-                print(f"Mergin features: {merging_features}")
+                print("-----------------------------")
+                print(f"Current tile: {action.tile}")
+                #print("Action sequence ------------")
+                #for a in self.action_sequence:
+                #    print(a)
+                print(f"> {action}")
+                
+                print(f"Merging features: {merging_features}")
                 if len(merging_features) > 0:
                     combined_feature = self.feature_manager.merge_features(tile_feature, action.coordinates, joining_sides, merging_features)
                     # check if feature is complete
@@ -201,6 +211,8 @@ class Game():
             self.deck.tiles.remove(action.tile)
             # update player
             self.current_player = (self.current_player + 1) % self.player_count
+            # add to action list
+            self.action_sequence.append(action)
             return True
         else:
             return False

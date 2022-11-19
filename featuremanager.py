@@ -32,21 +32,25 @@ class FeatureManager:
         assert len(merging_features) >= 1, "There must be atleast one merging feature"
         # merge features
         merging_feature = merging_features.pop()
-        merging_feature.merge_features(tile_feature, tile_feature_coordinates, joining_sides, merging_features)
-        # remove old features
-        print(self.features[Farm])
-        for old_feature in merging_features:
-            print(f"REMOVE: {old_feature}")
-            self.features[type(old_feature)].remove(old_feature)
+        merging_feature.merge_features(tile_feature, tile_feature_coordinates, joining_sides, merging_features) 
         # update child and parent features
         self.parent_feature[tile_feature] = merging_feature
         self.child_tile_features[merging_feature].add(tile_feature)
         for other_feature in merging_features:
             child_features = self.child_tile_features[other_feature]
+            print(f"CHILD FEATURES OF {other_feature}: {child_features}")
             for child_feature in child_features:
                 self.parent_feature[child_feature] = merging_feature
-            self.child_tile_features[merging_feature].union(child_features)
+            print(f"MERGE CHILDREN OF {merging_feature} and {other_feature}: {self.child_tile_features[merging_feature]} and {child_features}")
+            self.child_tile_features[merging_feature] = self.child_tile_features[merging_feature].union(child_features)
             del self.child_tile_features[other_feature]
+            #self.child_tile_features.pop(other_feature, None)
+        # remove old features
+        print(f"Current Farms: {self.features[Farm]}")
+        for old_feature in merging_features:
+            print(f"REMOVE: {old_feature}")
+            self.features[type(old_feature)].remove(old_feature)
+        print(f"NEW PARENT FEATURES: {self.parent_feature}")
         return merging_feature
     
     def generate_parent_feature(self, tile_feature: TileCity | TileRoad | TileFarm, coordinates: Coordinates):
