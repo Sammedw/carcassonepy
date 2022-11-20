@@ -21,6 +21,7 @@ class Game():
         self.current_player: int
         self.scores: list[int]
         self.free_meeples: list[list[Meeple]]
+        self.active_meeples: list[Meeple]
         self.feature_manager: FeatureManager
         self.reset()
         # action sequence
@@ -34,6 +35,7 @@ class Game():
         self.current_player = 0
         self.scores = [0 for _ in range(self.player_count)]
         self.free_meeples = [[Meeple(player) for _ in range(7)] for player in range(self.player_count)]
+        self.active_meeples = []
         # generate initial features
         self.feature_manager = FeatureManager(start_tile)
         self.action_sequence = []
@@ -158,7 +160,9 @@ class Game():
                     self.frontier.add(adjacent_coordiantes[side])
             # place meeple
             if action.meeple_feature_type is not None:
-                action.tile.place_meeple(self.free_meeples[self.current_player].pop(), action.coordinates, action.meeple_feature_number, action.meeple_feature_type)
+                meeple = self.free_meeples[self.current_player].pop()
+                self.active_meeples.append(meeple)
+                action.tile.place_meeple(meeple, action.coordinates, action.meeple_feature_number, action.meeple_feature_type)
             # merge features
             for tile_feature in action.tile.cities + action.tile.roads + action.tile.farms:
                 joining_sides: list[Side] = []
@@ -185,7 +189,12 @@ class Game():
                         # add score
                         score = combined_feature.score()
                         for player in controlling_players:
-                            self.scores[player] += score                    
+                            self.scores[player] += score
+                        # return meeples to players
+                        for meeple in combined_feature.meeples:
+                            self.active_meeples.remove(meeple)
+                            meeple.location = None
+                            self.free_meeples[meeple.player].append(meeple)
                 # create new feature
                 else:
                     self.feature_manager.generate_parent_feature(tile_feature, action.coordinates)
@@ -247,6 +256,18 @@ class Game():
 
     def get_action_history_str(self):
         return " | ".join(list(map(str, self.action_sequence)))
+
+    def get_state_str(self):
+        state_str = "BOARD: {"
+        sorted_board = sorted(self.board.items(), key=lambda loc: loc[0])
+        # add board with sorted locations
+        state_str += " | ".join(list(map(lambda loc: f"{loc[0]}: <{loc[1]}, {loc[1].rotation}>", sorted_board))) + "}"
+        # add sorted tiles in deck
+        state_str += f" DECK: {list(map(str, sorted(self.deck.tiles, key=lambda tile: tile.name)))}"
+        # add sorted location of meeples
+
+        return state_str
+
 
 if __name__ == "__main__":
     game = Game(2)

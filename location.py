@@ -12,6 +12,13 @@ class Coordinates():
     def __eq__(self, other):
         return self.x == other.x and self.y == other.y
 
+    def __lt__(self, other):
+        if self.x < other.x:
+            return True
+        elif self.x == other.x and self.y < other.y:
+            return True
+        return False
+
     def __hash__(self):
         return hash(f"({self.x}, {self.y})")
 

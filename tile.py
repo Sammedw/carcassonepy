@@ -11,7 +11,8 @@ class Tile():
     def __init__(self, name: str, top_type: ConnectionType, right_type: ConnectionType, bottom_type: ConnectionType, left_type: ConnectionType, 
                 cities: list[TileCity] = [], roads: list[TileRoad] = [], monastery: Optional[TileMonastery] = None, farms: list[TileFarm] = [],
                 attributes: list[TileAttribute] = []):     
-        self.name = name   
+        self.name = name
+        self.rotation = 0
         self.sides: dict[Side, ConnectionType] = {Side.TOP: top_type, Side.RIGHT: right_type, Side.BOTTOM: bottom_type, Side.LEFT: left_type}
         self.cities = cities
         self.roads = roads
@@ -25,6 +26,7 @@ class Tile():
     def rotate_clockwise(self, times: int):
         if times <= 0:
             return 
+        self.rotation = (self.rotation + 1) % 4
         # rotate sides
         self.sides = {Side.TOP: self.sides[Side.LEFT], Side.RIGHT: self.sides[Side.TOP], Side.BOTTOM: self.sides[Side.RIGHT], Side.LEFT: self.sides[Side.BOTTOM]}
         # rotate features
