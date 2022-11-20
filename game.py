@@ -261,11 +261,12 @@ class Game():
         state_str = "BOARD: {"
         sorted_board = sorted(self.board.items(), key=lambda loc: loc[0])
         # add board with sorted locations
-        state_str += " | ".join(list(map(lambda loc: f"{loc[0]}: <{loc[1]}, {loc[1].rotation}>", sorted_board))) + "}"
+        state_str += ", ".join(list(map(lambda loc: f"{loc[0]}: <{loc[1]}, {loc[1].rotation}>", sorted_board))) + "}"
         # add sorted tiles in deck
         state_str += f" DECK: {list(map(str, sorted(self.deck.tiles, key=lambda tile: tile.name)))}"
         # add sorted location of meeples
-
+        sorted_meeples = sorted(self.active_meeples, key=lambda meeple: meeple.location.coordinates)
+        state_str += " MEEPLES: [" + ", ".join(list(map(lambda meeple: f"<{meeple.location.coordinates}, {meeple.location.side}, {meeple.player}>", sorted_meeples))) + "]"
         return state_str
 
 
