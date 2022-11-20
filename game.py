@@ -95,21 +95,22 @@ class Game():
         return True            
         
     def is_action_valid(self, action: Action) -> bool:
+        tile = self.deck.get_tile_by_name(action.tile_name)
         # check if tile exists in the deck
-        if action.tile not in self.deck.tiles:
+        if not tile:
             return False
         # check if tile fits at location
         valid = False
-        action.tile.rotate_clockwise(action.rotation)
-        if self.does_tile_fit(action.tile, action.coordinates):
+        tile.rotate_clockwise(action.rotation)
+        if self.does_tile_fit(tile, action.coordinates):
             # check if the meeple can be placed
             if (action.meeple_feature_type):
-                if self.can_place_meeple(action.tile, action.coordinates, self.current_player, action.meeple_feature_type, action.meeple_feature_number):
+                if self.can_place_meeple(tile, action.coordinates, self.current_player, action.meeple_feature_type, action.meeple_feature_number):
                     valid = True
             else:
                 valid = True
         if action.rotation != 0:
-            action.tile.rotate_clockwise(4 - action.rotation)
+            tile.rotate_clockwise(4 - action.rotation)
         return valid
         
     def get_valid_actions(self, next_tile: Tile) -> list[Action]:
@@ -149,8 +150,9 @@ class Game():
     def make_action(self, action: Action) -> bool:
         if (self.is_action_valid(action)):
             # place tile
-            action.tile.rotate_clockwise(action.rotation)
-            self.board[action.coordinates] = action.tile
+            tile = self.deck.get_tile_by_name(action.tile_name)
+            tile.rotate_clockwise(action.rotation)
+            self.board[action.coordinates] = tile
             # update frontier
             self.frontier.remove(action.coordinates)
             adjacent_tiles = self.get_adjacent_tiles(action.coordinates)
@@ -162,9 +164,9 @@ class Game():
             if action.meeple_feature_type is not None:
                 meeple = self.free_meeples[self.current_player].pop()
                 self.active_meeples.append(meeple)
-                action.tile.place_meeple(meeple, action.coordinates, action.meeple_feature_number, action.meeple_feature_type)
+                tile.place_meeple(meeple, action.coordinates, action.meeple_feature_number, action.meeple_feature_type)
             # merge features
-            for tile_feature in action.tile.cities + action.tile.roads + action.tile.farms:
+            for tile_feature in tile.cities + tile.roads + tile.farms:
                 joining_sides: list[Side] = []
                 merging_features: set[Feature] = set()
                 for tile_feature_side in tile_feature.get_sides():
@@ -201,7 +203,7 @@ class Game():
 
             # track monastery if meeple placed on it
             if (action.meeple_feature_type == FeatureType.MONASTERY):
-                self.feature_manager.add_monastery(action.tile.monastery, action.coordinates)
+                self.feature_manager.add_monastery(tile.monastery, action.coordinates)
             # check for complete monasteries
             for monastery, coordinates in list(self.feature_manager.monasteries.items()):
                 if None not in self.get_adjacent_tiles(coordinates, corners=True).values():
@@ -209,7 +211,7 @@ class Game():
                     self.scores[monastery.meeple.player] += 9
                     del self.feature_manager.monasteries[monastery]
             # remove tile from deck
-            self.deck.tiles.remove(action.tile)
+            self.deck.tiles.remove(tile)
             # update player
             self.current_player = (self.current_player + 1) % self.player_count
             # add to action list
@@ -267,6 +269,8 @@ class Game():
         # add sorted location of meeples
         sorted_meeples = sorted(self.active_meeples, key=lambda meeple: meeple.location.coordinates)
         state_str += " MEEPLES: [" + ", ".join(list(map(lambda meeple: f"<{meeple.location.coordinates}, {meeple.location.side}, {meeple.player}>", sorted_meeples))) + "]"
+        # add scores
+        state_str += f" SCORES: {self.scores}"
         return state_str
 
 
