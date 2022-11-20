@@ -22,3 +22,5 @@ game.make_action(Action(game.deck.get_tile_by_name("monastery_road"), 2, Coordin
 game.print_game_state()
 game.make_action(Action(game.deck.get_tile_by_name("city_cap_straight_road"), 0, Coordinates(0, 2)))
 game.print_game_state()
+
+print(game.get_action_history_str())

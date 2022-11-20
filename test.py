@@ -6,12 +6,12 @@ from game import Game
 
 
 game = Game(2)
-#players = [RandomAgent(0, game), RandomAgent(1, game)] #UCTAgent(0, game)
-players = [UCTAgent(0, game), RandomAgent(1, game)]
+players = [RandomAgent(0, game), RandomAgent(1, game)] #UCTAgent(0, game)
+#players = [UCTAgent(0, game), RandomAgent(1, game)]
 
 scores = [0,0]
 
-for g in range(1000):
+for g in range(10000):
     player_cycle = cycle(players)
     while(not game.is_game_over()):
         next_tile = game.deck.peak_next_tile()

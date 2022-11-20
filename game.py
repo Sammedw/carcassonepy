@@ -176,13 +176,6 @@ class Game():
                         merging_feature = self.feature_manager.get_parent_feature(adjacent_tiles[tile_feature_side.facing()].get_tile_feature_from_side(tile_feature_side.get_opposite()))
                         merging_features.add(merging_feature)
                 # connect features
-                #print("-----------------------------")
-                #print(f"Current tile: {action.tile}")
-                #print("Action sequence ------------")
-                #for a in self.action_sequence:
-                #    print(a)
-                #print(f"> {action}")
-                #print(f"Merging features: {merging_features}")
                 if len(merging_features) > 0:
                     combined_feature = self.feature_manager.merge_features(tile_feature, action.coordinates, joining_sides, merging_features)
                     # check if feature is complete
@@ -251,6 +244,9 @@ class Game():
         print("Roads: ", len(self.feature_manager.features[Road]))
         print("Farms: ", len(self.feature_manager.features[Farm]))
         print("FINAL SCORES: ", self.compute_final_score())
+
+    def get_action_history_str(self):
+        return " | ".join(list(map(str, self.action_sequence)))
 
 if __name__ == "__main__":
     game = Game(2)
