@@ -120,26 +120,26 @@ class Game():
             # calculate number of rotations needed based on symmetry of tile
             for rotation in range(next_tile.get_unique_rotations()):
                 for feature_num in range(len(next_tile.cities)):
-                    new_action = Action(next_tile, rotation, coordinates, FeatureType.CITY, feature_num)
+                    new_action = Action(next_tile.name, rotation, coordinates, FeatureType.CITY, feature_num)
                     if self.is_action_valid(new_action):
                         valid_actions.append(new_action)
 
                 for feature_num in range(len(next_tile.roads)):
-                    new_action = Action(next_tile, rotation, coordinates, FeatureType.ROAD, feature_num)
+                    new_action = Action(next_tile.name, rotation, coordinates, FeatureType.ROAD, feature_num)
                     if self.is_action_valid(new_action):
                         valid_actions.append(new_action)
 
                 for feature_num in range(len(next_tile.farms)):
-                    new_action = Action(next_tile, rotation, coordinates, FeatureType.FARM, feature_num)
+                    new_action = Action(next_tile.name, rotation, coordinates, FeatureType.FARM, feature_num)
                     if self.is_action_valid(new_action):
                         valid_actions.append(new_action)
 
                 if next_tile.monastery:
-                    new_action = Action(next_tile, rotation, coordinates, FeatureType.MONASTERY, feature_num)
+                    new_action = Action(next_tile.name, rotation, coordinates, FeatureType.MONASTERY, feature_num)
                     if self.is_action_valid(new_action):
                         valid_actions.append(new_action)
 
-                new_action = Action(next_tile, rotation, coordinates)
+                new_action = Action(next_tile.name, rotation, coordinates)
                 if self.is_action_valid(new_action):
                     valid_actions.append(new_action)
         # discard tile if no valid actions
@@ -157,8 +157,8 @@ class Game():
             self.frontier.remove(action.coordinates)
             adjacent_tiles = self.get_adjacent_tiles(action.coordinates)
             adjacent_coordiantes = action.coordinates.get_adjacent()
-            for side, tile in adjacent_tiles.items():
-                if tile is None:
+            for side, adj_tile in adjacent_tiles.items():
+                if adj_tile is None:
                     self.frontier.add(adjacent_coordiantes[side])
             # place meeple
             if action.meeple_feature_type is not None:
@@ -251,6 +251,10 @@ class Game():
         return final_scores
 
     def print_game_state(self):
+        print("Action sequence ---------------------------")
+        for action in self.action_sequence:
+            print(action)
+        print("-------------------------------------------")
         print("Cities: ", len(self.feature_manager.features[City]))
         print("Roads: ", len(self.feature_manager.features[Road]))
         print("Farms: ", len(self.feature_manager.features[Farm]))

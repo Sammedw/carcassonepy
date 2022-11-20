@@ -9,12 +9,13 @@ from tile import Tile
 
 class Node:
 
-    def __init__(self, state: str, action_count: int):
+    def __init__(self, state: str, actions: list[Action]):
         self.state = state
-        self.action_count = action_count
-        self.regret_sum = [0 for _ in range(action_count)]
-        self.strategy = [0 for _ in range(action_count)]
-        self.strategy_sum = [0 for _ in range(action_count)]
+        self.actions = actions
+        self.action_count = len(actions)
+        self.regret_sum = [0 for _ in range(self.action_count)]
+        self.strategy = [0 for _ in range(self.action_count)]
+        self.strategy_sum = [0 for _ in range(self.action_count)]
 
     def get_strategy(self, reach_probability: float) -> list[float]:
         normalizing_sum = 0
@@ -63,10 +64,11 @@ class CFRAgent(BaseAgent):
         if node is None:
             while True:
                 # discard tile if no valid actions
-                if len(current_state.get_valid_actions(current_state.deck.peak_next_tile())) == 0:
+                valid_actions = current_state.get_valid_actions(current_state.deck.peak_next_tile())
+                if len(valid_actions) == 0:
                     continue
                 state_str = current_state.get_state_str() + f" NEXT_TILE: {current_state.deck.peak_next_tile()}"
-                node = Node(state_str)
+                node = Node(state_str, valid_actions)
                 break
             self.node_dict[state_str] = node
         # for each action, recursively call cfr
@@ -77,28 +79,30 @@ class CFRAgent(BaseAgent):
         strategy = node.get_strategy(p)
         util = []
         node_util = 0
-        print(f"CURRENT STATE: {current_state.get_state_str()}")
-        for i, action in enumerate(valid_actions):
-            print(action)
+        #print(f"CURRENT STATE: {current_state.get_state_str()}")
+        for i, action in enumerate(node.actions):
+            #print(action)
             next_state: Game = copy.deepcopy(current_state)
             next_state.make_action(action)
-            print(f"NEXT STATE: {next_state.get_state_str()}")
+            #print(f"NEXT STATE: {next_state.get_state_str()}")
             if current_state.current_player == 0:
                 util.append(- self.cfr(next_state, p0 * strategy[i], p1))
             else:
                 util.append(- self.cfr(next_state, p0, p1 * strategy[i]))
             node_util += strategy[i] * util[i]
         # for each action, compute and accumulate counterfactual regret
-        for i in range(len(valid_actions)):
+        for i in range(node.action_count):
             regret = util[i] - node_util
-            print(regret)
+            #print(regret)
             node.regret_sum[i] += p * regret
         return node_util
 
     def train(self, game_state: Game, iterations: int):
         random_state = copy.deepcopy(game_state)
         util = 0
-        for _ in range(iterations):
+        print(range(iterations))
+        for i in range(iterations):
+            print(i)
             random.shuffle(random_state.deck.tiles)
             util += self.cfr(random_state, 1, 1)
         print(f"Average game value: {util / iterations}")
@@ -107,6 +111,6 @@ class CFRAgent(BaseAgent):
 
     def make_move(self, next_tile: Tile):
         valid_actions = super().make_move(next_tile)
-        self.train(self.game, 1000)
+        self.train(self.game, 1)
         action = random.choice(valid_actions)
         self.game.make_action(action)
