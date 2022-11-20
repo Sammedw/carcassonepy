@@ -45,14 +45,14 @@ class ChoiceNode:
 
 class ChanceNode:
     
-    def __init__(self, state: Game, incoming_action: Optional[Action], parent: ChoiceNode):
+    def __init__(self, state: Game, incoming_action: Optional[Action], parent: ChoiceNode | ChanceNode):
         # current game state object
         self.state = state
         # action taken to reach the current state
         self.incoming_action = incoming_action
         self.parent = parent
         # dict of explored children
-        self.children: dict[Tile, ChoiceNode] = {}
+        self.children: dict[Tile, ChoiceNode | ChanceNode] = {}
         # visit and total sums used to calculate UCT
         self.visit_count = 0
         self.total_reward = 0
@@ -70,12 +70,23 @@ class ChanceNode:
                 return self.children[tile]
             else:
                 # if not, create new choice node
-                new_child = ChoiceNode(self.state, tile, self.incoming_action, self)
-                self.children[tile] = new_child
-                return new_child
+                # check if there are any valid moves given random tile
+                if (len(self.state.get_valid_actions(tile)) > 0):
+                    new_child = ChoiceNode(self.state, tile, self.incoming_action, self)
+                    self.children[tile] = new_child
+                    return new_child
+                else:
+                    # no valid actions, so create chance node to select new tile
+                    new_state = copy.deepcopy(self.state)
+                    # add tile back into current state since it was removed
+                    self.state.deck.tiles.append(tile)
+                    new_child = ChanceNode(new_state, self.incoming_action, self)
+                    self.children[tile] = new_child
+                    return new_child
+
 
     def print_node(self, tab: int = 0):
-        print('\t'*tab + f"Chance({UCT(self, self.parent.visit_count, 2)}): ")
+        print('\t'*tab + f"Chance({UCT(self, self.parent.visit_count, 3)}): ")
         for child in self.children.values():
             child.print_node(tab+1)
 
@@ -93,7 +104,7 @@ class UCTAgent(BaseAgent):
     
     def __init__(self, player_num: int, game: Game):
         super().__init__(player_num, game)
-        self.exploration_constant = 2
+        self.exploration_constant = 3
 
     def expand(self, root: ChoiceNode) -> ChanceNode:
         # choose untried action from current state and remove from expandable actions
@@ -126,6 +137,9 @@ class UCTAgent(BaseAgent):
                 return self.expand(current_node)
             else:
                 # find best child of node, max value if agent is current player otherwise minimise
+                #print(f"NEXT TILE: {current_node.next_tile}")
+                #print(f"EXPANDABLE ACTIONS: {current_node.expandable_actions}")
+                #print(f"CHILDREN: {current_node.children}")
                 is_current_player = current_node.state.current_player == self.player_num
                 return self.tree_policy(self.best_child(current_node, self.exploration_constant, is_current_player))
         else:

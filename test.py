@@ -6,10 +6,12 @@ from game import Game
 
 
 game = Game(2)
-players = [RandomAgent(0, game), RandomAgent(1, game)] #UCTAgent(0, game)
-#players = [UCTAgent(0, game), RandomAgent(1, game)]
+#players = [RandomAgent(0, game), RandomAgent(1, game)] #UCTAgent(0, game)
+players = [UCTAgent(0, game), RandomAgent(1, game)]
 
-for g in range(100000):
+scores = [0,0]
+
+for g in range(1000):
     player_cycle = cycle(players)
     while(not game.is_game_over()):
         next_tile = game.deck.peak_next_tile()
@@ -19,4 +21,11 @@ for g in range(100000):
         next(player_cycle).make_move(next_tile)
 
     game.print_game_state()
+    game_scores = game.compute_final_score()
+    if game_scores[0] > game_scores[1]:
+        scores[0] += 1
+    elif game_scores[0] < game_scores[1]:
+        scores[1] += 1
+
+    print(f"GAMES: {scores}") 
     game.reset()
