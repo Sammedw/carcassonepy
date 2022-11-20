@@ -12,7 +12,7 @@ game = Game(2)
 
 player = CFRAgent(0, game)
 
-player.train(game, 1000)
+player.train(game, "monastery_road",  10)
 
 
 # game.make_action(Action(game.deck.get_tile_by_name("monastery_road"), 0, Coordinates(0, 1), FeatureType.ROAD, 0))

@@ -21,7 +21,7 @@ class TileFeature():
             meeple_sides = list(self.sides)
             if Side.CENTER in meeple_sides and len(meeple_sides) > 1:
                 meeple_sides.remove(Side.CENTER)
-            meeple.location = Location(coordinates.x, coordinates.y, random.choice(meeple_sides))
+            meeple.location = Location(coordinates.x, coordinates.y, meeple_sides[0])
 
 
 class TileCity(TileFeature):

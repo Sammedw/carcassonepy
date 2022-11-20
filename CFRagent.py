@@ -68,6 +68,7 @@ class CFRAgent(BaseAgent):
                 if len(valid_actions) == 0:
                     continue
                 state_str = current_state.get_state_str() + f" NEXT_TILE: {current_state.deck.peak_next_tile()}"
+                #print(state_str)
                 node = Node(state_str, valid_actions)
                 break
             self.node_dict[state_str] = node
@@ -97,20 +98,25 @@ class CFRAgent(BaseAgent):
             node.regret_sum[i] += p * regret
         return node_util
 
-    def train(self, game_state: Game, iterations: int):
+    def train(self, game_state: Game, next_tile: str,  iterations: int):
         random_state = copy.deepcopy(game_state)
+        next_tile_obj = random_state.deck.get_tile_by_name(next_tile)  
         util = 0
-        print(range(iterations))
         for i in range(iterations):
             print(i)
+            random_state.deck.tiles.remove(next_tile_obj)
             random.shuffle(random_state.deck.tiles)
+            random_state.deck.tiles.insert(0, next_tile_obj)
             util += self.cfr(random_state, 1, 1)
         print(f"Average game value: {util / iterations}")
-        for state_str, node in self.node_dict.items():
-            print(f"State: {state_str} | Average Strategy: {node.get_average_strategy()}")
+        #for state_str, node in self.node_dict.items():
+           # print(f"State: {state_str} | Average Strategy: {node.get_average_strategy()}")
+        root = self.node_dict[Game(2).get_state_str() + ' NEXT_TILE: ' + next_tile]
+        print(list(map(str, root.actions)))
+        print(f"Average Strategy: {root.get_average_strategy()}")
 
     def make_move(self, next_tile: Tile):
         valid_actions = super().make_move(next_tile)
-        self.train(self.game, 1)
+        self.train(self.game, 1000)
         action = random.choice(valid_actions)
         self.game.make_action(action)
