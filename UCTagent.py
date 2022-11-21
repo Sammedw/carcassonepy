@@ -92,12 +92,14 @@ class ChanceNode:
 
 
 def UCT(node: ChoiceNode, parent_visit_count: int,  exploration_constant: float, max=True):
-            value = (node.total_reward / node.visit_count)
-            exploration = exploration_constant * math.sqrt((2*math.log(parent_visit_count))/node.visit_count)
-            if max:
-                return value + exploration
-            else:
-                return value - exploration
+    if node.visit_count == 0:
+        return "infinity"
+    value = (node.total_reward / node.visit_count)
+    exploration = exploration_constant * math.sqrt((2*math.log(parent_visit_count))/node.visit_count)
+    if max:
+        return value + exploration
+    else:
+        return value - exploration
 
 
 class UCTAgent(BaseAgent):
@@ -176,15 +178,9 @@ class UCTAgent(BaseAgent):
         for _ in range(iterations):
             # select node to expand using tree policy
             node = self.tree_policy(root)
+            #node.print_node()
             # simulate game from selected node
             simulate = copy.deepcopy(node.state)
-            #print(node.state.feature_manager.features)
-            #print(root.state.feature_manager.features[Farm])
-            #print(root.state.feature_manager.parent_feature)
-            #print("-----------------------------------------------------")
-            #print(simulate.feature_manager.features[Farm])
-            #print(simulate.feature_manager.parent_feature)
-            #print("-----------------------------------------------------\n")
             payoff = self.default_policy(simulate)
             # backup reward
             self.backup(node, payoff)
