@@ -17,7 +17,7 @@ base_set = TileSet("base",
     {Tile("monastery_road", ConnectionType.GRASS, ConnectionType.GRASS, ConnectionType.ROAD, ConnectionType.GRASS,
         roads = [feature_entrance],
         monastery = monastery,
-        farms = [TileFarm([Side.TOPLEFT, Side.TOPRIGHT, Side.BOTTOMRIGHT, Side.BOTTOMLEFT])]): 1, 
+        farms = [TileFarm([Side.TOPLEFT, Side.TOPRIGHT, Side.BOTTOMRIGHT, Side.BOTTOMLEFT])]): 2, 
         
     Tile("monastery", ConnectionType.GRASS, ConnectionType.GRASS, ConnectionType.GRASS, ConnectionType.GRASS,
         monastery = monastery,
@@ -29,7 +29,7 @@ base_set = TileSet("base",
     Tile("city_cap_straight_road", ConnectionType.ROAD, ConnectionType.CITY, ConnectionType.ROAD, ConnectionType.GRASS,
         cities = [city_cap_right],
         roads = [vertical_road],
-        farms = [TileFarm([Side.TOPLEFT, Side.BOTTOMLEFT]), TileFarm([Side.TOPRIGHTTOP, Side.BOTTOMRIGHTBOTTOM], adjacent_cities = {city_cap_right})]): 2
+        farms = [TileFarm([Side.TOPLEFT, Side.BOTTOMLEFT]), TileFarm([Side.TOPRIGHTTOP, Side.BOTTOMRIGHTBOTTOM], adjacent_cities = {city_cap_right})]): 3
     }, 
     Tile("start", ConnectionType.ROAD, ConnectionType.CITY, ConnectionType.ROAD, ConnectionType.GRASS,
         cities = [city_cap_right],

@@ -14,7 +14,9 @@ players = [RandomAgent(0, game), UCTAgent(1, game)]
 
 scores = [0,0]
 
-for g in range(10000):
+time_sum = 0 
+for g in range(100):
+    start = time.time()
     player_cycle = cycle(players)
     while(not game.is_game_over()):
         next_tile = game.deck.peak_next_tile()
@@ -32,7 +34,11 @@ for g in range(10000):
 
     print(f"GAMES: {scores}") 
     game.reset()
+    duration = time.time() - start
+    time_sum += duration
+    print("GAME DURATION: " + str(duration) + " seconds")
 
+print("AVERAGE RANDOM GAME DURATION: " + str(time_sum/100) + " seconds")
 
 # time_sum = 0 
 
