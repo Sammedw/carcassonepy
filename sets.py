@@ -21,10 +21,10 @@ base_set = TileSet("base",
         
     Tile("monastery", ConnectionType.GRASS, ConnectionType.GRASS, ConnectionType.GRASS, ConnectionType.GRASS,
         monastery = monastery,
-        farms = [TileFarm([Side.TOPRIGHT, Side.BOTTOMRIGHT, Side.BOTTOMLEFT, Side.TOPLEFT])]): 1,
+        farms = [TileFarm([Side.TOPRIGHT, Side.BOTTOMRIGHT, Side.BOTTOMLEFT, Side.TOPLEFT])]): 4,
 
     Tile("big_city", ConnectionType.CITY, ConnectionType.CITY, ConnectionType.CITY, ConnectionType.CITY,
-        cities = [TileCity([Side.TOP, Side.RIGHT, Side.BOTTOM, Side.LEFT], [TileFeatureAttribute.SHIELD])]): 0,
+        cities = [TileCity([Side.TOP, Side.RIGHT, Side.BOTTOM, Side.LEFT], [TileFeatureAttribute.SHIELD])]): 1,
 
     Tile("city_cap_straight_road", ConnectionType.ROAD, ConnectionType.CITY, ConnectionType.ROAD, ConnectionType.GRASS,
         cities = [city_cap_right],
