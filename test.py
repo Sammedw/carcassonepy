@@ -8,8 +8,8 @@ from game import Game
 
 
 game = Game(2)
-players = [RandomAgent(0, game), RandomAgent(1, game)] #UCTAgent(0, game)
-#players = [RandomAgent(0, game), UCTAgent(1, game)]
+#players = [RandomAgent(0, game), RandomAgent(1, game)] #UCTAgent(0, game)
+players = [UCTAgent(1, game), RandomAgent(0, game)]
 #players = [CFRAgent(0, game), RandomAgent(1, game)]
 
 scores = [0,0]
