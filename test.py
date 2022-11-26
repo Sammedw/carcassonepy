@@ -9,14 +9,15 @@ from game import Game
 
 game = Game(2)
 #players = [RandomAgent(0, game), RandomAgent(1, game)] #UCTAgent(0, game)
-players = [UCTAgent(1, game), RandomAgent(0, game)]
-#players = [CFRAgent(0, game), RandomAgent(1, game)]
+players = [RandomAgent(0, game), UCTAgent(1, game)]
+#players = [RandomAgent(0, game), CFRAgent(1, game)]
+#players = [CFRAgent(0, game), UCTAgent(1, game)]
 
 scores = [0,0]
+games = 100
 
-time_sum = 0 
-for g in range(10):
-    start = time.time()
+start = time.time()
+for g in range(games): 
     player_cycle = cycle(players)
     while(not game.is_game_over()):
         next_tile = game.deck.peak_next_tile()
@@ -34,11 +35,10 @@ for g in range(10):
 
     print(f"GAMES: {scores}") 
     game.reset()
-    duration = time.time() - start
-    time_sum += duration
-    print("GAME DURATION: " + str(duration) + " seconds")
 
-print("AVERAGE RANDOM GAME DURATION: " + str(time_sum/100) + " seconds")
+duration = time.time() - start
+
+print("AVERAGE GAME DURATION: " + str(duration/games) + " seconds")
 
 # time_sum = 0 
 

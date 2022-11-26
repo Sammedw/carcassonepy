@@ -125,6 +125,5 @@ class CFRAgent(BaseAgent):
         if (not state_str in self.node_dict):
             print("TRAIN")
             self.train(self.game, next_tile.name, 10)
-        print("MAKE MOVE")
         action = self.get_action(self.node_dict[self.game.get_state_str() + ' NEXT_TILE: ' + next_tile.name].get_average_strategy(), valid_actions)[0]
         self.game.make_action(action)
