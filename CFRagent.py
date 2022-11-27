@@ -39,7 +39,7 @@ class Node:
         if normalizing_sum > 0:
             avg_strategy = [x / normalizing_sum for x in self.strategy_sum]
         else:
-            avg_strategy = [1/self.action_count for _ in self.action_count]
+            avg_strategy = [1/self.action_count for _ in range(self.action_count)]
         return avg_strategy
 
 
@@ -63,6 +63,9 @@ class CFRAgent(BaseAgent):
         node = self.node_dict.get(state_str)
         if node is None:
             while True:
+                # if no tiles left then get node utility
+                if len(current_state.deck.tiles) == 0:
+                    return self.cfr(current_state, p0, p1)
                 # discard tile if no valid actions
                 valid_actions = current_state.get_valid_actions(current_state.deck.peak_next_tile())
                 if len(valid_actions) == 0:

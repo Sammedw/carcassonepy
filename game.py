@@ -34,7 +34,7 @@ class Game():
         self.frontier: set[Coordinates] = set(Coordinates(0,0).get_adjacent().values())
         self.current_player = 0
         self.scores = [0 for _ in range(self.player_count)]
-        self.free_meeples = [[Meeple(player) for _ in range(7)] for player in range(self.player_count)]
+        self.free_meeples = [[Meeple(player) for _ in range(1)] for player in range(self.player_count)]
         self.active_meeples = []
         # generate initial features
         self.feature_manager = FeatureManager(start_tile)
