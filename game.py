@@ -243,7 +243,6 @@ class Game():
         # iterate over incomplete features
         for feature in self.feature_manager.features[City].union(self.feature_manager.features[Road]):
             if not feature.is_complete():
-                # print(f"Incomplete: {feature} - {feature.score()}")
                 # find meeple majority
                 controlling_players = feature.get_controlling_player(self.player_count)
                 # add score
@@ -252,7 +251,6 @@ class Game():
                     final_scores[player] += score 
         # iterate over incomplete monasteries
         for monastery, coordinates in self.feature_manager.monasteries.items():
-            #print(f"Monastery - {len(list(filter(None, self.get_adjacent_tiles(coordinates, corners=True).values()))) + 1}")
             final_scores[monastery.meeple.player] += len(list(filter(None, self.get_adjacent_tiles(coordinates, corners=True).values()))) + 1
         # add current scores and farm scores
         farm_scores = self.feature_manager.score_farms(self.player_count)
