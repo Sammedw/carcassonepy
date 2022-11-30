@@ -40,33 +40,37 @@ class Game():
         self.feature_manager = FeatureManager(start_tile)
         self.action_sequence = []
 
+    # return a random tile remaining from the deck
     def get_random_tile(self):
-        # return a random tile remaining from the deck
         return random.choice(self.deck.tiles)
 
-    def get_adjacent_tiles(self, coordinates: Coordinates, corners: bool = False) -> dict[Side, Optional[Tile]]:
-        # return adjacent tiles (TRBL)
+    # return adjacent tiles (TRBL)
+    def get_adjacent_tiles(self, coordinates: Coordinates, corners: bool = False) -> dict[Side, Optional[Tile]]:   
         adjacent_tiles: dict[Side, Optional[Tile]] = {Side.TOP: None, Side.RIGHT: None, Side.BOTTOM: None, Side.LEFT: None}
+        # include corners if specified
         if corners:
             adjacent_tiles.update({Side.TOPRIGHT: None, Side.BOTTOMRIGHT: None,  Side.BOTTOMLEFT: None, Side.TOPLEFT: None})
         adjacent_coordinates = coordinates.get_adjacent(corners=corners)
+        # iterate over adjacent coordinates to find tiles on board
         for side in adjacent_coordinates.keys():
             if adjacent_coordinates[side] in self.board:
                 adjacent_tiles[side] = self.board[adjacent_coordinates[side]]
         return adjacent_tiles
 
+    # check if given tile fits at given coordinates
     def does_tile_fit(self, tile: Tile, coordinates: Coordinates) -> bool:
-        # check if given tile fits at given coordinates
+        # check if coordinats are in frontier     
         if not coordinates in self.frontier:
             return False
         adjacent_tiles = self.get_adjacent_tiles(coordinates)
-        # check each side
+        # check each side fits
         for side in adjacent_tiles.keys():
             if (adjacent_tiles[side]):
                 if adjacent_tiles[side].sides[side.get_opposite()] != tile.sides[side]: 
                     return False
         return True
 
+    # returns true if player can place meeple on given feature
     def can_place_meeple(self, tile: Tile, coordinates: Coordinates, player: int, feature_type: FeatureType, feature_number: int = 0) -> bool:
         # check player has enough meeples
         if not len(self.free_meeples[player]) > 0:
@@ -83,17 +87,21 @@ class Game():
         feature_sides = tile_feature.get_sides()
         if Side.CENTER in feature_sides:
             feature_sides.remove(Side.CENTER)
+        # iterate over adjacent tile features
         for side in feature_sides:
             if adjacent_tiles[side.facing()]: 
                 connecting_tile_feature = adjacent_tiles[side.facing()].get_tile_feature_from_side(side.get_opposite())
                 if not connecting_tile_feature:
                     continue
+                # get parent feature of adjacent tile feature
                 parent_feature = self.feature_manager.get_parent_feature(connecting_tile_feature)
                 if parent_feature:
+                    # check if it has any meeples
                     if parent_feature.has_meeples():
                         return False
         return True            
-        
+
+    # returns true if a given action is valid 
     def is_action_valid(self, action: Action) -> bool:
         tile = self.deck.get_tile_by_name(action.tile_name)
         # check if tile exists in the deck
@@ -112,13 +120,15 @@ class Game():
         if action.rotation != 0:
             tile.rotate_clockwise(4 - action.rotation)
         return valid
-        
+    
+    # returns a list of all valid actions
     def get_valid_actions(self, next_tile: Tile) -> list[Action]:
         valid_actions: list[Action] = []
         # iterate over all possible actions and check if they are valid
         for coordinates in self.frontier:
             # calculate number of rotations needed based on symmetry of tile
             for rotation in range(next_tile.get_unique_rotations()):
+                # iterate over all possible ways to place meeple on features
                 for feature_num in range(len(next_tile.cities)):
                     new_action = Action(next_tile.name, rotation, coordinates, FeatureType.CITY, feature_num)
                     if self.is_action_valid(new_action):
@@ -147,6 +157,7 @@ class Game():
             self.deck.tiles.remove(next_tile)
         return valid_actions
 
+    # execute given action
     def make_action(self, action: Action) -> bool:
         if (self.is_action_valid(action)):
             # place tile
@@ -276,18 +287,3 @@ class Game():
         # add scores
         state_str += f" SCORES: {self.scores}"
         return state_str
-
-
-if __name__ == "__main__":
-    game = Game(2)
-    print(game.deck)
-    print(game.board)
-
-    for i in range(5):
-        #for action in game.get_valid_actions(game.deck.peak_next_tile()):
-        #    print(action)
-        selected = random.choice(game.get_valid_actions(game.deck.peak_next_tile()))
-        print(f"--- Selected: {selected}")
-        game.make_action(selected)
-
-    game.print_game_state()
