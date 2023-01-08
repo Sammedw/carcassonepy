@@ -145,3 +145,16 @@ class Deck():
             if name == tile.name:
                 return tile
         return None
+
+    def get_unique_tiles(self) -> dict[str, int]:
+        unique_tiles = {}
+        # iterate over remaining tiles
+        for tile in self.tiles:
+            # check if tile is in unique tiles
+            if (tile.name in unique_tiles):
+                # update the tile count
+                unique_tiles[tile.name] += 1
+            else:
+                # otherwise add it to unique tiles
+                unique_tiles[tile.name] = 1
+        return unique_tiles
