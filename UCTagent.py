@@ -159,7 +159,7 @@ class UCTAgent(BaseAgent):
             if len(valid_actions) > 0:
                 state.make_action(random.choice(valid_actions))
         # return difference between own score and other highest score
-        scores = state.compute_final_score()
+        scores = state.compute_scores()
         own_score = scores.pop(self.player_num)
         best_opponent_score = max(scores)
         return own_score - best_opponent_score

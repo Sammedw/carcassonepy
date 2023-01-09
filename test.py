@@ -27,7 +27,7 @@ for g in range(games):
         next(player_cycle).make_move(next_tile)
 
     game.print_game_state()
-    game_scores = game.compute_final_score()
+    game_scores = game.compute_scores()
     if game_scores[0] > game_scores[1]:
         scores[0] += 1
     elif game_scores[0] < game_scores[1]:

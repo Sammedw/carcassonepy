@@ -238,7 +238,7 @@ class Game():
         else:
             return True
 
-    def compute_final_score(self) -> list[int]:
+    def compute_scores(self) -> list[int]:
         final_scores = [0 for _ in range(self.player_count)]
         # iterate over incomplete features
         for feature in self.feature_manager.features[City].union(self.feature_manager.features[Road]):
@@ -267,7 +267,7 @@ class Game():
         print("Cities: ", len(self.feature_manager.features[City]))
         print("Roads: ", len(self.feature_manager.features[Road]))
         print("Farms: ", len(self.feature_manager.features[Farm]))
-        print("FINAL SCORES: ", self.compute_final_score())
+        print("FINAL SCORES: ", self.compute_scores())
 
     def get_action_history_str(self):
         return " | ".join(list(map(str, self.action_sequence)))

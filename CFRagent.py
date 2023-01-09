@@ -53,7 +53,7 @@ class CFRAgent(BaseAgent):
         # check if game in in terminal state
         if current_state.is_game_over():
             # return node utility
-            final_scores = current_state.compute_final_score()
+            final_scores = current_state.compute_scores()
             if current_state.current_player == 0:
                 return final_scores[0] - final_scores[1]
             else:
