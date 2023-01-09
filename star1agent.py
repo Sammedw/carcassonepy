@@ -15,7 +15,11 @@ class Star1Agent(BaseAgent):
         self.lower = -350
 
     def eval_state(self, state: Game):
-        return 0
+        # return difference between own virtual score and other highest virtual score
+        scores = state.compute_scores()
+        own_score = scores.pop(self.player_num)
+        best_opponent_score = max(scores)
+        return own_score - best_opponent_score
 
     # calculate the score for a min or max node
     def minimax(self, state: Game, next_tile: Tile, alpha: int, beta: int, depth: int, maximising_player: bool):
@@ -79,7 +83,7 @@ class Star1Agent(BaseAgent):
             if (val >= cur_beta):
                 return beta
             if (val <= cur_alpha):
-                return alpha;
+                return alpha
             cur_x += prob * val
         # return final value
         return cur_x
