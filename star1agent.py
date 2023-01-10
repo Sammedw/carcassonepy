@@ -23,40 +23,60 @@ class Star1Agent(BaseAgent):
 
     # calculate the score for a min or max node
     def minimax(self, state: Game, next_tile: Tile, alpha: int, beta: int, depth: int, maximising_player: bool = True):
+        best_action = None
         if maximising_player:
             # player is max
             max_val = - inf
             # iterate over possible actions
+            #print(f"max node - actions: {list(map(str, state.get_valid_actions(next_tile)))}")
             for action in state.get_valid_actions(next_tile):
+                #print(action)
                 # create new game state with action applied
                 new_state = deepcopy(state)
                 new_state.make_action(action)
                 # calculate value of subsequent chance node by calling star method
-                max_val = max(max_val, self.star1(new_state, alpha, beta, depth - 1, not maximising_player))
+                val = self.star1(new_state, alpha, beta, depth - 1, not maximising_player)
+                if val > max_val:
+                    max_val = val
+                    best_action = action
+                #print(f"{str(action)} - new max: {max_val}")
                 # prune if val is equal or exceeds beta value
                 if max_val >= beta:
+                    #print("Prune max - beta: ", beta)
                     break
                 # update alpha value
                 alpha = max(alpha, max_val)
+            # check if max_val still inf
+            if max_val == -inf:
+                # no actions were available so get next random tile
+                max_val = self.star1(state, alpha, beta, depth, maximising_player)
             # return value of max node
-            return max_val, action
+            return max_val, best_action
         else:
             # player is min
             min_val = inf
             # iterate over possible actions
+            #print("min node")
             for action in state.get_valid_actions(next_tile):
                 # create new game state with action applied
                 new_state = deepcopy(state)
                 new_state.make_action(action)
                 # calculate value of subsequent chance node by calling star method
-                min_val = min(min_val, self.star1(new_state, alpha, beta, depth - 1, not maximising_player))
+                val = self.star1(new_state, alpha, beta, depth - 1, not maximising_player)
+                if val < min_val:
+                    min_val = val
+                    best_action = action
+                #print(f"{str(action)} - new min: {min_val}")
                 # prune if val is equal to or less than alpha value
                 if min_val <= alpha:
                     break
                 # update beta value
                 beta = min(beta, min_val)
+            if min_val == inf:
+                # no actions were available so get next random tile
+                min_val = self.star1(state, alpha, beta, depth, maximising_player)
             # return value of min node
-            return min_val, action
+            return min_val, best_action
 
     # calculate the score for a chance node
     def star1(self, state: Game, alpha: int, beta: int, depth: int, maximising_player: bool):
@@ -68,6 +88,7 @@ class Star1Agent(BaseAgent):
         cur_x = 0 # stores cumulative value of explored nodes
         cur_y = 1 # stores the probabilty that the next tile is not explored
         # iterate over possible tiles
+        #print("chance node")
         for tile, tile_count in state.deck.get_unique_tiles().items():
             # calculate probability of picking tile
             prob = tile_count / len(state.deck.tiles)
@@ -85,6 +106,7 @@ class Star1Agent(BaseAgent):
             if (val <= cur_alpha):
                 return alpha
             cur_x += prob * val
+            #print(f"curr x: {cur_x}")
         # return final value
         return cur_x
 
