@@ -22,7 +22,7 @@ class Star1Agent(BaseAgent):
         return own_score - best_opponent_score
 
     # calculate the score for a min or max node
-    def minimax(self, state: Game, next_tile: Tile, alpha: int, beta: int, depth: int, maximising_player: bool):
+    def minimax(self, state: Game, next_tile: Tile, alpha: int, beta: int, depth: int, maximising_player: bool = True):
         if maximising_player:
             # player is max
             max_val = - inf
@@ -39,7 +39,7 @@ class Star1Agent(BaseAgent):
                 # update alpha value
                 alpha = max(alpha, max_val)
             # return value of max node
-            return max_val
+            return max_val, action
         else:
             # player is min
             min_val = inf
@@ -56,10 +56,10 @@ class Star1Agent(BaseAgent):
                 # update beta value
                 beta = min(beta, min_val)
             # return value of min node
-            return min_val
+            return min_val, action
 
     # calculate the score for a chance node
-    def star1(self, state: Game, alpha: int, beta: int, depth: int, maximising_player: bool = True):
+    def star1(self, state: Game, alpha: int, beta: int, depth: int, maximising_player: bool):
         # check if game finished or depth reached
         if (state.is_game_over() or depth == 0):
             # evaluate the position
@@ -78,7 +78,7 @@ class Star1Agent(BaseAgent):
             ax = max(self.lower, cur_alpha)
             bx = min(self.upper, cur_beta)
             # calculate value of node after selecting tile using minimax
-            val = self.minimax(state, state.deck.get_tile_by_name(tile), ax, bx, depth, maximising_player)
+            val, _ = self.minimax(state, state.deck.get_tile_by_name(tile), ax, bx, depth, maximising_player)
             # prune if val is greater than beta or smaller than alpha
             if (val >= cur_beta):
                 return beta
@@ -91,5 +91,5 @@ class Star1Agent(BaseAgent):
 
 
     def make_move(self, next_tile: Tile):
-        action = self.uct_search(self.game, next_tile, 500)
+        _, action = self.minimax(self.game, next_tile, - inf, inf, 3)
         self.game.make_action(action)
