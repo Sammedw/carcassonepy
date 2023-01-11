@@ -192,6 +192,6 @@ class UCTAgent(BaseAgent):
 
 
     def make_move(self, next_tile: Tile):
-        action = self.uct_search(self.game, next_tile, 500)
+        action = self.uct_search(self.game, next_tile, 1000)
         print(action)
         self.game.make_action(action)

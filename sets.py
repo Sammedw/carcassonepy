@@ -33,7 +33,7 @@ base_set = TileSet("base",
 
     Tile("tri_road", ConnectionType.GRASS, ConnectionType.ROAD, ConnectionType.ROAD, ConnectionType.ROAD,
         roads = [TileRoad([Side.CENTER, Side.RIGHT]), TileRoad([Side.CENTER, Side.BOTTOM]), TileRoad([Side.CENTER, Side.LEFT])],
-        farms = [TileFarm([Side.TOPLEFT, Side.TOPRIGHT]), TileFarm([Side.BOTTOMRIGHT]), TileFarm([Side.BOTTOMLEFT])]): 0,
+        farms = [TileFarm([Side.TOPLEFT, Side.TOPRIGHT]), TileFarm([Side.BOTTOMRIGHT]), TileFarm([Side.BOTTOMLEFT])]): 2,
     }, 
     
     Tile("start", ConnectionType.ROAD, ConnectionType.CITY, ConnectionType.ROAD, ConnectionType.GRASS,

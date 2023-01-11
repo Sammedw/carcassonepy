@@ -18,7 +18,7 @@ game = Game(2)
 players = [Human(0, game), UCTAgent(1, game)]
 
 scores = [0,0]
-games = 5
+games = 1
 
 start = time.time()
 for g in range(games): 
