@@ -1,5 +1,5 @@
 from copy import deepcopy
-from typing import Optional, Type
+from typing import Optional, Type, Union
 from enums import *
 from location import *
 from feature import *
@@ -52,7 +52,7 @@ class Tile():
     def get_tile_feature_by_num(self, num: int, feature_type: FeatureType) -> Optional[TileFeature]:
          # check if given feature exists
         feature_count = 0
-        feature_list: list[TileCity] | list[TileRoad] | list[TileFarm]
+        feature_list: Union[list[TileCity], list[TileRoad], list[TileFarm]]
         if feature_type == FeatureType.CITY:
             feature_count = len(self.cities)
             feature_list = self.cities

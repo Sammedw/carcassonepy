@@ -1,5 +1,6 @@
 from feature import *
 from tile import Tile
+from typing import Union
 
 class FeatureManager:
 
@@ -47,7 +48,7 @@ class FeatureManager:
             self.features[type(old_feature)].remove(old_feature)
         return merging_feature
     
-    def generate_parent_feature(self, tile_feature: TileCity | TileRoad | TileFarm, coordinates: Coordinates):
+    def generate_parent_feature(self, tile_feature: Union[TileCity, TileRoad, TileFarm], coordinates: Coordinates):
         new_feature = tile_feature.generate_parent_feature(coordinates)
         self.add_feature(new_feature, tile_feature)
     

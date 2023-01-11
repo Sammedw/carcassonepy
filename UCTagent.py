@@ -1,7 +1,7 @@
 import copy
 import random
 import math
-from typing import Optional
+from typing import Optional, Union
 from action import Action
 from baseagent import BaseAgent
 from enums import FeatureType
@@ -45,14 +45,14 @@ class ChoiceNode:
 
 class ChanceNode:
     
-    def __init__(self, state: Game, incoming_action: Optional[Action], parent: ChoiceNode | ChanceNode):
+    def __init__(self, state: Game, incoming_action: Optional[Action], parent: Union[ChoiceNode, ChanceNode]):
         # current game state object
         self.state = state
         # action taken to reach the current state
         self.incoming_action = incoming_action
         self.parent = parent
         # dict of explored children
-        self.children: dict[Tile, ChoiceNode | ChanceNode] = {}
+        self.children: dict[Tile, Union[ChoiceNode, ChanceNode]] = {}
         # visit and total sums used to calculate UCT
         self.visit_count = 0
         self.total_reward = 0
@@ -130,7 +130,7 @@ class UCTAgent(BaseAgent):
                 valmax = uct_val
         return argmax
 
-    def tree_policy(self, current_node: ChoiceNode | ChanceNode):
+    def tree_policy(self, current_node: Union[ChoiceNode, ChanceNode]):
         # check if node is choice or chance
         if type(current_node) == ChoiceNode:
             # check if node not fully expanded
