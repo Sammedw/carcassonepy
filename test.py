@@ -6,14 +6,16 @@ from UCTagent import UCTAgent
 from randomagent import RandomAgent
 from game import Game
 from star1agent import Star1Agent
+from human import Human
 
 
 game = Game(2)
 #players = [RandomAgent(0, game), RandomAgent(1, game)] #UCTAgent(0, game)
-players = [RandomAgent(0, game), UCTAgent(1, game)]
+#players = [RandomAgent(0, game), UCTAgent(1, game)]
 #players = [RandomAgent(0, game), CFRAgent(1, game)]
 #players = [CFRAgent(0, game), UCTAgent(1, game)]
 #players = [Star1Agent(0, game), RandomAgent(1, game)]
+players = [Human(0, game), UCTAgent(1, game)]
 
 scores = [0,0]
 games = 5
