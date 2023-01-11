@@ -49,15 +49,14 @@ class Side(Enum):
     
     # decomposes a corner into its two half sides
     def decompose(self):
-        match self.name:
-            case "TOPRIGHT":
-                return [Side.TOPRIGHTTOP, Side.TOPRIGHTRIGHT]
-            case "BOTTOMRIGHT":
-                return [Side.BOTTOMRIGHTRIGHT, Side.BOTTOMRIGHTBOTTOM]
-            case "BOTTOMLEFT":
-                return [Side.BOTTOMLEFTBOTTOM, Side.BOTTOMLEFTLEFT]
-            case "TOPLEFT":
-                return [Side.TOPLEFTLEFT, Side.TOPLEFTTOP]
+        if self.name == "TOPRIGHT":
+            return [Side.TOPRIGHTTOP, Side.TOPRIGHTRIGHT]
+        elif self.name ==  "BOTTOMRIGHT":
+            return [Side.BOTTOMRIGHTRIGHT, Side.BOTTOMRIGHTBOTTOM]
+        elif self.name ==  "BOTTOMLEFT":
+            return [Side.BOTTOMLEFTBOTTOM, Side.BOTTOMLEFTLEFT]
+        elif self.name == "TOPLEFT":
+            return [Side.TOPLEFTLEFT, Side.TOPLEFTTOP]
         return [self]
 
     # returns the main side of a half side
@@ -72,67 +71,65 @@ class Side(Enum):
             return Side.LEFT
             
     def rotate_clockwise(self):
-        match self.name:
-            case "TOP":
-                return Side.RIGHT
-            case "TOPRIGHT":
-                return Side.BOTTOMRIGHT
-            case "RIGHT":
-                return Side.BOTTOM
-            case "BOTTOMRIGHT":
-                return Side.BOTTOMLEFT
-            case "BOTTOM":
-                return Side.LEFT
-            case "BOTTOMLEFT":
-                return Side.TOPLEFT
-            case "LEFT":
-                return Side.TOP
-            case "TOPLEFT":
-                return Side.TOPRIGHT
-            case "TOPRIGHTTOP":
-                return Side.BOTTOMRIGHTRIGHT
-            case "TOPRIGHTRIGHT":
-                return Side.BOTTOMRIGHTBOTTOM
-            case "BOTTOMRIGHTRIGHT":
-                return Side.BOTTOMLEFTBOTTOM
-            case "BOTTOMRIGHTBOTTOM":
-                return Side.BOTTOMLEFTLEFT
-            case "BOTTOMLEFTBOTTOM":
-                return Side.TOPLEFTLEFT
-            case "BOTTOMLEFTLEFT":
-                return Side.TOPLEFTTOP
-            case "TOPLEFTLEFT":
-                return Side.TOPRIGHTTOP
-            case "TOPLEFTTOP":
-                return Side.TOPRIGHTRIGHT
+        if self.name == "TOP":
+            return Side.RIGHT
+        elif self.name ==  "TOPRIGHT":
+            return Side.BOTTOMRIGHT
+        elif self.name ==  "RIGHT":
+            return Side.BOTTOM
+        elif self.name ==  "BOTTOMRIGHT":
+            return Side.BOTTOMLEFT
+        elif self.name ==  "BOTTOM":
+            return Side.LEFT
+        elif self.name ==  "BOTTOMLEFT":
+            return Side.TOPLEFT
+        elif self.name ==  "LEFT":
+            return Side.TOP
+        elif self.name ==  "TOPLEFT":
+            return Side.TOPRIGHT
+        elif self.name ==  "TOPRIGHTTOP":
+            return Side.BOTTOMRIGHTRIGHT
+        elif self.name ==  "TOPRIGHTRIGHT":
+            return Side.BOTTOMRIGHTBOTTOM
+        elif self.name ==  "BOTTOMRIGHTRIGHT":
+            return Side.BOTTOMLEFTBOTTOM
+        elif self.name ==  "BOTTOMRIGHTBOTTOM":
+            return Side.BOTTOMLEFTLEFT
+        elif self.name ==  "BOTTOMLEFTBOTTOM":
+            return Side.TOPLEFTLEFT
+        elif self.name ==  "BOTTOMLEFTLEFT":
+            return Side.TOPLEFTTOP
+        elif self.name ==  "TOPLEFTLEFT":
+            return Side.TOPRIGHTTOP
+        elif self.name ==  "TOPLEFTTOP":
+            return Side.TOPRIGHTRIGHT
         return Side.CENTER
 
     def get_opposite(self):
-        match self.name:
-            case "TOP":
-                return Side.BOTTOM
-            case "RIGHT":
-                return Side.LEFT
-            case "BOTTOM":
-                return Side.TOP
-            case "LEFT":
-                return Side.RIGHT
-            case "TOPRIGHTTOP":
-                return Side.BOTTOMRIGHTBOTTOM
-            case "TOPRIGHTRIGHT":
-                return Side.TOPLEFTLEFT
-            case "BOTTOMRIGHTRIGHT":
-                return Side.BOTTOMLEFTLEFT
-            case "BOTTOMRIGHTBOTTOM":
-                return Side.TOPRIGHTTOP
-            case "BOTTOMLEFTBOTTOM":
-                return Side.TOPLEFTTOP
-            case "BOTTOMLEFTLEFT":
-                return Side.BOTTOMRIGHTRIGHT
-            case "TOPLEFTLEFT":
-                return Side.TOPRIGHTRIGHT
-            case "TOPLEFTTOP":
-                return Side.BOTTOMLEFTBOTTOM
+        if self.name == "TOP":
+            return Side.BOTTOM
+        elif self.name ==  "RIGHT":
+            return Side.LEFT
+        elif self.name ==  "BOTTOM":
+            return Side.TOP
+        elif self.name ==  "LEFT":
+            return Side.RIGHT
+        elif self.name ==  "TOPRIGHTTOP":
+            return Side.BOTTOMRIGHTBOTTOM
+        elif self.name ==  "TOPRIGHTRIGHT":
+            return Side.TOPLEFTLEFT
+        elif self.name ==  "BOTTOMRIGHTRIGHT":
+            return Side.BOTTOMLEFTLEFT
+        elif self.name ==  "BOTTOMRIGHTBOTTOM":
+            return Side.TOPRIGHTTOP
+        elif self.name ==  "BOTTOMLEFTBOTTOM":
+            return Side.TOPLEFTTOP
+        elif self.name ==  "BOTTOMLEFTLEFT":
+            return Side.BOTTOMRIGHTRIGHT
+        elif self.name ==  "TOPLEFTLEFT":
+            return Side.TOPRIGHTRIGHT
+        elif self.name ==  "TOPLEFTTOP":
+            return Side.BOTTOMLEFTBOTTOM
         return Side.CENTER
 
 class TileFeatureAttribute(Enum):
