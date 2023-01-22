@@ -130,9 +130,29 @@ class Deck():
         shuffle(tile_list)
         self.tiles += tile_list
 
+        # create dict to keep track of available tiles and their counts
+        # create dict to point to next tile of a given name
+        self.tile_counts = {}
+        self.next_tiles = {}
+        for tile in self.tiles:
+            if tile.name in self.tile_counts:
+                self.tile_counts[tile.name] += 1
+            else:
+                self.tile_counts[tile.name] = 1
+            
+            if tile.name not in self.next_tiles:
+                self.next_tiles[tile.name] = tile
+
+
     def get_next_tile(self) ->Optional[Tile]:
         if (len(self.tiles) > 0):
-            return self.tiles.pop(0)
+            next_tile = self.tiles.pop(0)
+            # update tile counts
+            self.tile_counts[next_tile.name] -= 1
+            # update next tiles
+            if next_tile is self.next_tiles[next_tile.name]:
+                self.next_tiles[next_tile.name] = self.search_tile_by_name(next_tile.name)
+            return next_tile
         return None
 
     def peak_next_tile(self) -> Optional[Tile]:
@@ -140,21 +160,31 @@ class Deck():
             return self.tiles[0]
         return None
 
-    def get_tile_by_name(self, name: str) -> Optional[Tile]:
+    def search_tile_by_name(self, name: str) -> Optional[Tile]:
         for tile in self.tiles:
             if name == tile.name:
                 return tile
         return None
+    
+    def get_tile_by_name(self, name: str) -> Optional[Tile]:
+        return self.next_tiles[name]
+
+    def remove_tile(self, tile: Tile):
+        self.tiles.remove(tile)
+        self.tile_counts[tile.name] -= 1
+        # update next tiles
+        if tile is self.next_tiles[tile.name]:
+            self.next_tiles[tile.name] = self.search_tile_by_name(tile.name)
 
     def get_unique_tiles(self) -> dict[str, int]:
-        unique_tiles = {}
-        # iterate over remaining tiles
-        for tile in self.tiles:
-            # check if tile is in unique tiles
-            if (tile.name in unique_tiles):
-                # update the tile count
-                unique_tiles[tile.name] += 1
-            else:
-                # otherwise add it to unique tiles
-                unique_tiles[tile.name] = 1
-        return unique_tiles
+        # unique_tiles = {}
+        # # iterate over remaining tiles
+        # for tile in self.tiles:
+        #     # check if tile is in unique tiles
+        #     if (tile.name in unique_tiles):
+        #         # update the tile count
+        #         unique_tiles[tile.name] += 1
+        #     else:
+        #         # otherwise add it to unique tiles
+        #         unique_tiles[tile.name] = 1
+        return self.tile_counts
