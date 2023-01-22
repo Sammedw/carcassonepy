@@ -20,6 +20,7 @@ players = [Star1Agent(0, game), UCTAgent(1, game)]
 
 scores = [0,0]
 games = 5
+print("main")
 
 start = time.time()
 for g in range(games): 
