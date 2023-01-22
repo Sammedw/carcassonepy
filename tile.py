@@ -103,7 +103,7 @@ class TileSet():
 
 class Deck():
 
-    def __init__(self, base_tile_set: TileSet, additional_tile_sets: list[TileSet] = []):
+    def __init__(self, base_tile_set: TileSet, additional_tile_sets: list[TileSet] = [], load: str = None):
         self.tiles: list[Tile] = []
         # look for river set
         for tile_set in additional_tile_sets:
@@ -127,7 +127,21 @@ class Deck():
         tile_list: list[Tile] = base_tile_set.return_tile_list()
         for additional_tile_set in additional_tile_sets:
             tile_list += additional_tile_set.return_tile_list()
-        shuffle(tile_list)
+        # load order from file if provided
+        if load:
+            ordered_tile_list = []
+            with open(load, "r") as f:
+                for tile_name in f.readlines():
+                    for i, tile in enumerate(tile_list):
+                        if tile_name.strip("\n") == tile.name:
+                            ordered_tile_list.append(tile_list.pop(i))
+                            break
+                    else:
+                        raise Exception(f"{tile_name} contained in file does not exist in tile set")
+            tile_list = ordered_tile_list
+        # otherwise just shuffle tiles
+        else:
+            shuffle(tile_list)
         self.tiles += tile_list
 
         # create dict to keep track of available tiles and their counts

@@ -90,6 +90,8 @@ class Star1Agent(BaseAgent):
         # iterate over possible tiles
         #print("chance node")
         for tile, tile_count in state.deck.get_unique_tiles().items():
+            if tile_count == 0:
+                continue
             # calculate probability of picking tile
             prob = tile_count / len(state.deck.tiles)
             cur_y -= prob

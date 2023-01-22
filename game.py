@@ -28,8 +28,8 @@ class Game():
         # action sequence
         self.action_sequence: list[Action]
 
-    def reset(self):
-        self.deck = Deck(base_set, self.additional_tile_sets)
+    def reset(self, load: str = None):
+        self.deck = Deck(base_set, self.additional_tile_sets, load)
         start_tile: Tile = self.deck.get_next_tile()
         self.board = {Coordinates(0,0): start_tile}
         self.frontier: set[Coordinates] = set(Coordinates(0,0).get_adjacent().values())
