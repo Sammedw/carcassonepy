@@ -8,7 +8,6 @@ from meeple import Meeple
 from feature import City, Road, Farm, Feature, TileFarm, TileMonastery
 from featuremanager import FeatureManager
 from sets import base_set
-import time
 
 class Game():
 
@@ -120,12 +119,10 @@ class Game():
                 valid = True
         if action.rotation != 0:
             tile.rotate_clockwise(4 - action.rotation)
-
         return valid
     
     # returns a list of all valid actions
     def get_valid_actions(self, next_tile: Tile) -> list[Action]:
-        #start = time.time() #time
         valid_actions: list[Action] = []
         # iterate over all possible actions and check if they are valid
         for coordinates in self.frontier:
@@ -157,11 +154,7 @@ class Game():
                     valid_actions.append(new_action)
         # discard tile if no valid actions
         if len(valid_actions) == 0 and next_tile in self.deck.tiles:
-            self.deck.remove_tile(next_tile)
-
-        #dur = time.time() - start #time
-        #print("valid_actions: ", dur) 
-
+            self.deck.tiles.remove(next_tile)
         return valid_actions
 
     # execute given action
@@ -229,7 +222,7 @@ class Game():
                     self.scores[monastery.meeple.player] += 9
                     del self.feature_manager.monasteries[monastery]
             # remove tile from deck
-            self.deck.remove_tile(tile)
+            self.deck.tiles.remove(tile)
             # update player
             self.current_player = (self.current_player + 1) % self.player_count
             # add to action list
