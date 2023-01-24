@@ -17,7 +17,7 @@ class Node:
         self.strategy = [0 for _ in range(self.action_count)]
         self.strategy_sum = [0 for _ in range(self.action_count)]
 
-    def get_strategy(self, reach_probability: float) -> list[float]:
+    def update_strategy(self, reach_probability: float):
         normalizing_sum = 0
         # set strategy[a] to positive regret or 0
         for a in range(self.action_count):
@@ -31,7 +31,6 @@ class Node:
             else:
                 self.strategy[a] = 1 / self.action_count
             self.strategy_sum[a] += reach_probability * self.strategy[a]
-        return self.strategy
         
     def get_average_strategy(self) -> list[float]:
         avg_strategy: list[float]
@@ -45,9 +44,34 @@ class Node:
 
 class CFRAgent(BaseAgent):
     
-    def __init__(self, player_num: int, game: Game):
+    def __init__(self, player_num: int, game: Game, epsilon=0.6):
         super().__init__(player_num, game)
         self.node_dict: dict[str, Node] = {}
+        self.epsilon = epsilon
+
+    def cfr_iteration(self, current_state: Game):
+        # check if game in in terminal state
+        if current_state.is_game_over():
+            pass
+        # get game state node and sample random action if not visited before or if exploring
+        state_str = current_state.get_state_str() + f" NEXT_TILE: {current_state.deck.peak_next_tile()}"
+        node = self.node_dict.get(state_str)
+        if node is None:
+            while True:
+                # if no tiles left then get node utility
+                if len(current_state.deck.tiles) == 0:
+                    return self.cfr_iteration(current_state)
+                # discard tile if no valid actions
+                valid_actions = current_state.get_valid_actions(current_state.deck.peak_next_tile())
+                if len(valid_actions) == 0:
+                    continue
+                state_str = current_state.get_state_str() + f" NEXT_TILE: {current_state.deck.peak_next_tile()}"
+                node = Node(state_str, valid_actions)
+                break
+            self.node_dict[state_str] = node    
+
+        #or random.random() <= self.epsilon
+
 
     def cfr(self, current_state: Game, p0: float, p1: float):
         # check if game in in terminal state
