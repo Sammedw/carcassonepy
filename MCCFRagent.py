@@ -49,14 +49,20 @@ class CFRAgent(BaseAgent):
         self.node_dict: dict[str, Node] = {}
         self.epsilon = epsilon
 
-    def cfr_iteration(self, current_state: Game):
+    def cfr_iteration(self, current_state: Game, sample_probability: float = 1):
         # check if game in in terminal state
         if current_state.is_game_over():
-            pass
+            # return difference between own score and other highest score
+            scores = current_state.compute_scores()
+            own_score = scores.pop(self.player_num)
+            utility = own_score - max(scores)
+            return (utility, sample_probability)
         # get game state node and sample random action if not visited before or if exploring
         state_str = current_state.get_state_str() + f" NEXT_TILE: {current_state.deck.peak_next_tile()}"
         node = self.node_dict.get(state_str)
+        new_node = False
         if node is None:
+            new_node = True
             while True:
                 # if no tiles left then get node utility
                 if len(current_state.deck.tiles) == 0:
@@ -70,7 +76,20 @@ class CFRAgent(BaseAgent):
                 break
             self.node_dict[state_str] = node    
 
-        #or random.random() <= self.epsilon
+        # pick action at random if node is new or random is <= epsilon
+        if new_node or random.random() <= self.epsilon:
+            selected_action = random.choice(node.actions)
+            probability = 1 / node.action_count
+        # otherwise select action based on current strategy
+        else:
+            selected_action, probability = random.choices(zip(node.actions, node.strategy), weights=node.strategy)
+        # create game copy and execute selected action
+        next_state: Game = copy.deepcopy(current_state)
+        next_state.make_action(selected_action)
+        # update sample probability
+        sample_probability *= probability
+        # recursive call
+        self.cfr_iteration(next_state, sample_probability)
 
 
     def cfr(self, current_state: Game, p0: float, p1: float):
