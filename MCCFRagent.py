@@ -4,7 +4,7 @@ from action import Action
 from baseagent import BaseAgent
 from game import Game
 from tile import Tile
-
+import math
 
 
 class Node:
@@ -16,8 +16,9 @@ class Node:
         self.regret_sum = [0 for _ in range(self.action_count)]
         self.strategy = [0 for _ in range(self.action_count)]
         self.strategy_sum = [0 for _ in range(self.action_count)]
+        self.iteration_marker = 0
 
-    def update_strategy(self, reach_probability: float):
+    def get_strategy(self, reach_probability: float, iteration: int):
         normalizing_sum = 0
         # set strategy[a] to positive regret or 0
         for a in range(self.action_count):
@@ -25,12 +26,16 @@ class Node:
                 self.strategy[a] = self.regret_sum[a]
                 normalizing_sum += self.strategy[a]
         # normalise strategy to actions have probability that adds to one
+        print("normal: ", normalizing_sum)
         for a in range(self.action_count): 
             if normalizing_sum > 0:
                 self.strategy[a] /= normalizing_sum
             else:
                 self.strategy[a] = 1 / self.action_count
-            self.strategy_sum[a] += reach_probability * self.strategy[a]
+            self.strategy_sum[a] += (iteration - self.iteration_marker) * reach_probability * self.strategy[a]
+            # update iteration marker for node
+            self.iteration_marker = iteration
+        return self.strategy
         
     def get_average_strategy(self) -> list[float]:
         avg_strategy: list[float]
@@ -42,124 +47,85 @@ class Node:
         return avg_strategy
 
 
-class CFRAgent(BaseAgent):
+class MCCFRAgent(BaseAgent):
     
     def __init__(self, player_num: int, game: Game, epsilon=0.6):
         super().__init__(player_num, game)
         self.node_dict: dict[str, Node] = {}
         self.epsilon = epsilon
 
-    def cfr_iteration(self, current_state: Game, sample_probability: float = 1):
+    def cfr_iteration(self, current_state: Game, iteration: int, reach_probabilities: list[float], sample_probability: float, next_tile: Tile = None):
         # check if game in in terminal state
         if current_state.is_game_over():
             # return difference between own score and other highest score
             scores = current_state.compute_scores()
             own_score = scores.pop(self.player_num)
             utility = own_score - max(scores)
+            print("terminal: ", utility, sample_probability)
             return (utility, sample_probability)
-        # get game state node and sample random action if not visited before or if exploring
-        state_str = current_state.get_state_str() + f" NEXT_TILE: {current_state.deck.peak_next_tile()}"
+        # select next tile at random and calculate probabilty of selecting given tile (unless base node)
+        #print(list(map(str, (current_state.deck.tiles))))
+        if next_tile:
+            #next_tile = current_state.deck.get_tile_by_name(next_tile)
+            tile_probability = 1
+        else:
+            next_tile = random.choice(current_state.deck.tiles)
+            tile_probability = current_state.deck.get_unique_tiles()[next_tile.name] / len(current_state.deck.tiles)
+        # get game state node or create it if not explored
+        state_str = current_state.get_state_str() + f" NEXT_TILE: {next_tile}"
         node = self.node_dict.get(state_str)
-        new_node = False
         if node is None:
-            new_node = True
             while True:
                 # if no tiles left then get node utility
                 if len(current_state.deck.tiles) == 0:
-                    return self.cfr_iteration(current_state)
+                    return self.cfr_iteration(current_state, iteration, reach_probabilities, sample_probability)
                 # discard tile if no valid actions
-                valid_actions = current_state.get_valid_actions(current_state.deck.peak_next_tile())
+                valid_actions = current_state.get_valid_actions(next_tile)
                 if len(valid_actions) == 0:
-                    continue
-                state_str = current_state.get_state_str() + f" NEXT_TILE: {current_state.deck.peak_next_tile()}"
+                    return self.cfr_iteration(current_state, iteration, reach_probabilities, sample_probability)
+                state_str = current_state.get_state_str() + f" NEXT_TILE: {next_tile}"
                 node = Node(state_str, valid_actions)
                 break
-            self.node_dict[state_str] = node    
-
-        # pick action at random if node is new or random is <= epsilon
-        if new_node or random.random() <= self.epsilon:
+            self.node_dict[state_str] = node 
+        # get current strategy for state
+        strategy = node.get_strategy(reach_probabilities[self.player_num], iteration)
+        print("current strategy: ", strategy)
+        # pick action at random if random is <= epsilon
+        if random.random() <= self.epsilon:
             selected_action = random.choice(node.actions)
-            probability = 1 / node.action_count
+            action_probability = 1 / node.action_count
         # otherwise select action based on current strategy
         else:
-            selected_action, probability = random.choices(zip(node.actions, node.strategy), weights=node.strategy)
+            #print(random.choices(list(zip(node.actions, strategy)), weights=strategy))
+            selected_action, action_probability = random.choices(list(zip(node.actions, strategy)), weights=strategy)[0]
         # create game copy and execute selected action
         next_state: Game = copy.deepcopy(current_state)
         next_state.make_action(selected_action)
+        #print(tile_probability, action_probability)
         # update sample probability
-        sample_probability *= probability
+        sample_probability *= tile_probability * action_probability 
+        # calcuate reach probability for old state before updating
+        reach_probability = math.prod(reach_probabilities)
+        # update reach probability contribution for current player and chance player
+        reach_probabilities[current_state.current_player] *= action_probability
+        reach_probabilities[-1] *= tile_probability
         # recursive call
-        self.cfr_iteration(next_state, sample_probability)
+        terminal_utility, terminal_probability = self.cfr_iteration(next_state, iteration, reach_probabilities, sample_probability)
+        # for each action, compute and accumulate sampled counterfactual regret
+        counterfactual_reach_probability = 1
+        for i in range(len(reach_probabilities)):
+            if i != current_state.current_player:
+                counterfactual_reach_probability *= reach_probabilities[i]
 
-
-    def cfr(self, current_state: Game, p0: float, p1: float):
-        # check if game in in terminal state
-        if current_state.is_game_over():
-            # return node utility
-            final_scores = current_state.compute_scores()
-            if current_state.current_player == 0:
-                return final_scores[0] - final_scores[1]
-            else:
-                return final_scores[1] - final_scores[0]
-        # get node or create one if doesn't exist
-        state_str = current_state.get_state_str() + f" NEXT_TILE: {current_state.deck.peak_next_tile()}"
-        node = self.node_dict.get(state_str)
-        if node is None:
-            while True:
-                # if no tiles left then get node utility
-                if len(current_state.deck.tiles) == 0:
-                    return self.cfr(current_state, p0, p1)
-                # discard tile if no valid actions
-                valid_actions = current_state.get_valid_actions(current_state.deck.peak_next_tile())
-                if len(valid_actions) == 0:
-                    continue
-                state_str = current_state.get_state_str() + f" NEXT_TILE: {current_state.deck.peak_next_tile()}"
-                #print(state_str)
-                node = Node(state_str, valid_actions)
-                break
-            self.node_dict[state_str] = node
-        # for each action, recursively call cfr
-        if current_state.current_player == 0:
-            p = p0
-        else:
-            p = p1
-        strategy = node.get_strategy(p)
-        util = []
-        node_util = 0
-        #print(f"CURRENT STATE: {current_state.get_state_str()}")
+        W = (terminal_utility * counterfactual_reach_probability) / terminal_probability
+        finish_probability = terminal_probability / reach_probability
         for i, action in enumerate(node.actions):
-            #print(action)
-            next_state: Game = copy.deepcopy(current_state)
-            next_state.make_action(action)
-            #print(f"NEXT STATE: {next_state.get_state_str()}")
-            if current_state.current_player == 0:
-                util.append(- self.cfr(next_state, p0 * strategy[i], p1))
+            if action is selected_action:
+                node.regret_sum[i] += W * (finish_probability / action_probability - finish_probability)
             else:
-                util.append(- self.cfr(next_state, p0, p1 * strategy[i]))
-            node_util += strategy[i] * util[i]
-        # for each action, compute and accumulate counterfactual regret
-        for i in range(node.action_count):
-            regret = util[i] - node_util
-            #print(regret)
-            node.regret_sum[i] += p * regret
-        return node_util
+                node.regret_sum[i] += (-W) * finish_probability
+        return (terminal_utility, terminal_probability)
 
-    def train(self, game_state: Game, next_tile: str,  iterations: int):
-        random_state = copy.deepcopy(game_state)
-        next_tile_obj = random_state.deck.get_tile_by_name(next_tile) 
-        util = 0
-        for i in range(iterations):
-            print(i)
-            random_state.deck.tiles.remove(next_tile_obj)
-            random.shuffle(random_state.deck.tiles)
-            random_state.deck.tiles.insert(0, next_tile_obj)
-            util += self.cfr(random_state, 1, 1)
-        #print(f"Average game value: {util / iterations}")
-        #for state_str, node in self.node_dict.items():
-           # print(f"State: {state_str} | Average Strategy: {node.get_average_strategy()}")
-        #root = self.node_dict[]
-        #print(list(map(str, root.actions)))
-        #print(f"Average Strategy: {root.get_average_strategy()}")
 
     def get_action(self, strategy: list[float], actions: list[Action]):
         return random.choices(actions, weights=strategy)
@@ -167,9 +133,10 @@ class CFRAgent(BaseAgent):
 
     def make_move(self, next_tile: Tile):
         valid_actions = super().make_move(next_tile)
-        state_str = self.game.get_state_str() + ' NEXT_TILE: ' + next_tile.name
-        if (not state_str in self.node_dict):
-            print("TRAIN")
-            self.train(self.game, next_tile.name, 10)
+        for i in range(1000):
+            print(i)
+            self.cfr_iteration(self.game, i, [1 for _ in range(self.game.player_count + 1)], 1, next_tile)
+        print(list(map(str, valid_actions)),  self.node_dict[self.game.get_state_str() + ' NEXT_TILE: ' + next_tile.name].get_average_strategy())
         action = self.get_action(self.node_dict[self.game.get_state_str() + ' NEXT_TILE: ' + next_tile.name].get_average_strategy(), valid_actions)[0]
+        print(action)
         self.game.make_action(action)

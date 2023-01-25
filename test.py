@@ -2,6 +2,7 @@
 from itertools import cycle
 import time
 from CFRagent import CFRAgent
+from MCCFRagent import MCCFRAgent
 from UCTagent import UCTAgent
 from randomagent import RandomAgent
 from game import Game
@@ -16,10 +17,12 @@ game = Game(2)
 #players = [CFRAgent(0, game), UCTAgent(1, game)]
 #players = [Star1Agent(0, game), RandomAgent(1, game)]
 #players = [Human(0, game), UCTAgent(1, game)]
-players = [Star1Agent(0, game), UCTAgent(1, game)]
+#players = [Star1Agent(0, game), UCTAgent(1, game)]
+players = [RandomAgent(0, game), MCCFRAgent(1, game)]
+
 
 scores = [0,0]
-games = 50
+games = 10
 
 start = time.time()
 for g in range(games): 
