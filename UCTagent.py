@@ -188,10 +188,11 @@ class UCTAgent(BaseAgent):
             #root.print_node()          
         # return best child after simulations (c=0 so one with best average reward)
         #root.print_node()
-        return self.best_child(root, 0).incoming_action
+        return root
 
 
     def make_move(self, next_tile: Tile):
-        action = self.uct_search(self.game, next_tile, 1000)
-        print(action)
-        self.game.make_action(action)
+        root = self.uct_search(self.game, next_tile, 1000)
+        best_action = self.best_child(root, 0).incoming_action
+        print(best_action)
+        self.game.make_action(best_action)
