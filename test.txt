@@ -1,6 +1,10 @@
-monastery
-city_cap_straight_road
 big_city
-monastery_road
+tri_road
+monastery
+tri_road
+city_cap_straight_road
 monastery
 city_cap_straight_road
+city_cap_straight_road
+tri_road
+monastery_road

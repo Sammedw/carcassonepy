@@ -274,7 +274,8 @@ class Game():
         print("Cities: ", len(self.feature_manager.features[City]))
         print("Roads: ", len(self.feature_manager.features[Road]))
         print("Farms: ", len(self.feature_manager.features[Farm]))
-        print("FINAL SCORES: ", self.compute_scores())
+        print("Free Meeples: ",  list(map(len, self.free_meeples)))
+        print("SCORES: ", self.compute_scores())
 
     def get_action_history_str(self):
         return " | ".join(list(map(str, self.action_sequence)))

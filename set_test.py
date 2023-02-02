@@ -16,10 +16,10 @@ game = Game(2)
 #players = [CFRAgent(0, game), UCTAgent(1, game)]
 #players = [Star1Agent(0, game), RandomAgent(1, game)]
 #players = [Human(0, game), UCTAgent(1, game)]
-players = [Star1Agent(0, game), UCTAgent(1, game)]
+players = [Human(0, game), Human(1, game)]
 
 scores = [0,0]
-games = 5
+games = 1
 print("main")
 
 start = time.time()
@@ -32,6 +32,7 @@ for g in range(games):
         if (len(game.get_valid_actions(next_tile)) == 0):
             continue
         next(player_cycle).make_move(next_tile)
+        game.print_game_state()
 
     game.print_game_state()
     game_scores = game.compute_scores()
