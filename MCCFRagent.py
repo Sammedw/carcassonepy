@@ -99,9 +99,9 @@ class MCCFRAgent(BaseAgent):
                 break
             self.node_dict[state_str] = node 
         # get current strategy for state
-        #print("next tile: ", next_tile)
+        print("next tile: ", next_tile)
         strategy = node.get_strategy(reach_probabilities[self.player_num], iteration)
-        #print("current strategy: ", strategy)
+        print("current strategy: ", strategy)
         # pick action at random if random is <= epsilon
         if random.random() <= self.epsilon:
             sample_probability *= self.epsilon
@@ -115,11 +115,11 @@ class MCCFRAgent(BaseAgent):
         # create game copy and execute selected action
         next_state: Game = copy.deepcopy(current_state)
         next_state.make_action(selected_action)
-        #print(tile_probability, action_probability)
+        print(tile_probability, action_probability)
         # update sample and terminal reach probability
         sample_probability *= tile_probability * action_probability
         terminal_reach_probability *= tile_probability * action_probability
-        #print("new sample prob: ", sample_probability)
+        print("new sample prob: ", sample_probability)
         # calcuate reach probability for old state before updating
         reach_probability = math.prod(reach_probabilities)
         # update reach probability contribution for current player and chance player
