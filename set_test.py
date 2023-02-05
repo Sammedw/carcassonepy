@@ -18,7 +18,7 @@ game = Game(2)
 #players = [Star1Agent(0, game), RandomAgent(1, game)]
 #players = [Human(0, game), UCTAgent(1, game)]
 #players = [Human(0, game), Human(1, game)]
-players = [MCCFRAgent(0, game), MCCFRAgent(1, game)]
+players = [MCCFRAgent(0, game), Human(1, game)]
 
 scores = [0,0]
 games = 1

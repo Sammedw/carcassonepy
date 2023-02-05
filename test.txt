@@ -1,4 +1,2 @@
-tri_road
-monastery
 city_cap_straight_road
 monastery_road

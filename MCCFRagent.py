@@ -38,6 +38,7 @@ class Node:
             if normalizing_sum > 0:
                 self.strategy[a] /= normalizing_sum
             else:
+                #print("pick random")
                 self.strategy[a] = 1 / self.action_count
             self.strategy_sum[a] += (iteration - self.iteration_marker) * reach_probability * self.strategy[a]
             # update iteration marker for node
@@ -57,7 +58,7 @@ class Node:
 
 class MCCFRAgent(BaseAgent):
     
-    def __init__(self, player_num: int, game: Game, epsilon=0.6):
+    def __init__(self, player_num: int, game: Game, epsilon=0.5):
         super().__init__(player_num, game)
         self.node_dict: dict[str, Node] = {}
         self.epsilon = epsilon
@@ -99,9 +100,9 @@ class MCCFRAgent(BaseAgent):
                 break
             self.node_dict[state_str] = node 
         # get current strategy for state
-        print("next tile: ", next_tile)
+        #print("next tile: ", next_tile)
         strategy = node.get_strategy(reach_probabilities[self.player_num], iteration)
-        print("current strategy: ", strategy)
+        #print("current strategy: ", strategy)
         # pick action at random if random is <= epsilon
         if random.random() <= self.epsilon:
             sample_probability *= self.epsilon
@@ -115,11 +116,12 @@ class MCCFRAgent(BaseAgent):
         # create game copy and execute selected action
         next_state: Game = copy.deepcopy(current_state)
         next_state.make_action(selected_action)
-        print(tile_probability, action_probability)
+        print("selected action: ", str(selected_action))
+        #print("tile prob: ", tile_probability, " | action_prob: ", action_probability)
         # update sample and terminal reach probability
         sample_probability *= tile_probability * action_probability
         terminal_reach_probability *= tile_probability * action_probability
-        print("new sample prob: ", sample_probability)
+        #print("new sample prob: ", sample_probability)
         # calcuate reach probability for old state before updating
         reach_probability = math.prod(reach_probabilities)
         # update reach probability contribution for current player and chance player
@@ -135,18 +137,20 @@ class MCCFRAgent(BaseAgent):
             if i != current_state.current_player:
                 counterfactual_reach_probability *= reach_probabilities[i]
         #print("player: ", current_state.current_player)
-        #print("reach: ", reach_probabilities)
-        #print("counter reach prob: ", counterfactual_reach_probability)
-        #print("sample probability: ", sample_probability)
+        print("reach: ", reach_probabilities)
+        print("counter reach prob: ", counterfactual_reach_probability)
+        print("sample probability: ", sample_probability)
         #print("old regret sum: ", node.regret_sum)
+        print("terminal utilities: ", terminal_utilities)
         W = (terminal_utilities[current_state.current_player] * counterfactual_reach_probability) / sample_probability
+        print("W value: ", W)
         finish_probability = terminal_reach_probability / reach_probability
         for i, action in enumerate(node.actions):
             if action is selected_action:
                 node.regret_sum[i] += W * (finish_probability / action_probability - finish_probability)
             else:
                 node.regret_sum[i] += (-W) * finish_probability
-        #print("new regret sum: ", node.regret_sum)
+        print("new regret sum: ", node.regret_sum)
         return (terminal_utilities, terminal_reach_probability, sample_probability)
 
 
@@ -156,10 +160,11 @@ class MCCFRAgent(BaseAgent):
 
     def make_move(self, next_tile: Tile):
         valid_actions = super().make_move(next_tile)
-        for i in range(1100):
-            #print(i)
+        #print(list(map(str, valid_actions)))
+        for i in range(25):
+            print(i)
             self.cfr_iteration(self.game, i, [1 for _ in range(self.game.player_count + 1)], 1, 1, next_tile)
-        #print(list(map(str, valid_actions)),  self.node_dict[self.game.get_state_str() + ' NEXT_TILE: ' + next_tile.name].get_average_strategy())
+        print(list(map(str, valid_actions)),  self.node_dict[self.game.get_state_str() + ' NEXT_TILE: ' + next_tile.name].get_average_strategy())
         action = self.get_action(self.node_dict[self.game.get_state_str() + ' NEXT_TILE: ' + next_tile.name].get_average_strategy(), valid_actions)[0]
         print(action)
         self.game.make_action(action)
