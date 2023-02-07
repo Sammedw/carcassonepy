@@ -118,7 +118,7 @@ class MCCFRAgent(BaseAgent):
         # create game copy and execute selected action
         next_state: Game = copy.deepcopy(current_state)
         next_state.make_action(selected_action)
-        #print("selected action: ", str(selected_action))
+        print("selected action: ", str(selected_action))
         #print("tile prob: ", tile_probability, " | action_prob: ", action_probability)
         # update sample and terminal reach probability
         sample_probability *= tile_probability * action_probability
@@ -164,8 +164,8 @@ class MCCFRAgent(BaseAgent):
     def make_move(self, next_tile: Tile):
         valid_actions = super().make_move(next_tile)
         print(list(map(str, valid_actions)))
-        for i in range(2000):
-            #print(i)
+        for i in range(100):
+            print(i)
             self.cfr_iteration(self.game, i, [1 for _ in range(self.game.player_count + 1)], 1, 1, next_tile)
         print(self.node_dict[self.game.get_state_str() + ' NEXT_TILE: ' + next_tile.name].regret_sum)
         print("AVG strategy: ", self.node_dict[self.game.get_state_str() + ' NEXT_TILE: ' + next_tile.name].get_average_strategy())
