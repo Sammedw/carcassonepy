@@ -21,7 +21,7 @@ base_set = TileSet("base",
         
     Tile("monastery", ConnectionType.GRASS, ConnectionType.GRASS, ConnectionType.GRASS, ConnectionType.GRASS,
         monastery = monastery,
-        farms = [TileFarm([Side.TOPRIGHT, Side.BOTTOMRIGHT, Side.BOTTOMLEFT, Side.TOPLEFT])]): 2,
+        farms = [TileFarm([Side.TOPRIGHT, Side.BOTTOMRIGHT, Side.BOTTOMLEFT, Side.TOPLEFT])]): 3,
 
     Tile("big_city", ConnectionType.CITY, ConnectionType.CITY, ConnectionType.CITY, ConnectionType.CITY,
         cities = [TileCity([Side.TOP, Side.RIGHT, Side.BOTTOM, Side.LEFT], [TileFeatureAttribute.SHIELD])]): 1,
