@@ -59,7 +59,7 @@ class Node:
 
 class MCCFRAgent(BaseAgent):
     
-    def __init__(self, player_num: int, game: Game, iterations, epsilon=0.8):
+    def __init__(self, player_num: int, game: Game, iterations, epsilon=0.6):
         super().__init__(player_num, game)
         self.node_dict: dict[str, Node] = {}
         self.iterations = iterations
