@@ -249,7 +249,7 @@ players = [RandomAgent(0, game), UCTAgent(1, game, 1000, trees = 4)]
 #players = [Star1Agent(0, game), RandomAgent(1, game)]
 #players = [Human(0, game), UCTAgent(1, game)]
 #players = [Star1Agent(0, game), UCTAgent(1, game)]
-#players = [MCCFRAgent(0, game), MCCFRAgent(1, game)]
+players = [UCTAgent(0, game, 1000), MCCFRAgent(1, game, 1000)]
 
 
 scores = [0,0]
