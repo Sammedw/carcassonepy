@@ -252,7 +252,7 @@ class UCTAgent(BaseAgent):
             self.game.make_action(best_action)
 
 
-game = Game(2)
+game = Game(3)
 #players = [RandomAgent(0, game), RandomAgent(1, game)] #UCTAgent(0, game)
 #players = [RandomAgent(0, game), UCTAgent(1, game, 1000, trees = 6)]
 #players = [RandomAgent(0, game), CFRAgent(1, game)]
@@ -261,7 +261,8 @@ game = Game(2)
 #players = [Human(0, game), UCTAgent(1, game)]
 #players = [Star1Agent(0, game), UCTAgent(1, game)]
 #players = [UCTAgent(0, game, 1000), MCCFRAgent(1, game, 1000)]
-players = [UCTAgent(0, game, 1000), UCTAgent(1, game, 6000, trees = 6)]
+#players = [UCTAgent(0, game, 1000), UCTAgent(1, game, 6000, trees = 6)]
+players = MCCFRAgent(0, game, 1000), [UCTAgent(1, game, 1000), Star1Agent(2, game)]
 
 
 scores = [0,0]
