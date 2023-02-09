@@ -278,6 +278,7 @@ for g in range(games):
         if (len(game.get_valid_actions(next_tile)) == 0):
             continue
         next_player = next(player_cycle)
+        print(next_player)
         turn_start = time.time()
         next_player.make_move(next_tile)
         times[next_player.player_num] += time.time() - turn_start
