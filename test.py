@@ -190,6 +190,7 @@ class UCTAgent(BaseAgent):
         root = ChoiceNode(start_state, next_tile, None, None)
         # simulate while within computational budget
         for _ in range(iterations):
+            #print(i)
             # select node to expand using tree policy
             node = self.tree_policy(root)
             #node.print_node()
@@ -204,7 +205,9 @@ class UCTAgent(BaseAgent):
         #root.print_node()
         # add root to queue if in parallel mode
         if root_queue:
+            #print("put root")
             root_queue.put(root)
+        #print("return")
         return root
 
 
@@ -213,7 +216,7 @@ class UCTAgent(BaseAgent):
             root = self.uct_search(self.game, next_tile, self.iterations)
         elif __name__ == "__main__":
             # divide iterations between number of trees
-            print("divide")
+            #print("divide")
             tree_iterations = int(self.iterations / self.trees)
             # start trees
             processes = []
@@ -222,20 +225,28 @@ class UCTAgent(BaseAgent):
                 process = Process(target=self.uct_search, args=(self.game, next_tile, tree_iterations, root_queue))
                 processes.append(process)
                 process.start()
-            # close processes
-            for process in processes:
-                process.join()
+                #print("start tree")
+            
             # iterate over all tree roots
             root = root_queue.get()
-            while not root_queue.empty():
+            #print("collect roots")
+            for _ in range(self.trees - 1):
+                #print("get root")
                 next_root = root_queue.get()
                 # combine visit and reward stastics
                 for i, child in enumerate(next_root.children):
                     root.children[i].visit_count += child.visit_count
                     root.children[i].total_reward += child.total_reward
+            
+            # close processes
+            #print(processes)
+            for process in processes:
+                #print(process)
+                process.join()
+                #print("close tree")
         
         if __name__ == "__main__":
-            print("Choose")
+            #print("Choose")
             best_action = self.best_child(root, 0).incoming_action
             print(best_action)
             self.game.make_action(best_action)
@@ -243,29 +254,35 @@ class UCTAgent(BaseAgent):
 
 game = Game(2)
 #players = [RandomAgent(0, game), RandomAgent(1, game)] #UCTAgent(0, game)
-players = [RandomAgent(0, game), UCTAgent(1, game, 1000, trees = 4)]
+#players = [RandomAgent(0, game), UCTAgent(1, game, 1000, trees = 6)]
 #players = [RandomAgent(0, game), CFRAgent(1, game)]
 #players = [CFRAgent(0, game), UCTAgent(1, game)]
 #players = [Star1Agent(0, game), RandomAgent(1, game)]
 #players = [Human(0, game), UCTAgent(1, game)]
 #players = [Star1Agent(0, game), UCTAgent(1, game)]
-players = [UCTAgent(0, game, 1000), MCCFRAgent(1, game, 1000)]
+#players = [UCTAgent(0, game, 1000), MCCFRAgent(1, game, 1000)]
+players = [UCTAgent(0, game, 1000), UCTAgent(1, game, 6000, trees = 6)]
 
 
 scores = [0,0]
-games = 50
+games = 10
 
 start = time.time()
 for g in range(games): 
+    times = [0,0]
     player_cycle = cycle(players)
     while(not game.is_game_over()):
         next_tile = game.deck.peak_next_tile()
         # check for any valid moves
         if (len(game.get_valid_actions(next_tile)) == 0):
             continue
-        next(player_cycle).make_move(next_tile)
+        next_player = next(player_cycle)
+        turn_start = time.time()
+        next_player.make_move(next_tile)
+        times[next_player.player_num] += time.time() - turn_start
 
     game.print_game_state()
+    print(f"TIMES: {times}")
     game_scores = game.compute_scores()
     if game_scores[0] > game_scores[1]:
         scores[0] += 1
