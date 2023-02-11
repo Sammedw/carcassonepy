@@ -262,7 +262,7 @@ game = Game(3)
 #players = [Star1Agent(0, game), UCTAgent(1, game)]
 #players = [UCTAgent(0, game, 1000), MCCFRAgent(1, game, 1000)]
 #players = [UCTAgent(0, game, 1000), UCTAgent(1, game, 6000, trees = 6)]
-players = [MCCFRAgent(0, game, 1000), UCTAgent(1, game, 1000), UCTAgent(2, game, 500)]
+players = [UCTAgent(1, game, 1000), MCCFRAgent(0, game, 1000), UCTAgent(2, game, 500)]
 
 
 scores = [0 for _ in range(len(players))]
