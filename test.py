@@ -262,13 +262,13 @@ game = Game(3)
 #players = [Star1Agent(0, game), UCTAgent(1, game)]
 #players = [UCTAgent(0, game, 1000), MCCFRAgent(1, game, 1000)]
 #players = [UCTAgent(0, game, 1000), UCTAgent(1, game, 6000, trees = 6)]
-players = [UCTAgent(0, game, 1000), MCCFRAgent(1, game, 1000), UCTAgent(2, game, 500)]
+players = [UCTAgent(0, game, 500), MCCFRAgent(1, game, 1000), UCTAgent(2, game, 1000)]
 
 
 scores = [0 for _ in range(len(players))]
 total_times = [0 for _ in range(len(players))]
 total_points = [0 for _ in range(len(players))]
-games = 5
+games = 100
 
 start = time.time()
 for g in range(games): 
