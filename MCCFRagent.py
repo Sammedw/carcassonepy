@@ -167,9 +167,9 @@ class MCCFRAgent(BaseAgent):
             self.cfr_iteration(self.game, i, [1 for _ in range(self.game.player_count + 1)], 1, 1, next_tile)
         #print("regret sum: ", self.node_dict[self.game.get_state_str() + ' NEXT_TILE: ' + next_tile.name].regret_sum)
         #print("-----------------------------------------------------------------------------")
-        print("AVG strategy: ", list(sorted(zip(self.node_dict[self.game.get_state_str() + ' NEXT_TILE: ' + next_tile.name].get_average_strategy(), list(map(str, valid_actions))), key = lambda x: x[0], reverse=True)))
-        print("-----------------------------------------------------------------------------")
+        #print("AVG strategy: ", list(sorted(zip(self.node_dict[self.game.get_state_str() + ' NEXT_TILE: ' + next_tile.name].get_average_strategy(), list(map(str, valid_actions))), key = lambda x: x[0], reverse=True)))
+        #print("-----------------------------------------------------------------------------")
         action = list(sorted(zip(self.node_dict[self.game.get_state_str() + ' NEXT_TILE: ' + next_tile.name].get_average_strategy(), valid_actions), key = lambda x: x[0], reverse=True))[0][1]
-        print()
-        print(action)
+        #print()
+        #print(action)
         self.game.make_action(action)

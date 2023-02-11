@@ -248,7 +248,7 @@ class UCTAgent(BaseAgent):
         if __name__ == "__main__":
             #print("Choose")
             best_action = self.best_child(root, 0).incoming_action
-            print(best_action)
+            #print(best_action)
             self.game.make_action(best_action)
 
 
@@ -262,15 +262,17 @@ game = Game(3)
 #players = [Star1Agent(0, game), UCTAgent(1, game)]
 #players = [UCTAgent(0, game, 1000), MCCFRAgent(1, game, 1000)]
 #players = [UCTAgent(0, game, 1000), UCTAgent(1, game, 6000, trees = 6)]
-players = MCCFRAgent(0, game, 1000), [UCTAgent(1, game, 1000), Star1Agent(2, game)]
+players = [MCCFRAgent(0, game, 1000), UCTAgent(1, game, 1000), Star1Agent(2, game)]
 
 
-scores = [0,0]
-games = 10
+scores = [0 for _ in range(len(players))]
+total_times = [0 for _ in range(len(players))]
+total_points = [0 for _ in range(len(players))]
+games = 5
 
 start = time.time()
 for g in range(games): 
-    times = [0,0]
+    times = [0 for _ in range(len(players))]
     player_cycle = cycle(players)
     while(not game.is_game_over()):
         next_tile = game.deck.peak_next_tile()
@@ -278,24 +280,42 @@ for g in range(games):
         if (len(game.get_valid_actions(next_tile)) == 0):
             continue
         next_player = next(player_cycle)
-        print(next_player)
+        #print(next_player)
         turn_start = time.time()
         next_player.make_move(next_tile)
         times[next_player.player_num] += time.time() - turn_start
+        print("turn complete")
 
     game.print_game_state()
     print(f"TIMES: {times}")
     game_scores = game.compute_scores()
-    if game_scores[0] > game_scores[1]:
-        scores[0] += 1
-    elif game_scores[0] < game_scores[1]:
-        scores[1] += 1
+    # sort scores
+    sorted_scores = sorted(enumerate(game_scores), key = lambda x: x[1], reverse=True)
+    best_score = sorted_scores[0][1]
+    # check if there is a draw
+    if sorted_scores[1][1] == best_score:
+        # add 0.5 to each drawing player score
+        for player, score in sorted_scores:
+            if score == best_score:
+                scores[player] += 0.5
+            else:
+                break          
+    else:
+        # add 1 to winning player
+        scores[sorted_scores[0][0]] += 1
+
+    for player in range(len(players)):
+        total_times[player] += times[player]
+        total_points[player] += game_scores[player]
 
     print(f"GAMES: {scores}") 
     game.reset()
 
 duration = time.time() - start
 
+print ("--------------------------------------------")
+print("AVERAGE SCORES: " + str(list(map(lambda x: x / games, total_points))))
+print("AVERAGE TIMES: " + str(list(map(lambda x: x / games, total_times))))
 print("AVERAGE GAME DURATION: " + str(duration/games) + " seconds")
 
 # time_sum = 0 
