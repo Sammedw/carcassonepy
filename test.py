@@ -252,6 +252,10 @@ class UCTAgent(BaseAgent):
             self.game.make_action(best_action)
 
 
+games = input("Number of games: ")
+player_count = input("Number of players: ")
+
+
 game = Game(3)
 #players = [RandomAgent(0, game), RandomAgent(1, game)] #UCTAgent(0, game)
 #players = [RandomAgent(0, game), UCTAgent(1, game, 1000, trees = 6)]
