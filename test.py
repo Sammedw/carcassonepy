@@ -121,6 +121,24 @@ class UCTAgent(BaseAgent):
         self.iterations = iterations
         self.exploration_constant = exploration_constant
         self.trees = trees
+ 
+    @staticmethod
+    def build(player_num: int, game: Game):
+        print("--- Build UCT agent ---")
+        while True:
+            try:
+                iterations = input("Iterations per action: ")
+                iterations = int(iterations)
+                exploration_constant = input("Exploration constant: ")
+                exploration_constant = float(exploration_constant)
+                break
+            except:
+                print("Invalid inputs.")
+        return UCTAgent(player_num, game, iterations, exploration_constant=exploration_constant)
+    
+
+    def return_info(self):
+        return f"UCT Agent(iterations={self.iterations}, exploration_constant={self.exploration_constant})"
 
     def expand(self, root: ChoiceNode) -> ChanceNode:
         # choose untried action from current state and remove from expandable actions
@@ -252,11 +270,47 @@ class UCTAgent(BaseAgent):
             self.game.make_action(best_action)
 
 
-games = input("Number of games: ")
-player_count = input("Number of players: ")
+# get game info
+available_agents = {"uct": UCTAgent}
+print("--- Game Configuration ---")
+while True:
+    try:
+        games = int(input("> Number of games: "))
+        player_count = int(input("> Number of players: "))
+        log_file = input("> Log file name: ")
+        break
+    except ValueError:
+        print("Invalid input.")
 
+game = Game(player_count)
+players = []
 
-game = Game(3)
+# get player info
+print("--- Player Configuration ---")
+print(f"Available players: {', '.join(available_agents.keys())}")
+for p in range(player_count):
+    while True:
+        player_type = input(f"> Agent type for player {p}: ")
+        if player_type in available_agents.keys():
+            new_player = available_agents[player_type].build(p, game)
+            players.append(new_player)
+            break
+        else:
+            print("Invalid agent type.")
+
+# write game info into head of file
+with open(log_file + ".txt", "w") as f:
+    f.write("--- Game Configuration ---\n")
+    f.write(f"Game count: {games}\n")
+    f.write(f"Player count: {player_count}\n")
+    f.write(f"Deck: {game.deck.tile_counts}\n")
+    
+    f.write("--- Player Configuration ---\n")
+    for i, player in enumerate(players):
+        f.write(f"Player {i}: {player.return_info()}\n")
+    f.write("-----------------------------\n")
+    
+
 #players = [RandomAgent(0, game), RandomAgent(1, game)] #UCTAgent(0, game)
 #players = [RandomAgent(0, game), UCTAgent(1, game, 1000, trees = 6)]
 #players = [RandomAgent(0, game), CFRAgent(1, game)]
@@ -266,61 +320,61 @@ game = Game(3)
 #players = [Star1Agent(0, game), UCTAgent(1, game)]
 #players = [UCTAgent(0, game, 1000), MCCFRAgent(1, game, 1000)]
 #players = [UCTAgent(0, game, 1000), UCTAgent(1, game, 6000, trees = 6)]
-players = [UCTAgent(0, game, 500), MCCFRAgent(1, game, 1000), UCTAgent(2, game, 1000)]
+#players = [UCTAgent(0, game, 100), UCTAgent(1, game, 100)]
+#players = [UCTAgent(0, game, 500), MCCFRAgent(1, game, 1000), UCTAgent(2, game, 1000)]
 
 
-scores = [0 for _ in range(len(players))]
-total_times = [0 for _ in range(len(players))]
-total_points = [0 for _ in range(len(players))]
-games = 100
+    scores = [0 for _ in range(len(players))]
+    total_times = [0 for _ in range(len(players))]
+    total_points = [0 for _ in range(len(players))]
 
-start = time.time()
-for g in range(games): 
-    times = [0 for _ in range(len(players))]
-    player_cycle = cycle(players)
-    while(not game.is_game_over()):
-        next_tile = game.deck.peak_next_tile()
-        # check for any valid moves
-        if (len(game.get_valid_actions(next_tile)) == 0):
-            continue
-        next_player = next(player_cycle)
-        #print(next_player)
-        turn_start = time.time()
-        next_player.make_move(next_tile)
-        times[next_player.player_num] += time.time() - turn_start
-        print("turn complete")
+    start = time.time()
+    for g in range(games): 
+        times = [0 for _ in range(len(players))]
+        player_cycle = cycle(players)
+        while(not game.is_game_over()):
+            next_tile = game.deck.peak_next_tile()
+            # check for any valid moves
+            if (len(game.get_valid_actions(next_tile)) == 0):
+                continue
+            next_player = next(player_cycle)
+            #print(next_player)
+            turn_start = time.time()
+            next_player.make_move(next_tile)
+            times[next_player.player_num] += time.time() - turn_start
+            print("turn complete")
 
-    game.print_game_state()
-    print(f"TIMES: {times}")
-    game_scores = game.compute_scores()
-    # sort scores
-    sorted_scores = sorted(enumerate(game_scores), key = lambda x: x[1], reverse=True)
-    best_score = sorted_scores[0][1]
-    # check if there is a draw
-    if sorted_scores[1][1] == best_score:
-        # add 0.5 to each drawing player score
-        for player, score in sorted_scores:
-            if score == best_score:
-                scores[player] += 0.5
-            else:
-                break          
-    else:
-        # add 1 to winning player
-        scores[sorted_scores[0][0]] += 1
+        game.print_game_state()
+        print(f"TIMES: {times}")
+        game_scores = game.compute_scores()
+        # sort scores
+        sorted_scores = sorted(enumerate(game_scores), key = lambda x: x[1], reverse=True)
+        best_score = sorted_scores[0][1]
+        # check if there is a draw
+        if sorted_scores[1][1] == best_score:
+            # add 0.5 to each drawing player score
+            for player, score in sorted_scores:
+                if score == best_score:
+                    scores[player] += 0.5
+                else:
+                    break          
+        else:
+            # add 1 to winning player
+            scores[sorted_scores[0][0]] += 1
 
-    for player in range(len(players)):
-        total_times[player] += times[player]
-        total_points[player] += game_scores[player]
+        for player in range(len(players)):
+            total_times[player] += times[player]
+            total_points[player] += game_scores[player]
 
-    print(f"GAMES: {scores}") 
-    game.reset()
+        print(f"GAMES: {scores}") 
+        game.reset()
 
-duration = time.time() - start
+    duration = time.time() - start
 
-print ("--------------------------------------------")
-print("AVERAGE SCORES: " + str(list(map(lambda x: x / games, total_points))))
-print("AVERAGE TIMES: " + str(list(map(lambda x: x / games, total_times))))
-print("AVERAGE GAME DURATION: " + str(duration/games) + " seconds")
+    print ("--------------------------------------------")
+    print("AVERAGE SCORES: " + str(list(map(lambda x: x / games, total_points))))
+    print("AVERAGE TIMES: " + str(list(map(lambda x: x / games, total_times))))
+    print("AVERAGE GAME DURATION: " + str(duration/games) + " seconds")
 
 # time_sum = 0 
 
