@@ -129,16 +129,25 @@ class Deck():
             tile_list += additional_tile_set.return_tile_list()
         # load order from file if provided
         if load:
+            # check if file is specified
+            load_split = load.split(" ")
+            if load_split[0] == "file":
+                with open(load_split[1], "r") as f:
+                    tile_names = f.readlines()
+            # get tiles from string
+            else:
+                tile_names = load_split
+
             ordered_tile_list = []
-            with open(load, "r") as f:
-                for tile_name in f.readlines():
-                    for i, tile in enumerate(tile_list):
-                        if tile_name.strip("\n") == tile.name:
-                            ordered_tile_list.append(tile_list.pop(i))
-                            break
-                    else:
-                        raise Exception(f"{tile_name} contained in file does not exist in tile set")
+            for tile_name in tile_names:
+                for i, tile in enumerate(tile_list):
+                    if tile_name.strip("\n") == tile.name:
+                        ordered_tile_list.append(tile_list.pop(i))
+                        break
+                else:
+                    raise Exception(f"{tile_name} contained in file does not exist in tile set")
             tile_list = ordered_tile_list
+
         # otherwise just shuffle tiles
         else:
             shuffle(tile_list)
@@ -202,3 +211,7 @@ class Deck():
         #         # otherwise add it to unique tiles
         #         unique_tiles[tile.name] = 1
         return self.tile_counts
+
+    # return list of tile names seperated by
+    def get_tile_list_string(self):
+        return " ".join(map(lambda t: t.name, self.tiles))

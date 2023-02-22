@@ -26,7 +26,7 @@ print("main")
 
 start = time.time()
 for g in range(games): 
-    game.reset("test.txt")
+    game.reset("monastery monastery")
     player_cycle = cycle(players)
     while(not game.is_game_over()):
         next_tile = game.deck.peak_next_tile()

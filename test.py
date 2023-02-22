@@ -308,7 +308,7 @@ with open(log_file + ".txt", "w") as f:
     f.write("--- Player Configuration ---\n")
     for i, player in enumerate(players):
         f.write(f"Player {i}: {player.return_info()}\n")
-    f.write("-----------------------------\n")
+    f.write("-----------------------------\n\n")
     
 
 #players = [RandomAgent(0, game), RandomAgent(1, game)] #UCTAgent(0, game)
@@ -324,57 +324,80 @@ with open(log_file + ".txt", "w") as f:
 #players = [UCTAgent(0, game, 500), MCCFRAgent(1, game, 1000), UCTAgent(2, game, 1000)]
 
 
-    scores = [0 for _ in range(len(players))]
-    total_times = [0 for _ in range(len(players))]
-    total_points = [0 for _ in range(len(players))]
+scores = [0 for _ in range(len(players))]
+total_times = [0 for _ in range(len(players))]
+total_points = [0 for _ in range(len(players))]
 
-    start = time.time()
-    for g in range(games): 
-        times = [0 for _ in range(len(players))]
-        player_cycle = cycle(players)
-        while(not game.is_game_over()):
-            next_tile = game.deck.peak_next_tile()
-            # check for any valid moves
-            if (len(game.get_valid_actions(next_tile)) == 0):
-                continue
-            next_player = next(player_cycle)
-            #print(next_player)
-            turn_start = time.time()
-            next_player.make_move(next_tile)
-            times[next_player.player_num] += time.time() - turn_start
-            print("turn complete")
+start = time.time()
+game_list = []
+for g in range(games): 
+    times = [0 for _ in range(len(players))]
+    player_cycle = cycle(players)
+    # save tile list
+    game_list.append(game.deck.get_tile_list_string())
+    while(not game.is_game_over()):
+        next_tile = game.deck.peak_next_tile()
+        # check for any valid moves
+        if (len(game.get_valid_actions(next_tile)) == 0):
+            continue
+        next_player = next(player_cycle)
+        #print(next_player)
+        turn_start = time.time()
+        next_player.make_move(next_tile)
+        times[next_player.player_num] += time.time() - turn_start
+        print("turn complete")
 
-        game.print_game_state()
-        print(f"TIMES: {times}")
-        game_scores = game.compute_scores()
-        # sort scores
-        sorted_scores = sorted(enumerate(game_scores), key = lambda x: x[1], reverse=True)
-        best_score = sorted_scores[0][1]
-        # check if there is a draw
-        if sorted_scores[1][1] == best_score:
-            # add 0.5 to each drawing player score
-            for player, score in sorted_scores:
-                if score == best_score:
-                    scores[player] += 0.5
-                else:
-                    break          
-        else:
-            # add 1 to winning player
-            scores[sorted_scores[0][0]] += 1
+    with open(log_file + ".txt", "a") as f:
+        f.write(f"--- Game {g+1} ----------------\n")
+        for action in game.action_sequence:
+            f.write(str(action) + "\n")
+        f.write(f"--- End Game Stats -------------\n")
+        f.write("Scores: " + str(game.compute_scores()) + "\n")
+        f.write("Times: " + str(times) + "\n")
+        f.write(f"------------------------------\n\n")
+    game.print_game_state()
+    print(f"TIMES: {times}")
+    game_scores = game.compute_scores()
+    # sort scores
+    sorted_scores = sorted(enumerate(game_scores), key = lambda x: x[1], reverse=True)
+    best_score = sorted_scores[0][1]
+    # check if there is a draw
+    if sorted_scores[1][1] == best_score:
+        # add 0.5 to each drawing player score
+        for player, score in sorted_scores:
+            if score == best_score:
+                scores[player] += 0.5
+            else:
+                break          
+    else:
+        # add 1 to winning player
+        scores[sorted_scores[0][0]] += 1
 
-        for player in range(len(players)):
-            total_times[player] += times[player]
-            total_points[player] += game_scores[player]
+    for player in range(len(players)):
+        total_times[player] += times[player]
+        total_points[player] += game_scores[player]
 
-        print(f"GAMES: {scores}") 
-        game.reset()
+    print(f"GAMES: {scores}") 
+    game.reset()
 
-    duration = time.time() - start
+duration = time.time() - start
 
-    print ("--------------------------------------------")
-    print("AVERAGE SCORES: " + str(list(map(lambda x: x / games, total_points))))
-    print("AVERAGE TIMES: " + str(list(map(lambda x: x / games, total_times))))
-    print("AVERAGE GAME DURATION: " + str(duration/games) + " seconds")
+
+avg_scores_str = "Average Scores: " + str(list(map(lambda x: x / games, total_points)))
+avg_times_str = "Average Times: " + str(list(map(lambda x: x / games, total_times)))
+avg_duration_str = "Average Game Duration: " + str(duration/games) + " seconds"
+
+with open(log_file + ".txt", "a") as f:
+    f.write("\n --- Game Batch Stats ------------\n")
+    f.write(avg_scores_str + "\n")
+    f.write(avg_times_str + "\n")
+    f.write(avg_duration_str + "\n")
+
+print("--------------------------------------------")
+print(avg_scores_str)
+print(avg_times_str)
+print(avg_duration_str)
+print(game_list)
 
 # time_sum = 0 
 
