@@ -110,6 +110,24 @@ class UCTAgent(BaseAgent):
         self.iterations = iterations
         self.exploration_constant = exploration_constant
         self.trees = trees
+ 
+    @staticmethod
+    def build(player_num: int, game: Game):
+        print("--- Build UCT agent ---")
+        while True:
+            try:
+                iterations = input("Iterations per action: ")
+                iterations = int(iterations)
+                exploration_constant = input("Exploration constant: ")
+                exploration_constant = float(exploration_constant)
+                break
+            except:
+                print("Invalid inputs.")
+        return UCTAgent(player_num, game, iterations, exploration_constant=exploration_constant)
+    
+
+    def return_info(self):
+        return f"UCT Agent(iterations={self.iterations}, exploration_constant={self.exploration_constant})"
 
     def expand(self, root: ChoiceNode) -> ChanceNode:
         # choose untried action from current state and remove from expandable actions
@@ -179,6 +197,7 @@ class UCTAgent(BaseAgent):
         root = ChoiceNode(start_state, next_tile, None, None)
         # simulate while within computational budget
         for _ in range(iterations):
+            #print(i)
             # select node to expand using tree policy
             node = self.tree_policy(root)
             #node.print_node()
@@ -193,15 +212,18 @@ class UCTAgent(BaseAgent):
         #root.print_node()
         # add root to queue if in parallel mode
         if root_queue:
+            #print("put root")
             root_queue.put(root)
+        #print("return")
         return root
 
 
     def make_move(self, next_tile: Tile):
         if self.trees <= 1:
             root = self.uct_search(self.game, next_tile, self.iterations)
-        else:
+        elif __name__ == "__main__":
             # divide iterations between number of trees
+            #print("divide")
             tree_iterations = int(self.iterations / self.trees)
             # start trees
             processes = []
@@ -210,19 +232,28 @@ class UCTAgent(BaseAgent):
                 process = Process(target=self.uct_search, args=(self.game, next_tile, tree_iterations, root_queue))
                 processes.append(process)
                 process.start()
-            # close processes
-            for process in processes:
-                process.join()
+                #print("start tree")
+            
             # iterate over all tree roots
             root = root_queue.get()
-            while not root_queue.empty():
+            #print("collect roots")
+            for _ in range(self.trees - 1):
+                #print("get root")
                 next_root = root_queue.get()
                 # combine visit and reward stastics
                 for i, child in enumerate(next_root.children):
                     root.children[i].visit_count += child.visit_count
                     root.children[i].total_reward += child.total_reward
+            
+            # close processes
+            #print(processes)
+            for process in processes:
+                #print(process)
+                process.join()
+                #print("close tree")
         
-        
-        best_action = self.best_child(root, 0).incoming_action
-        print(best_action)
-        self.game.make_action(best_action)
+        if __name__ == "__main__":
+            #print("Choose")
+            best_action = self.best_child(root, 0).incoming_action
+            #print(best_action)
+            self.game.make_action(best_action)
