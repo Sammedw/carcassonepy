@@ -1,5 +1,5 @@
 
-from itertools import cycle
+from itertools import cycle, permutations
 import time
 from CFRagent import CFRAgent
 from MCCFRagent import MCCFRAgent
@@ -328,13 +328,24 @@ scores = [0 for _ in range(len(players))]
 total_times = [0 for _ in range(len(players))]
 total_points = [0 for _ in range(len(players))]
 
+player_permutations = list(permutations(players))
+
+
 start = time.time()
 game_list = []
-for g in range(games): 
+for g in range(games*player_count): 
     times = [0 for _ in range(len(players))]
+    # update player order if in new batch of games
+    if (g % games) == 0:
+        players = player_permutations[g // games]
+
     player_cycle = cycle(players)
     # save tile list
-    game_list.append(game.deck.get_tile_list_string())
+    if g < games:
+        game_list.append(game.deck.get_tile_list_string())
+    # otherwise load game
+    else:
+        game.reset(game_list[g % games])
     while(not game.is_game_over()):
         next_tile = game.deck.peak_next_tile()
         # check for any valid moves
