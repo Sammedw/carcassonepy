@@ -8,7 +8,8 @@ from randomagent import RandomAgent
 from game import Game
 from star1agent import Star1Agent
 from human import Human
-from copy import deepcopy
+from copy import copy
+from random import sample
 
 # get game info
 available_agents = {"uct": UCTAgent}
@@ -76,92 +77,95 @@ for p, permutation in enumerate(player_permutations):
     player_permutations_temp.append([])
     for i in range(player_count):
         # copy player and update player num
-        new_player = deepcopy(permutation[i])
+        new_player = copy(permutation[i])
         new_player.player_num = i
         player_permutations_temp[p].append(new_player)
 player_permutations = player_permutations_temp
 
-start = time.time()
-game_list = []
-for g in range(games*player_count): 
-    times = [0 for _ in range(len(players))]
-    # update player order if in new batch of games
-    if (g % games) == 0:
-        players = player_permutations[g // games]
-
-    print(players)
-    for player in players:
-        print(player.player_num)
-    player_cycle = cycle(players)
-    # save tile list
-    if g < games:
-        game_list.append(game.deck.get_tile_list_string())
-    # otherwise load game
-    else:
-        game.reset(game_list[g % games])
-    while(not game.is_game_over()):
-        next_tile = game.deck.peak_next_tile()
-        # check for any valid moves
-        if (len(game.get_valid_actions(next_tile)) == 0):
-            continue
-        next_player = next(player_cycle)
-        #print(next_player)
-        turn_start = time.time()
-        next_player.make_move(next_tile)
-        times[next_player.player_num] += time.time() - turn_start
-        print("turn complete")
-
-    with open(log_file + ".txt", "a") as f:
-        f.write(f"--- Game {g+1} ----------------\n")
-        for action in game.action_sequence:
-            f.write(str(action) + "\n")
-        f.write(f"--- End Game Stats -------------\n")
-        f.write("Scores: " + str(game.compute_scores()) + "\n")
-        f.write("Times: " + str(times) + "\n")
-        f.write(f"------------------------------\n\n")
-    game.print_game_state()
-    print(f"TIMES: {times}")
-    game_scores = game.compute_scores()
-    # sort scores
-    sorted_scores = sorted(enumerate(game_scores), key = lambda x: x[1], reverse=True)
-    best_score = sorted_scores[0][1]
-    # check if there is a draw
-    if sorted_scores[1][1] == best_score:
-        # add 0.5 to each drawing player score
-        for player, score in sorted_scores:
-            if score == best_score:
-                scores[player] += 0.5
-            else:
-                break          
-    else:
-        # add 1 to winning player
-        scores[sorted_scores[0][0]] += 1
-
-    for player in range(len(players)):
-        total_times[player] += times[player]
-        total_points[player] += game_scores[player]
-
-    print(f"GAMES: {scores}") 
-    game.reset()
-
-duration = time.time() - start
-
-
-avg_scores_str = "Average Scores: " + str(list(map(lambda x: x / games, total_points)))
-avg_times_str = "Average Times: " + str(list(map(lambda x: x / games, total_times)))
-avg_duration_str = "Average Game Duration: " + str(duration/games) + " seconds"
-
-with open(log_file + ".txt", "a") as f:
-    f.write("\n --- Game Batch Stats ------------\n")
-    f.write(avg_scores_str + "\n")
-    f.write(avg_times_str + "\n")
-    f.write(avg_duration_str + "\n")
-
-print("--------------------------------------------")
-print(avg_scores_str)
-print(avg_times_str)
-print(avg_duration_str)
+# generate the tile orders for given number of games
+deck = game.deck.get_tile_list()
+game_list = [" ".join(sample(deck, len(deck))) for _ in range(games)]
 print(game_list)
+
+
+def simulate_games(game, game_count, players):
+    start = time.time()
+    out = ""
+    for g in range(game_count): 
+        times = [0 for _ in range(len(players))]
+        print(players)
+        for player in players:
+            print(player.return_info())
+        player_cycle = cycle(players)
+        # load tiles
+        game.reset(game_list[g])
+        # play game
+        while(not game.is_game_over()):
+            next_tile = game.deck.peak_next_tile()
+            # check for any valid moves
+            if (len(game.get_valid_actions(next_tile)) == 0):
+                continue
+            next_player = next(player_cycle)
+            #print(next_player)
+            turn_start = time.time()
+            next_player.make_move(next_tile)
+            times[next_player.player_num] += time.time() - turn_start
+            print("turn complete")
+
+        # write details of game
+        out += f"--- Game {g+1} ----------------\n"
+        for action in game.action_sequence:
+            out += str(action) + "\n"
+        out += f"--- End Game Stats -------------\n"
+        out += "Scores: " + str(game.compute_scores()) + "\n"
+        out += "Times: " + str(times) + "\n"
+        out += f"------------------------------\n\n"
+        game.print_game_state()
+        print(f"TIMES: {times}")
+        game_scores = game.compute_scores()
+        # sort scores
+        sorted_scores = sorted(enumerate(game_scores), key = lambda x: x[1], reverse=True)
+        best_score = sorted_scores[0][1]
+        # check if there is a draw
+        if sorted_scores[1][1] == best_score:
+            # add 0.5 to each drawing player score
+            for player, score in sorted_scores:
+                if score == best_score:
+                    scores[player] += 0.5
+                else:
+                    break          
+        else:
+            # add 1 to winning player
+            scores[sorted_scores[0][0]] += 1
+
+        for player in range(len(players)):
+            total_times[player] += times[player]
+            total_points[player] += game_scores[player]
+
+        print(f"GAMES: {scores}") 
+
+    duration = time.time() - start
+
+
+    avg_scores_str = "Average Scores: " + str(list(map(lambda x: x / games, total_points)))
+    avg_times_str = "Average Times: " + str(list(map(lambda x: x / games, total_times)))
+    avg_duration_str = "Average Game Duration: " + str(duration/games) + " seconds"
+
+    out += "\n --- Game Batch Stats ------------\n"
+    out += avg_scores_str + "\n"
+    out += avg_times_str + "\n"
+    out += avg_duration_str + "\n"
+
+    print("--------------------------------------------")
+    print(avg_scores_str)
+    print(avg_times_str)
+    print(avg_duration_str)
+
+    return out
+
+for permutation in player_permutations:
+    with open(log_file + ".txt", "a") as f:
+        f.write(simulate_games(game, games, permutation))
 
 # time_sum = 0 
 
