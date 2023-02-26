@@ -105,11 +105,10 @@ def UCT(node: ChoiceNode, parent_visit_count: int,  exploration_constant: float,
 
 class UCTAgent(BaseAgent):
     
-    def __init__(self, player_num: int, game: Game, iterations: int, exploration_constant: float = 3, trees: int = 1):
+    def __init__(self, player_num: int, game: Game, iterations: int, exploration_constant: float = 3):
         super().__init__(player_num, game)
         self.iterations = iterations
         self.exploration_constant = exploration_constant
-        self.trees = trees
  
     @staticmethod
     def build(player_num: int, game: Game):
@@ -192,7 +191,7 @@ class UCTAgent(BaseAgent):
             current_node.total_reward += payoff
             current_node = current_node.parent
              
-    def uct_search(self, start_state: Game, next_tile: Tile, iterations: int, root_queue: Queue = None):
+    def uct_search(self, start_state: Game, next_tile: Tile, iterations: int):
         # create root node
         root = ChoiceNode(start_state, next_tile, None, None)
         # simulate while within computational budget
@@ -210,50 +209,12 @@ class UCTAgent(BaseAgent):
             #root.print_node()          
         # return best child after simulations (c=0 so one with best average reward)
         #root.print_node()
-        # add root to queue if in parallel mode
-        if root_queue:
-            #print("put root")
-            root_queue.put(root)
-        #print("return")
         return root
 
 
     def make_move(self, next_tile: Tile):
-        if self.trees <= 1:
-            root = self.uct_search(self.game, next_tile, self.iterations)
-        elif __name__ == "__main__":
-            # divide iterations between number of trees
-            #print("divide")
-            tree_iterations = int(self.iterations / self.trees)
-            # start trees
-            processes = []
-            root_queue = Queue()
-            for _ in range(self.trees):
-                process = Process(target=self.uct_search, args=(self.game, next_tile, tree_iterations, root_queue))
-                processes.append(process)
-                process.start()
-                #print("start tree")
-            
-            # iterate over all tree roots
-            root = root_queue.get()
-            #print("collect roots")
-            for _ in range(self.trees - 1):
-                #print("get root")
-                next_root = root_queue.get()
-                # combine visit and reward stastics
-                for i, child in enumerate(next_root.children):
-                    root.children[i].visit_count += child.visit_count
-                    root.children[i].total_reward += child.total_reward
-            
-            # close processes
-            #print(processes)
-            for process in processes:
-                #print(process)
-                process.join()
-                #print("close tree")
-        
-        if __name__ == "__main__":
-            #print("Choose")
-            best_action = self.best_child(root, 0).incoming_action
-            #print(best_action)
-            self.game.make_action(best_action)
+        root = self.uct_search(self.game, next_tile, self.iterations)
+        #print("Choose")
+        best_action = self.best_child(root, 0).incoming_action
+        #print(best_action)
+        self.game.make_action(best_action)

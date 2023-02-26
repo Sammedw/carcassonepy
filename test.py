@@ -8,6 +8,7 @@ from randomagent import RandomAgent
 from game import Game
 from star1agent import Star1Agent
 from human import Human
+from copy import deepcopy
 
 # get game info
 available_agents = {"uct": UCTAgent}
@@ -69,7 +70,16 @@ total_points = [0 for _ in range(len(players))]
 
 # create permutations of players
 player_permutations = list(permutations(players))
-
+player_permutations_temp = []
+# update player number for each permutation
+for p, permutation in enumerate(player_permutations):
+    player_permutations_temp.append([])
+    for i in range(player_count):
+        # copy player and update player num
+        new_player = deepcopy(permutation[i])
+        new_player.player_num = i
+        player_permutations_temp[p].append(new_player)
+player_permutations = player_permutations_temp
 
 start = time.time()
 game_list = []
@@ -79,6 +89,9 @@ for g in range(games*player_count):
     if (g % games) == 0:
         players = player_permutations[g // games]
 
+    print(players)
+    for player in players:
+        print(player.player_num)
     player_cycle = cycle(players)
     # save tile list
     if g < games:
@@ -87,7 +100,6 @@ for g in range(games*player_count):
     else:
         game.reset(game_list[g % games])
     while(not game.is_game_over()):
-        print("hello")
         next_tile = game.deck.peak_next_tile()
         # check for any valid moves
         if (len(game.get_valid_actions(next_tile)) == 0):

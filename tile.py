@@ -212,6 +212,12 @@ class Deck():
         #         unique_tiles[tile.name] = 1
         return self.tile_counts
 
-    # return list of tile names seperated by
+
+    # return list of tile names
+    def get_tile_list(self):
+        return list(map(lambda t: t.name, self.tiles))
+
+
+    # return list of tile names seperated by spaces
     def get_tile_list_string(self):
-        return " ".join(map(lambda t: t.name, self.tiles))
+        return " ".join(self.get_tile_list())
