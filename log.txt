@@ -1,101 +1,345 @@
 --- Game Configuration ---
 Game count: 2
-Player count: 2
-Deck: {'start': 0, 'tri_road': 4, 'city_cap_straight_road': 3, 'monastery_road': 2, 'big_city': 1, 'city_tunnel': 1, 'monastery': 4}
+Player count: 3
+Deck: {'start': 0, 'tri_road': 4, 'monastery_road': 2, 'city_tunnel': 1, 'monastery': 4, 'city_cap_straight_road': 3, 'big_city': 1}
+
 --- Player Configuration ---
-Player 0: UCT Agent(iterations=5, exploration_constant=3.0)
-Player 1: UCT Agent(iterations=5, exploration_constant=3.0)
+Player 0: UCT Agent(iterations=1, exploration_constant=3.0)
+Player 1: UCT Agent(iterations=2, exploration_constant=3.0)
+Player 2: UCT Agent(iterations=3, exploration_constant=3.0)
 -----------------------------
 
 --- Game 1 ----------------
-<tri_road, 2, (0, -1), ROAD, 1>
-<monastery, 0, (0, -2), MONASTERY, 0>
-<monastery, 0, (-1, -2), None, 0>
-<monastery, 0, (-1, 0), FARM, 0>
-<monastery_road, 2, (-1, 1), ROAD, 0>
-<monastery, 0, (1, -2), None, 0>
-<city_cap_straight_road, 2, (-2, 1), None, 0>
-<city_tunnel, 1, (-1, -3), None, 0>
-<city_cap_straight_road, 0, (-2, -3), None, 0>
-<tri_road, 2, (1, -1), None, 0>
-<tri_road, 3, (0, 1), None, 0>
-<monastery_road, 2, (-2, -4), None, 0>
-<tri_road, 2, (2, -1), ROAD, 0>
-<big_city, 0, (-3, 1), None, 0>
-<city_cap_straight_road, 0, (-4, 1), ROAD, 0>
---- End Game Stats -------------
-Scores: [7, 6]
-Times: [5.975180149078369, 5.588709831237793]
-------------------------------
-
---- Game 2 ----------------
-<city_cap_straight_road, 0, (0, 1), FARM, 0>
-<monastery, 0, (-1, 1), MONASTERY, 0>
-<city_cap_straight_road, 2, (1, 1), FARM, 1>
-<monastery_road, 0, (2, 1), ROAD, 0>
-<tri_road, 1, (1, 2), None, 0>
-<tri_road, 0, (0, 2), None, 0>
-<monastery, 0, (0, 3), None, 0>
-<monastery, 0, (2, 2), None, 0>
-<monastery_road, 3, (3, 2), None, 0>
-<tri_road, 3, (1, 3), None, 0>
-<city_tunnel, 1, (3, 3), None, 0>
-<monastery, 0, (3, 4), None, 0>
-<tri_road, 2, (4, 2), None, 0>
-<city_cap_straight_road, 2, (0, -1), None, 0>
---- End Game Stats -------------
-Scores: [3, 5]
-Times: [4.764984607696533, 4.315377712249756]
-------------------------------
-
-
- --- Game Batch Stats ------------
-Average Scores: [5.0, 5.5]
-Average Times: [5.370082378387451, 4.952043771743774]
-Average Game Duration: 10.528746843338013 seconds
---- Game 1 ----------------
-<tri_road, 1, (0, 1), None, 0>
-<monastery, 0, (1, 1), MONASTERY, 0>
-<monastery, 0, (-1, 0), MONASTERY, 0>
-<monastery, 0, (-1, -1), MONASTERY, 0>
-<monastery_road, 2, (-2, 0), MONASTERY, 0>
-<monastery, 0, (-1, -2), None, 0>
-<city_cap_straight_road, 0, (0, -1), None, 0>
-<city_tunnel, 0, (-2, -2), None, 0>
-<city_cap_straight_road, 3, (-1, 1), None, 0>
-<tri_road, 1, (0, 2), None, 0>
-<tri_road, 1, (-3, 0), None, 0>
-<monastery_road, 3, (2, 1), None, 0>
-<tri_road, 0, (-2, 1), None, 0>
-<big_city, 0, (1, -1), None, 0>
-<city_cap_straight_road, 1, (3, 1), None, 0>
---- End Game Stats -------------
-Scores: [14, 12]
-Times: [5.72053599357605, 5.314950704574585]
-------------------------------
-
---- Game 2 ----------------
 <city_cap_straight_road, 2, (-1, 0), CITY, 0>
-<city_cap_straight_road, 0, (0, 1), CITY, 0>
-<monastery_road, 0, (0, 2), None, 0>
-<tri_road, 3, (-1, -1), ROAD, 1>
-<tri_road, 3, (-1, -2), FARM, 0>
-<monastery, 0, (-2, -1), None, 0>
-<monastery, 0, (1, 2), None, 0>
-<monastery_road, 1, (0, 3), None, 0>
-<big_city, 0, (1, 0), None, 0>
-<tri_road, 1, (-1, -3), None, 0>
-<city_tunnel, 1, (-2, 0), None, 0>
-<monastery, 0, (0, 4), None, 0>
-<tri_road, 2, (-1, -4), None, 0>
-<city_cap_straight_road, 3, (-2, -3), None, 0>
+<monastery_road, 2, (0, -1), FARM, 0>
+<tri_road, 3, (1, -1), ROAD, 2>
+<tri_road, 1, (2, -1), ROAD, 1>
+<city_tunnel, 1, (-2, 0), FARM, 1>
+<monastery, 0, (0, -2), MONASTERY, 0>
+<monastery, 0, (3, -1), None, 0>
+<tri_road, 1, (-1, -2), None, 0>
+<monastery, 0, (3, 0), None, 0>
+<tri_road, 0, (-1, 1), ROAD, 0>
+<city_cap_straight_road, 1, (-2, -1), None, 0>
+<monastery, 0, (0, -3), None, 0>
+<monastery_road, 1, (0, -4), None, 0>
+<big_city, 0, (-3, 0), None, 0>
+<city_cap_straight_road, 3, (-2, -2), None, 0>
 --- End Game Stats -------------
-Scores: [2, 2]
-Times: [4.572319746017456, 4.239473819732666]
+Scores: [7, 0, 6]
+Times: [1.1098029613494873, 2.1766550540924072, 2.7249670028686523]
+------------------------------
+
+--- Game 2 ----------------
+<tri_road, 1, (0, -1), None, 0>
+<city_tunnel, 0, (1, -1), None, 0>
+<tri_road, 0, (0, 1), FARM, 1>
+<big_city, 0, (1, 0), CITY, 0>
+<city_cap_straight_road, 0, (0, -2), ROAD, 0>
+<city_cap_straight_road, 2, (-1, 0), FARM, 1>
+<monastery, 0, (-1, -2), MONASTERY, 0>
+<monastery, 0, (-1, -3), None, 0>
+<tri_road, 3, (2, -1), None, 0>
+<tri_road, 1, (3, -1), None, 0>
+<monastery, 0, (0, 2), MONASTERY, 0>
+<monastery, 0, (0, 3), None, 0>
+<monastery_road, 0, (-1, 3), None, 0>
+<city_cap_straight_road, 0, (1, 3), None, 0>
+<monastery_road, 2, (2, -2), None, 0>
+--- End Game Stats -------------
+Scores: [8, 7, 0]
+Times: [1.0672359466552734, 1.8877677917480469, 2.5339274406433105]
 ------------------------------
 
 
  --- Game Batch Stats ------------
-Average Scores: [13.0, 12.5]
-Average Times: [10.516510248184204, 9.7292560338974]
-Average Game Duration: 10.13614547252655 seconds
+Results: [2, 0, 0]
+Average Scores: [7.5, 3.5, 3.0]
+Average Times: [1.0885194540023804, 2.032211422920227, 2.6294472217559814]
+Average Game Duration: 6.025750279426575 seconds
+-----------------------------
+
+
+--- Player Configuration ---
+Player 0: UCT Agent(iterations=1, exploration_constant=3.0)
+Player 1: UCT Agent(iterations=3, exploration_constant=3.0)
+Player 2: UCT Agent(iterations=2, exploration_constant=3.0)
+-----------------------------
+
+--- Game 1 ----------------
+<city_cap_straight_road, 2, (0, 1), FARM, 0>
+<monastery_road, 2, (0, -1), ROAD, 0>
+<tri_road, 1, (-1, -1), ROAD, 2>
+<tri_road, 3, (1, -1), ROAD, 2>
+<city_tunnel, 1, (-1, 1), CITY, 0>
+<monastery, 0, (1, 1), MONASTERY, 0>
+<monastery, 0, (0, -2), None, 0>
+<tri_road, 3, (0, 2), None, 0>
+<monastery, 0, (-1, 2), None, 0>
+<tri_road, 3, (2, 1), None, 0>
+<city_cap_straight_road, 2, (2, 0), ROAD, 0>
+<monastery, 0, (-2, 2), None, 0>
+<monastery_road, 3, (-1, 3), None, 0>
+<city_cap_straight_road, 3, (3, 1), None, 0>
+--- End Game Stats -------------
+Scores: [1, 8, 7]
+Times: [0.9459757804870605, 2.7153327465057373, 1.5509281158447266]
+------------------------------
+
+--- Game 2 ----------------
+<tri_road, 3, (0, 1), None, 0>
+<city_tunnel, 0, (-1, 1), None, 0>
+<tri_road, 1, (0, 2), ROAD, 2>
+<big_city, 0, (1, 0), None, 0>
+<city_cap_straight_road, 1, (-1, 2), ROAD, 0>
+<city_cap_straight_road, 1, (1, 1), FARM, 1>
+<monastery, 0, (-2, 1), None, 0>
+<monastery, 0, (-2, 0), MONASTERY, 0>
+<tri_road, 1, (2, 1), None, 0>
+<tri_road, 0, (2, 2), FARM, 0>
+<monastery, 0, (-3, 0), None, 0>
+<monastery, 0, (-1, 3), None, 0>
+<monastery_road, 2, (0, -1), ROAD, 0>
+<city_cap_straight_road, 1, (-3, -1), None, 0>
+<monastery_road, 0, (3, 1), None, 0>
+--- End Game Stats -------------
+Scores: [3, 7, 1]
+Times: [1.0309994220733643, 3.0707943439483643, 1.6190290451049805]
+------------------------------
+
+
+ --- Game Batch Stats ------------
+Results: [0, 2, 0]
+Average Scores: [2.0, 7.5, 4.0]
+Average Times: [0.9884876012802124, 2.893063545227051, 1.5849785804748535]
+Average Game Duration: 5.793834209442139 seconds
+-----------------------------
+
+
+--- Player Configuration ---
+Player 0: UCT Agent(iterations=2, exploration_constant=3.0)
+Player 1: UCT Agent(iterations=1, exploration_constant=3.0)
+Player 2: UCT Agent(iterations=3, exploration_constant=3.0)
+-----------------------------
+
+--- Game 1 ----------------
+<city_cap_straight_road, 0, (0, -1), CITY, 0>
+<monastery_road, 2, (-1, -1), MONASTERY, 0>
+<tri_road, 1, (-1, 0), None, 0>
+<tri_road, 2, (0, -2), ROAD, 2>
+<city_tunnel, 1, (1, 0), CITY, 0>
+<monastery, 0, (1, 1), MONASTERY, 0>
+<monastery, 0, (-2, -1), None, 0>
+<tri_road, 0, (-2, -2), None, 0>
+<monastery, 0, (2, 1), None, 0>
+<tri_road, 0, (-1, -2), None, 0>
+<city_cap_straight_road, 1, (0, -3), None, 0>
+<monastery, 0, (-3, -1), MONASTERY, 0>
+<monastery_road, 1, (1, -2), None, 0>
+<big_city, 0, (0, -4), None, 0>
+<city_cap_straight_road, 3, (0, -5), None, 0>
+--- End Game Stats -------------
+Scores: [3, 10, 7]
+Times: [2.0398855209350586, 1.0546698570251465, 2.531719446182251]
+------------------------------
+
+--- Game 2 ----------------
+<tri_road, 3, (0, -1), ROAD, 2>
+<city_tunnel, 1, (1, 0), FARM, 0>
+<tri_road, 1, (0, 1), ROAD, 1>
+<big_city, 0, (2, 0), None, 0>
+<city_cap_straight_road, 2, (-1, 0), ROAD, 0>
+<city_cap_straight_road, 2, (0, 2), FARM, 1>
+<monastery, 0, (1, 2), MONASTERY, 0>
+<monastery, 0, (1, 1), None, 0>
+<tri_road, 2, (0, -2), None, 0>
+<tri_road, 3, (0, 3), ROAD, 2>
+<monastery, 0, (0, -3), None, 0>
+<monastery, 0, (2, 2), None, 0>
+<monastery_road, 0, (0, 4), None, 0>
+<city_cap_straight_road, 0, (1, 4), None, 0>
+<monastery_road, 2, (0, 5), None, 0>
+--- End Game Stats -------------
+Scores: [11, 1, 1]
+Times: [2.128645896911621, 0.9895825386047363, 2.592571973800659]
+------------------------------
+
+
+ --- Game Batch Stats ------------
+Results: [1, 1, 0]
+Average Scores: [7.0, 5.5, 4.0]
+Average Times: [2.08426570892334, 1.0221261978149414, 2.562145709991455]
+Average Game Duration: 5.9371970891952515 seconds
+-----------------------------
+
+
+--- Player Configuration ---
+Player 0: UCT Agent(iterations=2, exploration_constant=3.0)
+Player 1: UCT Agent(iterations=3, exploration_constant=3.0)
+Player 2: UCT Agent(iterations=1, exploration_constant=3.0)
+-----------------------------
+
+--- Game 1 ----------------
+<city_cap_straight_road, 2, (0, 1), ROAD, 0>
+<monastery_road, 2, (-1, 0), MONASTERY, 0>
+<tri_road, 3, (0, 2), FARM, 1>
+<tri_road, 0, (-1, -1), ROAD, 2>
+<city_tunnel, 0, (1, 1), None, 0>
+<monastery, 0, (-1, 2), FARM, 0>
+<monastery, 0, (2, 1), None, 0>
+<tri_road, 1, (-2, 0), None, 0>
+<monastery, 0, (3, 1), None, 0>
+<tri_road, 3, (-2, 1), None, 0>
+<city_cap_straight_road, 1, (2, 0), CITY, 0>
+<monastery, 0, (3, 2), None, 0>
+<monastery_road, 3, (4, 2), None, 0>
+<big_city, 0, (2, -1), None, 0>
+<city_cap_straight_road, 0, (0, 3), None, 0>
+--- End Game Stats -------------
+Scores: [4, 9, 0]
+Times: [2.2275490760803223, 3.1166961193084717, 0.8796586990356445]
+------------------------------
+
+--- Game 2 ----------------
+<tri_road, 2, (0, -1), FARM, 1>
+<city_tunnel, 1, (0, -2), FARM, 0>
+<tri_road, 1, (-1, 0), None, 0>
+<big_city, 0, (1, -2), CITY, 0>
+<city_cap_straight_road, 2, (1, 0), CITY, 0>
+<city_cap_straight_road, 0, (1, 1), FARM, 1>
+<monastery, 0, (0, -3), None, 0>
+<monastery, 0, (0, -4), FARM, 0>
+<tri_road, 0, (-2, 0), FARM, 0>
+<tri_road, 0, (-3, 0), None, 0>
+<monastery, 0, (-1, -3), None, 0>
+<monastery, 0, (-1, -4), None, 0>
+<monastery_road, 0, (0, -5), None, 0>
+<city_cap_straight_road, 2, (0, -6), None, 0>
+<monastery_road, 0, (2, 0), None, 0>
+--- End Game Stats -------------
+Scores: [3, 4, 0]
+Times: [2.148573160171509, 3.0399324893951416, 0.9063594341278076]
+------------------------------
+
+
+ --- Game Batch Stats ------------
+Results: [0, 2, 0]
+Average Scores: [3.5, 6.5, 0.0]
+Average Times: [2.1880611181259155, 3.0783143043518066, 0.8930090665817261]
+Average Game Duration: 6.476116180419922 seconds
+-----------------------------
+
+
+--- Player Configuration ---
+Player 0: UCT Agent(iterations=3, exploration_constant=3.0)
+Player 1: UCT Agent(iterations=1, exploration_constant=3.0)
+Player 2: UCT Agent(iterations=2, exploration_constant=3.0)
+-----------------------------
+
+--- Game 1 ----------------
+<city_cap_straight_road, 2, (0, 1), CITY, 0>
+<monastery_road, 0, (-1, 0), None, 0>
+<tri_road, 1, (-2, 0), FARM, 0>
+<tri_road, 3, (1, 1), ROAD, 1>
+<city_tunnel, 1, (-1, 1), None, 0>
+<monastery, 0, (-1, 2), None, 0>
+<monastery, 0, (-2, 2), None, 0>
+<tri_road, 1, (0, -1), FARM, 0>
+<monastery, 0, (1, -1), MONASTERY, 0>
+<tri_road, 1, (-3, 2), None, 0>
+<city_cap_straight_road, 1, (-3, 0), FARM, 0>
+<monastery, 0, (2, -1), None, 0>
+<monastery_road, 0, (0, 2), None, 0>
+<big_city, 0, (-3, -1), None, 0>
+<city_cap_straight_road, 1, (-4, 0), None, 0>
+--- End Game Stats -------------
+Scores: [3, 0, 4]
+Times: [3.0905683040618896, 1.0916023254394531, 1.7740345001220703]
+------------------------------
+
+--- Game 2 ----------------
+<tri_road, 3, (0, 1), ROAD, 1>
+<city_tunnel, 1, (1, 0), FARM, 1>
+<tri_road, 0, (1, -1), FARM, 1>
+<big_city, 0, (2, 0), CITY, 0>
+<city_cap_straight_road, 2, (-1, 1), ROAD, 0>
+<city_cap_straight_road, 2, (1, -2), None, 0>
+<monastery, 0, (2, -2), None, 0>
+<monastery, 0, (2, -3), None, 0>
+<tri_road, 0, (0, 2), ROAD, 0>
+<tri_road, 2, (1, 1), None, 0>
+<monastery, 0, (2, -4), None, 0>
+<monastery, 0, (3, -3), None, 0>
+<monastery_road, 1, (0, 3), None, 0>
+<city_cap_straight_road, 0, (4, -3), None, 0>
+<monastery_road, 2, (3, -2), None, 0>
+--- End Game Stats -------------
+Scores: [6, 1, 1]
+Times: [3.1131889820098877, 0.903411865234375, 1.7796697616577148]
+------------------------------
+
+
+ --- Game Batch Stats ------------
+Results: [1, 0, 1]
+Average Scores: [4.5, 0.5, 2.5]
+Average Times: [3.1018786430358887, 0.9975070953369141, 1.7768521308898926]
+Average Game Duration: 6.1102423667907715 seconds
+-----------------------------
+
+
+--- Player Configuration ---
+Player 0: UCT Agent(iterations=3, exploration_constant=3.0)
+Player 1: UCT Agent(iterations=2, exploration_constant=3.0)
+Player 2: UCT Agent(iterations=1, exploration_constant=3.0)
+-----------------------------
+
+--- Game 1 ----------------
+<city_cap_straight_road, 0, (0, 1), ROAD, 0>
+<monastery_road, 2, (-1, 0), MONASTERY, 0>
+<tri_road, 1, (-2, 0), FARM, 2>
+<tri_road, 3, (-2, -1), ROAD, 0>
+<city_tunnel, 1, (1, 1), FARM, 0>
+<monastery, 0, (-3, -1), None, 0>
+<monastery, 0, (-4, -1), MONASTERY, 0>
+<tri_road, 0, (-2, 1), None, 0>
+<monastery, 0, (-4, -2), MONASTERY, 0>
+<tri_road, 0, (-4, -3), None, 0>
+<city_cap_straight_road, 0, (-2, -2), None, 0>
+<monastery, 0, (-4, 0), None, 0>
+<monastery_road, 2, (-4, 1), None, 0>
+<big_city, 0, (-1, -2), None, 0>
+<city_cap_straight_road, 3, (1, 2), None, 0>
+--- End Game Stats -------------
+Scores: [8, 6, 4]
+Times: [3.0579850673675537, 2.154550075531006, 0.9694900512695312]
+------------------------------
+
+--- Game 2 ----------------
+<tri_road, 1, (-1, 0), None, 0>
+<city_tunnel, 1, (1, 0), FARM, 1>
+<tri_road, 0, (1, -1), FARM, 2>
+<big_city, 0, (2, 0), CITY, 0>
+<city_cap_straight_road, 0, (-1, 1), ROAD, 0>
+<city_cap_straight_road, 2, (-1, -1), FARM, 0>
+<monastery, 0, (-2, 1), MONASTERY, 0>
+<monastery, 0, (1, 1), None, 0>
+<tri_road, 0, (-1, 2), None, 0>
+<tri_road, 1, (-3, 1), None, 0>
+<monastery, 0, (-1, 3), MONASTERY, 0>
+<monastery, 0, (-1, 4), None, 0>
+<monastery_road, 1, (-1, 5), None, 0>
+<city_cap_straight_road, 0, (0, 4), None, 0>
+<monastery_road, 0, (0, 5), None, 0>
+--- End Game Stats -------------
+Scores: [9, 7, 0]
+Times: [3.041354179382324, 2.022080898284912, 0.9537954330444336]
+------------------------------
+
+
+ --- Game Batch Stats ------------
+Results: [2, 0, 0]
+Average Scores: [8.5, 6.5, 2.0]
+Average Times: [3.049669623374939, 2.088315486907959, 0.9616427421569824]
+Average Game Duration: 6.389364242553711 seconds
+-----------------------------
+

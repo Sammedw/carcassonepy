@@ -10,6 +10,7 @@ from star1agent import Star1Agent
 from human import Human
 from copy import copy
 from random import sample
+from multiprocessing import Process, Queue
 
 # get game info
 available_agents = {"uct": UCTAgent}
@@ -45,11 +46,6 @@ with open(log_file + ".txt", "w") as f:
     f.write(f"Game count: {games}\n")
     f.write(f"Player count: {player_count}\n")
     f.write(f"Deck: {game.deck.tile_counts}\n")
-    
-    f.write("--- Player Configuration ---\n")
-    for i, player in enumerate(players):
-        f.write(f"Player {i}: {player.return_info()}\n")
-    f.write("-----------------------------\n\n")
     
 
 #players = [RandomAgent(0, game), RandomAgent(1, game)] #UCTAgent(0, game)
@@ -88,9 +84,15 @@ game_list = [" ".join(sample(deck, len(deck))) for _ in range(games)]
 print(game_list)
 
 
-def simulate_games(game, game_count, players):
+def simulate_games(perm_num, game, game_count, players, queue):
     start = time.time()
     out = ""
+
+    out += "\n--- Player Configuration ---\n"
+    for i, player in enumerate(players):
+        out += f"Player {i}: {player.return_info()}\n"
+    out += "-----------------------------\n\n"
+
     for g in range(game_count): 
         times = [0 for _ in range(len(players))]
         print(players)
@@ -152,20 +154,51 @@ def simulate_games(game, game_count, players):
     avg_duration_str = "Average Game Duration: " + str(duration/games) + " seconds"
 
     out += "\n --- Game Batch Stats ------------\n"
+    out += "Results: " + str(scores) + "\n"
     out += avg_scores_str + "\n"
     out += avg_times_str + "\n"
     out += avg_duration_str + "\n"
+    out += "-----------------------------\n\n"
 
     print("--------------------------------------------")
     print(avg_scores_str)
     print(avg_times_str)
     print(avg_duration_str)
 
-    return out
+    queue.put((perm_num, out, scores, total_points))
 
-for permutation in player_permutations:
-    with open(log_file + ".txt", "a") as f:
-        f.write(simulate_games(game, games, permutation))
+processes = []
+queue = Queue()
+for p, permutation in enumerate(player_permutations):
+    process = Process(target=simulate_games, args=(p, game, games, permutation, queue))
+    processes.append(process)
+    process.start()
+
+# wait for results
+for process in processes:
+    process.join()
+
+# empty queue and order results
+results = []
+while not queue.empty():
+    results.append(queue.get())
+
+results.sort(key = lambda x: x[0])
+batch_strings = [r[1] for r in results]
+
+# calculate overall result and average score
+total_scores = [0 for p in len(players)]
+average_points = [0 for p in len(players)]
+for result in results:
+    total_scores = [sum(x) for x in zip(total_scores, result[2])]
+    average_points = [sum(x) for x in zip(average_points, result[3])]
+
+# write results to file
+with open(log_file + ".txt", "a") as f:
+    f.writelines(results)
+    f.write("\n--- Full Stats --------------")
+    f.write()
+
 
 # time_sum = 0 
 

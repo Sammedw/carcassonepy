@@ -8,7 +8,6 @@ from enums import FeatureType
 from feature import Farm
 from game import Game
 from tile import Tile
-from multiprocessing import Process, Queue
 
 class ChanceNode: pass
 
