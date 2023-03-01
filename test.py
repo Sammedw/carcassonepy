@@ -12,79 +12,12 @@ from copy import copy
 from random import sample
 from multiprocessing import Process, Queue
 
-# get game info
-available_agents = {"uct": UCTAgent}
-print("--- Game Configuration ---")
-while True:
-    try:
-        games = int(input("> Number of games: "))
-        player_count = int(input("> Number of players: "))
-        log_file = input("> Log file name: ")
-        break
-    except ValueError:
-        print("Invalid input.")
+def simulate_games(perm_num, game, game_list, players, queue):
 
-game = Game(player_count)
-players = []
+    scores = [0 for _ in range(len(players))]
+    total_times = [0 for _ in range(len(players))]
+    total_points = [0 for _ in range(len(players))]
 
-# get player info
-print("--- Player Configuration ---")
-print(f"Available players: {', '.join(available_agents.keys())}")
-for p in range(player_count):
-    while True:
-        player_type = input(f"> Agent type for player {p}: ")
-        if player_type in available_agents.keys():
-            new_player = available_agents[player_type].build(p, game)
-            players.append(new_player)
-            break
-        else:
-            print("Invalid agent type.")
-
-# write game info into head of file
-with open(log_file + ".txt", "w") as f:
-    f.write("--- Game Configuration ---\n")
-    f.write(f"Game count: {games}\n")
-    f.write(f"Player count: {player_count}\n")
-    f.write(f"Deck: {game.deck.tile_counts}\n")
-    
-
-#players = [RandomAgent(0, game), RandomAgent(1, game)] #UCTAgent(0, game)
-#players = [RandomAgent(0, game), UCTAgent(1, game, 1000, trees = 6)]
-#players = [RandomAgent(0, game), CFRAgent(1, game)]
-#players = [CFRAgent(0, game), UCTAgent(1, game)]
-#players = [Star1Agent(0, game), RandomAgent(1, game)]
-#players = [Human(0, game), UCTAgent(1, game)]
-#players = [Star1Agent(0, game), UCTAgent(1, game)]
-#players = [UCTAgent(0, game, 1000), MCCFRAgent(1, game, 1000)]
-#players = [UCTAgent(0, game, 1000), UCTAgent(1, game, 6000, trees = 6)]
-#players = [UCTAgent(0, game, 100), UCTAgent(1, game, 100)]
-#players = [UCTAgent(0, game, 500), MCCFRAgent(1, game, 1000), UCTAgent(2, game, 1000)]
-
-
-scores = [0 for _ in range(len(players))]
-total_times = [0 for _ in range(len(players))]
-total_points = [0 for _ in range(len(players))]
-
-# create permutations of players
-player_permutations = list(permutations(players))
-player_permutations_temp = []
-# update player number for each permutation
-for p, permutation in enumerate(player_permutations):
-    player_permutations_temp.append([])
-    for i in range(player_count):
-        # copy player and update player num
-        new_player = copy(permutation[i])
-        new_player.player_num = i
-        player_permutations_temp[p].append(new_player)
-player_permutations = player_permutations_temp
-
-# generate the tile orders for given number of games
-deck = game.deck.get_tile_list()
-game_list = [" ".join(sample(deck, len(deck))) for _ in range(games)]
-print(game_list)
-
-
-def simulate_games(perm_num, game, game_count, players, queue):
     start = time.time()
     out = ""
 
@@ -93,7 +26,7 @@ def simulate_games(perm_num, game, game_count, players, queue):
         out += f"Player {i}: {player.return_info()}\n"
     out += "-----------------------------\n\n"
 
-    for g in range(game_count): 
+    for g in range(len(game_list)): 
         times = [0 for _ in range(len(players))]
         print(players)
         for player in players:
@@ -149,9 +82,9 @@ def simulate_games(perm_num, game, game_count, players, queue):
     duration = time.time() - start
 
 
-    avg_scores_str = "Average Scores: " + str(list(map(lambda x: x / games, total_points)))
-    avg_times_str = "Average Times: " + str(list(map(lambda x: x / games, total_times)))
-    avg_duration_str = "Average Game Duration: " + str(duration/games) + " seconds"
+    avg_scores_str = "Average Scores: " + str(list(map(lambda x: x / len(game_list), total_points)))
+    avg_times_str = "Average Times: " + str(list(map(lambda x: x / len(game_list), total_times)))
+    avg_duration_str = "Average Game Duration: " + str(duration / len(game_list)) + " seconds"
 
     out += "\n --- Game Batch Stats ------------\n"
     out += "Results: " + str(scores) + "\n"
@@ -165,39 +98,109 @@ def simulate_games(perm_num, game, game_count, players, queue):
     print(avg_times_str)
     print(avg_duration_str)
 
-    queue.put((perm_num, out, scores, total_points))
+    print("return")
+    queue.put((perm_num, out, {player:score for (player, score) in zip(players, scores)}, {player:score for (player, score) in zip(players, total_points)}))
 
-processes = []
-queue = Queue()
-for p, permutation in enumerate(player_permutations):
-    process = Process(target=simulate_games, args=(p, game, games, permutation, queue))
-    processes.append(process)
-    process.start()
 
-# wait for results
-for process in processes:
-    process.join()
+if __name__ == "__main__":
+    # get game info
+    available_agents = {"uct": UCTAgent}
+    print("--- Game Configuration ---")
+    while True:
+        try:
+            games = int(input("> Number of games: "))
+            player_count = int(input("> Number of players: "))
+            log_file = input("> Log file name: ")
+            break
+        except ValueError:
+            print("Invalid input.")
 
-# empty queue and order results
-results = []
-while not queue.empty():
-    results.append(queue.get())
+    game = Game(player_count)
+    players = []
 
-results.sort(key = lambda x: x[0])
-batch_strings = [r[1] for r in results]
+    # get player info
+    print("--- Player Configuration ---")
+    print(f"Available players: {', '.join(available_agents.keys())}")
+    for p in range(player_count):
+        while True:
+            player_type = input(f"> Agent type for player {p}: ")
+            if player_type in available_agents.keys():
+                new_player = available_agents[player_type].build(p, game)
+                players.append(new_player)
+                break
+            else:
+                print("Invalid agent type.")
 
-# calculate overall result and average score
-total_scores = [0 for p in len(players)]
-average_points = [0 for p in len(players)]
-for result in results:
-    total_scores = [sum(x) for x in zip(total_scores, result[2])]
-    average_points = [sum(x) for x in zip(average_points, result[3])]
+    # write game info into head of file
+    with open(log_file + ".txt", "w") as f:
+        f.write("--- Game Configuration ---\n")
+        f.write(f"Game count: {games}\n")
+        f.write(f"Player count: {player_count}\n")
+        f.write(f"Deck: {game.deck.tile_counts}\n")
+        
 
-# write results to file
-with open(log_file + ".txt", "a") as f:
-    f.writelines(results)
-    f.write("\n--- Full Stats --------------")
-    f.write()
+    #players = [RandomAgent(0, game), RandomAgent(1, game)] #UCTAgent(0, game)
+    #players = [RandomAgent(0, game), UCTAgent(1, game, 1000, trees = 6)]
+    #players = [RandomAgent(0, game), CFRAgent(1, game)]
+    #players = [CFRAgent(0, game), UCTAgent(1, game)]
+    #players = [Star1Agent(0, game), RandomAgent(1, game)]
+    #players = [Human(0, game), UCTAgent(1, game)]
+    #players = [Star1Agent(0, game), UCTAgent(1, game)]
+    #players = [UCTAgent(0, game, 1000), MCCFRAgent(1, game, 1000)]
+    #players = [UCTAgent(0, game, 1000), UCTAgent(1, game, 6000, trees = 6)]
+    #players = [UCTAgent(0, game, 100), UCTAgent(1, game, 100)]
+    #players = [UCTAgent(0, game, 500), MCCFRAgent(1, game, 1000), UCTAgent(2, game, 1000)]
+
+
+    
+    # create permutations of players
+    player_permutations = list(permutations(players))
+    player_permutations_temp = []
+    # update player number for each permutation
+    for p, permutation in enumerate(player_permutations):
+        player_permutations_temp.append([])
+        for i in range(player_count):
+            # copy player and update player num
+            new_player = copy(permutation[i])
+            new_player.player_num = i
+            player_permutations_temp[p].append(new_player)
+    player_permutations = player_permutations_temp
+
+    # generate the tile orders for given number of games
+    deck = game.deck.get_tile_list()
+    game_list = [" ".join(sample(deck, len(deck))) for _ in range(games)]
+
+    processes = []
+    queue = Queue()
+    for p, permutation in enumerate(player_permutations):
+        process = Process(target=simulate_games, args=(p, game, game_list, permutation, queue))
+        processes.append(process)
+        process.start()
+
+    # wait for results
+    for process in processes:
+        process.join()
+
+    # empty queue and order results
+    results = []
+    while not queue.empty():
+        results.append(queue.get())
+
+    results.sort(key = lambda x: x[0])
+    batch_strings = [r[1] for r in results]
+
+    # calculate overall result and average score
+    total_scores = [0 for p in range(player_count)]
+    average_points = [0 for p in range(player_count)]
+    for result in results:
+        total_scores = [sum(x) for x in zip(total_scores, result[2])]
+        average_points = [sum(x) for x in zip(average_points, result[3])]
+
+    # write results to file
+    with open(log_file + ".txt", "a") as f:
+        f.writelines(results)
+        f.write("\n--- Full Stats --------------")
+        #f.write()
 
 
 # time_sum = 0 
