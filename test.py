@@ -23,14 +23,14 @@ def simulate_games(perm_num, game, game_list, players, queue):
 
     out += "\n--- Player Configuration ---\n"
     for i, player in enumerate(players):
-        out += f"Player {i}: {player.return_info()}\n"
+        out += f"Player {i}: {player[1].return_info()}\n"
     out += "-----------------------------\n\n"
 
     for g in range(len(game_list)): 
         times = [0 for _ in range(len(players))]
         print(players)
         for player in players:
-            print(player.return_info())
+            print(player[1].player_num, player[1].return_info())
         player_cycle = cycle(players)
         # load tiles
         game.reset(game_list[g])
@@ -40,7 +40,7 @@ def simulate_games(perm_num, game, game_list, players, queue):
             # check for any valid moves
             if (len(game.get_valid_actions(next_tile)) == 0):
                 continue
-            next_player = next(player_cycle)
+            next_player = next(player_cycle)[1]
             #print(next_player)
             turn_start = time.time()
             next_player.make_move(next_tile)
@@ -52,7 +52,7 @@ def simulate_games(perm_num, game, game_list, players, queue):
         for action in game.action_sequence:
             out += str(action) + "\n"
         out += f"--- End Game Stats -------------\n"
-        out += "Scores: " + str(game.compute_scores()) + "\n"
+        out += "Points: " + str(game.compute_scores()) + "\n"
         out += "Times: " + str(times) + "\n"
         out += f"------------------------------\n\n"
         game.print_game_state()
@@ -82,12 +82,12 @@ def simulate_games(perm_num, game, game_list, players, queue):
     duration = time.time() - start
 
 
-    avg_scores_str = "Average Scores: " + str(list(map(lambda x: x / len(game_list), total_points)))
+    avg_scores_str = "Average Points: " + str(list(map(lambda x: x / len(game_list), total_points)))
     avg_times_str = "Average Times: " + str(list(map(lambda x: x / len(game_list), total_times)))
     avg_duration_str = "Average Game Duration: " + str(duration / len(game_list)) + " seconds"
 
     out += "\n --- Game Batch Stats ------------\n"
-    out += "Results: " + str(scores) + "\n"
+    out += f"Results: {scores}\n"
     out += avg_scores_str + "\n"
     out += avg_times_str + "\n"
     out += avg_duration_str + "\n"
@@ -98,7 +98,6 @@ def simulate_games(perm_num, game, game_list, players, queue):
     print(avg_times_str)
     print(avg_duration_str)
 
-    print("return")
     queue.put((perm_num, out, {player:score for (player, score) in zip(players, scores)}, {player:score for (player, score) in zip(players, total_points)}))
 
 
@@ -154,15 +153,17 @@ if __name__ == "__main__":
 
     
     # create permutations of players
-    player_permutations = list(permutations(players))
+    player_permutations = list(permutations(enumerate(players)))
     player_permutations_temp = []
     # update player number for each permutation
     for p, permutation in enumerate(player_permutations):
         player_permutations_temp.append([])
         for i in range(player_count):
             # copy player and update player num
-            new_player = copy(permutation[i])
+            player = permutation[i]
+            new_player = copy(player[1]) #remove copy
             new_player.player_num = i
+            new_player = (player[0], new_player)
             player_permutations_temp[p].append(new_player)
     player_permutations = player_permutations_temp
 
@@ -178,8 +179,10 @@ if __name__ == "__main__":
         process.start()
 
     # wait for results
+    print(processes)
     for process in processes:
         process.join()
+        print(f"{process} JOINED")
 
     # empty queue and order results
     results = []
@@ -191,16 +194,24 @@ if __name__ == "__main__":
 
     # calculate overall result and average score
     total_scores = [0 for p in range(player_count)]
-    average_points = [0 for p in range(player_count)]
+    total_points = [0 for p in range(player_count)]
+    print(players)
     for result in results:
-        total_scores = [sum(x) for x in zip(total_scores, result[2])]
-        average_points = [sum(x) for x in zip(average_points, result[3])]
+        sorted_scores = dict(sorted(result[2].items(), key=lambda x: x[0][0]))
+        sorted_points = dict(sorted(result[3].items(), key=lambda x: x[0][0]))
+        total_scores = [sum(x) for x in zip(total_scores, sorted_scores.values())]
+        total_points = [sum(x) for x in zip(total_points, sorted_points.values())]
+
+    print("\n--- Full Stats --------------")
+    print(f"Total Points: {total_points}")
+    print(f"Total Scores: {total_scores}")
 
     # write results to file
     with open(log_file + ".txt", "a") as f:
-        f.writelines(results)
-        f.write("\n--- Full Stats --------------")
-        #f.write()
+        f.writelines(batch_strings)
+        f.write("\n--- Full Stats --------------\n")
+        f.write(f"Total Points: {total_points}\n")
+        f.write(f"Total Scores: {total_scores}\n")
 
 
 # time_sum = 0 

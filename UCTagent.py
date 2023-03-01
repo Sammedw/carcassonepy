@@ -122,7 +122,6 @@ class UCTAgent(BaseAgent):
             except:
                 print("Invalid inputs.")
         return UCTAgent(player_num, game, iterations, exploration_constant=exploration_constant)
-    
 
     def return_info(self):
         return f"UCT Agent(iterations={self.iterations}, exploration_constant={self.exploration_constant})"
