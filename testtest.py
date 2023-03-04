@@ -11,7 +11,6 @@ from human import Human
 from copy import copy
 from random import sample
 from multiprocessing import Process, Queue
-import sys
 
 def simulate_games(perm_num, game, game_list, players, queue):
 
@@ -105,52 +104,25 @@ def simulate_games(perm_num, game, game_list, players, queue):
 
 
 if __name__ == "__main__":
+    # get game info
     available_agents = {"uct": UCTAgent, "mccfr": MCCFRAgent}
+    print("--- Game Configuration ---")
+    while True:
+        try:
+            games = 10
+            player_count = 3
+            log_file = "test.txt"
+            break
+        except ValueError:
+            print("Invalid input.")
 
-    if len(sys.argv) == 3 and sys.argv[1] == "-l":
-        # read game config from file
-        filename = sys.argv[2]
-        with open(filename, "r") as f:
-            lines = f.readlines()
-        games = int(lines[0].strip("\n"))
-        player_count = int(lines[1].strip("\n"))
-        log_file = lines[2].strip("\n")
-        game = Game(player_count)
-        players = []
-        # read players from file
-        for p in range(player_count):
-            player_string = lines[3+p].strip("\n")
-            player_params = player_string.split(",")
-            player_name = player_params[0]
-            player_params = player_params[1:]
-            players.append(available_agents[player_name](p, game, *map(float, player_params)))
-    else:
-        # get game info
-        print("--- Game Configuration ---")
-        while True:
-            try:
-                games = int(input("> Number of games: "))
-                player_count = int(input("> Number of players: "))
-                log_file = input("> Log file name: ")
-                break
-            except ValueError:
-                print("Invalid input.")
+    game = Game(player_count)
+    players = []
 
-        game = Game(player_count)
-        players = []
-
-        # get player info
-        print("--- Player Configuration ---")
-        print(f"Available players: {', '.join(available_agents.keys())}")
-        for p in range(player_count):
-            while True:
-                player_type = input(f"> Agent type for player {p}: ")
-                if player_type in available_agents.keys():
-                    new_player = available_agents[player_type].build(p, game)
-                    players.append(new_player)
-                    break
-                else:
-                    print("Invalid agent type.")
+    # get player info
+    print("--- Player Configuration ---")
+    print(f"Available players: {', '.join(available_agents.keys())}")
+    players = [UCTAgent(0, game, 3, 3), UCTAgent(1, game, 3, 3), MCCFRAgent(2, game, 3, 0.6)]
 
     # write game info into head of file
     with open(log_file + ".txt", "w") as f:
@@ -208,6 +180,11 @@ if __name__ == "__main__":
             results.append(queue.get())
         if not any(p.is_alive() for p in processes):
             break
+
+    #print(processes)
+    #for process in processes:
+    #    process.join()
+    #    print(f"{process} JOINED")
 
     results.sort(key = lambda x: x[0])
     batch_strings = [r[1] for r in results]

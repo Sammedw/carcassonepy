@@ -8,6 +8,7 @@ from enums import FeatureType
 from feature import Farm
 from game import Game
 from tile import Tile
+import time
 
 class ChanceNode: pass
 
@@ -104,9 +105,9 @@ def UCT(node: ChoiceNode, parent_visit_count: int,  exploration_constant: float,
 
 class UCTAgent(BaseAgent):
     
-    def __init__(self, player_num: int, game: Game, iterations: int, exploration_constant: float = 3):
+    def __init__(self, player_num: int, game: Game, time_per_turn: int, exploration_constant: float = 3):
         super().__init__(player_num, game)
-        self.iterations = iterations
+        self.time_per_turn = time_per_turn
         self.exploration_constant = exploration_constant
  
     @staticmethod
@@ -114,17 +115,17 @@ class UCTAgent(BaseAgent):
         print("--- Build UCT agent ---")
         while True:
             try:
-                iterations = input("Iterations per action: ")
-                iterations = int(iterations)
+                time_per_turn = input("Time(s) per action: ")
+                time_per_turn = int(time_per_turn)
                 exploration_constant = input("Exploration constant: ")
                 exploration_constant = float(exploration_constant)
                 break
             except:
                 print("Invalid inputs.")
-        return UCTAgent(player_num, game, iterations, exploration_constant=exploration_constant)
+        return UCTAgent(player_num, game, time_per_turn, exploration_constant=exploration_constant)
 
     def return_info(self):
-        return f"UCT Agent(iterations={self.iterations}, exploration_constant={self.exploration_constant})"
+        return f"UCT Agent(time={self.time_per_turn}, exploration_constant={self.exploration_constant})"
 
     def expand(self, root: ChoiceNode) -> ChanceNode:
         # choose untried action from current state and remove from expandable actions
@@ -189,11 +190,14 @@ class UCTAgent(BaseAgent):
             current_node.total_reward += payoff
             current_node = current_node.parent
              
-    def uct_search(self, start_state: Game, next_tile: Tile, iterations: int):
+    def uct_search(self, start_state: Game, next_tile: Tile, time_per_turn: int):
         # create root node
         root = ChoiceNode(start_state, next_tile, None, None)
+        # start time 
+        start = time.time()
         # simulate while within computational budget
-        for _ in range(iterations):
+        i = 0
+        while (time.time() - start) < time_per_turn:
             #print(i)
             # select node to expand using tree policy
             node = self.tree_policy(root)
@@ -204,14 +208,16 @@ class UCTAgent(BaseAgent):
             # backup reward
             self.backup(node, payoff)
             #print("-----------------------------------------------------------------")
-            #root.print_node()          
+            #root.print_node() 
+            i += 1         
         # return best child after simulations (c=0 so one with best average reward)
         #root.print_node()
+        print(f"{i} UCT iterations in {self.time_per_turn}s")
         return root
 
 
     def make_move(self, next_tile: Tile):
-        root = self.uct_search(self.game, next_tile, self.iterations)
+        root = self.uct_search(self.game, next_tile, self.time_per_turn)
         #print("Choose")
         best_action = self.best_child(root, 0).incoming_action
         #print(best_action)

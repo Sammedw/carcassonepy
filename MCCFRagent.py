@@ -1,5 +1,6 @@
 import copy
 import random
+import time
 from action import Action
 from baseagent import BaseAgent
 from game import Game
@@ -59,11 +60,28 @@ class Node:
 
 class MCCFRAgent(BaseAgent):
     
-    def __init__(self, player_num: int, game: Game, iterations, epsilon=0.6):
+    def __init__(self, player_num: int, game: Game, time_per_turn: int, epsilon=0.6):
         super().__init__(player_num, game)
         self.node_dict: dict[str, Node] = {}
-        self.iterations = iterations
+        self.time_per_turn = time_per_turn
         self.epsilon = epsilon
+
+    @staticmethod
+    def build(player_num: int, game: Game):
+        print("--- Build MCCFR agent ---")
+        while True:
+            try:
+                time_per_turn = input("Time(s) per action: ")
+                time_per_turn = int(time_per_turn)
+                epsilon = input("Epsilon: ")
+                epsilon = float(epsilon)
+                break
+            except:
+                print("Invalid inputs.")
+        return MCCFRAgent(player_num, game, time_per_turn, epsilon=epsilon)
+
+    def return_info(self):
+        return f"MCCFR Agent(time={self.time_per_turn}, epsilon={self.epsilon})"
 
     def cfr_iteration(self, current_state: Game, iteration: int, reach_probabilities: list[float], terminal_reach_probability: float, sample_probability: float, next_tile: Tile = None):
         # check if game in in terminal state
@@ -161,10 +179,14 @@ class MCCFRAgent(BaseAgent):
 
     def make_move(self, next_tile: Tile):
         valid_actions = super().make_move(next_tile)
-        #print(list(map(str, valid_actions)))
-        for i in range(self.iterations):
+        # start time 
+        start = time.time()
+        i = 0
+        # simulate while within computational budget
+        while (time.time() - start) < self.time_per_turn:
             #print(i)
             self.cfr_iteration(self.game, i, [1 for _ in range(self.game.player_count + 1)], 1, 1, next_tile)
+            i += 1
         #print("regret sum: ", self.node_dict[self.game.get_state_str() + ' NEXT_TILE: ' + next_tile.name].regret_sum)
         #print("-----------------------------------------------------------------------------")
         #print("AVG strategy: ", list(sorted(zip(self.node_dict[self.game.get_state_str() + ' NEXT_TILE: ' + next_tile.name].get_average_strategy(), list(map(str, valid_actions))), key = lambda x: x[0], reverse=True)))
