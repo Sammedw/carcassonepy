@@ -1,0 +1,2099 @@
+--- Game Configuration ---
+Game count: 50
+Player count: 2
+Deck: {'start': 0, 'big_city': 1, 'monastery_road': 2, 'monastery': 4, 'tri_road': 4, 'city_cap_straight_road': 3, 'city_tunnel': 1}
+
+--- Player Configuration ---
+Player 0: UCT Agent(time=60.0, exploration_constant=2.5)
+Player 1: MCCFR Agent(time=60.0, epsilon=0.6)
+-----------------------------
+
+--- Game 1 ----------------
+<city_cap_straight_road, 2, (1, 0), CITY, 0>
+<monastery_road, 0, (-1, 0), MONASTERY, 0>
+<city_cap_straight_road, 2, (0, -1), ROAD, 0>
+<monastery, 0, (-1, 1), MONASTERY, 0>
+<city_cap_straight_road, 0, (-1, -1), CITY, 0>
+<tri_road, 1, (-2, 0), None, 0>
+<monastery_road, 2, (0, -2), FARM, 0>
+<tri_road, 3, (1, 1), None, 0>
+<city_tunnel, 1, (0, -3), None, 0>
+<monastery, 0, (-1, 2), None, 0>
+<monastery, 0, (2, 0), None, 0>
+<tri_road, 3, (-3, 0), None, 0>
+<monastery, 0, (3, 0), None, 0>
+<tri_road, 0, (1, 2), None, 0>
+--- End Game Stats -------------
+Points: [17, 11]
+Times: [221.54270386695862, 191.9620611667633]
+------------------------------
+
+--- Game 2 ----------------
+<monastery, 0, (-1, 0), MONASTERY, 0>
+<tri_road, 2, (0, -1), ROAD, 1>
+<tri_road, 0, (1, -1), ROAD, 2>
+<tri_road, 1, (0, 1), FARM, 1>
+<city_tunnel, 0, (-2, 0), CITY, 0>
+<monastery, 0, (-3, 0), MONASTERY, 0>
+<monastery_road, 1, (2, -1), None, 0>
+<city_cap_straight_road, 2, (-4, 0), None, 0>
+<monastery_road, 3, (-1, -1), None, 0>
+<monastery, 0, (-3, 1), None, 0>
+<city_cap_straight_road, 3, (-1, 1), None, 0>
+<big_city, 0, (-1, 2), None, 0>
+<city_cap_straight_road, 0, (-5, 0), None, 0>
+<monastery, 0, (-3, 2), None, 0>
+<tri_road, 3, (-5, -1), None, 0>
+--- End Game Stats -------------
+Points: [10, 7]
+Times: [240.59983849525452, 210.3490867614746]
+------------------------------
+
+--- Game 3 ----------------
+<big_city, 0, (1, 0), CITY, 0>
+<city_tunnel, 0, (-1, 0), CITY, 0>
+<monastery, 0, (-2, 0), MONASTERY, 0>
+<city_cap_straight_road, 1, (-1, 1), None, 0>
+<tri_road, 2, (-2, 1), None, 0>
+<monastery, 0, (-3, 0), MONASTERY, 0>
+<monastery_road, 3, (-3, -1), None, 0>
+<tri_road, 1, (-4, 0), None, 0>
+<monastery, 0, (-3, -2), None, 0>
+<city_cap_straight_road, 2, (-4, -2), None, 0>
+<monastery_road, 3, (-3, -3), None, 0>
+<tri_road, 1, (-4, -1), None, 0>
+<tri_road, 3, (0, -1), None, 0>
+<monastery, 0, (-1, 2), None, 0>
+<city_cap_straight_road, 3, (1, -1), None, 0>
+--- End Game Stats -------------
+Points: [10, 8]
+Times: [240.89422988891602, 210.7867488861084]
+------------------------------
+
+--- Game 4 ----------------
+<monastery, 0, (-1, 0), MONASTERY, 0>
+<city_cap_straight_road, 1, (-1, -1), CITY, 0>
+<monastery, 0, (-2, 0), MONASTERY, 0>
+<monastery_road, 0, (0, 1), MONASTERY, 0>
+<city_tunnel, 1, (0, 2), None, 0>
+<city_cap_straight_road, 3, (-1, -2), None, 0>
+<tri_road, 0, (-2, -1), None, 0>
+<city_cap_straight_road, 2, (1, 0), CITY, 0>
+<monastery, 0, (-2, 1), None, 0>
+<tri_road, 0, (0, -2), ROAD, 2>
+<monastery_road, 2, (-1, 1), None, 0>
+<tri_road, 3, (-2, -2), None, 0>
+<tri_road, 2, (0, -1), None, 0>
+<monastery, 0, (0, 3), MONASTERY, 0>
+<big_city, 0, (1, 2), None, 0>
+--- End Game Stats -------------
+Points: [15, 21]
+Times: [240.5998396873474, 211.22438311576843]
+------------------------------
+
+--- Game 5 ----------------
+<tri_road, 3, (0, 1), ROAD, 2>
+<city_cap_straight_road, 2, (1, 0), CITY, 0>
+<monastery, 0, (-1, 1), MONASTERY, 0>
+<city_tunnel, 0, (2, 0), CITY, 0>
+<city_cap_straight_road, 2, (0, -1), None, 0>
+<monastery, 0, (-1, 0), MONASTERY, 0>
+<monastery_road, 2, (0, -2), None, 0>
+<tri_road, 0, (0, -3), None, 0>
+<tri_road, 1, (1, 1), ROAD, 1>
+<big_city, 0, (2, -1), None, 0>
+<monastery_road, 2, (-1, 2), MONASTERY, 0>
+<tri_road, 3, (0, -4), None, 0>
+<city_cap_straight_road, 0, (0, 2), None, 0>
+<monastery, 0, (-2, 0), None, 0>
+<monastery, 0, (-2, 2), None, 0>
+--- End Game Stats -------------
+Points: [19, 13]
+Times: [240.63243317604065, 210.95718789100647]
+------------------------------
+
+--- Game 6 ----------------
+<tri_road, 3, (0, -1), ROAD, 1>
+<big_city, 0, (1, 0), CITY, 0>
+<tri_road, 3, (0, 1), ROAD, 2>
+<monastery, 0, (-1, 0), MONASTERY, 0>
+<tri_road, 1, (0, 2), ROAD, 0>
+<city_tunnel, 1, (2, 0), None, 0>
+<monastery_road, 1, (-1, -1), MONASTERY, 0>
+<monastery, 0, (-1, 1), None, 0>
+<city_cap_straight_road, 0, (0, -2), None, 0>
+<city_cap_straight_road, 3, (2, 1), None, 0>
+<city_cap_straight_road, 2, (-2, 0), None, 0>
+<tri_road, 3, (0, 3), None, 0>
+<monastery, 0, (-1, -2), None, 0>
+<monastery_road, 2, (0, -3), None, 0>
+<monastery, 0, (-2, -2), None, 0>
+--- End Game Stats -------------
+Points: [14, 11]
+Times: [240.35162115097046, 210.36697578430176]
+------------------------------
+
+--- Game 7 ----------------
+<city_cap_straight_road, 2, (1, 0), CITY, 0>
+<city_cap_straight_road, 2, (1, -1), FARM, 1>
+<city_cap_straight_road, 0, (1, 1), ROAD, 0>
+<monastery, 0, (2, 0), MONASTERY, 0>
+<monastery, 0, (2, -1), MONASTERY, 0>
+<tri_road, 3, (1, 2), None, 0>
+<tri_road, 1, (1, -2), None, 0>
+<city_tunnel, 1, (2, 1), None, 0>
+<monastery, 0, (2, -2), MONASTERY, 0>
+<monastery_road, 2, (3, -1), None, 0>
+<tri_road, 2, (1, -3), None, 0>
+<monastery_road, 2, (-1, 0), None, 0>
+<monastery, 0, (3, -2), None, 0>
+<tri_road, 2, (0, -3), None, 0>
+--- End Game Stats -------------
+Points: [24, 10]
+Times: [218.0758559703827, 191.79046082496643]
+------------------------------
+
+--- Game 8 ----------------
+<monastery_road, 1, (-1, 0), MONASTERY, 0>
+<monastery, 0, (-1, -1), MONASTERY, 0>
+<monastery, 0, (-1, 1), MONASTERY, 0>
+<monastery_road, 0, (-2, -1), MONASTERY, 0>
+<city_cap_straight_road, 0, (0, 1), None, 0>
+<tri_road, 1, (-2, -2), None, 0>
+<city_cap_straight_road, 0, (0, 2), None, 0>
+<city_tunnel, 1, (1, 1), None, 0>
+<monastery, 0, (-2, 1), None, 0>
+<tri_road, 3, (0, 3), None, 0>
+<big_city, 0, (2, 1), None, 0>
+<tri_road, 3, (-2, -3), None, 0>
+<monastery, 0, (-2, 2), None, 0>
+<city_cap_straight_road, 1, (-3, -2), None, 0>
+<tri_road, 2, (-2, 3), None, 0>
+--- End Game Stats -------------
+Points: [14, 10]
+Times: [240.660986661911, 210.78099393844604]
+------------------------------
+
+--- Game 9 ----------------
+<big_city, 0, (1, 0), CITY, 0>
+<monastery_road, 0, (0, 1), ROAD, 0>
+<city_cap_straight_road, 2, (2, 0), ROAD, 0>
+<city_cap_straight_road, 2, (0, -1), None, 0>
+<city_tunnel, 0, (1, 1), None, 0>
+<tri_road, 3, (2, -1), None, 0>
+<city_cap_straight_road, 0, (2, 1), None, 0>
+<tri_road, 0, (3, -1), None, 0>
+<monastery, 0, (-1, 0), None, 0>
+<tri_road, 3, (3, -2), ROAD, 0>
+<monastery, 0, (-2, 0), None, 0>
+<monastery, 0, (-1, 1), MONASTERY, 0>
+<tri_road, 0, (2, 2), None, 0>
+<monastery_road, 1, (0, 2), None, 0>
+<monastery, 0, (3, 0), MONASTERY, 0>
+--- End Game Stats -------------
+Points: [14, 11]
+Times: [240.8021993637085, 210.71189999580383]
+------------------------------
+
+--- Game 10 ----------------
+<big_city, 0, (1, 0), CITY, 0>
+<city_cap_straight_road, 2, (0, 1), ROAD, 0>
+<monastery, 0, (-1, 0), MONASTERY, 0>
+<city_cap_straight_road, 0, (0, -1), FARM, 0>
+<monastery_road, 1, (-2, 0), None, 0>
+<monastery, 0, (-2, -1), None, 0>
+<monastery_road, 0, (-1, -1), None, 0>
+<tri_road, 2, (0, -2), None, 0>
+<tri_road, 0, (0, -3), None, 0>
+<monastery, 0, (-2, 1), None, 0>
+<city_cap_straight_road, 2, (2, 0), None, 0>
+<tri_road, 1, (-3, 1), None, 0>
+<city_tunnel, 0, (1, 1), None, 0>
+<monastery, 0, (-2, 2), None, 0>
+<tri_road, 2, (-3, 0), None, 0>
+--- End Game Stats -------------
+Points: [13, 4]
+Times: [240.809326171875, 210.61940050125122]
+------------------------------
+
+--- Game 11 ----------------
+<monastery, 0, (-1, 0), MONASTERY, 0>
+<tri_road, 2, (0, -1), ROAD, 1>
+<tri_road, 2, (1, -1), ROAD, 0>
+<tri_road, 1, (0, 1), FARM, 0>
+<city_cap_straight_road, 1, (1, -2), None, 0>
+<tri_road, 0, (-1, -1), ROAD, 0>
+<city_cap_straight_road, 3, (1, -3), CITY, 0>
+<monastery, 0, (1, 1), MONASTERY, 0>
+<city_tunnel, 0, (-2, 0), CITY, 0>
+<big_city, 0, (-2, 1), None, 0>
+<monastery_road, 2, (-1, -2), None, 0>
+<monastery, 0, (-3, 0), None, 0>
+<city_cap_straight_road, 3, (-2, -1), None, 0>
+<monastery_road, 1, (2, -3), None, 0>
+<monastery, 0, (3, -3), None, 0>
+--- End Game Stats -------------
+Points: [18, 8]
+Times: [240.3697316646576, 210.49464011192322]
+------------------------------
+
+--- Game 12 ----------------
+<city_cap_straight_road, 2, (1, 0), CITY, 0>
+<monastery, 0, (-1, 0), MONASTERY, 0>
+<monastery, 0, (2, 0), MONASTERY, 0>
+<monastery, 0, (-2, 0), MONASTERY, 0>
+<tri_road, 2, (2, 1), None, 0>
+<city_cap_straight_road, 2, (0, 1), None, 0>
+<tri_road, 2, (1, -1), ROAD, 1>
+<tri_road, 2, (-2, 1), None, 0>
+<monastery_road, 1, (2, -1), None, 0>
+<city_cap_straight_road, 2, (-3, 0), None, 0>
+<monastery_road, 1, (3, 1), None, 0>
+<city_tunnel, 1, (-1, -1), None, 0>
+<monastery, 0, (3, -1), None, 0>
+<tri_road, 3, (-3, 1), None, 0>
+--- End Game Stats -------------
+Points: [13, 12]
+Times: [229.46036076545715, 199.28214526176453]
+------------------------------
+
+--- Game 13 ----------------
+<city_tunnel, 1, (1, 0), CITY, 0>
+<monastery_road, 2, (1, 1), MONASTERY, 0>
+<monastery, 0, (-1, 0), MONASTERY, 0>
+<monastery, 0, (2, 1), MONASTERY, 0>
+<tri_road, 2, (-1, 1), None, 0>
+<city_cap_straight_road, 1, (1, -1), None, 0>
+<monastery, 0, (-2, 0), None, 0>
+<tri_road, 0, (-2, -1), None, 0>
+<monastery, 0, (-3, 0), None, 0>
+<monastery_road, 3, (2, 2), None, 0>
+<tri_road, 2, (-2, 1), None, 0>
+<city_cap_straight_road, 2, (1, 2), None, 0>
+<tri_road, 2, (0, -1), None, 0>
+<city_cap_straight_road, 0, (3, 1), None, 0>
+<big_city, 0, (1, -2), None, 0>
+--- End Game Stats -------------
+Points: [9, 12]
+Times: [241.28523182868958, 210.73721504211426]
+------------------------------
+
+--- Game 14 ----------------
+<monastery, 0, (-1, 0), MONASTERY, 0>
+<monastery, 0, (-2, 0), MONASTERY, 0>
+<city_cap_straight_road, 0, (0, 1), ROAD, 0>
+<monastery, 0, (-1, 1), MONASTERY, 0>
+<big_city, 0, (1, 1), None, 0>
+<monastery, 0, (-2, 1), None, 0>
+<tri_road, 3, (0, -1), None, 0>
+<tri_road, 2, (-1, 2), None, 0>
+<monastery_road, 0, (-1, -1), None, 0>
+<city_tunnel, 0, (-3, 1), None, 0>
+<tri_road, 1, (0, 2), None, 0>
+<tri_road, 2, (-2, 2), None, 0>
+<city_cap_straight_road, 2, (2, 1), CITY, 0>
+<monastery_road, 1, (-4, 1), None, 0>
+<city_cap_straight_road, 0, (-1, -2), None, 0>
+--- End Game Stats -------------
+Points: [16, 15]
+Times: [240.74942874908447, 210.621572971344]
+------------------------------
+
+--- Game 15 ----------------
+<tri_road, 1, (0, -1), ROAD, 2>
+<monastery_road, 0, (0, 1), MONASTERY, 0>
+<big_city, 0, (1, 0), CITY, 0>
+<city_tunnel, 0, (-1, 0), None, 0>
+<tri_road, 2, (0, -2), ROAD, 1>
+<monastery, 0, (0, 2), MONASTERY, 0>
+<monastery, 0, (0, -3), MONASTERY, 0>
+<tri_road, 1, (-1, 2), None, 0>
+<city_cap_straight_road, 3, (1, -2), None, 0>
+<monastery_road, 3, (0, 3), None, 0>
+<monastery, 0, (1, -3), None, 0>
+<city_cap_straight_road, 2, (-1, 3), None, 0>
+<tri_road, 2, (-1, -2), None, 0>
+<city_cap_straight_road, 0, (1, 2), None, 0>
+<monastery, 0, (0, -4), None, 0>
+--- End Game Stats -------------
+Points: [14, 13]
+Times: [240.55095958709717, 212.18351912498474]
+------------------------------
+
+--- Game 16 ----------------
+<monastery, 0, (-1, 0), MONASTERY, 0>
+<city_cap_straight_road, 1, (-1, -1), CITY, 0>
+<monastery_road, 3, (-2, -1), MONASTERY, 0>
+<city_cap_straight_road, 3, (-1, -2), ROAD, 0>
+<tri_road, 2, (0, -1), None, 0>
+<monastery, 0, (-2, 0), MONASTERY, 0>
+<tri_road, 0, (0, 1), None, 0>
+<monastery, 0, (-3, -1), None, 0>
+<monastery, 0, (-3, -2), None, 0>
+<monastery_road, 3, (-2, 1), None, 0>
+<big_city, 0, (1, 0), None, 0>
+<tri_road, 0, (-1, -3), None, 0>
+<city_tunnel, 1, (2, 0), None, 0>
+<tri_road, 1, (-3, 1), None, 0>
+<city_cap_straight_road, 3, (0, -3), None, 0>
+--- End Game Stats -------------
+Points: [15, 12]
+Times: [243.3990499973297, 210.66121292114258]
+------------------------------
+
+--- Game 17 ----------------
+<monastery, 0, (-1, 0), MONASTERY, 0>
+<city_cap_straight_road, 1, (-1, -1), CITY, 0>
+<city_cap_straight_road, 2, (1, 0), CITY, 0>
+<tri_road, 0, (0, 1), ROAD, 0>
+<tri_road, 2, (0, -1), ROAD, 1>
+<monastery, 0, (0, 2), None, 0>
+<monastery_road, 3, (-1, 1), MONASTERY, 0>
+<tri_road, 1, (1, 1), None, 0>
+<big_city, 0, (-1, -2), None, 0>
+<tri_road, 2, (-2, -1), None, 0>
+<monastery, 0, (-2, 1), None, 0>
+<monastery, 0, (0, 3), MONASTERY, 0>
+<monastery_road, 0, (-2, 0), None, 0>
+<city_cap_straight_road, 3, (-1, -3), None, 0>
+<city_tunnel, 1, (-2, 2), None, 0>
+--- End Game Stats -------------
+Points: [24, 8]
+Times: [241.06253600120544, 212.6507978439331]
+------------------------------
+
+--- Game 18 ----------------
+<monastery_road, 1, (-1, 0), MONASTERY, 0>
+<tri_road, 1, (0, -1), None, 0>
+<city_tunnel, 1, (1, 0), CITY, 0>
+<tri_road, 1, (0, 1), ROAD, 0>
+<monastery, 0, (1, -1), None, 0>
+<city_cap_straight_road, 3, (-1, 1), CITY, 0>
+<city_cap_straight_road, 2, (2, 0), None, 0>
+<monastery_road, 1, (1, -2), MONASTERY, 0>
+<big_city, 0, (-1, 2), None, 0>
+<monastery, 0, (1, -3), None, 0>
+<tri_road, 0, (-2, 1), ROAD, 0>
+<monastery, 0, (2, -2), None, 0>
+<monastery, 0, (1, 1), MONASTERY, 0>
+<city_cap_straight_road, 1, (-3, 1), None, 0>
+<tri_road, 0, (-1, -1), None, 0>
+--- End Game Stats -------------
+Points: [21, 11]
+Times: [240.64450907707214, 210.60134434700012]
+------------------------------
+
+--- Game 19 ----------------
+<city_cap_straight_road, 2, (1, 0), CITY, 0>
+<tri_road, 3, (1, -1), ROAD, 0>
+<monastery, 0, (2, 0), MONASTERY, 0>
+<monastery, 0, (2, 1), MONASTERY, 0>
+<city_tunnel, 0, (-1, 0), CITY, 0>
+<big_city, 0, (-1, 1), None, 0>
+<monastery_road, 1, (2, -1), None, 0>
+<monastery, 0, (-2, 0), None, 0>
+<tri_road, 3, (3, -1), None, 0>
+<city_cap_straight_road, 0, (1, -2), None, 0>
+<city_cap_straight_road, 2, (0, 1), None, 0>
+<monastery_road, 2, (3, 1), None, 0>
+<tri_road, 0, (-2, -1), None, 0>
+<monastery, 0, (2, 2), None, 0>
+<tri_road, 3, (1, -3), None, 0>
+--- End Game Stats -------------
+Points: [15, 7]
+Times: [241.86308932304382, 210.36494040489197]
+------------------------------
+
+--- Game 20 ----------------
+<monastery_road, 2, (-1, 0), MONASTERY, 0>
+<monastery, 0, (-2, 0), MONASTERY, 0>
+<city_tunnel, 1, (1, 0), CITY, 0>
+<monastery_road, 1, (1, -1), MONASTERY, 0>
+<monastery, 0, (1, 1), None, 0>
+<monastery, 0, (-3, 0), None, 0>
+<city_cap_straight_road, 2, (2, 0), None, 0>
+<city_cap_straight_road, 1, (1, -2), None, 0>
+<big_city, 0, (1, -3), CITY, 0>
+<monastery, 0, (-3, 1), None, 0>
+<tri_road, 1, (-4, 0), None, 0>
+<tri_road, 2, (0, -2), None, 0>
+<tri_road, 1, (0, 1), None, 0>
+<tri_road, 0, (-3, -1), None, 0>
+<city_cap_straight_road, 3, (1, -4), None, 0>
+--- End Game Stats -------------
+Points: [14, 11]
+Times: [240.91123247146606, 211.5647213459015]
+------------------------------
+
+--- Game 21 ----------------
+<big_city, 0, (1, 0), CITY, 0>
+<monastery, 0, (-1, 0), MONASTERY, 0>
+<monastery_road, 2, (-1, 1), MONASTERY, 0>
+<city_cap_straight_road, 1, (-1, -1), CITY, 0>
+<tri_road, 3, (-1, 2), None, 0>
+<tri_road, 1, (-2, 1), None, 0>
+<city_cap_straight_road, 3, (1, -1), None, 0>
+<monastery, 0, (1, -2), None, 0>
+<tri_road, 2, (0, 2), None, 0>
+<tri_road, 3, (-2, -1), None, 0>
+<city_tunnel, 1, (2, 0), None, 0>
+<city_cap_straight_road, 3, (-1, -2), None, 0>
+<monastery_road, 0, (-2, 2), None, 0>
+<monastery, 0, (2, 1), MONASTERY, 0>
+<monastery, 0, (-1, -3), None, 0>
+--- End Game Stats -------------
+Points: [12, 13]
+Times: [240.6905379295349, 210.3387906551361]
+------------------------------
+
+--- Game 22 ----------------
+<monastery, 0, (-1, 0), MONASTERY, 0>
+<monastery_road, 1, (-1, -1), MONASTERY, 0>
+<big_city, 0, (1, 0), CITY, 0>
+<monastery_road, 3, (-1, -2), MONASTERY, 0>
+<city_cap_straight_road, 2, (2, 0), None, 0>
+<monastery, 0, (-1, -3), None, 0>
+<monastery, 0, (-1, 1), None, 0>
+<tri_road, 2, (2, -1), None, 0>
+<tri_road, 3, (0, 1), None, 0>
+<tri_road, 2, (0, -2), None, 0>
+<city_cap_straight_road, 1, (1, 1), None, 0>
+<city_tunnel, 0, (-2, -2), None, 0>
+<tri_road, 1, (-2, 1), None, 0>
+<city_cap_straight_road, 0, (0, -1), None, 0>
+<monastery, 0, (-1, 2), None, 0>
+--- End Game Stats -------------
+Points: [12, 13]
+Times: [240.71973848342896, 210.8708975315094]
+------------------------------
+
+--- Game 23 ----------------
+<city_tunnel, 1, (1, 0), CITY, 0>
+<monastery, 0, (-1, 0), MONASTERY, 0>
+<tri_road, 2, (0, -1), ROAD, 0>
+<tri_road, 0, (1, -1), None, 0>
+<city_cap_straight_road, 2, (2, 0), None, 0>
+<city_cap_straight_road, 2, (2, 1), FARM, 1>
+<tri_road, 1, (0, 1), ROAD, 0>
+<monastery, 0, (-2, 0), None, 0>
+<monastery, 0, (3, 0), MONASTERY, 0>
+<monastery_road, 2, (-3, 0), None, 0>
+<tri_road, 0, (-1, -1), None, 0>
+<monastery_road, 3, (-2, 1), None, 0>
+<monastery, 0, (3, 1), MONASTERY, 0>
+<city_cap_straight_road, 0, (1, -2), None, 0>
+--- End Game Stats -------------
+Points: [19, 10]
+Times: [229.1083562374115, 202.82905220985413]
+------------------------------
+
+--- Game 24 ----------------
+<city_cap_straight_road, 2, (1, 0), CITY, 0>
+<tri_road, 1, (1, 1), None, 0>
+<tri_road, 3, (2, 1), ROAD, 0>
+<city_cap_straight_road, 0, (0, -1), None, 0>
+<monastery, 0, (-1, 0), MONASTERY, 0>
+<monastery_road, 2, (0, -2), MONASTERY, 0>
+<monastery, 0, (-2, 0), None, 0>
+<monastery, 0, (-1, 1), MONASTERY, 0>
+<city_cap_straight_road, 2, (2, 2), None, 0>
+<city_tunnel, 1, (-1, 2), None, 0>
+<monastery_road, 0, (2, 3), None, 0>
+<tri_road, 1, (-1, -2), None, 0>
+<monastery, 0, (-2, 1), MONASTERY, 0>
+<tri_road, 3, (-1, -3), None, 0>
+--- End Game Stats -------------
+Points: [18, 10]
+Times: [233.56750750541687, 201.0591220855713]
+------------------------------
+
+--- Game 25 ----------------
+<tri_road, 3, (0, 1), None, 0>
+<monastery, 0, (-1, 0), MONASTERY, 0>
+<monastery_road, 2, (-1, 1), MONASTERY, 0>
+<big_city, 0, (1, 0), CITY, 0>
+<city_cap_straight_road, 2, (0, -1), ROAD, 0>
+<monastery, 0, (-2, 0), None, 0>
+<tri_road, 1, (0, -2), None, 0>
+<monastery, 0, (1, -2), None, 0>
+<city_cap_straight_road, 3, (-1, -2), ROAD, 0>
+<monastery, 0, (-3, 0), None, 0>
+<monastery_road, 3, (-2, -2), None, 0>
+<city_cap_straight_road, 2, (2, 0), None, 0>
+<city_tunnel, 1, (1, -3), None, 0>
+<tri_road, 3, (2, -2), None, 0>
+<tri_road, 1, (-1, 2), ROAD, 0>
+--- End Game Stats -------------
+Points: [15, 10]
+Times: [240.69428133964539, 212.71022176742554]
+------------------------------
+
+--- Game 26 ----------------
+<tri_road, 1, (0, 1), ROAD, 0>
+<monastery, 0, (-1, 0), MONASTERY, 0>
+<city_cap_straight_road, 2, (1, 0), CITY, 0>
+<tri_road, 1, (0, 2), ROAD, 2>
+<tri_road, 2, (0, -1), FARM, 2>
+<monastery, 0, (-2, 0), None, 0>
+<monastery_road, 3, (-1, 1), MONASTERY, 0>
+<city_cap_straight_road, 0, (0, 3), None, 0>
+<monastery, 0, (2, 0), None, 0>
+<city_cap_straight_road, 1, (-1, -1), None, 0>
+<monastery, 0, (2, 1), None, 0>
+<monastery_road, 3, (1, 2), None, 0>
+<tri_road, 2, (-1, 2), None, 0>
+<city_tunnel, 1, (0, -2), None, 0>
+--- End Game Stats -------------
+Points: [17, 9]
+Times: [217.9504406452179, 192.14128875732422]
+------------------------------
+
+--- Game 27 ----------------
+<city_cap_straight_road, 2, (1, 0), CITY, 0>
+<tri_road, 3, (1, -1), ROAD, 0>
+<city_cap_straight_road, 2, (0, 1), FARM, 0>
+<tri_road, 1, (2, -1), ROAD, 1>
+<monastery, 0, (-1, 0), MONASTERY, 0>
+<monastery, 0, (3, -1), MONASTERY, 0>
+<monastery_road, 2, (-2, 0), None, 0>
+<city_tunnel, 1, (-2, -1), None, 0>
+<city_cap_straight_road, 0, (0, 2), None, 0>
+<monastery_road, 2, (-1, 2), None, 0>
+<monastery, 0, (-2, -2), None, 0>
+<tri_road, 0, (-2, 1), None, 0>
+<tri_road, 1, (0, -1), None, 0>
+<monastery, 0, (3, 0), None, 0>
+--- End Game Stats -------------
+Points: [14, 7]
+Times: [214.2701017856598, 191.45097160339355]
+------------------------------
+
+--- Game 28 ----------------
+<city_cap_straight_road, 2, (1, 0), CITY, 0>
+<monastery, 0, (-1, 0), MONASTERY, 0>
+<city_cap_straight_road, 2, (0, 1), ROAD, 0>
+<city_cap_straight_road, 0, (2, 0), ROAD, 0>
+<monastery, 0, (-1, -1), MONASTERY, 0>
+<tri_road, 3, (1, -1), None, 0>
+<big_city, 0, (3, 0), None, 0>
+<tri_road, 1, (-2, 0), None, 0>
+<tri_road, 1, (0, 2), None, 0>
+<monastery_road, 3, (1, 2), None, 0>
+<monastery, 0, (-1, -2), None, 0>
+<tri_road, 2, (2, 2), None, 0>
+<city_tunnel, 0, (0, -2), None, 0>
+<monastery_road, 0, (-1, -3), None, 0>
+<monastery, 0, (-2, -2), None, 0>
+--- End Game Stats -------------
+Points: [14, 6]
+Times: [240.55562257766724, 214.49855852127075]
+------------------------------
+
+--- Game 29 ----------------
+<monastery_road, 1, (-1, 0), MONASTERY, 0>
+<monastery, 0, (-1, -1), MONASTERY, 0>
+<city_cap_straight_road, 2, (1, 0), CITY, 0>
+<monastery_road, 0, (-1, -2), None, 0>
+<monastery, 0, (-1, 1), MONASTERY, 0>
+<monastery, 0, (2, 0), MONASTERY, 0>
+<monastery, 0, (-2, 1), None, 0>
+<tri_road, 3, (3, 0), None, 0>
+<city_cap_straight_road, 0, (0, 1), None, 0>
+<city_cap_straight_road, 2, (-1, -3), None, 0>
+<tri_road, 2, (-1, 2), None, 0>
+<tri_road, 0, (2, -1), None, 0>
+<tri_road, 1, (0, 2), None, 0>
+<city_tunnel, 0, (0, -2), None, 0>
+--- End Game Stats -------------
+Points: [17, 9]
+Times: [218.04390692710876, 191.8353304862976]
+------------------------------
+
+--- Game 30 ----------------
+<tri_road, 1, (0, 1), None, 0>
+<monastery_road, 0, (0, 2), MONASTERY, 0>
+<monastery_road, 2, (1, 2), MONASTERY, 0>
+<tri_road, 1, (0, -1), ROAD, 2>
+<tri_road, 3, (0, -2), ROAD, 0>
+<monastery, 0, (-1, 0), MONASTERY, 0>
+<city_cap_straight_road, 2, (1, 0), CITY, 0>
+<monastery, 0, (-2, 0), None, 0>
+<monastery, 0, (-1, -2), MONASTERY, 0>
+<monastery, 0, (-2, 1), None, 0>
+<city_cap_straight_road, 0, (2, 2), None, 0>
+<tri_road, 1, (1, -2), None, 0>
+<city_cap_straight_road, 0, (2, 3), None, 0>
+<city_tunnel, 0, (-1, 2), None, 0>
+--- End Game Stats -------------
+Points: [14, 13]
+Times: [229.2464714050293, 199.29685807228088]
+------------------------------
+
+--- Game 31 ----------------
+<city_tunnel, 1, (1, 0), CITY, 0>
+<tri_road, 0, (1, -1), None, 0>
+<city_cap_straight_road, 2, (2, 0), ROAD, 0>
+<tri_road, 3, (1, -2), ROAD, 0>
+<monastery, 0, (0, -2), MONASTERY, 0>
+<monastery, 0, (1, 1), MONASTERY, 0>
+<monastery_road, 1, (-1, -2), None, 0>
+<city_cap_straight_road, 2, (-1, 0), ROAD, 0>
+<monastery_road, 3, (0, -3), None, 0>
+<tri_road, 0, (-1, 1), None, 0>
+<monastery, 0, (-1, -3), None, 0>
+<monastery, 0, (-1, 2), None, 0>
+<tri_road, 2, (1, -3), None, 0>
+<city_cap_straight_road, 3, (1, 2), None, 0>
+--- End Game Stats -------------
+Points: [14, 9]
+Times: [221.89661312103271, 197.56385588645935]
+------------------------------
+
+--- Game 32 ----------------
+<tri_road, 1, (0, 1), ROAD, 0>
+<monastery, 0, (-1, 0), MONASTERY, 0>
+<tri_road, 3, (0, -1), ROAD, 2>
+<city_cap_straight_road, 1, (1, -1), ROAD, 0>
+<tri_road, 2, (0, -2), ROAD, 0>
+<monastery, 0, (-1, -1), None, 0>
+<tri_road, 0, (0, 2), ROAD, 1>
+<monastery_road, 2, (-2, 0), None, 0>
+<monastery, 0, (1, 1), MONASTERY, 0>
+<city_cap_straight_road, 1, (0, -3), None, 0>
+<city_cap_straight_road, 1, (-1, -2), None, 0>
+<city_tunnel, 1, (1, 0), None, 0>
+<monastery, 0, (2, 1), None, 0>
+<monastery_road, 2, (2, 2), None, 0>
+--- End Game Stats -------------
+Points: [16, 8]
+Times: [221.63386988639832, 195.38072276115417]
+------------------------------
+
+--- Game 33 ----------------
+<big_city, 0, (1, 0), CITY, 0>
+<city_cap_straight_road, 0, (0, 1), ROAD, 0>
+<monastery, 0, (-1, 1), MONASTERY, 0>
+<city_tunnel, 1, (-1, 2), None, 0>
+<monastery, 0, (-2, 1), None, 0>
+<monastery, 0, (-1, 0), MONASTERY, 0>
+<tri_road, 1, (-3, 1), None, 0>
+<monastery_road, 2, (0, -1), None, 0>
+<tri_road, 3, (-4, 1), None, 0>
+<monastery_road, 0, (-1, -1), None, 0>
+<city_cap_straight_road, 2, (2, 0), None, 0>
+<tri_road, 1, (-1, -2), None, 0>
+<tri_road, 2, (-2, -2), None, 0>
+<monastery, 0, (0, -2), None, 0>
+<city_cap_straight_road, 1, (0, -3), None, 0>
+--- End Game Stats -------------
+Points: [10, 10]
+Times: [240.75477600097656, 210.58655762672424]
+------------------------------
+
+--- Game 34 ----------------
+<tri_road, 3, (0, -1), ROAD, 0>
+<monastery, 0, (-1, 0), MONASTERY, 0>
+<monastery, 0, (-1, -1), MONASTERY, 0>
+<monastery, 0, (-2, 0), MONASTERY, 0>
+<tri_road, 3, (0, 1), None, 0>
+<tri_road, 0, (0, 2), None, 0>
+<monastery_road, 0, (-1, -2), MONASTERY, 0>
+<city_cap_straight_road, 3, (1, 1), None, 0>
+<city_cap_straight_road, 0, (0, -2), None, 0>
+<monastery_road, 1, (-3, 0), None, 0>
+<big_city, 0, (1, -2), None, 0>
+<tri_road, 1, (0, -3), None, 0>
+<city_cap_straight_road, 2, (-2, -2), None, 0>
+<monastery, 0, (-1, 1), None, 0>
+<city_tunnel, 1, (2, -2), None, 0>
+--- End Game Stats -------------
+Points: [17, 12]
+Times: [240.669855594635, 210.45874190330505]
+------------------------------
+
+--- Game 35 ----------------
+<city_cap_straight_road, 2, (1, 0), CITY, 0>
+<monastery, 0, (-1, 0), MONASTERY, 0>
+<monastery, 0, (2, 0), MONASTERY, 0>
+<monastery_road, 0, (0, 1), MONASTERY, 0>
+<monastery, 0, (2, -1), MONASTERY, 0>
+<tri_road, 1, (-2, 0), None, 0>
+<tri_road, 1, (1, -1), None, 0>
+<city_cap_straight_road, 3, (0, 2), None, 0>
+<tri_road, 3, (3, 0), None, 0>
+<city_cap_straight_road, 3, (2, 1), None, 0>
+<tri_road, 3, (3, -1), None, 0>
+<monastery_road, 1, (-1, 1), None, 0>
+<city_tunnel, 1, (2, -2), None, 0>
+<monastery, 0, (-1, -1), None, 0>
+--- End Game Stats -------------
+Points: [18, 12]
+Times: [219.10041427612305, 191.69545078277588]
+------------------------------
+
+--- Game 36 ----------------
+<city_cap_straight_road, 2, (1, 0), CITY, 0>
+<monastery_road, 0, (-1, 0), MONASTERY, 0>
+<city_cap_straight_road, 2, (1, 1), ROAD, 0>
+<tri_road, 3, (-1, -1), None, 0>
+<city_cap_straight_road, 0, (0, 1), FARM, 1>
+<monastery_road, 1, (-2, 0), MONASTERY, 0>
+<tri_road, 1, (1, 2), None, 0>
+<monastery, 0, (-2, -1), None, 0>
+<monastery, 0, (2, 1), None, 0>
+<city_tunnel, 1, (-2, 1), None, 0>
+<monastery, 0, (3, 1), None, 0>
+<tri_road, 2, (-2, 2), None, 0>
+<tri_road, 2, (1, -1), None, 0>
+<monastery, 0, (-3, -1), None, 0>
+--- End Game Stats -------------
+Points: [14, 13]
+Times: [218.0141100883484, 191.79085397720337]
+------------------------------
+
+--- Game 37 ----------------
+<tri_road, 2, (0, -1), ROAD, 1>
+<city_cap_straight_road, 2, (1, 0), CITY, 0>
+<monastery, 0, (-1, 0), MONASTERY, 0>
+<monastery, 0, (-1, 1), MONASTERY, 0>
+<tri_road, 3, (0, 1), None, 0>
+<monastery_road, 3, (2, 0), MONASTERY, 0>
+<city_cap_straight_road, 1, (-1, -1), ROAD, 0>
+<monastery, 0, (-1, 2), None, 0>
+<tri_road, 0, (-2, -1), None, 0>
+<tri_road, 1, (-2, -2), None, 0>
+<city_tunnel, 0, (-1, -2), CITY, 0>
+<monastery_road, 0, (0, 2), None, 0>
+<city_cap_straight_road, 3, (-1, -3), None, 0>
+<monastery, 0, (2, -1), None, 0>
+--- End Game Stats -------------
+Points: [19, 13]
+Times: [223.96673846244812, 191.79377436637878]
+------------------------------
+
+--- Game 38 ----------------
+<big_city, 0, (1, 0), CITY, 0>
+<city_cap_straight_road, 0, (0, 1), ROAD, 0>
+<tri_road, 1, (-1, 0), ROAD, 1>
+<tri_road, 1, (0, -1), ROAD, 0>
+<monastery_road, 3, (-2, 0), None, 0>
+<tri_road, 0, (0, 2), None, 0>
+<monastery, 0, (-2, -1), MONASTERY, 0>
+<monastery, 0, (0, 3), MONASTERY, 0>
+<city_cap_straight_road, 1, (-2, -2), None, 0>
+<tri_road, 2, (0, -2), None, 0>
+<city_tunnel, 1, (2, 0), None, 0>
+<city_cap_straight_road, 3, (-2, -3), CITY, 0>
+<monastery_road, 2, (-3, 0), None, 0>
+--- End Game Stats -------------
+Points: [11, 12]
+Times: [199.08893418312073, 179.00162768363953]
+------------------------------
+
+--- Game 39 ----------------
+<tri_road, 1, (0, 1), ROAD, 0>
+<tri_road, 3, (0, 2), ROAD, 2>
+<monastery, 0, (1, 1), MONASTERY, 0>
+<monastery, 0, (-1, 0), MONASTERY, 0>
+<monastery_road, 3, (2, 1), None, 0>
+<monastery, 0, (-2, 0), MONASTERY, 0>
+<city_cap_straight_road, 3, (2, 2), None, 0>
+<city_cap_straight_road, 1, (-2, -1), None, 0>
+<monastery, 0, (2, 0), None, 0>
+<big_city, 0, (2, 3), None, 0>
+<city_cap_straight_road, 3, (1, 2), None, 0>
+<monastery_road, 0, (2, -1), None, 0>
+<tri_road, 3, (0, -1), None, 0>
+<city_tunnel, 1, (-2, 1), None, 0>
+<tri_road, 1, (3, 2), ROAD, 1>
+--- End Game Stats -------------
+Points: [15, 13]
+Times: [240.6025595664978, 210.69536185264587]
+------------------------------
+
+--- Game 40 ----------------
+<monastery_road, 0, (-1, 0), MONASTERY, 0>
+<monastery, 0, (-2, 0), MONASTERY, 0>
+<monastery, 0, (-2, -1), MONASTERY, 0>
+<city_cap_straight_road, 0, (-1, -1), ROAD, 0>
+<city_cap_straight_road, 2, (0, -1), None, 0>
+<city_tunnel, 1, (-1, 1), None, 0>
+<city_cap_straight_road, 1, (-2, -2), None, 0>
+<tri_road, 3, (0, -2), None, 0>
+<tri_road, 2, (-3, -2), None, 0>
+<monastery, 0, (-3, 0), None, 0>
+<big_city, 0, (-2, -3), None, 0>
+<tri_road, 3, (0, -3), None, 0>
+<monastery, 0, (-1, 2), None, 0>
+<tri_road, 3, (-4, -2), None, 0>
+<monastery_road, 0, (-2, 2), None, 0>
+--- End Game Stats -------------
+Points: [14, 8]
+Times: [240.7949161529541, 210.75871896743774]
+------------------------------
+
+--- Game 41 ----------------
+<monastery_road, 1, (-1, 0), MONASTERY, 0>
+<monastery_road, 1, (-1, 1), MONASTERY, 0>
+<city_cap_straight_road, 0, (0, -1), ROAD, 0>
+<monastery, 0, (-1, 2), MONASTERY, 0>
+<big_city, 0, (1, 0), None, 0>
+<city_cap_straight_road, 1, (-2, 0), None, 0>
+<monastery, 0, (-1, -1), None, 0>
+<tri_road, 3, (0, 1), None, 0>
+<city_tunnel, 0, (-2, -1), None, 0>
+<tri_road, 1, (-2, 2), None, 0>
+<tri_road, 2, (0, -2), None, 0>
+<monastery, 0, (-1, 3), None, 0>
+<tri_road, 3, (-3, 0), ROAD, 1>
+<monastery, 0, (-4, 0), None, 0>
+<city_cap_straight_road, 3, (-2, -2), CITY, 0>
+--- End Game Stats -------------
+Points: [21, 12]
+Times: [248.8308322429657, 210.4937562942505]
+------------------------------
+
+--- Game 42 ----------------
+<tri_road, 0, (0, 1), ROAD, 1>
+<monastery, 0, (0, 2), MONASTERY, 0>
+<city_cap_straight_road, 2, (1, 0), CITY, 0>
+<city_cap_straight_road, 3, (-1, 1), None, 0>
+<monastery_road, 2, (0, -1), MONASTERY, 0>
+<city_tunnel, 0, (1, 2), None, 0>
+<monastery_road, 0, (-1, 0), MONASTERY, 0>
+<monastery, 0, (0, -2), MONASTERY, 0>
+<tri_road, 1, (-2, 0), None, 0>
+<monastery, 0, (2, 2), None, 0>
+<city_cap_straight_road, 0, (-2, -1), None, 0>
+<monastery, 0, (1, -2), None, 0>
+<tri_road, 0, (-2, 1), None, 0>
+<tri_road, 2, (-2, -2), None, 0>
+--- End Game Stats -------------
+Points: [21, 7]
+Times: [223.6201777458191, 187.7970142364502]
+------------------------------
+
+--- Game 43 ----------------
+<tri_road, 3, (0, 1), ROAD, 2>
+<tri_road, 3, (0, 2), ROAD, 2>
+<monastery_road, 1, (1, 1), MONASTERY, 0>
+<tri_road, 1, (0, 3), ROAD, 0>
+<monastery, 0, (2, 1), None, 0>
+<city_cap_straight_road, 3, (1, 2), CITY, 0>
+<monastery, 0, (2, 0), None, 0>
+<tri_road, 0, (2, -1), None, 0>
+<monastery_road, 2, (0, -1), None, 0>
+<monastery, 0, (-1, -1), MONASTERY, 0>
+<city_cap_straight_road, 3, (2, 2), ROAD, 0>
+<city_cap_straight_road, 2, (-2, -1), None, 0>
+<city_tunnel, 1, (-3, -1), None, 0>
+<monastery, 0, (3, 0), None, 0>
+--- End Game Stats -------------
+Points: [14, 9]
+Times: [217.72262740135193, 187.90356016159058]
+------------------------------
+
+--- Game 44 ----------------
+<tri_road, 3, (0, 1), None, 0>
+<monastery, 0, (-1, 0), MONASTERY, 0>
+<monastery, 0, (-1, -1), MONASTERY, 0>
+<tri_road, 0, (1, 1), None, 0>
+<city_cap_straight_road, 2, (1, 0), CITY, 0>
+<monastery, 0, (-1, 1), MONASTERY, 0>
+<city_cap_straight_road, 0, (0, -1), ROAD, 0>
+<monastery_road, 1, (-2, 1), None, 0>
+<tri_road, 3, (0, -2), None, 0>
+<monastery, 0, (1, 2), None, 0>
+<monastery_road, 1, (-1, -2), MONASTERY, 0>
+<tri_road, 3, (-3, 1), None, 0>
+<city_tunnel, 1, (-1, -3), None, 0>
+<city_cap_straight_road, 0, (-2, -3), None, 0>
+--- End Game Stats -------------
+Points: [20, 12]
+Times: [225.548246383667, 195.46589994430542]
+------------------------------
+
+--- Game 45 ----------------
+<tri_road, 1, (0, -1), ROAD, 0>
+<city_cap_straight_road, 2, (1, 0), FARM, 1>
+<tri_road, 1, (0, 1), ROAD, 0>
+<monastery, 0, (2, 0), MONASTERY, 0>
+<tri_road, 3, (-1, 1), ROAD, 1>
+<city_cap_straight_road, 3, (2, 1), None, 0>
+<city_cap_straight_road, 1, (2, 2), CITY, 0>
+<monastery, 0, (2, 3), None, 0>
+<monastery_road, 3, (1, 2), MONASTERY, 0>
+<monastery, 0, (3, 0), None, 0>
+<monastery_road, 2, (0, -2), None, 0>
+<monastery, 0, (3, 3), None, 0>
+<tri_road, 1, (0, 2), FARM, 0>
+<city_tunnel, 1, (2, -1), None, 0>
+--- End Game Stats -------------
+Points: [23, 8]
+Times: [218.0936357975006, 187.83279824256897]
+------------------------------
+
+--- Game 46 ----------------
+<monastery_road, 2, (-1, 0), MONASTERY, 0>
+<tri_road, 0, (-1, -1), ROAD, 1>
+<monastery, 0, (-2, 0), MONASTERY, 0>
+<city_cap_straight_road, 3, (-2, 1), None, 0>
+<monastery_road, 3, (-2, -1), None, 0>
+<city_cap_straight_road, 2, (-3, -1), None, 0>
+<monastery, 0, (-2, -2), None, 0>
+<big_city, 0, (-4, -1), CITY, 0>
+<monastery, 0, (-2, -3), None, 0>
+<tri_road, 3, (0, 1), None, 0>
+<tri_road, 1, (-1, 1), None, 0>
+<tri_road, 1, (-3, -2), None, 0>
+<city_cap_straight_road, 2, (-3, 0), None, 0>
+<city_tunnel, 1, (1, 0), None, 0>
+<monastery, 0, (1, -1), None, 0>
+--- End Game Stats -------------
+Points: [16, 4]
+Times: [240.5084686279297, 210.40797305107117]
+------------------------------
+
+--- Game 47 ----------------
+<monastery, 0, (-1, 0), MONASTERY, 0>
+<monastery, 0, (-2, 0), MONASTERY, 0>
+<city_cap_straight_road, 2, (1, 0), CITY, 0>
+<monastery, 0, (-2, 1), MONASTERY, 0>
+<monastery_road, 1, (-1, -1), MONASTERY, 0>
+<tri_road, 3, (1, 1), None, 0>
+<monastery_road, 2, (0, -1), None, 0>
+<monastery, 0, (-1, 1), None, 0>
+<city_tunnel, 1, (-1, -2), None, 0>
+<city_cap_straight_road, 2, (-3, 0), None, 0>
+<city_cap_straight_road, 1, (-2, -1), None, 0>
+<big_city, 0, (-4, 0), None, 0>
+<tri_road, 0, (-1, -3), None, 0>
+<tri_road, 3, (2, 0), None, 0>
+<tri_road, 2, (-2, -3), None, 0>
+--- End Game Stats -------------
+Points: [19, 12]
+Times: [240.5376591682434, 219.53925776481628]
+------------------------------
+
+--- Game 48 ----------------
+<monastery_road, 0, (-1, 0), MONASTERY, 0>
+<monastery, 0, (-2, 0), MONASTERY, 0>
+<city_cap_straight_road, 2, (1, 0), CITY, 0>
+<tri_road, 2, (-1, -1), ROAD, 1>
+<tri_road, 2, (0, -1), ROAD, 1>
+<monastery_road, 2, (-2, 1), MONASTERY, 0>
+<city_cap_straight_road, 2, (0, 1), None, 0>
+<tri_road, 0, (-2, 2), None, 0>
+<tri_road, 1, (0, 2), None, 0>
+<city_cap_straight_road, 3, (-1, 2), None, 0>
+<monastery, 0, (-1, -2), MONASTERY, 0>
+<monastery, 0, (-3, 1), None, 0>
+<city_tunnel, 1, (-1, -3), None, 0>
+<monastery, 0, (-4, 1), None, 0>
+--- End Game Stats -------------
+Points: [19, 13]
+Times: [229.22174501419067, 202.17128491401672]
+------------------------------
+
+--- Game 49 ----------------
+<city_cap_straight_road, 2, (1, 0), CITY, 0>
+<monastery_road, 0, (-1, 0), MONASTERY, 0>
+<monastery, 0, (2, 0), MONASTERY, 0>
+<monastery, 0, (-1, 1), MONASTERY, 0>
+<monastery_road, 0, (1, 1), MONASTERY, 0>
+<tri_road, 1, (-2, 1), None, 0>
+<city_cap_straight_road, 0, (3, 0), None, 0>
+<tri_road, 2, (-1, -1), None, 0>
+<monastery, 0, (2, 1), None, 0>
+<city_cap_straight_road, 2, (4, 0), None, 0>
+<tri_road, 1, (3, -1), None, 0>
+<city_tunnel, 1, (-1, 2), None, 0>
+<tri_road, 3, (3, 1), None, 0>
+<big_city, 0, (0, 2), None, 0>
+<monastery, 0, (2, 2), None, 0>
+--- End Game Stats -------------
+Points: [18, 11]
+Times: [240.67064499855042, 210.5869550704956]
+------------------------------
+
+--- Game 50 ----------------
+<tri_road, 1, (0, 1), ROAD, 1>
+<monastery, 0, (-1, 0), MONASTERY, 0>
+<city_cap_straight_road, 2, (1, 0), CITY, 0>
+<monastery_road, 2, (0, -1), MONASTERY, 0>
+<city_cap_straight_road, 0, (0, 2), ROAD, 0>
+<monastery, 0, (-1, -1), None, 0>
+<tri_road, 3, (0, 3), None, 0>
+<city_tunnel, 0, (-2, 0), None, 0>
+<big_city, 0, (1, 2), CITY, 0>
+<monastery_road, 0, (-1, -2), None, 0>
+<tri_road, 2, (-1, 1), None, 0>
+<monastery, 0, (0, -2), None, 0>
+<tri_road, 0, (0, 4), ROAD, 1>
+<monastery, 0, (1, -2), None, 0>
+<city_cap_straight_road, 1, (1, 3), FARM, 1>
+--- End Game Stats -------------
+Points: [18, 15]
+Times: [251.0760247707367, 210.4604001045227]
+------------------------------
+
+
+ --- Game Batch Stats ------------
+Results: [44.5, 5.5]
+Average Points: [15.96, 10.56]
+Average Times: [233.44929956436158, 204.16253931045532]
+Average Game Duration: 437.81734531879425 seconds
+-----------------------------
+
+
+--- Player Configuration ---
+Player 0: MCCFR Agent(time=60.0, epsilon=0.6)
+Player 1: UCT Agent(time=60.0, exploration_constant=2.5)
+-----------------------------
+
+--- Game 1 ----------------
+<city_cap_straight_road, 2, (1, 0), CITY, 0>
+<monastery_road, 0, (-1, 0), MONASTERY, 0>
+<city_cap_straight_road, 0, (0, -1), ROAD, 0>
+<monastery, 0, (-1, 1), MONASTERY, 0>
+<city_cap_straight_road, 2, (0, -2), None, 0>
+<big_city, 0, (-1, -2), None, 0>
+<tri_road, 1, (0, -3), FARM, 0>
+<monastery_road, 0, (-2, 0), None, 0>
+<tri_road, 3, (1, 1), None, 0>
+<city_tunnel, 1, (-1, 2), None, 0>
+<monastery, 0, (-1, 3), None, 0>
+<monastery, 0, (-2, 1), None, 0>
+<tri_road, 3, (1, -2), None, 0>
+<monastery, 0, (-3, 0), None, 0>
+<tri_road, 0, (2, -2), None, 0>
+--- End Game Stats -------------
+Points: [11, 12]
+Times: [240.9244999885559, 210.66724252700806]
+------------------------------
+
+--- Game 2 ----------------
+<monastery, 0, (-1, 0), MONASTERY, 0>
+<tri_road, 3, (0, -1), ROAD, 0>
+<tri_road, 1, (1, -1), ROAD, 1>
+<tri_road, 1, (1, -2), ROAD, 2>
+<city_tunnel, 1, (-1, 1), CITY, 0>
+<monastery, 0, (-2, 0), MONASTERY, 0>
+<monastery_road, 2, (1, -3), None, 0>
+<city_cap_straight_road, 2, (-3, 0), None, 0>
+<monastery_road, 0, (2, -3), None, 0>
+<monastery, 0, (1, -4), None, 0>
+<city_cap_straight_road, 2, (0, 1), None, 0>
+<big_city, 0, (-4, 0), None, 0>
+<city_cap_straight_road, 1, (1, -5), None, 0>
+<monastery, 0, (0, -4), None, 0>
+<tri_road, 3, (-3, -1), None, 0>
+--- End Game Stats -------------
+Points: [10, 10]
+Times: [240.58025979995728, 210.5325984954834]
+------------------------------
+
+--- Game 3 ----------------
+<big_city, 0, (1, 0), CITY, 0>
+<city_tunnel, 0, (-1, 0), None, 0>
+<monastery, 0, (-2, 0), MONASTERY, 0>
+<city_cap_straight_road, 0, (0, 1), ROAD, 0>
+<tri_road, 1, (-3, 0), None, 0>
+<monastery, 0, (-2, -1), MONASTERY, 0>
+<monastery_road, 3, (-4, 0), None, 0>
+<tri_road, 0, (0, 2), None, 0>
+<monastery, 0, (-2, 1), None, 0>
+<city_cap_straight_road, 2, (0, -1), None, 0>
+<monastery_road, 3, (-2, 2), None, 0>
+<tri_road, 3, (0, -2), None, 0>
+<tri_road, 2, (-1, 2), None, 0>
+<monastery, 0, (-1, -2), MONASTERY, 0>
+<city_cap_straight_road, 1, (1, -2), None, 0>
+--- End Game Stats -------------
+Points: [8, 14]
+Times: [241.2442500591278, 210.72375178337097]
+------------------------------
+
+--- Game 4 ----------------
+<monastery, 0, (-1, 0), MONASTERY, 0>
+<city_cap_straight_road, 2, (1, 0), CITY, 0>
+<monastery, 0, (-2, 0), MONASTERY, 0>
+<monastery_road, 3, (-1, -1), MONASTERY, 0>
+<city_tunnel, 1, (-1, -2), None, 0>
+<city_cap_straight_road, 2, (0, -2), CITY, 0>
+<tri_road, 0, (0, 1), None, 0>
+<city_cap_straight_road, 0, (-2, -2), None, 0>
+<monastery, 0, (-3, -2), None, 0>
+<tri_road, 1, (0, -1), ROAD, 2>
+<monastery_road, 1, (-3, -1), None, 0>
+<tri_road, 2, (0, -3), ROAD, 1>
+<tri_road, 0, (-1, -3), None, 0>
+<monastery, 0, (1, -2), MONASTERY, 0>
+--- End Game Stats -------------
+Points: [10, 28]
+Times: [237.14500761032104, 210.57887935638428]
+------------------------------
+
+--- Game 5 ----------------
+<tri_road, 1, (0, -1), ROAD, 2>
+<city_cap_straight_road, 2, (1, 0), CITY, 0>
+<monastery, 0, (-1, 0), MONASTERY, 0>
+<city_tunnel, 1, (-1, 1), CITY, 0>
+<city_cap_straight_road, 2, (0, 1), None, 0>
+<monastery, 0, (-1, 2), MONASTERY, 0>
+<monastery_road, 2, (-2, 0), None, 0>
+<tri_road, 1, (-2, 2), None, 0>
+<tri_road, 3, (0, 2), None, 0>
+<monastery_road, 1, (-1, 3), None, 0>
+<tri_road, 3, (-2, 3), ROAD, 2>
+<city_cap_straight_road, 0, (-2, 1), None, 0>
+<monastery, 0, (-2, -1), FARM, 0>
+<monastery, 0, (-3, 0), MONASTERY, 0>
+--- End Game Stats -------------
+Points: [17, 22]
+Times: [230.82815599441528, 199.28738737106323]
+------------------------------
+
+--- Game 6 ----------------
+<tri_road, 1, (0, -1), ROAD, 2>
+<big_city, 0, (1, 0), CITY, 0>
+<tri_road, 1, (-1, 0), ROAD, 1>
+<tri_road, 1, (0, -2), ROAD, 2>
+<city_tunnel, 0, (1, -1), None, 0>
+<monastery_road, 0, (-1, 1), MONASTERY, 0>
+<monastery, 0, (-2, 1), None, 0>
+<city_cap_straight_road, 2, (2, 0), None, 0>
+<city_cap_straight_road, 3, (-1, 2), None, 0>
+<city_cap_straight_road, 1, (1, 1), None, 0>
+<tri_road, 3, (0, -3), None, 0>
+<monastery, 0, (-1, -3), None, 0>
+<monastery_road, 2, (2, -1), None, 0>
+<monastery, 0, (2, -2), None, 0>
+--- End Game Stats -------------
+Points: [3, 13]
+Times: [219.6521635055542, 187.87099409103394]
+------------------------------
+
+--- Game 7 ----------------
+<city_cap_straight_road, 2, (1, 0), CITY, 0>
+<city_cap_straight_road, 0, (0, -1), FARM, 1>
+<city_cap_straight_road, 0, (2, 0), CITY, 0>
+<monastery, 0, (-1, -1), MONASTERY, 0>
+<big_city, 0, (3, 0), None, 0>
+<monastery, 0, (-1, 0), None, 0>
+<tri_road, 1, (0, 1), ROAD, 0>
+<tri_road, 1, (-2, 0), None, 0>
+<city_tunnel, 0, (3, -1), None, 0>
+<monastery, 0, (-1, -2), None, 0>
+<monastery_road, 3, (-1, -3), None, 0>
+<tri_road, 1, (-2, -1), None, 0>
+<monastery_road, 3, (4, -1), None, 0>
+<monastery, 0, (4, -2), None, 0>
+<tri_road, 3, (0, -2), None, 0>
+--- End Game Stats -------------
+Points: [12, 11]
+Times: [241.43407583236694, 210.44166541099548]
+------------------------------
+
+--- Game 8 ----------------
+<monastery_road, 2, (-1, 0), MONASTERY, 0>
+<monastery, 0, (-1, -1), MONASTERY, 0>
+<monastery, 0, (-2, -1), MONASTERY, 0>
+<monastery_road, 0, (-1, -2), MONASTERY, 0>
+<city_cap_straight_road, 2, (-3, -1), None, 0>
+<tri_road, 3, (-1, -3), None, 0>
+<city_cap_straight_road, 0, (-3, 0), None, 0>
+<city_tunnel, 0, (-2, -3), None, 0>
+<monastery, 0, (-4, 0), None, 0>
+<tri_road, 3, (0, -2), None, 0>
+<big_city, 0, (-2, -4), None, 0>
+<tri_road, 1, (0, -3), None, 0>
+<monastery, 0, (-3, -3), None, 0>
+<city_cap_straight_road, 0, (0, -1), None, 0>
+<tri_road, 3, (-1, 1), None, 0>
+--- End Game Stats -------------
+Points: [12, 15]
+Times: [241.39394211769104, 210.70224356651306]
+------------------------------
+
+--- Game 9 ----------------
+<big_city, 0, (1, 0), CITY, 0>
+<monastery_road, 2, (0, -1), MONASTERY, 0>
+<city_cap_straight_road, 0, (0, 1), ROAD, 0>
+<city_cap_straight_road, 1, (0, -2), ROAD, 0>
+<city_tunnel, 1, (2, 0), None, 0>
+<tri_road, 3, (-1, -2), None, 0>
+<city_cap_straight_road, 2, (-1, 0), None, 0>
+<tri_road, 0, (1, -2), None, 0>
+<monastery, 0, (-2, -2), None, 0>
+<tri_road, 1, (-1, -1), ROAD, 0>
+<monastery, 0, (2, 1), None, 0>
+<monastery, 0, (2, -1), MONASTERY, 0>
+<tri_road, 3, (-1, -3), None, 0>
+<monastery_road, 1, (2, -2), None, 0>
+<monastery, 0, (2, -3), None, 0>
+--- End Game Stats -------------
+Points: [7, 18]
+Times: [242.1103937625885, 210.35114693641663]
+------------------------------
+
+--- Game 10 ----------------
+<big_city, 0, (1, 0), CITY, 0>
+<city_cap_straight_road, 2, (0, 1), ROAD, 0>
+<monastery, 0, (-1, 0), MONASTERY, 0>
+<city_cap_straight_road, 0, (0, 2), None, 0>
+<monastery_road, 0, (-1, 2), None, 0>
+<monastery, 0, (-1, 3), MONASTERY, 0>
+<monastery_road, 0, (-2, 0), None, 0>
+<tri_road, 3, (0, 3), None, 0>
+<tri_road, 2, (-2, -1), None, 0>
+<monastery, 0, (-2, 3), None, 0>
+<city_cap_straight_road, 1, (-1, -1), None, 0>
+<tri_road, 0, (0, 4), None, 0>
+<city_tunnel, 0, (1, -1), None, 0>
+<monastery, 0, (-2, 2), None, 0>
+<tri_road, 0, (1, 3), None, 0>
+--- End Game Stats -------------
+Points: [10, 11]
+Times: [240.8248143196106, 210.66157817840576]
+------------------------------
+
+--- Game 11 ----------------
+<monastery, 0, (-1, 0), MONASTERY, 0>
+<tri_road, 1, (0, 1), ROAD, 0>
+<tri_road, 3, (1, 1), ROAD, 0>
+<tri_road, 2, (0, -1), ROAD, 2>
+<city_cap_straight_road, 3, (-1, 1), None, 0>
+<tri_road, 0, (-2, 1), ROAD, 0>
+<city_cap_straight_road, 2, (-2, 0), None, 0>
+<monastery, 0, (-2, 2), MONASTERY, 0>
+<city_tunnel, 1, (-2, 3), None, 0>
+<big_city, 0, (-1, 3), None, 0>
+<monastery_road, 0, (0, 2), None, 0>
+<monastery, 0, (-3, 2), None, 0>
+<city_cap_straight_road, 1, (-1, -1), None, 0>
+<monastery_road, 1, (1, -1), None, 0>
+<monastery, 0, (0, -2), None, 0>
+--- End Game Stats -------------
+Points: [9, 14]
+Times: [240.51996326446533, 212.4538562297821]
+------------------------------
+
+--- Game 12 ----------------
+<city_cap_straight_road, 2, (1, 0), CITY, 0>
+<monastery, 0, (-1, 0), MONASTERY, 0>
+<monastery, 0, (-1, 1), MONASTERY, 0>
+<monastery, 0, (-1, -1), MONASTERY, 0>
+<tri_road, 1, (-2, -1), ROAD, 1>
+<city_cap_straight_road, 0, (0, -1), None, 0>
+<tri_road, 3, (-3, -1), None, 0>
+<tri_road, 1, (-2, 1), None, 0>
+<monastery_road, 2, (-1, 2), MONASTERY, 0>
+<city_cap_straight_road, 2, (-2, 0), None, 0>
+<monastery_road, 1, (-4, -1), None, 0>
+<city_tunnel, 1, (-1, -2), None, 0>
+<monastery, 0, (-4, -2), None, 0>
+<tri_road, 3, (2, 0), None, 0>
+--- End Game Stats -------------
+Points: [15, 15]
+Times: [231.46873021125793, 199.3271427154541]
+------------------------------
+
+--- Game 13 ----------------
+<city_tunnel, 1, (1, 0), CITY, 0>
+<monastery_road, 3, (1, 1), MONASTERY, 0>
+<monastery, 0, (-1, 0), MONASTERY, 0>
+<monastery, 0, (-1, 1), MONASTERY, 0>
+<tri_road, 1, (0, -1), None, 0>
+<city_cap_straight_road, 3, (2, 1), None, 0>
+<monastery, 0, (-2, 0), None, 0>
+<tri_road, 2, (-1, 2), None, 0>
+<monastery, 0, (1, 2), None, 0>
+<monastery_road, 1, (0, 2), None, 0>
+<tri_road, 2, (0, 3), None, 0>
+<city_cap_straight_road, 1, (-2, 2), None, 0>
+<tri_road, 0, (-2, -1), None, 0>
+<city_cap_straight_road, 1, (-3, -1), None, 0>
+<big_city, 0, (-3, -2), None, 0>
+--- End Game Stats -------------
+Points: [8, 13]
+Times: [240.6550190448761, 210.70582056045532]
+------------------------------
+
+--- Game 14 ----------------
+<monastery, 0, (-1, 0), MONASTERY, 0>
+<monastery, 0, (-1, -1), MONASTERY, 0>
+<city_cap_straight_road, 3, (-1, 1), None, 0>
+<monastery, 0, (-1, -2), MONASTERY, 0>
+<big_city, 0, (-1, 2), CITY, 0>
+<monastery, 0, (0, -2), None, 0>
+<tri_road, 1, (-2, 0), None, 0>
+<tri_road, 1, (-2, -2), None, 0>
+<monastery_road, 3, (0, -3), None, 0>
+<city_tunnel, 1, (0, -4), None, 0>
+<tri_road, 3, (-3, 0), None, 0>
+<tri_road, 3, (-2, -3), None, 0>
+<city_cap_straight_road, 2, (-4, 0), None, 0>
+<monastery_road, 2, (0, -1), None, 0>
+<city_cap_straight_road, 2, (0, 2), None, 0>
+--- End Game Stats -------------
+Points: [10, 15]
+Times: [244.20937180519104, 210.68315887451172]
+------------------------------
+
+--- Game 15 ----------------
+<tri_road, 1, (0, -1), ROAD, 2>
+<monastery_road, 2, (1, -1), MONASTERY, 0>
+<city_tunnel, 0, (2, -1), CITY, 0>
+<tri_road, 3, (-1, -1), ROAD, 1>
+<monastery, 0, (-2, -1), None, 0>
+<monastery, 0, (1, -2), MONASTERY, 0>
+<tri_road, 2, (-1, -2), None, 0>
+<city_cap_straight_road, 2, (1, 0), None, 0>
+<monastery_road, 2, (-2, 0), None, 0>
+<monastery, 0, (1, -3), None, 0>
+<city_cap_straight_road, 0, (0, 1), None, 0>
+<tri_road, 1, (0, -2), None, 0>
+<city_cap_straight_road, 2, (-3, -1), None, 0>
+<monastery, 0, (2, -3), None, 0>
+--- End Game Stats -------------
+Points: [4, 16]
+Times: [214.27432680130005, 188.02901554107666]
+------------------------------
+
+--- Game 16 ----------------
+<monastery, 0, (-1, 0), MONASTERY, 0>
+<city_cap_straight_road, 2, (1, 0), CITY, 0>
+<monastery_road, 2, (-1, 1), ROAD, 0>
+<city_cap_straight_road, 0, (1, -1), ROAD, 0>
+<tri_road, 3, (-1, 2), None, 0>
+<monastery, 0, (2, 0), MONASTERY, 0>
+<tri_road, 1, (0, 2), ROAD, 1>
+<monastery, 0, (3, 0), None, 0>
+<monastery, 0, (-1, -1), MONASTERY, 0>
+<monastery_road, 2, (3, 1), None, 0>
+<tri_road, 1, (-2, 0), None, 0>
+<city_tunnel, 1, (3, -1), None, 0>
+<tri_road, 3, (0, 1), None, 0>
+<city_cap_straight_road, 0, (1, -2), None, 0>
+--- End Game Stats -------------
+Points: [14, 13]
+Times: [231.1031458377838, 203.02198839187622]
+------------------------------
+
+--- Game 17 ----------------
+<monastery, 0, (-1, 0), MONASTERY, 0>
+<city_cap_straight_road, 2, (1, 0), CITY, 0>
+<city_cap_straight_road, 2, (-2, 0), CITY, 0>
+<tri_road, 3, (0, -1), ROAD, 0>
+<tri_road, 1, (1, -1), None, 0>
+<monastery, 0, (-1, -1), MONASTERY, 0>
+<monastery_road, 2, (-1, 1), None, 0>
+<tri_road, 3, (0, 1), None, 0>
+<big_city, 0, (-3, 0), None, 0>
+<tri_road, 0, (1, 1), ROAD, 1>
+<monastery, 0, (2, 0), None, 0>
+<monastery, 0, (2, -1), MONASTERY, 0>
+<monastery_road, 0, (3, 0), None, 0>
+<city_cap_straight_road, 0, (3, -1), None, 0>
+<city_tunnel, 0, (-3, -1), None, 0>
+--- End Game Stats -------------
+Points: [11, 21]
+Times: [240.60829329490662, 210.41863870620728]
+------------------------------
+
+--- Game 18 ----------------
+<monastery_road, 2, (-1, 0), MONASTERY, 0>
+<tri_road, 0, (-1, 1), ROAD, 1>
+<city_tunnel, 1, (-1, -1), CITY, 0>
+<tri_road, 3, (-2, 1), ROAD, 1>
+<monastery, 0, (-1, 2), None, 0>
+<city_cap_straight_road, 2, (1, 0), CITY, 0>
+<city_cap_straight_road, 2, (0, -1), None, 0>
+<monastery_road, 2, (-2, 0), MONASTERY, 0>
+<monastery, 0, (0, 2), None, 0>
+<tri_road, 1, (-2, 2), ROAD, 0>
+<monastery, 0, (-1, 3), None, 0>
+<monastery, 0, (-3, 1), MONASTERY, 0>
+<city_cap_straight_road, 0, (1, 2), None, 0>
+<tri_road, 2, (-3, 2), None, 0>
+--- End Game Stats -------------
+Points: [9, 21]
+Times: [225.61163806915283, 199.18839716911316]
+------------------------------
+
+--- Game 19 ----------------
+<city_cap_straight_road, 2, (1, 0), CITY, 0>
+<tri_road, 2, (1, -1), ROAD, 1>
+<monastery, 0, (2, 0), MONASTERY, 0>
+<monastery, 0, (-1, 0), MONASTERY, 0>
+<city_tunnel, 1, (-1, -1), None, 0>
+<big_city, 0, (-2, -1), None, 0>
+<monastery_road, 1, (-1, -2), None, 0>
+<monastery, 0, (-1, 1), None, 0>
+<tri_road, 3, (1, 1), FARM, 1>
+<city_cap_straight_road, 3, (-2, -2), CITY, 0>
+<city_cap_straight_road, 3, (2, 1), None, 0>
+<monastery_road, 1, (-2, 1), None, 0>
+<tri_road, 1, (3, 1), None, 0>
+<monastery, 0, (4, 1), None, 0>
+<tri_road, 3, (1, 2), None, 0>
+--- End Game Stats -------------
+Points: [10, 13]
+Times: [241.27380895614624, 210.37953090667725]
+------------------------------
+
+--- Game 20 ----------------
+<monastery_road, 1, (-1, 0), ROAD, 0>
+<monastery, 0, (-1, -1), MONASTERY, 0>
+<city_tunnel, 1, (1, 0), CITY, 0>
+<monastery_road, 1, (-2, -1), MONASTERY, 0>
+<monastery, 0, (1, -1), None, 0>
+<monastery, 0, (2, -1), None, 0>
+<city_cap_straight_road, 1, (-3, -1), None, 0>
+<city_cap_straight_road, 1, (-1, -2), None, 0>
+<big_city, 0, (-1, -3), None, 0>
+<monastery, 0, (-1, 1), None, 0>
+<tri_road, 0, (2, -2), None, 0>
+<tri_road, 0, (-2, -2), None, 0>
+<tri_road, 2, (2, -3), None, 0>
+<tri_road, 0, (0, -2), None, 0>
+<city_cap_straight_road, 1, (1, -2), None, 0>
+--- End Game Stats -------------
+Points: [3, 13]
+Times: [240.66435766220093, 210.76146292686462]
+------------------------------
+
+--- Game 21 ----------------
+<big_city, 0, (1, 0), CITY, 0>
+<monastery, 0, (-1, 0), MONASTERY, 0>
+<monastery_road, 1, (-1, 1), MONASTERY, 0>
+<city_cap_straight_road, 0, (0, 1), ROAD, 0>
+<tri_road, 2, (-2, 1), None, 0>
+<tri_road, 2, (0, -1), None, 0>
+<city_cap_straight_road, 2, (-2, 2), None, 0>
+<monastery, 0, (-2, 0), None, 0>
+<tri_road, 0, (-2, 3), None, 0>
+<tri_road, 1, (0, 2), None, 0>
+<city_tunnel, 1, (2, 0), None, 0>
+<city_cap_straight_road, 0, (-3, 2), CITY, 0>
+<monastery_road, 1, (2, -1), None, 0>
+<monastery, 0, (-2, -1), MONASTERY, 0>
+<monastery, 0, (3, -1), None, 0>
+--- End Game Stats -------------
+Points: [12, 19]
+Times: [243.66823077201843, 214.5149564743042]
+------------------------------
+
+--- Game 22 ----------------
+<monastery, 0, (-1, 0), MONASTERY, 0>
+<monastery_road, 3, (-1, 1), MONASTERY, 0>
+<big_city, 0, (1, 0), CITY, 0>
+<monastery_road, 2, (-2, 1), MONASTERY, 0>
+<city_cap_straight_road, 2, (2, 0), None, 0>
+<monastery, 0, (-1, 2), None, 0>
+<monastery, 0, (-1, 3), None, 0>
+<tri_road, 1, (-2, 2), None, 0>
+<tri_road, 1, (-2, 3), None, 0>
+<tri_road, 1, (-3, 1), None, 0>
+<city_cap_straight_road, 1, (1, 1), None, 0>
+<city_tunnel, 0, (0, 2), None, 0>
+<tri_road, 0, (-1, -1), None, 0>
+<city_cap_straight_road, 2, (-3, 0), None, 0>
+<monastery, 0, (3, 0), None, 0>
+--- End Game Stats -------------
+Points: [10, 14]
+Times: [240.71557688713074, 210.56389164924622]
+------------------------------
+
+--- Game 23 ----------------
+<city_tunnel, 1, (1, 0), CITY, 0>
+<monastery, 0, (1, 1), MONASTERY, 0>
+<tri_road, 1, (-1, 0), ROAD, 1>
+<tri_road, 0, (1, -1), None, 0>
+<city_cap_straight_road, 2, (2, 0), None, 0>
+<city_cap_straight_road, 0, (2, 1), FARM, 0>
+<tri_road, 3, (-2, 0), ROAD, 2>
+<monastery, 0, (1, 2), None, 0>
+<monastery, 0, (3, 0), FARM, 0>
+<monastery_road, 2, (0, 2), None, 0>
+<tri_road, 3, (-2, -1), None, 0>
+<monastery_road, 0, (0, 1), None, 0>
+<monastery, 0, (-1, 2), MONASTERY, 0>
+<city_cap_straight_road, 0, (2, 2), None, 0>
+--- End Game Stats -------------
+Points: [13, 12]
+Times: [231.87290859222412, 208.51528549194336]
+------------------------------
+
+--- Game 24 ----------------
+<city_cap_straight_road, 2, (1, 0), CITY, 0>
+<tri_road, 1, (1, 1), FARM, 1>
+<tri_road, 3, (1, 2), ROAD, 1>
+<city_cap_straight_road, 2, (1, -1), ROAD, 0>
+<monastery, 0, (2, -1), MONASTERY, 0>
+<monastery_road, 2, (1, -2), None, 0>
+<monastery, 0, (2, 1), None, 0>
+<monastery, 0, (2, 0), MONASTERY, 0>
+<city_cap_straight_road, 3, (2, 2), None, 0>
+<big_city, 0, (2, 3), None, 0>
+<city_tunnel, 0, (3, -1), None, 0>
+<monastery_road, 3, (3, 1), None, 0>
+<tri_road, 2, (3, 2), None, 0>
+<monastery, 0, (4, -1), None, 0>
+<tri_road, 1, (0, -2), ROAD, 0>
+--- End Game Stats -------------
+Points: [14, 15]
+Times: [240.63666653633118, 210.282000541687]
+------------------------------
+
+--- Game 25 ----------------
+<tri_road, 1, (0, -1), ROAD, 2>
+<monastery, 0, (-1, 0), MONASTERY, 0>
+<monastery_road, 0, (-2, 0), ROAD, 0>
+<big_city, 0, (1, 0), CITY, 0>
+<city_cap_straight_road, 2, (0, 1), None, 0>
+<monastery, 0, (-2, 1), None, 0>
+<tri_road, 0, (0, 2), None, 0>
+<monastery, 0, (-2, 2), None, 0>
+<city_cap_straight_road, 1, (1, 2), ROAD, 0>
+<monastery, 0, (-3, 2), None, 0>
+<monastery_road, 1, (0, 3), None, 0>
+<city_cap_straight_road, 2, (2, 0), None, 0>
+<city_tunnel, 1, (-2, 3), None, 0>
+<tri_road, 0, (-1, -1), None, 0>
+<tri_road, 3, (-2, -1), None, 0>
+--- End Game Stats -------------
+Points: [8, 12]
+Times: [240.63429594039917, 210.4830720424652]
+------------------------------
+
+--- Game 26 ----------------
+<tri_road, 1, (0, -1), ROAD, 2>
+<monastery, 0, (-1, 0), MONASTERY, 0>
+<city_cap_straight_road, 2, (0, 1), None, 0>
+<tri_road, 0, (-1, -1), ROAD, 0>
+<big_city, 0, (1, 0), None, 0>
+<tri_road, 3, (0, -2), ROAD, 0>
+<monastery, 0, (-2, 0), MONASTERY, 0>
+<monastery_road, 3, (-2, -1), MONASTERY, 0>
+<city_cap_straight_road, 2, (2, 0), None, 0>
+<monastery, 0, (-2, -2), None, 0>
+<city_cap_straight_road, 0, (2, 1), None, 0>
+<monastery, 0, (-3, -2), None, 0>
+<monastery_road, 1, (1, -2), None, 0>
+<tri_road, 1, (-3, 0), None, 0>
+<city_tunnel, 1, (-2, 1), None, 0>
+--- End Game Stats -------------
+Points: [9, 19]
+Times: [240.51186108589172, 210.45526266098022]
+------------------------------
+
+--- Game 27 ----------------
+<city_cap_straight_road, 2, (1, 0), CITY, 0>
+<tri_road, 1, (1, 1), ROAD, 2>
+<city_cap_straight_road, 2, (-1, 0), ROAD, 0>
+<tri_road, 0, (0, 1), ROAD, 0>
+<monastery, 0, (0, 2), MONASTERY, 0>
+<monastery, 0, (2, 0), MONASTERY, 0>
+<monastery_road, 0, (-1, 2), None, 0>
+<city_tunnel, 1, (2, -1), None, 0>
+<city_cap_straight_road, 3, (0, 3), None, 0>
+<monastery_road, 0, (1, 2), None, 0>
+<monastery, 0, (2, -2), None, 0>
+<tri_road, 3, (0, -1), ROAD, 0>
+<tri_road, 3, (-1, 1), None, 0>
+<monastery, 0, (2, 1), MONASTERY, 0>
+--- End Game Stats -------------
+Points: [13, 17]
+Times: [216.2242865562439, 192.59491515159607]
+------------------------------
+
+--- Game 28 ----------------
+<city_cap_straight_road, 2, (1, 0), CITY, 0>
+<monastery, 0, (2, 0), MONASTERY, 0>
+<city_cap_straight_road, 0, (0, -1), FARM, 1>
+<city_cap_straight_road, 2, (0, 1), ROAD, 0>
+<monastery, 0, (2, 1), MONASTERY, 0>
+<tri_road, 1, (0, 2), None, 0>
+<big_city, 0, (-1, 1), None, 0>
+<tri_road, 1, (0, -2), None, 0>
+<tri_road, 3, (3, 1), None, 0>
+<monastery_road, 0, (1, 1), MONASTERY, 0>
+<monastery, 0, (2, 2), None, 0>
+<tri_road, 0, (2, -1), None, 0>
+<city_tunnel, 0, (1, -2), None, 0>
+<monastery_road, 1, (3, -1), None, 0>
+<monastery, 0, (2, 3), None, 0>
+--- End Game Stats -------------
+Points: [13, 20]
+Times: [240.52156233787537, 210.59665536880493]
+------------------------------
+
+--- Game 29 ----------------
+<monastery_road, 1, (-1, 0), ROAD, 0>
+<monastery, 0, (-1, -1), MONASTERY, 0>
+<city_cap_straight_road, 2, (1, 0), CITY, 0>
+<monastery_road, 2, (0, -1), MONASTERY, 0>
+<monastery, 0, (-2, -1), MONASTERY, 0>
+<monastery, 0, (0, -2), None, 0>
+<monastery, 0, (-3, -1), None, 0>
+<tri_road, 2, (-1, 1), None, 0>
+<city_cap_straight_road, 3, (-2, 0), None, 0>
+<city_cap_straight_road, 0, (1, -1), None, 0>
+<tri_road, 2, (-3, 0), None, 0>
+<tri_road, 3, (1, -2), None, 0>
+<tri_road, 2, (2, -2), ROAD, 2>
+<city_tunnel, 0, (2, 0), None, 0>
+--- End Game Stats -------------
+Points: [14, 15]
+Times: [220.8106951713562, 191.8102729320526]
+------------------------------
+
+--- Game 30 ----------------
+<tri_road, 1, (0, -1), ROAD, 2>
+<monastery_road, 3, (-1, -1), MONASTERY, 0>
+<monastery_road, 3, (1, -1), ROAD, 0>
+<tri_road, 1, (0, -2), ROAD, 2>
+<tri_road, 3, (0, 1), None, 0>
+<monastery, 0, (-1, 0), MONASTERY, 0>
+<city_cap_straight_road, 1, (-1, -2), ROAD, 0>
+<monastery, 0, (-2, 0), None, 0>
+<monastery, 0, (-2, 1), None, 0>
+<big_city, 0, (-1, -3), None, 0>
+<monastery, 0, (-2, -1), None, 0>
+<city_cap_straight_road, 0, (0, 2), None, 0>
+<tri_road, 2, (2, -1), None, 0>
+<city_cap_straight_road, 3, (-2, 2), None, 0>
+<city_tunnel, 0, (-1, -4), CITY, 0>
+--- End Game Stats -------------
+Points: [11, 18]
+Times: [240.61245584487915, 210.29033637046814]
+------------------------------
+
+--- Game 31 ----------------
+<city_tunnel, 1, (1, 0), CITY, 0>
+<tri_road, 1, (0, -1), ROAD, 2>
+<city_cap_straight_road, 2, (0, -2), CITY, 0>
+<tri_road, 1, (0, -3), ROAD, 2>
+<monastery, 0, (-1, 0), None, 0>
+<monastery, 0, (1, -1), MONASTERY, 0>
+<big_city, 0, (2, 0), None, 0>
+<monastery_road, 0, (0, 1), None, 0>
+<city_cap_straight_road, 0, (-1, -2), None, 0>
+<monastery_road, 2, (-1, 1), MONASTERY, 0>
+<tri_road, 2, (0, -4), ROAD, 1>
+<monastery, 0, (1, -2), None, 0>
+<monastery, 0, (1, -3), MONASTERY, 0>
+<tri_road, 1, (-2, 1), None, 0>
+<city_cap_straight_road, 2, (-2, 2), None, 0>
+--- End Game Stats -------------
+Points: [15, 19]
+Times: [240.81369495391846, 210.60774159431458]
+------------------------------
+
+--- Game 32 ----------------
+<tri_road, 1, (0, -1), ROAD, 2>
+<monastery, 0, (-1, 0), MONASTERY, 0>
+<tri_road, 0, (0, 1), ROAD, 0>
+<city_cap_straight_road, 2, (1, 0), CITY, 0>
+<tri_road, 2, (-1, 1), ROAD, 2>
+<monastery, 0, (-2, 0), MONASTERY, 0>
+<tri_road, 3, (2, 0), None, 0>
+<monastery_road, 3, (-2, 1), None, 0>
+<monastery, 0, (0, 2), None, 0>
+<city_cap_straight_road, 1, (-1, -1), None, 0>
+<city_cap_straight_road, 3, (-1, -2), CITY, 0>
+<city_tunnel, 0, (-3, 0), None, 0>
+<monastery, 0, (-2, 2), MONASTERY, 0>
+<monastery_road, 3, (-2, -1), None, 0>
+--- End Game Stats -------------
+Points: [13, 20]
+Times: [222.13665628433228, 195.29764938354492]
+------------------------------
+
+--- Game 33 ----------------
+<big_city, 0, (1, 0), CITY, 0>
+<city_cap_straight_road, 0, (0, 1), ROAD, 0>
+<monastery, 0, (-1, 0), MONASTERY, 0>
+<city_tunnel, 0, (-2, 0), CITY, 0>
+<monastery, 0, (-1, -1), None, 0>
+<monastery, 0, (-3, 0), None, 0>
+<tri_road, 3, (0, 2), None, 0>
+<monastery_road, 2, (0, -1), None, 0>
+<tri_road, 1, (0, 3), None, 0>
+<monastery_road, 1, (-1, 1), MONASTERY, 0>
+<city_cap_straight_road, 2, (2, 0), None, 0>
+<tri_road, 2, (-1, 3), None, 0>
+<tri_road, 1, (0, 4), None, 0>
+<monastery, 0, (-1, 2), None, 0>
+<city_cap_straight_road, 1, (-2, 3), None, 0>
+--- End Game Stats -------------
+Points: [11, 12]
+Times: [240.6558051109314, 210.88765788078308]
+------------------------------
+
+--- Game 34 ----------------
+<tri_road, 1, (0, -1), ROAD, 2>
+<monastery, 0, (-1, 0), MONASTERY, 0>
+<monastery, 0, (-1, 1), MONASTERY, 0>
+<monastery, 0, (-2, 1), MONASTERY, 0>
+<tri_road, 3, (0, 1), None, 0>
+<tri_road, 0, (-1, -1), None, 0>
+<monastery_road, 0, (1, -1), MONASTERY, 0>
+<city_cap_straight_road, 2, (-3, 1), None, 0>
+<city_cap_straight_road, 0, (0, -2), None, 0>
+<monastery_road, 3, (-2, -1), None, 0>
+<big_city, 0, (-4, 1), None, 0>
+<tri_road, 1, (-3, 0), None, 0>
+<city_cap_straight_road, 2, (-3, 2), None, 0>
+<monastery, 0, (-2, 0), None, 0>
+<city_tunnel, 1, (1, 0), None, 0>
+--- End Game Stats -------------
+Points: [14, 16]
+Times: [240.28314876556396, 210.2844808101654]
+------------------------------
+
+--- Game 35 ----------------
+<city_cap_straight_road, 2, (1, 0), CITY, 0>
+<monastery, 0, (-1, 0), MONASTERY, 0>
+<monastery, 0, (-1, 1), MONASTERY, 0>
+<monastery_road, 0, (0, 1), MONASTERY, 0>
+<monastery, 0, (0, 2), MONASTERY, 0>
+<tri_road, 0, (-1, -1), None, 0>
+<tri_road, 1, (-1, -2), None, 0>
+<city_cap_straight_road, 1, (-2, -1), None, 0>
+<tri_road, 2, (-1, -3), None, 0>
+<city_cap_straight_road, 1, (-3, -1), None, 0>
+<tri_road, 3, (1, 1), None, 0>
+<monastery_road, 3, (-4, -1), None, 0>
+<city_tunnel, 1, (0, 3), None, 0>
+<monastery, 0, (-5, -1), None, 0>
+--- End Game Stats -------------
+Points: [14, 13]
+Times: [218.13623523712158, 198.94697403907776]
+------------------------------
+
+--- Game 36 ----------------
+<city_cap_straight_road, 2, (1, 0), CITY, 0>
+<monastery_road, 3, (2, 0), MONASTERY, 0>
+<city_cap_straight_road, 0, (1, 1), FARM, 0>
+<tri_road, 2, (3, 0), ROAD, 0>
+<city_cap_straight_road, 2, (0, 1), ROAD, 0>
+<monastery_road, 2, (1, -1), MONASTERY, 0>
+<tri_road, 1, (0, 2), None, 0>
+<monastery, 0, (2, -1), None, 0>
+<monastery, 0, (-1, 0), None, 0>
+<city_tunnel, 1, (2, 1), None, 0>
+<monastery, 0, (2, -2), None, 0>
+<tri_road, 0, (-1, -1), None, 0>
+<tri_road, 0, (0, 3), None, 0>
+<monastery, 0, (3, -1), None, 0>
+--- End Game Stats -------------
+Points: [10, 16]
+Times: [218.01769399642944, 191.79071378707886]
+------------------------------
+
+--- Game 37 ----------------
+<tri_road, 1, (0, -1), ROAD, 2>
+<city_cap_straight_road, 2, (1, 0), CITY, 0>
+<monastery, 0, (-1, 0), MONASTERY, 0>
+<monastery, 0, (-1, 1), MONASTERY, 0>
+<tri_road, 3, (0, 1), None, 0>
+<monastery_road, 1, (-2, 1), MONASTERY, 0>
+<city_cap_straight_road, 2, (0, -2), None, 0>
+<monastery, 0, (-2, 2), None, 0>
+<tri_road, 0, (-1, -1), FARM, 0>
+<tri_road, 3, (0, 2), None, 0>
+<city_tunnel, 0, (1, -2), None, 0>
+<monastery_road, 2, (-1, 2), None, 0>
+<city_cap_straight_road, 3, (-2, 3), None, 0>
+<monastery, 0, (-3, 2), None, 0>
+--- End Game Stats -------------
+Points: [10, 18]
+Times: [217.77064633369446, 191.55746936798096]
+------------------------------
+
+--- Game 38 ----------------
+<big_city, 0, (1, 0), CITY, 0>
+<city_cap_straight_road, 0, (0, 1), ROAD, 0>
+<tri_road, 1, (0, -1), ROAD, 0>
+<tri_road, 3, (-1, -1), ROAD, 1>
+<monastery, 0, (-2, -1), None, 0>
+<monastery, 0, (-2, 0), MONASTERY, 0>
+<monastery_road, 2, (-1, 1), None, 0>
+<tri_road, 1, (0, 2), None, 0>
+<monastery, 0, (-2, 1), None, 0>
+<monastery, 0, (-3, 1), MONASTERY, 0>
+<city_cap_straight_road, 2, (2, 0), None, 0>
+<tri_road, 1, (-4, 1), None, 0>
+<city_tunnel, 0, (1, -1), None, 0>
+<city_cap_straight_road, 2, (-4, 2), None, 0>
+<monastery_road, 2, (-3, -1), None, 0>
+--- End Game Stats -------------
+Points: [6, 18]
+Times: [240.63368487358093, 210.64616465568542]
+------------------------------
+
+--- Game 39 ----------------
+<tri_road, 1, (0, -1), ROAD, 2>
+<tri_road, 0, (-1, -1), ROAD, 0>
+<monastery, 0, (1, -1), MONASTERY, 0>
+<monastery, 0, (-1, 0), MONASTERY, 0>
+<monastery_road, 2, (2, -1), None, 0>
+<monastery, 0, (-1, 1), MONASTERY, 0>
+<city_cap_straight_road, 2, (2, 0), None, 0>
+<city_cap_straight_road, 3, (-1, 2), None, 0>
+<monastery, 0, (3, 0), None, 0>
+<big_city, 0, (-1, 3), None, 0>
+<city_cap_straight_road, 0, (4, 0), None, 0>
+<monastery_road, 2, (-2, 0), None, 0>
+<tri_road, 3, (0, -2), None, 0>
+<city_tunnel, 0, (-3, 0), None, 0>
+<tri_road, 1, (2, 1), None, 0>
+--- End Game Stats -------------
+Points: [8, 13]
+Times: [240.6575207710266, 216.4045844078064]
+------------------------------
+
+--- Game 40 ----------------
+<monastery_road, 1, (-1, 0), ROAD, 0>
+<monastery, 0, (-1, -1), MONASTERY, 0>
+<monastery, 0, (-1, 1), MONASTERY, 0>
+<city_cap_straight_road, 2, (1, 0), CITY, 0>
+<city_cap_straight_road, 1, (-2, 0), None, 0>
+<city_tunnel, 0, (-2, -1), CITY, 0>
+<city_cap_straight_road, 3, (-3, 0), None, 0>
+<tri_road, 3, (0, -1), None, 0>
+<tri_road, 3, (-4, 0), None, 0>
+<monastery, 0, (-2, 1), None, 0>
+<big_city, 0, (-2, -2), None, 0>
+<tri_road, 2, (0, -2), None, 0>
+<monastery, 0, (-1, 2), MONASTERY, 0>
+<tri_road, 0, (-4, 1), None, 0>
+<monastery_road, 3, (-4, 2), None, 0>
+--- End Game Stats -------------
+Points: [13, 16]
+Times: [240.73631954193115, 210.5860242843628]
+------------------------------
+
+--- Game 41 ----------------
+<monastery_road, 1, (-1, 0), ROAD, 0>
+<monastery_road, 2, (0, -1), MONASTERY, 0>
+<city_cap_straight_road, 2, (0, 1), ROAD, 0>
+<monastery, 0, (-1, -1), MONASTERY, 0>
+<big_city, 0, (1, 0), None, 0>
+<city_cap_straight_road, 2, (-2, -1), None, 0>
+<monastery, 0, (-1, -2), None, 0>
+<tri_road, 0, (-1, -3), None, 0>
+<city_tunnel, 1, (2, 0), None, 0>
+<tri_road, 2, (2, 1), None, 0>
+<tri_road, 1, (0, -3), None, 0>
+<monastery, 0, (1, -3), None, 0>
+<tri_road, 0, (3, 1), None, 0>
+<monastery, 0, (1, -2), None, 0>
+<city_cap_straight_road, 2, (2, 2), None, 0>
+--- End Game Stats -------------
+Points: [4, 13]
+Times: [240.75113558769226, 211.06906986236572]
+------------------------------
+
+--- Game 42 ----------------
+<tri_road, 1, (0, -1), ROAD, 2>
+<monastery, 0, (-1, 0), MONASTERY, 0>
+<city_cap_straight_road, 0, (0, 1), None, 0>
+<big_city, 0, (1, 0), CITY, 0>
+<city_cap_straight_road, 2, (0, -2), ROAD, 0>
+<monastery_road, 2, (-2, 0), None, 0>
+<city_tunnel, 1, (-1, -2), None, 0>
+<monastery_road, 3, (-1, -1), None, 0>
+<monastery, 0, (-2, -1), None, 0>
+<tri_road, 1, (-2, 1), None, 0>
+<monastery, 0, (-3, -1), None, 0>
+<city_cap_straight_road, 2, (2, 0), None, 0>
+<monastery, 0, (-3, 0), None, 0>
+<tri_road, 3, (3, 0), None, 0>
+<tri_road, 0, (-2, 2), None, 0>
+--- End Game Stats -------------
+Points: [5, 12]
+Times: [240.68998193740845, 210.47191429138184]
+------------------------------
+
+--- Game 43 ----------------
+<tri_road, 1, (0, -1), ROAD, 2>
+<tri_road, 2, (-1, -1), ROAD, 2>
+<monastery_road, 0, (-1, -2), MONASTERY, 0>
+<big_city, 0, (1, 0), CITY, 0>
+<tri_road, 3, (-1, -3), None, 0>
+<monastery, 0, (-2, -2), MONASTERY, 0>
+<city_cap_straight_road, 1, (0, -3), None, 0>
+<monastery, 0, (-3, -2), None, 0>
+<tri_road, 1, (-4, -2), None, 0>
+<monastery_road, 2, (-3, -1), None, 0>
+<monastery, 0, (-2, -3), None, 0>
+<city_cap_straight_road, 1, (1, 1), None, 0>
+<city_cap_straight_road, 2, (-1, 0), None, 0>
+<city_tunnel, 0, (1, -1), None, 0>
+<monastery, 0, (2, -1), None, 0>
+--- End Game Stats -------------
+Points: [9, 14]
+Times: [250.59627318382263, 210.24207544326782]
+------------------------------
+
+--- Game 44 ----------------
+<tri_road, 1, (0, -1), ROAD, 2>
+<monastery, 0, (-1, 0), MONASTERY, 0>
+<monastery, 0, (-1, 1), MONASTERY, 0>
+<tri_road, 0, (-1, -1), ROAD, 0>
+<city_cap_straight_road, 3, (-1, 2), None, 0>
+<monastery, 0, (-2, 1), MONASTERY, 0>
+<city_cap_straight_road, 0, (0, -2), None, 0>
+<big_city, 0, (1, 0), None, 0>
+<monastery_road, 2, (0, -3), None, 0>
+<tri_road, 2, (-2, -1), None, 0>
+<monastery, 0, (-1, -3), None, 0>
+<monastery_road, 2, (-3, 1), None, 0>
+<tri_road, 3, (0, 1), None, 0>
+<city_tunnel, 1, (-3, 0), None, 0>
+<city_cap_straight_road, 2, (2, 0), CITY, 0>
+--- End Game Stats -------------
+Points: [13, 16]
+Times: [245.35361456871033, 210.55012130737305]
+------------------------------
+
+--- Game 45 ----------------
+<tri_road, 1, (0, -1), ROAD, 2>
+<city_cap_straight_road, 2, (1, 0), CITY, 0>
+<tri_road, 0, (0, 1), FARM, 1>
+<monastery, 0, (-1, 0), MONASTERY, 0>
+<tri_road, 3, (0, -2), ROAD, 2>
+<city_cap_straight_road, 1, (-1, -1), ROAD, 0>
+<city_cap_straight_road, 0, (2, 0), None, 0>
+<monastery, 0, (-2, 0), None, 0>
+<monastery_road, 2, (0, 2), None, 0>
+<monastery, 0, (-2, 1), None, 0>
+<monastery_road, 1, (-2, 2), None, 0>
+<monastery, 0, (1, 2), None, 0>
+<tri_road, 2, (-2, 3), None, 0>
+<city_tunnel, 0, (-3, 1), None, 0>
+--- End Game Stats -------------
+Points: [7, 13]
+Times: [218.1155607700348, 187.74789357185364]
+------------------------------
+
+--- Game 46 ----------------
+<monastery_road, 1, (-1, 0), ROAD, 0>
+<tri_road, 3, (0, -1), ROAD, 0>
+<monastery, 0, (-1, -1), MONASTERY, 0>
+<city_cap_straight_road, 0, (0, 1), CITY, 0>
+<monastery_road, 1, (-2, -1), None, 0>
+<city_cap_straight_road, 2, (1, 1), None, 0>
+<monastery, 0, (-2, -2), None, 0>
+<monastery, 0, (-1, -2), MONASTERY, 0>
+<tri_road, 3, (2, 1), None, 0>
+<tri_road, 1, (0, 2), None, 0>
+<tri_road, 0, (-2, -3), None, 0>
+<city_cap_straight_road, 2, (1, 0), CITY, 0>
+<city_tunnel, 0, (-3, -2), None, 0>
+<monastery, 0, (-1, 1), MONASTERY, 0>
+--- End Game Stats -------------
+Points: [8, 23]
+Times: [232.232106924057, 195.27089762687683]
+------------------------------
+
+--- Game 47 ----------------
+<monastery, 0, (-1, 0), MONASTERY, 0>
+<monastery, 0, (-1, 1), MONASTERY, 0>
+<city_cap_straight_road, 2, (1, 0), CITY, 0>
+<monastery, 0, (-2, 1), MONASTERY, 0>
+<monastery_road, 0, (-1, -1), MONASTERY, 0>
+<tri_road, 2, (-1, 2), None, 0>
+<monastery_road, 0, (-2, -1), None, 0>
+<monastery, 0, (-3, 1), None, 0>
+<city_tunnel, 0, (2, 0), None, 0>
+<city_cap_straight_road, 3, (-2, 2), None, 0>
+<city_cap_straight_road, 2, (-1, 3), None, 0>
+<big_city, 0, (-2, 3), None, 0>
+<tri_road, 1, (1, -1), None, 0>
+<tri_road, 2, (-3, 2), None, 0>
+<tri_road, 3, (0, -1), None, 0>
+--- End Game Stats -------------
+Points: [16, 13]
+Times: [241.03523564338684, 210.51810908317566]
+------------------------------
+
+--- Game 48 ----------------
+<monastery_road, 1, (-1, 0), ROAD, 0>
+<monastery, 0, (-1, 1), MONASTERY, 0>
+<city_cap_straight_road, 2, (1, 0), CITY, 0>
+<tri_road, 3, (0, -1), FARM, 1>
+<tri_road, 3, (0, 1), ROAD, 2>
+<monastery_road, 0, (-2, 1), None, 0>
+<city_cap_straight_road, 3, (-1, 2), CITY, 0>
+<tri_road, 0, (0, 2), None, 0>
+<tri_road, 3, (-2, 0), None, 0>
+<big_city, 0, (-1, 3), None, 0>
+<city_cap_straight_road, 0, (0, -2), ROAD, 0>
+<monastery, 0, (2, 0), None, 0>
+<monastery, 0, (-1, -1), None, 0>
+<city_tunnel, 0, (-3, 0), None, 0>
+<monastery, 0, (2, -1), None, 0>
+--- End Game Stats -------------
+Points: [14, 11]
+Times: [260.3788392543793, 210.50159311294556]
+------------------------------
+
+--- Game 49 ----------------
+<city_cap_straight_road, 2, (1, 0), CITY, 0>
+<monastery_road, 0, (1, 1), MONASTERY, 0>
+<monastery, 0, (2, 1), MONASTERY, 0>
+<monastery, 0, (2, 0), MONASTERY, 0>
+<monastery_road, 2, (2, 2), MONASTERY, 0>
+<tri_road, 1, (0, 1), None, 0>
+<city_cap_straight_road, 0, (3, 0), None, 0>
+<tri_road, 0, (0, 2), None, 0>
+<monastery, 0, (3, 2), None, 0>
+<city_cap_straight_road, 2, (1, -1), None, 0>
+<tri_road, 1, (-1, 0), None, 0>
+<city_tunnel, 0, (4, 2), None, 0>
+<tri_road, 0, (2, 3), None, 0>
+<big_city, 0, (4, 1), None, 0>
+<monastery, 0, (5, 2), None, 0>
+--- End Game Stats -------------
+Points: [16, 14]
+Times: [240.47432327270508, 210.8138449192047]
+------------------------------
+
+--- Game 50 ----------------
+<tri_road, 1, (0, -1), ROAD, 2>
+<monastery, 0, (-1, 0), MONASTERY, 0>
+<city_cap_straight_road, 0, (0, 1), None, 0>
+<monastery_road, 1, (-1, 1), MONASTERY, 0>
+<city_cap_straight_road, 2, (1, 1), CITY, 0>
+<monastery, 0, (-2, 0), None, 0>
+<tri_road, 1, (0, 2), FARM, 0>
+<city_tunnel, 0, (1, -1), None, 0>
+<big_city, 0, (1, -2), CITY, 0>
+<monastery_road, 3, (-2, 1), None, 0>
+<tri_road, 0, (0, 3), None, 0>
+<monastery, 0, (-2, 2), None, 0>
+<tri_road, 1, (-3, 0), None, 0>
+<monastery, 0, (-2, -1), None, 0>
+<city_cap_straight_road, 2, (-3, 1), None, 0>
+--- End Game Stats -------------
+Points: [14, 16]
+Times: [240.59517765045166, 210.2277660369873]
+------------------------------
+
+
+ --- Game Batch Stats ------------
+Results: [8.0, 42.0]
+Average Points: [10.6, 15.5]
+Average Times: [236.25596824645996, 206.22631787776947]
+Average Game Duration: 442.68297235012056 seconds
+-----------------------------
+
+
+--- Full Stats --------------
+Total Points: [1573, 1058]
+Total Scores: [86.5, 13.5]

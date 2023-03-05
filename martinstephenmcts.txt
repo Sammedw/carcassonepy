@@ -1,0 +1,4 @@
+--- Game Configuration ---
+Game count: 1
+Player count: 3
+Deck: {'start': 0, 'tri_road': 4, 'monastery': 4, 'city_cap_straight_road': 3, 'monastery_road': 2, 'big_city': 1, 'city_tunnel': 1}

@@ -11,6 +11,14 @@ class Human(BaseAgent):
     def __init__(self, player_num: int, game: Game):
         super().__init__(player_num, game)
 
+    @staticmethod
+    def build(player_num: int, game: Game):
+        print("--- Build Human player ---")
+        return Human(player_num, game)
+
+    def return_info(self):
+        return "Human Player()"
+
     def make_move(self, next_tile: Tile):
         valid_actions = super().make_move(next_tile)
         # check if there are any valid moves

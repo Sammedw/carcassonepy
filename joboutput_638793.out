@@ -1,0 +1,5621 @@
+[(0, <UCTagent.UCTAgent object at 0x7f5323dff910>), (1, <MCCFRagent.MCCFRAgent object at 0x7f5323dff970>)]
+0 UCT Agent(time=60.0, exploration_constant=1.5)
+1 MCCFR Agent(time=60.0, epsilon=0.6)
+UCT MAKE MOVE IN 56.25 time
+256 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 48.75 time
+239 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 41.25 time
+261 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 33.75 time
+241 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 26.25 time
+348 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 18.75 time
+202 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 11.25 time
+406 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 3.75 time
+1125 UCT iterations in 60.0s
+turn complete
+Action sequence ---------------------------
+<monastery, 0, (-1, 0), MONASTERY, 0>
+<city_cap_straight_road, 2, (1, 0), CITY, 0>
+<monastery_road, 2, (-1, 1), MONASTERY, 0>
+<tri_road, 3, (1, -1), ROAD, 0>
+<city_tunnel, 0, (2, 0), None, 0>
+<tri_road, 2, (1, -2), ROAD, 0>
+<monastery_road, 1, (-2, 0), None, 0>
+<tri_road, 3, (0, -2), None, 0>
+<big_city, 0, (2, 1), None, 0>
+<monastery, 0, (1, -3), MONASTERY, 0>
+<monastery, 0, (-2, 1), None, 0>
+<city_cap_straight_road, 0, (3, 0), None, 0>
+<city_cap_straight_road, 0, (0, 1), None, 0>
+<tri_road, 2, (2, -2), None, 0>
+<monastery, 0, (-2, 2), None, 0>
+-------------------------------------------
+Cities:  4
+Roads:  13
+Farms:  10
+Free Meeples:  [0, 0]
+SCORES:  [13, 12]
+TIMES: [240.4578197002411, 210.58283066749573]
+GAMES: [1, 0]
+[(0, <UCTagent.UCTAgent object at 0x7f5323dff910>), (1, <MCCFRagent.MCCFRAgent object at 0x7f5323dff970>)]
+0 UCT Agent(time=60.0, exploration_constant=1.5)
+1 MCCFR Agent(time=60.0, epsilon=0.6)
+UCT MAKE MOVE IN 56.25 time
+287 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 48.75 time
+283 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 41.25 time
+292 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 33.75 time
+247 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 26.25 time
+334 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 18.75 time
+293 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 11.25 time
+934 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 3.75 time
+1273 UCT iterations in 60.0s
+turn complete
+Action sequence ---------------------------
+<monastery_road, 1, (-1, 0), MONASTERY, 0>
+<tri_road, 0, (0, 1), None, 0>
+<monastery, 0, (-1, -1), MONASTERY, 0>
+<city_tunnel, 0, (-2, -1), FARM, 1>
+<tri_road, 2, (-1, 1), None, 0>
+<city_cap_straight_road, 3, (-2, 1), FARM, 1>
+<big_city, 0, (-2, 2), None, 0>
+<tri_road, 0, (1, 1), None, 0>
+<city_cap_straight_road, 1, (-2, 0), None, 0>
+<monastery, 0, (1, 2), None, 0>
+<monastery_road, 2, (0, -1), None, 0>
+<city_cap_straight_road, 2, (-1, 2), None, 0>
+<monastery, 0, (0, -2), None, 0>
+<monastery, 0, (1, 3), None, 0>
+<tri_road, 2, (2, 1), None, 0>
+-------------------------------------------
+Cities:  3
+Roads:  10
+Farms:  6
+Free Meeples:  [0, 0]
+SCORES:  [16, 0]
+TIMES: [240.35067081451416, 210.6241557598114]
+GAMES: [2, 0]
+[(0, <UCTagent.UCTAgent object at 0x7f5323dff910>), (1, <MCCFRagent.MCCFRAgent object at 0x7f5323dff970>)]
+0 UCT Agent(time=60.0, exploration_constant=1.5)
+1 MCCFR Agent(time=60.0, epsilon=0.6)
+UCT MAKE MOVE IN 56.25 time
+270 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 48.75 time
+278 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 41.25 time
+325 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 33.75 time
+279 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 26.25 time
+356 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 18.75 time
+372 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 11.25 time
+3356 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 3.75 time
+1112 UCT iterations in 60.0s
+turn complete
+Action sequence ---------------------------
+<big_city, 0, (1, 0), CITY, 0>
+<tri_road, 1, (0, 1), ROAD, 1>
+<city_cap_straight_road, 0, (0, 2), ROAD, 0>
+<monastery_road, 3, (-1, 1), MONASTERY, 0>
+<tri_road, 3, (0, 3), None, 0>
+<monastery, 0, (-1, 2), MONASTERY, 0>
+<city_cap_straight_road, 2, (1, 2), CITY, 0>
+<tri_road, 1, (-2, 2), None, 0>
+<monastery_road, 1, (-1, 3), MONASTERY, 0>
+<monastery, 0, (-1, 0), None, 0>
+<city_cap_straight_road, 0, (0, 4), None, 0>
+<tri_road, 1, (0, 5), None, 0>
+<monastery, 0, (-1, 4), None, 0>
+<city_tunnel, 1, (-1, -1), None, 0>
+<monastery, 0, (-2, 4), None, 0>
+-------------------------------------------
+Cities:  4
+Roads:  12
+Farms:  9
+Free Meeples:  [0, 0]
+SCORES:  [18, 16]
+TIMES: [240.51696348190308, 210.43566751480103]
+GAMES: [3, 0]
+[(0, <UCTagent.UCTAgent object at 0x7f5323dff910>), (1, <MCCFRagent.MCCFRAgent object at 0x7f5323dff970>)]
+0 UCT Agent(time=60.0, exploration_constant=1.5)
+1 MCCFR Agent(time=60.0, epsilon=0.6)
+UCT MAKE MOVE IN 56.25 time
+284 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 48.75 time
+243 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 41.25 time
+262 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 33.75 time
+234 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 26.25 time
+198 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 18.75 time
+183 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 11.25 time
+702 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 3.75 time
+1300 UCT iterations in 60.0s
+turn complete
+Action sequence ---------------------------
+<monastery_road, 2, (0, -1), MONASTERY, 0>
+<monastery_road, 0, (0, 1), MONASTERY, 0>
+<city_tunnel, 1, (1, 0), CITY, 0>
+<city_cap_straight_road, 2, (-1, 0), None, 0>
+<city_cap_straight_road, 2, (2, 0), None, 0>
+<tri_road, 3, (2, 1), ROAD, 1>
+<big_city, 0, (-2, 0), None, 0>
+<monastery, 0, (1, 1), None, 0>
+<monastery, 0, (1, -1), MONASTERY, 0>
+<city_cap_straight_road, 1, (1, -2), None, 0>
+<monastery, 0, (3, 0), None, 0>
+<tri_road, 3, (4, 0), None, 0>
+<tri_road, 0, (0, -2), None, 0>
+<monastery, 0, (1, 2), None, 0>
+<tri_road, 2, (-1, -2), None, 0>
+-------------------------------------------
+Cities:  3
+Roads:  13
+Farms:  9
+Free Meeples:  [0, 0]
+SCORES:  [21, 7]
+TIMES: [240.56173610687256, 210.70870113372803]
+GAMES: [4, 0]
+[(0, <UCTagent.UCTAgent object at 0x7f5323dff910>), (1, <MCCFRagent.MCCFRAgent object at 0x7f5323dff970>)]
+0 UCT Agent(time=60.0, exploration_constant=1.5)
+1 MCCFR Agent(time=60.0, epsilon=0.6)
+UCT MAKE MOVE IN 56.25 time
+291 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 48.75 time
+247 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 41.25 time
+295 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 33.75 time
+326 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 26.25 time
+258 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 18.75 time
+204 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 11.25 time
+1283 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 3.75 time
+1114 UCT iterations in 60.0s
+turn complete
+Action sequence ---------------------------
+<city_cap_straight_road, 2, (0, 1), ROAD, 0>
+<monastery, 0, (1, 1), MONASTERY, 0>
+<city_cap_straight_road, 2, (0, 2), CITY, 0>
+<tri_road, 3, (2, 1), ROAD, 2>
+<tri_road, 0, (0, 3), None, 0>
+<city_cap_straight_road, 0, (2, 0), None, 0>
+<monastery_road, 2, (0, -1), None, 0>
+<monastery, 0, (1, 2), None, 0>
+<monastery_road, 3, (1, -1), MONASTERY, 0>
+<monastery, 0, (0, 4), None, 0>
+<monastery, 0, (1, -2), None, 0>
+<city_tunnel, 0, (-1, 0), None, 0>
+<big_city, 0, (-1, 2), None, 0>
+<tri_road, 1, (-2, 0), None, 0>
+<tri_road, 3, (2, -2), None, 0>
+-------------------------------------------
+Cities:  5
+Roads:  13
+Farms:  9
+Free Meeples:  [0, 0]
+SCORES:  [14, 9]
+TIMES: [241.30725860595703, 210.40526461601257]
+GAMES: [5, 0]
+[(1, <MCCFRagent.MCCFRAgent object at 0x7f5323dff9d0>), (0, <UCTagent.UCTAgent object at 0x7f5323dffa30>)]
+0 MCCFR Agent(time=60.0, epsilon=0.6)
+1 UCT Agent(time=60.0, exploration_constant=1.5)
+turn complete
+UCT MAKE MOVE IN 52.5 time
+251 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 45.0 time
+244 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 37.5 time
+252 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 30.0 time
+301 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 22.5 time
+239 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 15.0 time
+221 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 7.5 time
+2333 UCT iterations in 60.0s
+turn complete
+turn complete
+Action sequence ---------------------------
+<monastery, 0, (-1, 0), MONASTERY, 0>
+<city_cap_straight_road, 2, (1, 0), CITY, 0>
+<monastery_road, 0, (2, 0), MONASTERY, 0>
+<tri_road, 3, (0, 1), ROAD, 2>
+<city_tunnel, 1, (-1, -1), None, 0>
+<tri_road, 1, (2, -1), ROAD, 2>
+<monastery_road, 2, (3, 0), None, 0>
+<tri_road, 3, (2, -2), ROAD, 0>
+<big_city, 0, (-2, -1), None, 0>
+<monastery, 0, (3, -1), MONASTERY, 0>
+<monastery, 0, (-1, -2), None, 0>
+<city_cap_straight_road, 1, (3, -2), None, 0>
+<city_cap_straight_road, 0, (4, -1), None, 0>
+<tri_road, 1, (4, -2), None, 0>
+<monastery, 0, (-1, 1), None, 0>
+-------------------------------------------
+Cities:  4
+Roads:  12
+Farms:  9
+Free Meeples:  [0, 0]
+SCORES:  [11, 18]
+TIMES: [240.57137966156006, 210.33222651481628]
+GAMES: [0, 1]
+[(1, <MCCFRagent.MCCFRAgent object at 0x7f5323dff9d0>), (0, <UCTagent.UCTAgent object at 0x7f5323dffa30>)]
+0 MCCFR Agent(time=60.0, epsilon=0.6)
+1 UCT Agent(time=60.0, exploration_constant=1.5)
+turn complete
+UCT MAKE MOVE IN 52.5 time
+304 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 45.0 time
+231 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 37.5 time
+275 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 26.25 time
+271 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 18.75 time
+219 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 11.25 time
+1987 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 3.75 time
+1321 UCT iterations in 60.0s
+turn complete
+Action sequence ---------------------------
+<monastery_road, 2, (0, -1), MONASTERY, 0>
+<tri_road, 3, (0, 1), ROAD, 2>
+<monastery, 0, (0, -2), MONASTERY, 0>
+<city_tunnel, 1, (1, 0), CITY, 0>
+<tri_road, 0, (0, -3), None, 0>
+<city_cap_straight_road, 2, (2, 0), FARM, 1>
+<tri_road, 2, (1, -3), None, 0>
+<city_cap_straight_road, 2, (0, 2), None, 0>
+<monastery, 0, (-1, -1), None, 0>
+<monastery_road, 1, (1, 1), MONASTERY, 0>
+<city_cap_straight_road, 2, (-1, 1), None, 0>
+<monastery, 0, (1, 2), None, 0>
+<monastery, 0, (-2, -1), None, 0>
+<tri_road, 3, (2, 1), None, 0>
+-------------------------------------------
+Cities:  3
+Roads:  12
+Farms:  8
+Free Meeples:  [0, 0]
+SCORES:  [10, 20]
+TIMES: [221.71773719787598, 195.82041716575623]
+GAMES: [0, 2]
+[(1, <MCCFRagent.MCCFRAgent object at 0x7f5323dff9d0>), (0, <UCTagent.UCTAgent object at 0x7f5323dffa30>)]
+0 MCCFR Agent(time=60.0, epsilon=0.6)
+1 UCT Agent(time=60.0, exploration_constant=1.5)
+turn complete
+UCT MAKE MOVE IN 52.5 time
+289 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 45.0 time
+272 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 37.5 time
+296 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 30.0 time
+416 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 22.5 time
+318 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 15.0 time
+1853 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 7.5 time
+2800 UCT iterations in 60.0s
+turn complete
+turn complete
+Action sequence ---------------------------
+<big_city, 0, (1, 0), CITY, 0>
+<tri_road, 1, (0, -1), ROAD, 2>
+<city_cap_straight_road, 1, (-1, -1), ROAD, 0>
+<monastery_road, 2, (-1, 0), MONASTERY, 0>
+<tri_road, 3, (-2, -1), None, 0>
+<monastery, 0, (-3, -1), None, 0>
+<city_cap_straight_road, 2, (-1, 1), CITY, 0>
+<tri_road, 3, (0, 1), None, 0>
+<monastery_road, 2, (-4, -1), None, 0>
+<monastery, 0, (-3, -2), MONASTERY, 0>
+<city_cap_straight_road, 2, (-2, 0), None, 0>
+<tri_road, 3, (-2, -2), None, 0>
+<monastery, 0, (-3, -3), None, 0>
+<city_tunnel, 0, (-4, -3), None, 0>
+<monastery, 0, (-5, -3), None, 0>
+-------------------------------------------
+Cities:  5
+Roads:  11
+Farms:  7
+Free Meeples:  [0, 0]
+SCORES:  [7, 18]
+TIMES: [241.6380512714386, 210.4954240322113]
+GAMES: [0, 3]
+[(1, <MCCFRagent.MCCFRAgent object at 0x7f5323dff9d0>), (0, <UCTagent.UCTAgent object at 0x7f5323dffa30>)]
+0 MCCFR Agent(time=60.0, epsilon=0.6)
+1 UCT Agent(time=60.0, exploration_constant=1.5)
+turn complete
+UCT MAKE MOVE IN 52.5 time
+271 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 45.0 time
+238 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 37.5 time
+270 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 30.0 time
+224 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 22.5 time
+200 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 15.0 time
+198 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 7.5 time
+1999 UCT iterations in 60.0s
+turn complete
+turn complete
+Action sequence ---------------------------
+<monastery_road, 2, (0, -1), MONASTERY, 0>
+<monastery_road, 1, (-1, 0), MONASTERY, 0>
+<city_tunnel, 0, (1, -1), CITY, 0>
+<city_cap_straight_road, 0, (0, 1), ROAD, 0>
+<city_cap_straight_road, 3, (1, -2), None, 0>
+<tri_road, 2, (-2, 0), None, 0>
+<big_city, 0, (1, 0), None, 0>
+<monastery, 0, (-1, 1), None, 0>
+<monastery, 0, (-1, -1), None, 0>
+<city_cap_straight_road, 0, (0, 2), None, 0>
+<monastery, 0, (-1, -2), None, 0>
+<tri_road, 3, (0, 3), None, 0>
+<tri_road, 0, (1, -3), None, 0>
+<monastery, 0, (-2, -1), MONASTERY, 0>
+<tri_road, 0, (1, 3), None, 0>
+-------------------------------------------
+Cities:  3
+Roads:  12
+Farms:  9
+Free Meeples:  [0, 0]
+SCORES:  [13, 18]
+TIMES: [241.37978053092957, 210.46424007415771]
+GAMES: [0, 4]
+[(1, <MCCFRagent.MCCFRAgent object at 0x7f5323dff9d0>), (0, <UCTagent.UCTAgent object at 0x7f5323dffa30>)]
+0 MCCFR Agent(time=60.0, epsilon=0.6)
+1 UCT Agent(time=60.0, exploration_constant=1.5)
+turn complete
+UCT MAKE MOVE IN 52.5 time
+275 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 45.0 time
+264 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 37.5 time
+306 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 30.0 time
+303 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 22.5 time
+217 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 15.0 time
+166 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 7.5 time
+651 UCT iterations in 60.0s
+turn complete
+turn complete
+Action sequence ---------------------------
+<city_cap_straight_road, 0, (0, 1), ROAD, 0>
+<monastery, 0, (-1, 0), MONASTERY, 0>
+<city_cap_straight_road, 2, (0, 2), None, 0>
+<tri_road, 3, (1, 2), ROAD, 1>
+<tri_road, 1, (0, -1), ROAD, 0>
+<city_cap_straight_road, 3, (2, 2), None, 0>
+<monastery_road, 2, (0, -2), None, 0>
+<monastery, 0, (-2, 0), None, 0>
+<monastery_road, 1, (-3, 0), MONASTERY, 0>
+<monastery, 0, (-1, 1), None, 0>
+<monastery, 0, (-3, 1), None, 0>
+<city_tunnel, 0, (2, 3), None, 0>
+<big_city, 0, (2, 4), None, 0>
+<tri_road, 0, (3, 2), None, 0>
+<tri_road, 2, (3, 1), None, 0>
+-------------------------------------------
+Cities:  4
+Roads:  11
+Farms:  8
+Free Meeples:  [0, 1]
+SCORES:  [9, 9]
+TIMES: [240.7301127910614, 210.39016604423523]
+GAMES: [0.5, 4.5]
+[(1, <MCCFRagent.MCCFRAgent object at 0x7f5323dff9d0>), (0, <UCTagent.UCTAgent object at 0x7f5323dffa30>)]
+0 MCCFR Agent(time=60.0, epsilon=0.6)
+1 UCT Agent(time=60.0, exploration_constant=1.5)
+turn complete
+UCT MAKE MOVE IN 52.5 time
+298 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 45.0 time
+355 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 37.5 time
+[(0, <UCTagent.UCTAgent object at 0x7f5323dff910>), (1, <MCCFRagent.MCCFRAgent object at 0x7f5323dff970>)]
+0 UCT Agent(time=60.0, exploration_constant=1.5)
+1 MCCFR Agent(time=60.0, epsilon=0.6)
+UCT MAKE MOVE IN 56.25 time
+313 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 48.75 time
+288 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 41.25 time
+335 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 33.75 time
+333 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 26.25 time
+253 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 18.75 time
+219 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 11.25 time
+742 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 3.75 time
+1327 UCT iterations in 60.0s
+turn complete
+Action sequence ---------------------------
+<tri_road, 1, (-1, 0), ROAD, 1>
+<big_city, 0, (1, 0), CITY, 0>
+<tri_road, 1, (-1, 1), ROAD, 0>
+<tri_road, 3, (-1, -1), ROAD, 0>
+<monastery, 0, (-2, -1), MONASTERY, 0>
+<city_tunnel, 0, (1, -1), None, 0>
+<city_cap_straight_road, 3, (-2, 0), None, 0>
+<monastery, 0, (-3, -1), MONASTERY, 0>
+<monastery_road, 3, (-3, 0), None, 0>
+<city_cap_straight_road, 3, (1, -2), None, 0>
+<monastery, 0, (-2, -2), MONASTERY, 0>
+<tri_road, 1, (2, -2), None, 0>
+<monastery_road, 2, (-1, -2), None, 0>
+<city_cap_straight_road, 2, (-4, -1), None, 0>
+<monastery, 0, (-1, -3), None, 0>
+-------------------------------------------
+Cities:  3
+Roads:  12
+Farms:  10
+Free Meeples:  [0, 0]
+SCORES:  [19, 13]
+TIMES: [240.2215220928192, 210.41215920448303]
+GAMES: [6, 0]
+[(0, <UCTagent.UCTAgent object at 0x7f5323dff910>), (1, <MCCFRagent.MCCFRAgent object at 0x7f5323dff970>)]
+0 UCT Agent(time=60.0, exploration_constant=1.5)
+1 MCCFR Agent(time=60.0, epsilon=0.6)
+UCT MAKE MOVE IN 56.25 time
+281 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 48.75 time
+228 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 41.25 time
+203 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 33.75 time
+221 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 26.25 time
+201 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 18.75 time
+157 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 11.25 time
+126 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 3.75 time
+1249 UCT iterations in 60.0s
+turn complete
+Action sequence ---------------------------
+<city_tunnel, 1, (1, 0), CITY, 0>
+<big_city, 0, (2, 0), None, 0>
+<monastery, 0, (-1, 0), MONASTERY, 0>
+<monastery, 0, (-2, 0), MONASTERY, 0>
+<tri_road, 1, (0, -1), None, 0>
+<tri_road, 0, (-1, -1), ROAD, 1>
+<city_cap_straight_road, 2, (3, 0), None, 0>
+<city_cap_straight_road, 0, (3, 1), None, 0>
+<city_cap_straight_road, 2, (3, 2), None, 0>
+<monastery, 0, (-2, 1), None, 0>
+<monastery, 0, (4, 0), None, 0>
+<tri_road, 0, (3, 3), None, 0>
+<monastery_road, 0, (0, 1), None, 0>
+<monastery_road, 0, (5, 0), None, 0>
+<tri_road, 3, (5, -1), None, 0>
+-------------------------------------------
+Cities:  3
+Roads:  11
+Farms:  9
+Free Meeples:  [0, 0]
+SCORES:  [12, 5]
+TIMES: [240.68417525291443, 211.10123705863953]
+GAMES: [7, 0]
+[(0, <UCTagent.UCTAgent object at 0x7f5323dff910>), (1, <MCCFRagent.MCCFRAgent object at 0x7f5323dff970>)]
+0 UCT Agent(time=60.0, exploration_constant=1.5)
+1 MCCFR Agent(time=60.0, epsilon=0.6)
+UCT MAKE MOVE IN 56.25 time
+301 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 45.0 time
+283 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 37.5 time
+220 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 30.0 time
+187 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 22.5 time
+395 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 15.0 time
+329 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 7.5 time
+2630 UCT iterations in 60.0s
+turn complete
+turn complete
+Action sequence ---------------------------
+<city_cap_straight_road, 2, (1, 0), CITY, 0>
+<tri_road, 3, (0, 1), ROAD, 1>
+<city_tunnel, 0, (2, 0), None, 0>
+<monastery, 0, (-1, 1), MONASTERY, 0>
+<monastery, 0, (-1, 0), MONASTERY, 0>
+<city_cap_straight_road, 3, (-1, 2), None, 0>
+<monastery_road, 1, (-2, 1), MONASTERY, 0>
+<tri_road, 0, (1, 1), None, 0>
+<tri_road, 2, (-3, 1), None, 0>
+<city_cap_straight_road, 1, (-1, -1), FARM, 1>
+<monastery, 0, (-2, 0), None, 0>
+<tri_road, 0, (-3, 2), None, 0>
+<monastery_road, 3, (-2, -1), None, 0>
+<monastery, 0, (3, 0), None, 0>
+-------------------------------------------
+Cities:  4
+Roads:  12
+Farms:  8
+Free Meeples:  [0, 0]
+SCORES:  [19, 9]
+TIMES: [214.72879004478455, 184.35287928581238]
+GAMES: [8, 0]
+[(0, <UCTagent.UCTAgent object at 0x7f5323dff910>), (1, <MCCFRagent.MCCFRAgent object at 0x7f5323dff970>)]
+0 UCT Agent(time=60.0, exploration_constant=1.5)
+1 MCCFR Agent(time=60.0, epsilon=0.6)
+UCT MAKE MOVE IN 56.25 time
+274 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 48.75 time
+294 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 41.25 time
+370 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 33.75 time
+408 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 26.25 time
+487 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 18.75 time
+705 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 11.25 time
+2254 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 3.75 time
+1271 UCT iterations in 60.0s
+turn complete
+Action sequence ---------------------------
+<big_city, 0, (1, 0), CITY, 0>
+<tri_road, 1, (-1, 0), ROAD, 2>
+<tri_road, 1, (0, 1), ROAD, 0>
+<city_tunnel, 0, (1, 1), None, 0>
+<tri_road, 1, (0, -1), None, 0>
+<city_cap_straight_road, 3, (-2, 0), CITY, 0>
+<tri_road, 2, (-3, 0), ROAD, 2>
+<monastery_road, 2, (0, -2), None, 0>
+<monastery_road, 1, (-2, -1), MONASTERY, 0>
+<city_cap_straight_road, 1, (-2, 1), None, 0>
+<monastery, 0, (-2, -2), None, 0>
+<monastery, 0, (-1, -2), MONASTERY, 0>
+<monastery, 0, (-3, -2), None, 0>
+<monastery, 0, (-1, -3), None, 0>
+<city_cap_straight_road, 1, (1, 2), None, 0>
+-------------------------------------------
+Cities:  2
+Roads:  13
+Farms:  10
+Free Meeples:  [0, 0]
+SCORES:  [18, 11]
+TIMES: [240.4998757839203, 210.3953492641449]
+GAMES: [9, 0]
+[(0, <UCTagent.UCTAgent object at 0x7f5323dff910>), (1, <MCCFRagent.MCCFRAgent object at 0x7f5323dff970>)]
+0 UCT Agent(time=60.0, exploration_constant=1.5)
+1 MCCFR Agent(time=60.0, epsilon=0.6)
+UCT MAKE MOVE IN 56.25 time
+313 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 48.75 time
+293 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 41.25 time
+224 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 33.75 time
+231 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 26.25 time
+178 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 18.75 time
+166 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 11.25 time
+206 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 3.75 time
+1243 UCT iterations in 60.0s
+turn complete
+Action sequence ---------------------------
+<tri_road, 1, (0, 1), ROAD, 0>
+<city_cap_straight_road, 2, (0, 2), ROAD, 0>
+<monastery, 0, (1, 2), MONASTERY, 0>
+<monastery, 0, (-1, 0), MONASTERY, 0>
+<city_tunnel, 1, (1, 3), None, 0>
+<monastery, 0, (-1, -1), None, 0>
+<tri_road, 3, (0, -1), None, 0>
+<big_city, 0, (2, 3), None, 0>
+<monastery_road, 3, (1, 1), MONASTERY, 0>
+<city_cap_straight_road, 1, (2, 4), None, 0>
+<monastery, 0, (-1, -2), None, 0>
+<city_cap_straight_road, 2, (-2, -2), None, 0>
+<tri_road, 1, (2, 1), None, 0>
+<tri_road, 3, (3, 1), None, 0>
+<monastery_road, 2, (2, 0), None, 0>
+-------------------------------------------
+Cities:  4
+Roads:  13
+Farms:  10
+Free Meeples:  [0, 0]
+SCORES:  [17, 7]
+TIMES: [240.55062913894653, 210.5241014957428]
+GAMES: [10, 0]
+[(0, <UCTagent.UCTAgent object at 0x7f5323dff910>), (1, <MCCFRagent.MCCFRAgent object at 0x7f5323dff970>)]
+0 UCT Agent(time=60.0, exploration_constant=1.5)
+1 282 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 30.0 time
+249 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 22.5 time
+266 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 15.0 time
+288 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 7.5 time
+2273 UCT iterations in 60.0s
+turn complete
+turn complete
+Action sequence ---------------------------
+<tri_road, 0, (0, 1), ROAD, 1>
+<big_city, 0, (1, 0), CITY, 0>
+<tri_road, 1, (0, -1), FARM, 1>
+<tri_road, 2, (-1, -1), ROAD, 2>
+<monastery, 0, (-1, -2), MONASTERY, 0>
+<city_tunnel, 1, (2, 0), None, 0>
+<city_cap_straight_road, 1, (-1, 1), None, 0>
+<monastery, 0, (-1, 2), MONASTERY, 0>
+<monastery_road, 2, (0, 2), None, 0>
+<city_cap_straight_road, 2, (3, 0), None, 0>
+<monastery, 0, (-1, -3), None, 0>
+<tri_road, 3, (0, 3), None, 0>
+<monastery_road, 0, (-2, -3), None, 0>
+<city_cap_straight_road, 3, (-2, 1), None, 0>
+<monastery, 0, (0, -3), None, 0>
+-------------------------------------------
+Cities:  3
+Roads:  12
+Farms:  10
+Free Meeples:  [0, 0]
+SCORES:  [9, 13]
+TIMES: [240.51789236068726, 210.48410654067993]
+GAMES: [0.5, 5.5]
+[(1, <MCCFRagent.MCCFRAgent object at 0x7f5323dff9d0>), (0, <UCTagent.UCTAgent object at 0x7f5323dffa30>)]
+0 MCCFR Agent(time=60.0, epsilon=0.6)
+1 UCT Agent(time=60.0, exploration_constant=1.5)
+turn complete
+UCT MAKE MOVE IN 52.5 time
+254 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 45.0 time
+205 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 37.5 time
+228 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 30.0 time
+211 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 22.5 time
+206 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 15.0 time
+207 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 7.5 time
+1119 UCT iterations in 60.0s
+turn complete
+turn complete
+Action sequence ---------------------------
+<city_tunnel, 0, (-1, 0), None, 0>
+<big_city, 0, (-1, 1), CITY, 0>
+<monastery, 0, (-2, 0), MONASTERY, 0>
+<monastery, 0, (-2, -1), MONASTERY, 0>
+<tri_road, 3, (0, -1), ROAD, 1>
+<tri_road, 0, (-2, -2), None, 0>
+<city_cap_straight_road, 0, (0, -2), None, 0>
+<city_cap_straight_road, 3, (-3, -2), None, 0>
+<city_cap_straight_road, 3, (1, -1), None, 0>
+<monastery, 0, (-3, -3), None, 0>
+<monastery, 0, (-3, 0), None, 0>
+<tri_road, 1, (-1, -2), None, 0>
+<monastery_road, 0, (-4, 0), None, 0>
+<monastery_road, 2, (-4, 1), None, 0>
+<tri_road, 1, (-4, 2), None, 0>
+-------------------------------------------
+Cities:  5
+Roads:  12
+Farms:  7
+Free Meeples:  [0, 0]
+SCORES:  [7, 10]
+TIMES: [242.13608384132385, 210.65683484077454]
+GAMES: [0.5, 6.5]
+[(1, <MCCFRagent.MCCFRAgent object at 0x7f5323dff9d0>), (0, <UCTagent.UCTAgent object at 0x7f5323dffa30>)]
+0 MCCFR Agent(time=60.0, epsilon=0.6)
+1 UCT Agent(time=60.0, exploration_constant=1.5)
+turn complete
+UCT MAKE MOVE IN 48.75 time
+292 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 41.25 time
+238 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 33.75 time
+207 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 26.25 time
+236 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 18.75 time
+311 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 11.25 time
+1519 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 3.75 time
+946 UCT iterations in 60.0s
+turn complete
+Action sequence ---------------------------
+<city_cap_straight_road, 2, (1, 0), CITY, 0>
+<tri_road, 2, (1, -1), ROAD, 1>
+<city_tunnel, 0, (-1, 0), FARM, 1>
+<monastery, 0, (2, 0), MONASTERY, 0>
+<monastery, 0, (2, 1), MONASTERY, 0>
+<city_cap_straight_road, 2, (1, 1), None, 0>
+<monastery_road, 2, (2, 2), None, 0>
+<tri_road, 1, (1, 2), None, 0>
+<tri_road, 3, (0, 2), None, 0>
+<city_cap_straight_road, 0, (0, 1), FARM, 1>
+<monastery, 0, (3, 2), None, 0>
+<tri_road, 0, (2, -1), None, 0>
+<monastery_road, 3, (3, 1), None, 0>
+<monastery, 0, (4, 2), None, 0>
+-------------------------------------------
+Cities:  3
+Roads:  11
+Farms:  7
+Free Meeples:  [0, 0]
+SCORES:  [12, 17]
+TIMES: [214.25148367881775, 185.11898279190063]
+GAMES: [0.5, 7.5]
+[(1, <MCCFRagent.MCCFRAgent object at 0x7f5323dff9d0>), (0, <UCTagent.UCTAgent object at 0x7f5323dffa30>)]
+0 MCCFR Agent(time=60.0, epsilon=0.6)
+1 UCT Agent(time=60.0, exploration_constant=1.5)
+turn complete
+UCT MAKE MOVE IN 52.5 time
+280 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 45.0 time
+274 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 37.5 time
+331 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 30.0 time
+415 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 22.5 time
+637 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 15.0 time
+529 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 7.5 time
+2133 UCT iterations in 60.0s
+turn complete
+turn complete
+Action sequence ---------------------------
+<big_city, 0, (1, 0), CITY, 0>
+<tri_road, 1, (0, 1), ROAD, 0>
+<tri_road, 3, (0, 2), ROAD, 0>
+<city_tunnel, 0, (-1, 2), None, 0>
+<tri_road, 1, (0, 3), None, 0>
+<city_cap_straight_road, 0, (0, -1), None, 0>
+<tri_road, 1, (0, 4), ROAD, 0>
+<monastery_road, 2, (0, -2), MONASTERY, 0>
+<monastery_road, 0, (1, 3), MONASTERY, 0>
+<city_cap_straight_road, 3, (-1, 1), CITY, 0>
+<monastery, 0, (1, 4), None, 0>
+<monastery, 0, (-1, -2), None, 0>
+<monastery, 0, (-2, -2), None, 0>
+<monastery, 0, (1, -2), None, 0>
+<city_cap_straight_road, 3, (-2, -1), None, 0>
+-------------------------------------------
+Cities:  4
+Roads:  11
+Farms:  7
+Free Meeples:  [0, 0]
+SCORES:  [12, 10]
+TIMES: [240.51425457000732, 210.32604217529297]
+GAMES: [1.5, 7.5]
+[(1, <MCCFRagent.MCCFRAgent object at 0x7f5323dff9d0>), (0, <UCTagent.UCTAgent object at 0x7f5323dffa30>)]
+0 MCCFR Agent(time=60.0, epsilon=0.6)
+1 UCT Agent(time=60.0, exploration_constant=1.5)
+turn complete
+UCT MAKE MOVE IN 52.5 time
+328 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 45.0 time
+268 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 37.5 time
+208 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 30.0 time
+205 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 22.5 time
+166 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 15.0 time
+151 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 7.5 time
+1611 UCT iterations in 60.0s
+turn complete
+turn complete
+Action sequence ---------------------------
+<tri_road, 3, (0, 1), ROAD, 0>
+<city_cap_straight_road, 2, (1, 0), CITY, 0>
+<monastery, 0, (-1, 0), MONASTERY, 0>
+<monastery, 0, (-1, 1), MONASTERY, 0>
+<city_tunnel, 0, (-2, 0), None, 0>
+<monastery, 0, (-1, 2), MONASTERY, 0>
+<tri_road, 1, (1, 1), None, 0>
+<big_city, 0, (-2, -1), None, 0>
+<monastery_road, 1, (-3, 0), None, 0>
+<city_cap_straight_road, 2, (-2, 2), None, 0>
+<monastery, 0, (2, 0), None, 0>
+<city_cap_straight_road, 3, (-1, 3), None, 0>
+<tri_road, 0, (-4, 0), None, 0>
+<tri_road, 0, (-2, 3), None, 0>
+<monastery_road, 0, (0, 2), None, 0>
+-------------------------------------------
+Cities:  4
+Roads:  11
+Farms:  7
+Free Meeples:  [1, 0]
+SCORES:  [8, 19]
+TIMES: [240.71058988571167, 210.32085537910461]
+GAMES: [1.5, 8.5]
+[(1, <MCCFRagent.MCCFRAgent object at 0x7f5323dff9d0>), (0, <UCTagent.UCTAgent object at 0x7f5323dffa30>)]
+0 MCCFR Agent(time=60.0, epsilon=0.6)
+1 UCT Agent(time=60.0, exploration_constant=1.5)
+turn complete
+UCT MAKE MOVE IN 52.5 time
+290 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 45.0 time
+264 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 37.5 time
+308 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 30.0 time
+276 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 22.5 time
+219 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 15.0 time
+425 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 7.5 time
+2840 UCT iterations in 60.0s
+turn complete
+turn complete
+MCCFR Agent(time=60.0, epsilon=0.6)
+UCT MAKE MOVE IN 56.25 time
+285 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 48.75 time
+283 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 41.25 time
+280 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 33.75 time
+291 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 26.25 time
+228 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 18.75 time
+257 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 11.25 time
+1641 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 3.75 time
+1275 UCT iterations in 60.0s
+turn complete
+Action sequence ---------------------------
+<monastery_road, 2, (-1, 0), MONASTERY, 0>
+<tri_road, 1, (-2, 0), ROAD, 0>
+<monastery, 0, (-1, -1), MONASTERY, 0>
+<city_cap_straight_road, 0, (-2, 1), None, 0>
+<city_cap_straight_road, 0, (0, -1), None, 0>
+<tri_road, 1, (-3, 1), FARM, 2>
+<city_tunnel, 1, (-1, -2), None, 0>
+<monastery_road, 0, (-3, 2), None, 0>
+<big_city, 0, (-2, -2), None, 0>
+<monastery, 0, (-3, 3), None, 0>
+<tri_road, 3, (0, 1), None, 0>
+<city_cap_straight_road, 3, (1, 1), None, 0>
+<tri_road, 1, (-4, 3), None, 0>
+<monastery, 0, (-2, 3), None, 0>
+<monastery, 0, (-3, 4), None, 0>
+-------------------------------------------
+Cities:  5
+Roads:  13
+Farms:  9
+Free Meeples:  [0, 0]
+SCORES:  [14, 1]
+TIMES: [240.64272141456604, 210.48362469673157]
+GAMES: [11, 0]
+[(0, <UCTagent.UCTAgent object at 0x7f5323dff910>), (1, <MCCFRagent.MCCFRAgent object at 0x7f5323dff970>)]
+0 UCT Agent(time=60.0, exploration_constant=1.5)
+1 MCCFR Agent(time=60.0, epsilon=0.6)
+UCT MAKE MOVE IN 56.25 time
+301 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 48.75 time
+288 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 41.25 time
+225 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 33.75 time
+243 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 26.25 time
+225 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 18.75 time
+226 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 11.25 time
+2283 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 3.75 time
+1300 UCT iterations in 60.0s
+turn complete
+Action sequence ---------------------------
+<tri_road, 1, (0, -1), ROAD, 2>
+<monastery, 0, (-1, 0), MONASTERY, 0>
+<city_cap_straight_road, 2, (1, 0), CITY, 0>
+<monastery, 0, (-2, 0), MONASTERY, 0>
+<monastery_road, 2, (1, -1), MONASTERY, 0>
+<city_tunnel, 0, (-3, 0), None, 0>
+<tri_road, 0, (0, 1), None, 0>
+<monastery, 0, (-4, 0), None, 0>
+<tri_road, 1, (1, 1), ROAD, 0>
+<monastery_road, 3, (2, -1), None, 0>
+<city_cap_straight_road, 2, (0, -2), FARM, 0>
+<city_cap_straight_road, 1, (-3, 1), None, 0>
+<tri_road, 0, (2, -2), None, 0>
+<monastery, 0, (-2, -1), None, 0>
+<big_city, 0, (-1, -2), None, 0>
+-------------------------------------------
+Cities:  3
+Roads:  12
+Farms:  9
+Free Meeples:  [0, 0]
+SCORES:  [20, 11]
+TIMES: [240.54654669761658, 210.64476943016052]
+GAMES: [12, 0]
+[(0, <UCTagent.UCTAgent object at 0x7f5323dff910>), (1, <MCCFRagent.MCCFRAgent object at 0x7f5323dff970>)]
+0 UCT Agent(time=60.0, exploration_constant=1.5)
+1 MCCFR Agent(time=60.0, epsilon=0.6)
+UCT MAKE MOVE IN 56.25 time
+272 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 48.75 time
+244 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 41.25 time
+203 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 33.75 time
+179 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 26.25 time
+228 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 18.75 time
+190 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 11.25 time
+231 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 3.75 time
+1303 UCT iterations in 60.0s
+turn complete
+Action sequence ---------------------------
+<big_city, 0, (1, 0), CITY, 0>
+<city_cap_straight_road, 0, (0, 1), ROAD, 0>
+<monastery, 0, (-1, 0), MONASTERY, 0>
+<city_cap_straight_road, 0, (0, 2), FARM, 0>
+<monastery, 0, (-1, -1), None, 0>
+<monastery, 0, (-2, -1), None, 0>
+<tri_road, 1, (-3, -1), None, 0>
+<tri_road, 0, (-3, 0), None, 0>
+<tri_road, 2, (-3, 1), None, 0>
+<city_tunnel, 1, (-1, -2), None, 0>
+<monastery, 0, (-1, 1), None, 0>
+<tri_road, 0, (0, 3), None, 0>
+<monastery_road, 1, (-2, 1), None, 0>
+<monastery_road, 3, (-4, 1), None, 0>
+<city_cap_straight_road, 2, (2, 0), None, 0>
+-------------------------------------------
+Cities:  4
+Roads:  12
+Farms:  8
+Free Meeples:  [0, 0]
+SCORES:  [11, 4]
+TIMES: [240.70252180099487, 210.66422176361084]
+GAMES: [13, 0]
+[(0, <UCTagent.UCTAgent object at 0x7f5323dff910>), (1, <MCCFRagent.MCCFRAgent object at 0x7f5323dff970>)]
+0 UCT Agent(time=60.0, exploration_constant=1.5)
+1 MCCFR Agent(time=60.0, epsilon=0.6)
+UCT MAKE MOVE IN 56.25 time
+277 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 48.75 time
+239 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 37.5 time
+196 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 30.0 time
+212 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 22.5 time
+254 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 15.0 time
+205 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 7.5 time
+1537 UCT iterations in 60.0s
+turn complete
+turn complete
+Action sequence ---------------------------
+<monastery, 0, (-1, 0), MONASTERY, 0>
+<monastery, 0, (-1, -1), MONASTERY, 0>
+<city_cap_straight_road, 2, (1, 0), CITY, 0>
+<monastery_road, 1, (-1, -2), MONASTERY, 0>
+<tri_road, 1, (1, -1), FARM, 2>
+<tri_road, 3, (-2, -2), None, 0>
+<monastery_road, 1, (-1, 1), None, 0>
+<city_tunnel, 0, (0, -2), None, 0>
+<tri_road, 0, (-2, 1), None, 0>
+<monastery, 0, (-1, -3), None, 0>
+<monastery, 0, (2, -1), None, 0>
+<city_cap_straight_road, 0, (1, 1), None, 0>
+<city_cap_straight_road, 2, (-3, -2), None, 0>
+<tri_road, 1, (-2, -1), None, 0>
+-------------------------------------------
+Cities:  4
+Roads:  13
+Farms:  10
+Free Meeples:  [0, 0]
+SCORES:  [13, 13]
+TIMES: [218.08045291900635, 188.77091217041016]
+GAMES: [13.5, 0.5]
+[(0, <UCTagent.UCTAgent object at 0x7f5323dff910>), (1, <MCCFRagent.MCCFRAgent object at 0x7f5323dff970>)]
+0 UCT Agent(time=60.0, exploration_constant=1.5)
+1 MCCFR Agent(time=60.0, epsilon=0.6)
+UCT MAKE MOVE IN 56.25 time
+320 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 48.75 time
+272 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 41.25 time
+292 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 33.75 time
+325 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 26.25 time
+272 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 18.75 time
+251 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 11.25 time
+232 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 3.75 time
+1408 UCT iterations in 60.0s
+turn complete
+Action sequence ---------------------------
+<tri_road, 1, (0, -1), ROAD, 2>
+<monastery, 0, (-1, 0), MONASTERY, 0>
+<monastery, 0, (1, -1), MONASTERY, 0>
+<tri_road, 0, (-1, -1), ROAD, 0>
+<monastery_road, 0, (0, 1), None, 0>
+<tri_road, 3, (-2, -1), ROAD, 1>
+<monastery, 0, (1, -2), MONASTERY, 0>
+<monastery_road, 2, (0, -2), MONASTERY, 0>
+<city_tunnel, 1, (1, 0), None, 0>
+<big_city, 0, (2, 0), None, 0>
+<city_cap_straight_road, 0, (2, -2), None, 0>
+<city_cap_straight_road, 2, (2, -3), None, 0>
+<monastery, 0, (1, 1), None, 0>
+<tri_road, 1, (-1, -2), None, 0>
+<city_cap_straight_road, 3, (0, 2), None, 0>
+-------------------------------------------
+Cities:  4
+Roads:  11
+Farms:  6
+Free Meeples:  [0, 0]
+SCORES:  [17, 16]
+TIMES: [240.50454759597778, 210.43184852600098]
+GAMES: [14.5, 0.5]
+[(0, <UCTagent.UCTAgent object at 0x7f5323dff910>), (1, <MCCFRagent.MCCFRAgent object at 0x7f5323dff970>)]
+0 UCT Agent(time=60.0, exploration_constant=1.5)
+1 MCCFR Agent(time=60.0, epsilon=0.6)
+UCT MAKE MOVE IN 56.25 time
+257 UCT iterations in 60.0s
+turn complete
+turn complete
+Action sequence ---------------------------
+<monastery_road, 2, (0, -1), MONASTERY, 0>
+<tri_road, 3, (0, 1), ROAD, 2>
+<monastery, 0, (0, -2), MONASTERY, 0>
+<city_cap_straight_road, 2, (1, 0), CITY, 0>
+<city_cap_straight_road, 0, (1, -1), None, 0>
+<tri_road, 3, (0, 2), ROAD, 2>
+<city_tunnel, 0, (-1, -2), None, 0>
+<monastery_road, 1, (-1, 1), MONASTERY, 0>
+<big_city, 0, (2, -1), None, 0>
+<monastery, 0, (-1, 2), MONASTERY, 0>
+<tri_road, 1, (1, 1), None, 0>
+<city_cap_straight_road, 1, (-2, 1), None, 0>
+<tri_road, 3, (1, -2), None, 0>
+<monastery, 0, (-2, 2), None, 0>
+<monastery, 0, (-2, -2), None, 0>
+-------------------------------------------
+Cities:  4
+Roads:  10
+Farms:  6
+Free Meeples:  [0, 0]
+SCORES:  [12, 22]
+TIMES: [240.62471961975098, 210.3012933731079]
+GAMES: [1.5, 9.5]
+[(1, <MCCFRagent.MCCFRAgent object at 0x7f5323dff9d0>), (0, <UCTagent.UCTAgent object at 0x7f5323dffa30>)]
+0 MCCFR Agent(time=60.0, epsilon=0.6)
+1 UCT Agent(time=60.0, exploration_constant=1.5)
+turn complete
+UCT MAKE MOVE IN 52.5 time
+285 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 45.0 time
+255 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 37.5 time
+221 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 30.0 time
+251 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 22.5 time
+329 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 15.0 time
+554 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 7.5 time
+2875 UCT iterations in 60.0s
+turn complete
+Action sequence ---------------------------
+<tri_road, 3, (0, -1), ROAD, 0>
+<monastery, 0, (-1, 0), MONASTERY, 0>
+<city_cap_straight_road, 2, (0, -2), ROAD, 0>
+<monastery, 0, (-1, -1), MONASTERY, 0>
+<monastery_road, 0, (-2, -1), None, 0>
+<city_tunnel, 1, (-1, 1), None, 0>
+<tri_road, 2, (0, -3), None, 0>
+<monastery, 0, (-2, 0), None, 0>
+<tri_road, 0, (1, -1), ROAD, 2>
+<monastery_road, 2, (-2, -2), None, 0>
+<city_cap_straight_road, 3, (1, -3), None, 0>
+<city_cap_straight_road, 2, (0, 1), None, 0>
+<tri_road, 1, (0, 2), ROAD, 2>
+<monastery, 0, (-3, 0), None, 0>
+-------------------------------------------
+Cities:  4
+Roads:  10
+Farms:  7
+Free Meeples:  [1, 0]
+SCORES:  [10, 16]
+TIMES: [236.7757179737091, 212.85816407203674]
+GAMES: [1.5, 10.5]
+[(1, <MCCFRagent.MCCFRAgent object at 0x7f5323dff9d0>), (0, <UCTagent.UCTAgent object at 0x7f5323dffa30>)]
+0 MCCFR Agent(time=60.0, epsilon=0.6)
+1 UCT Agent(time=60.0, exploration_constant=1.5)
+turn complete
+UCT MAKE MOVE IN 52.5 time
+266 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 45.0 time
+221 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 37.5 time
+190 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 30.0 time
+217 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 22.5 time
+266 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 15.0 time
+342 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 7.5 time
+451 UCT iterations in 60.0s
+turn complete
+turn complete
+Action sequence ---------------------------
+<big_city, 0, (1, 0), CITY, 0>
+<city_cap_straight_road, 0, (0, 1), ROAD, 0>
+<monastery, 0, (-1, 1), MONASTERY, 0>
+<city_cap_straight_road, 2, (0, -1), CITY, 0>
+<monastery, 0, (-1, 0), None, 0>
+<monastery, 0, (-2, 0), None, 0>
+<tri_road, 2, (-1, 2), None, 0>
+<tri_road, 1, (0, -2), None, 0>
+<tri_road, 0, (-1, -2), None, 0>
+<city_tunnel, 1, (-1, -1), None, 0>
+<monastery, 0, (-2, 1), None, 0>
+<tri_road, 0, (0, 2), None, 0>
+<monastery_road, 2, (-1, -3), None, 0>
+<monastery_road, 2, (0, -3), MONASTERY, 0>
+<city_cap_straight_road, 2, (2, 0), None, 0>
+-------------------------------------------
+Cities:  3
+Roads:  10
+Farms:  6
+Free Meeples:  [0, 0]
+SCORES:  [12, 11]
+TIMES: [240.4167182445526, 210.51300287246704]
+GAMES: [2.5, 10.5]
+[(1, <MCCFRagent.MCCFRAgent object at 0x7f5323dff9d0>), (0, <UCTagent.UCTAgent object at 0x7f5323dffa30>)]
+0 MCCFR Agent(time=60.0, epsilon=0.6)
+1 UCT Agent(time=60.0, exploration_constant=1.5)
+turn complete
+UCT MAKE MOVE IN 52.5 time
+248 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 41.25 time
+197 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 33.75 time
+234 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 26.25 time
+218 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 18.75 time
+225 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 11.25 time
+187 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 3.75 time
+1320 UCT iterations in 60.0s
+turn complete
+Action sequence ---------------------------
+<monastery, 0, (-1, 0), MONASTERY, 0>
+<monastery, 0, (-1, 1), MONASTERY, 0>
+<city_cap_straight_road, 2, (1, 0), CITY, 0>
+<monastery_road, 2, (-1, 2), MONASTERY, 0>
+<tri_road, 3, (0, -1), FARM, 1>
+<tri_road, 1, (-2, 2), None, 0>
+<monastery_road, 1, (-1, -1), None, 0>
+<city_tunnel, 0, (0, 2), None, 0>
+<tri_road, 3, (-2, -1), None, 0>
+<monastery, 0, (1, 2), None, 0>
+<monastery, 0, (-3, -1), None, 0>
+<city_cap_straight_road, 2, (-2, 1), None, 0>
+<city_cap_straight_road, 0, (-1, 3), None, 0>
+<tri_road, 1, (-2, 3), None, 0>
+-------------------------------------------
+Cities:  4
+Roads:  13
+Farms:  10
+Free Meeples:  [0, 0]
+SCORES:  [14, 14]
+TIMES: [218.36985802650452, 188.04016494750977]
+GAMES: [3.0, 11.0]
+[(1, <MCCFRagent.MCCFRAgent object at 0x7f5323dff9d0>), (0, <UCTagent.UCTAgent object at 0x7f5323dffa30>)]
+0 MCCFR Agent(time=60.0, epsilon=0.6)
+1 UCT Agent(time=60.0, exploration_constant=1.5)
+turn complete
+UCT MAKE MOVE IN 52.5 time
+304 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 45.0 time
+274 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 37.5 time
+289 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 30.0 time
+256 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 22.5 time
+223 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 15.0 time
+225 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 7.5 time
+1668 UCT iterations in 60.0s
+turn complete
+turn complete
+Action sequence ---------------------------
+<tri_road, 3, (0, 1), ROAD, 0>
+<monastery, 0, (-1, 1), MONASTERY, 0>
+<monastery, 0, (-1, 0), MONASTERY, 0>
+<tri_road, 2, (0, -1), ROAD, 1>
+<monastery_road, 1, (0, -2), None, 0>
+<tri_road, 0, (1, -1), ROAD, 2>
+<monastery, 0, (-2, 1), None, 0>
+<monastery_road, 2, (-1, 2), MONASTERY, 0>
+<city_tunnel, 0, (-3, 1), None, 0>
+<big_city, 0, (-3, 0), None, 0>
+<city_cap_straight_road, 1, (-1, -2), None, 0>
+<city_cap_straight_road, 0, (-1, 3), None, 0>
+<monastery, 0, (0, -3), None, 0>
+<tri_road, 1, (-2, 3), None, 0>
+<city_cap_straight_road, 1, (-2, -2), None, 0>
+-------------------------------------------
+Cities:  5
+Roads:  12
+Farms:  8
+Free Meeples:  [0, 0]
+SCORES:  [7, 17]
+TIMES: [240.72228813171387, 210.5432767868042]
+GAMES: [3.0, 12.0]
+[(1, <MCCFRagent.MCCFRAgent object at 0x7f5323dff9d0>), (0, <UCTagent.UCTAgent object at 0x7f5323dffa30>)]
+0 MCCFR Agent(time=60.0, epsilon=0.6)
+1 UCT Agent(time=60.0, exploration_constant=1.5)
+turn complete
+UCT MAKE MOVE IN 52.5 time
+248 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 45.0 time
+185 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 37.5 time
+170 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 30.0 time
+195 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 22.5 time
+223 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 15.0 time
+211 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 7.5 time
+707 UCT iterations in 60.0s
+turn complete
+turn complete
+Action sequence ---------------------------
+<big_city, 0, (1, 0), CITY, 0>
+<monastery, 0, (-1, 0), MONASTERY, 0>
+<monastery, 0, (-1, 1), MONASTERY, 0>
+<monastery, 0, (-1, -1), MONASTERY, 0>
+<tri_road, 3, (0, 1), None, 0>
+<city_tunnel, 0, (-2, -1), None, 0>
+<tri_road, 1, (-3, -1), None, 0>
+<city_cap_straight_road, 0, (0, -1), None, 0>
+<tri_road, 3, (-3, -2), None, 0>
+<monastery_road, 2, (0, -2), None, 0>
+UCT MAKE MOVE IN 48.75 time
+218 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 41.25 time
+191 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 33.75 time
+177 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 26.25 time
+211 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 18.75 time
+211 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 11.25 time
+363 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 3.75 time
+1215 UCT iterations in 60.0s
+turn complete
+Action sequence ---------------------------
+<big_city, 0, (1, 0), CITY, 0>
+<monastery, 0, (-1, 0), MONASTERY, 0>
+<monastery, 0, (-1, 1), MONASTERY, 0>
+<monastery, 0, (-2, 0), MONASTERY, 0>
+<tri_road, 2, (-1, 2), None, 0>
+<city_tunnel, 1, (-2, -1), None, 0>
+<tri_road, 0, (-2, 2), None, 0>
+<city_cap_straight_road, 0, (0, -1), None, 0>
+<tri_road, 0, (0, 2), None, 0>
+<monastery_road, 1, (-3, 0), None, 0>
+<city_cap_straight_road, 1, (1, 1), None, 0>
+<monastery, 0, (-3, 1), None, 0>
+<tri_road, 0, (-4, 0), None, 0>
+<city_cap_straight_road, 1, (-2, -2), None, 0>
+<monastery_road, 3, (-5, 0), None, 0>
+-------------------------------------------
+Cities:  4
+Roads:  13
+Farms:  10
+Free Meeples:  [0, 0]
+SCORES:  [11, 12]
+TIMES: [240.61311030387878, 210.46770572662354]
+GAMES: [14.5, 1.5]
+[(0, <UCTagent.UCTAgent object at 0x7f5323dff910>), (1, <MCCFRagent.MCCFRAgent object at 0x7f5323dff970>)]
+0 UCT Agent(time=60.0, exploration_constant=1.5)
+1 MCCFR Agent(time=60.0, epsilon=0.6)
+UCT MAKE MOVE IN 56.25 time
+285 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 48.75 time
+285 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 41.25 time
+227 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 33.75 time
+187 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 26.25 time
+251 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 18.75 time
+305 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 11.25 time
+3273 UCT iterations in 60.0s
+turn complete
+turn complete
+Action sequence ---------------------------
+<city_cap_straight_road, 2, (1, 0), CITY, 0>
+<monastery_road, 0, (-1, 0), MONASTERY, 0>
+<tri_road, 2, (0, -1), None, 0>
+<monastery, 0, (2, 0), MONASTERY, 0>
+<city_tunnel, 1, (0, -2), CITY, 0>
+<monastery_road, 2, (-1, 1), None, 0>
+<city_cap_straight_road, 0, (0, 1), ROAD, 0>
+<tri_road, 2, (-1, -1), None, 0>
+<monastery, 0, (0, -3), None, 0>
+<monastery, 0, (1, -3), None, 0>
+<tri_road, 1, (0, 2), None, 0>
+<tri_road, 3, (3, 0), None, 0>
+<city_cap_straight_road, 2, (1, 1), FARM, 1>
+<monastery, 0, (2, -1), None, 0>
+-------------------------------------------
+Cities:  3
+Roads:  12
+Farms:  9
+Free Meeples:  [0, 0]
+SCORES:  [15, 11]
+TIMES: [236.7057499885559, 213.6892647743225]
+GAMES: [15.5, 1.5]
+[(0, <UCTagent.UCTAgent object at 0x7f5323dff910>), (1, <MCCFRagent.MCCFRAgent object at 0x7f5323dff970>)]
+0 UCT Agent(time=60.0, exploration_constant=1.5)
+1 MCCFR Agent(time=60.0, epsilon=0.6)
+UCT MAKE MOVE IN 56.25 time
+272 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 48.75 time
+242 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 41.25 time
+239 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 33.75 time
+314 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 26.25 time
+372 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 18.75 time
+418 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 11.25 time
+2019 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 3.75 time
+424 UCT iterations in 60.0s
+turn complete
+Action sequence ---------------------------
+<monastery, 0, (-1, 0), MONASTERY, 0>
+<city_cap_straight_road, 2, (1, 0), CITY, 0>
+<monastery, 0, (-1, 1), MONASTERY, 0>
+<tri_road, 2, (1, -1), None, 0>
+<monastery, 0, (-1, -1), None, 0>
+<tri_road, 3, (1, 1), ROAD, 2>
+<tri_road, 1, (-2, 1), None, 0>
+<city_cap_straight_road, 3, (-3, 1), CITY, 0>
+<city_cap_straight_road, 0, (-2, 2), None, 0>
+<monastery_road, 1, (2, -1), ROAD, 0>
+<monastery, 0, (-2, -1), None, 0>
+<tri_road, 3, (-4, 1), ROAD, 1>
+<city_tunnel, 1, (-1, 2), None, 0>
+<monastery_road, 0, (-5, 1), MONASTERY, 0>
+<big_city, 0, (0, 2), None, 0>
+-------------------------------------------
+Cities:  3
+Roads:  12
+Farms:  9
+Free Meeples:  [0, 0]
+SCORES:  [13, 15]
+TIMES: [242.18104529380798, 212.0351026058197]
+GAMES: [15.5, 2.5]
+[(0, <UCTagent.UCTAgent object at 0x7f5323dff910>), (1, <MCCFRagent.MCCFRAgent object at 0x7f5323dff970>)]
+0 UCT Agent(time=60.0, exploration_constant=1.5)
+1 MCCFR Agent(time=60.0, epsilon=0.6)
+UCT MAKE MOVE IN 56.25 time
+276 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 48.75 time
+279 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 41.25 time
+252 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 33.75 time
+319 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 26.25 time
+246 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 18.75 time
+1069 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 11.25 time
+3438 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 3.75 time
+1247 UCT iterations in 60.0s
+turn complete
+Action sequence ---------------------------
+<big_city, 0, (1, 0), CITY, 0>
+<tri_road, 1, (-1, 0), ROAD, 2>
+<city_cap_straight_road, 2, (-1, -1), ROAD, 0>
+<monastery_road, 2, (0, -1), MONASTERY, 0>
+<city_tunnel, 0, (1, 1), None, 0>
+<tri_road, 1, (-1, 1), None, 0>
+<city_cap_straight_road, 1, (1, 2), None, 0>
+<monastery, 0, (2, 1), MONASTERY, 0>
+<city_cap_straight_road, 0, (-1, -2), None, 0>
+<tri_road, 1, (-2, -2), None, 0>
+<tri_road, 3, (-1, -3), None, 0>
+<monastery_road, 3, (3, 1), None, 0>
+<monastery, 0, (3, 0), MONASTERY, 0>
+<monastery, 0, (3, 2), None, 0>
+<monastery, 0, (4, 0), None, 0>
+-------------------------------------------
+Cities:  3
+Roads:  13
+Farms:  11
+Free Meeples:  [0, 0]
+SCORES:  [13, 15]
+TIMES: [243.09966921806335, 210.47926235198975]
+GAMES: [15.5, 3.5]
+[(0, <UCTagent.UCTAgent object at 0x7f5323dff910>), (1, <MCCFRagent.MCCFRAgent object at 0x7f5323dff970>)]
+0 UCT Agent(time=60.0, exploration_constant=1.5)
+1 MCCFR Agent(time=60.0, epsilon=0.6)
+UCT MAKE MOVE IN 56.25 time
+318 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 48.75 time
+339 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 41.25 time
+363 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 33.75 time
+344 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 26.25 time
+682 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 18.75 time
+397 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 7.5 time
+508 UCT iterations in 60.0s
+turn complete
+turn complete
+Action sequence ---------------------------
+<tri_road, 0, (0, 1), ROAD, 1>
+<city_cap_straight_road, 3, (1, 1), ROAD, 0>
+<tri_road, 2, (0, -1), ROAD, 2>
+<city_cap_straight_road, 1, (1, 2), CITY, 0>
+<monastery_road, 1, (1, -1), MONASTERY, 0>
+<city_cap_straight_road, 3, (-1, -1), ROAD, 0>
+<city_tunnel, 1, (1, 0), CITY, 0>
+<tri_road, 2, (2, 1), None, 0>
+<monastery, 0, (2, -1), None, 0>
+<monastery, 0, (0, -2), MONASTERY, 0>
+<monastery, 0, (2, -2), None, 0>
+<tri_road, 0, (-2, -1), None, 0>
+<monastery, 0, (1, 3), None, 0>
+<monastery_road, 3, (1, 4), MONASTERY, 0>
+-------------------------------------------
+Cities:  3
+Roads:  11
+Farms:  7
+Free Meeples:  [0, 0]
+SCORES:  [14, 16]
+TIMES: [232.67057538032532, 206.7443447113037]
+GAMES: [15.5, 4.5]
+[(0, <UCTagent.UCTAgent object at 0x7f5323dff910>), (1, <MCCFRagent.MCCFRAgent object at 0x7f5323dff970>)]
+0 UCT Agent(time=60.0, exploration_constant=1.5)
+1 MCCFR Agent(time=60.0, epsilon=0.6)
+UCT MAKE MOVE IN 56.25 time
+313 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 48.75 time
+347 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 41.25 time
+460 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 30.0 time
+447 UCT iterations in 60.0s
+turn complete
+<city_cap_straight_road, 2, (-3, 0), None, 0>
+<monastery, 0, (-1, -2), None, 0>
+<tri_road, 2, (-4, -1), None, 0>
+<city_cap_straight_road, 0, (1, -2), None, 0>
+<monastery_road, 3, (-1, 2), None, 0>
+-------------------------------------------
+Cities:  5
+Roads:  12
+Farms:  8
+Free Meeples:  [0, 0]
+SCORES:  [8, 14]
+TIMES: [241.34948110580444, 210.6211643218994]
+GAMES: [3.0, 13.0]
+[(1, <MCCFRagent.MCCFRAgent object at 0x7f5323dff9d0>), (0, <UCTagent.UCTAgent object at 0x7f5323dffa30>)]
+0 MCCFR Agent(time=60.0, epsilon=0.6)
+1 UCT Agent(time=60.0, exploration_constant=1.5)
+turn complete
+UCT MAKE MOVE IN 52.5 time
+281 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 45.0 time
+295 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 37.5 time
+224 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 30.0 time
+269 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 22.5 time
+226 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 15.0 time
+630 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 7.5 time
+2534 UCT iterations in 60.0s
+turn complete
+turn complete
+Action sequence ---------------------------
+<city_cap_straight_road, 2, (1, 0), CITY, 0>
+<monastery_road, 0, (0, 1), MONASTERY, 0>
+<tri_road, 1, (-1, 1), ROAD, 2>
+<monastery, 0, (0, 2), MONASTERY, 0>
+<city_tunnel, 1, (0, 3), FARM, 1>
+<monastery_road, 0, (1, 1), None, 0>
+<city_cap_straight_road, 2, (1, 3), None, 0>
+<tri_road, 1, (-1, 0), None, 0>
+<monastery, 0, (0, 4), None, 0>
+<monastery, 0, (2, 3), None, 0>
+<tri_road, 1, (1, -1), None, 0>
+<tri_road, 2, (-2, 0), None, 0>
+<city_cap_straight_road, 1, (-2, -1), None, 0>
+<monastery, 0, (2, 1), None, 0>
+<big_city, 0, (-1, 3), None, 0>
+-------------------------------------------
+Cities:  3
+Roads:  13
+Farms:  10
+Free Meeples:  [0, 0]
+SCORES:  [8, 14]
+TIMES: [240.58626985549927, 210.41568994522095]
+GAMES: [3.0, 14.0]
+[(1, <MCCFRagent.MCCFRAgent object at 0x7f5323dff9d0>), (0, <UCTagent.UCTAgent object at 0x7f5323dffa30>)]
+0 MCCFR Agent(time=60.0, epsilon=0.6)
+1 UCT Agent(time=60.0, exploration_constant=1.5)
+turn complete
+UCT MAKE MOVE IN 52.5 time
+272 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 45.0 time
+235 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 37.5 time
+220 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 30.0 time
+271 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 22.5 time
+409 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 15.0 time
+636 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 7.5 time
+2510 UCT iterations in 60.0s
+turn complete
+turn complete
+Action sequence ---------------------------
+<monastery, 0, (-1, 0), MONASTERY, 0>
+<city_cap_straight_road, 2, (1, 0), CITY, 0>
+<monastery, 0, (-1, -1), MONASTERY, 0>
+<tri_road, 3, (1, -1), FARM, 0>
+<monastery, 0, (-1, -2), None, 0>
+<tri_road, 0, (2, -1), ROAD, 2>
+<tri_road, 1, (0, 1), None, 0>
+<city_cap_straight_road, 2, (1, -2), ROAD, 0>
+<city_cap_straight_road, 3, (-1, 1), None, 0>
+<monastery_road, 2, (1, -3), None, 0>
+<monastery, 0, (-2, 0), None, 0>
+<tri_road, 3, (1, 1), ROAD, 2>
+<city_tunnel, 0, (-1, 2), None, 0>
+<monastery_road, 2, (0, -1), MONASTERY, 0>
+<big_city, 0, (-1, 3), None, 0>
+-------------------------------------------
+Cities:  3
+Roads:  10
+Farms:  7
+Free Meeples:  [0, 0]
+SCORES:  [13, 23]
+TIMES: [240.65032243728638, 214.57976531982422]
+GAMES: [3.0, 15.0]
+[(1, <MCCFRagent.MCCFRAgent object at 0x7f5323dff9d0>), (0, <UCTagent.UCTAgent object at 0x7f5323dffa30>)]
+0 MCCFR Agent(time=60.0, epsilon=0.6)
+1 UCT Agent(time=60.0, exploration_constant=1.5)
+turn complete
+UCT MAKE MOVE IN 52.5 time
+283 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 45.0 time
+274 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 37.5 time
+268 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 30.0 time
+261 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 22.5 time
+370 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 15.0 time
+1372 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 7.5 time
+2674 UCT iterations in 60.0s
+turn complete
+turn complete
+Action sequence ---------------------------
+<big_city, 0, (1, 0), CITY, 0>
+<tri_road, 2, (0, -1), ROAD, 1>
+<city_cap_straight_road, 3, (1, -1), ROAD, 0>
+<monastery_road, 0, (0, 1), MONASTERY, 0>
+<city_tunnel, 0, (-1, 1), None, 0>
+<tri_road, 3, (-1, -1), ROAD, 1>
+<city_cap_straight_road, 1, (2, -1), None, 0>
+<monastery, 0, (0, -2), MONASTERY, 0>
+<city_cap_straight_road, 3, (3, -1), None, 0>
+<tri_road, 0, (0, -3), None, 0>
+<tri_road, 0, (4, -1), None, 0>
+<monastery_road, 3, (-1, -3), None, 0>
+<monastery, 0, (1, -2), MONASTERY, 0>
+<monastery, 0, (0, 2), None, 0>
+<monastery, 0, (-2, -3), None, 0>
+-------------------------------------------
+Cities:  4
+Roads:  10
+Farms:  6
+Free Meeples:  [0, 0]
+SCORES:  [15, 17]
+TIMES: [240.49161338806152, 210.43522095680237]
+GAMES: [3.0, 16.0]
+[(1, <MCCFRagent.MCCFRAgent object at 0x7f5323dff9d0>), (0, <UCTagent.UCTAgent object at 0x7f5323dffa30>)]
+0 MCCFR Agent(time=60.0, epsilon=0.6)
+1 UCT Agent(time=60.0, exploration_constant=1.5)
+turn complete
+UCT MAKE MOVE IN 52.5 time
+331 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 45.0 time
+358 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 37.5 time
+379 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 30.0 time
+589 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 22.5 time
+371 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 15.0 time
+989 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 7.5 time
+772 UCT iterations in 60.0s
+turn complete
+turn complete
+Action sequence ---------------------------
+<tri_road, 3, (0, 1), ROAD, 0>
+<city_cap_straight_road, 2, (1, 0), CITY, 0>
+<tri_road, 0, (0, 2), ROAD, 0>
+<city_cap_straight_road, 0, (0, -1), ROAD, 0>
+<monastery_road, 2, (-1, 1), MONASTERY, 0>
+<city_cap_straight_road, 2, (1, -1), FARM, 1>
+<city_tunnel, 0, (2, -1), None, 0>
+<tri_road, 2, (0, -2), None, 0>
+<monastery, 0, (0, 3), None, 0>
+<monastery, 0, (-1, -1), MONASTERY, 0>
+<monastery, 0, (-2, -1), None, 0>
+<tri_road, 0, (-1, -2), None, 0>
+<big_city, 0, (2, -2), None, 0>
+<monastery, 0, (0, 4), None, 0>
+<monastery_road, 3, (3, -1), None, 0>
+-------------------------------------------
+Cities:  3
+Roads:  12
+Farms:  9
+Free Meeples:  [0, 0]
+SCORES:  [7, 20]
+TIMES: [240.57637739181519, 211.5386462211609]
+GAMES: [3.0, 17.0]
+[(1, <MCCFRagent.MCCFRAgent object at 0x7f5323dff9d0>), (0, <UCTagent.UCTAgent object at 0x7f5323dffa30>)]
+0 MCCFR Agent(time=60.0, epsilon=0.6)
+1 UCT Agent(time=60.0, exploration_constant=1.5)
+turn complete
+UCT MAKE MOVE IN 52.5 time
+325 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 45.0 time
+396 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 37.5 time
+386 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 26.25 time
+464 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 18.75 time
+514 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 11.25 time
+484 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 3.75 time
+1387 UCT iterations in 60.0s
+turn complete
+Action sequence ---------------------------
+<tri_road, 3, (0, 1), ROAD, 0>
+<city_cap_straight_road, 2, (1, 0), CITY, 0>
+<tri_road, 0, (0, 2), ROAD, 0>
+<tri_road, 2, (0, -1), ROAD, 1>
+<city_cap_straight_road, 1, (-1, 2), ROAD, 0>
+<monastery, 0, (0, 3), MONASTERY, 0>
+<tri_road, 1, (1, 1), None, 0>
+<monastery, 0, (-1, 3), MONASTERY, 0>
+<city_cap_straight_road, 3, (-1, -1), None, 0>
+<monastery, 0, (0, 4), None, 0>
+<monastery_road, 0, (2, 0), None, 0>
+<city_tunnel, 0, (-2, 3), None, 0>
+<monastery, 0, (1, 4), None, 0>
+<monastery_road, 2, (-1, 4), None, 0>
+-------------------------------------------
+Cities:  4
+Roads:  11
+Farms:  7
+Free Meeples:  [0, 0]
+SCORES:  [5, 21]
+TIMES: [221.59917044639587, 195.15281200408936]
+GAMES: [3.0, 18.0]
+turn complete
+UCT MAKE MOVE IN 22.5 time
+597 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 15.0 time
+609 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 7.5 time
+2432 UCT iterations in 60.0s
+turn complete
+turn complete
+Action sequence ---------------------------
+<tri_road, 1, (0, 1), ROAD, 0>
+<city_cap_straight_road, 2, (-1, 0), None, 0>
+<tri_road, 1, (0, -1), None, 0>
+<tri_road, 1, (0, 2), ROAD, 0>
+<city_cap_straight_road, 0, (-2, 0), CITY, 0>
+<monastery, 0, (1, 1), MONASTERY, 0>
+<tri_road, 3, (-1, 1), ROAD, 1>
+<monastery, 0, (1, 2), MONASTERY, 0>
+<city_cap_straight_road, 2, (-2, 1), FARM, 0>
+<monastery, 0, (2, 1), None, 0>
+<monastery_road, 2, (1, -1), MONASTERY, 0>
+<city_tunnel, 1, (1, 3), None, 0>
+<monastery, 0, (1, -2), None, 0>
+<monastery_road, 3, (2, 2), None, 0>
+-------------------------------------------
+Cities:  4
+Roads:  12
+Farms:  8
+Free Meeples:  [0, 0]
+SCORES:  [16, 16]
+TIMES: [221.55038571357727, 195.3608205318451]
+GAMES: [16.0, 5.0]
+[(0, <UCTagent.UCTAgent object at 0x7f5323dff910>), (1, <MCCFRagent.MCCFRAgent object at 0x7f5323dff970>)]
+0 UCT Agent(time=60.0, exploration_constant=1.5)
+1 MCCFR Agent(time=60.0, epsilon=0.6)
+UCT MAKE MOVE IN 56.25 time
+285 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 48.75 time
+300 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 41.25 time
+262 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 33.75 time
+258 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 26.25 time
+333 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 18.75 time
+299 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 11.25 time
+587 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 3.75 time
+1272 UCT iterations in 60.0s
+turn complete
+Action sequence ---------------------------
+<monastery_road, 2, (-1, 0), MONASTERY, 0>
+<city_cap_straight_road, 1, (-1, -1), None, 0>
+<tri_road, 3, (-1, 1), ROAD, 2>
+<big_city, 0, (-1, -2), None, 0>
+<monastery, 0, (-2, 0), MONASTERY, 0>
+<monastery_road, 3, (-2, -1), ROAD, 0>
+<city_cap_straight_road, 2, (-3, -1), None, 0>
+<tri_road, 1, (-1, 2), None, 0>
+<city_cap_straight_road, 2, (-3, 0), None, 0>
+<monastery, 0, (-2, 1), None, 0>
+<monastery, 0, (0, 2), None, 0>
+<monastery, 0, (0, 3), MONASTERY, 0>
+<tri_road, 1, (-3, 1), None, 0>
+<city_tunnel, 1, (-2, -2), None, 0>
+<tri_road, 0, (0, 1), None, 0>
+-------------------------------------------
+Cities:  4
+Roads:  11
+Farms:  7
+Free Meeples:  [0, 0]
+SCORES:  [19, 5]
+TIMES: [244.9368348121643, 211.6070728302002]
+GAMES: [17.0, 5.0]
+[(0, <UCTagent.UCTAgent object at 0x7f5323dff910>), (1, <MCCFRagent.MCCFRAgent object at 0x7f5323dff970>)]
+0 UCT Agent(time=60.0, exploration_constant=1.5)
+1 MCCFR Agent(time=60.0, epsilon=0.6)
+UCT MAKE MOVE IN 56.25 time
+320 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 48.75 time
+289 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 41.25 time
+231 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 33.75 time
+225 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 22.5 time
+153 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 15.0 time
+207 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 7.5 time
+518 UCT iterations in 60.0s
+turn complete
+turn complete
+Action sequence ---------------------------
+<tri_road, 3, (0, 1), ROAD, 2>
+<city_tunnel, 1, (1, 0), CITY, 0>
+<monastery_road, 2, (0, -1), MONASTERY, 0>
+<monastery, 0, (-1, 1), MONASTERY, 0>
+<monastery, 0, (1, -1), MONASTERY, 0>
+<city_cap_straight_road, 2, (2, 0), None, 0>
+<monastery, 0, (0, -2), None, 0>
+<city_cap_straight_road, 3, (-1, 2), ROAD, 0>
+<monastery, 0, (1, -2), None, 0>
+<tri_road, 1, (0, 2), None, 0>
+<tri_road, 3, (2, -1), None, 0>
+<tri_road, 3, (-2, 2), None, 0>
+<city_cap_straight_road, 2, (-1, -1), None, 0>
+<monastery_road, 1, (-3, 2), MONASTERY, 0>
+-------------------------------------------
+Cities:  3
+Roads:  12
+Farms:  8
+Free Meeples:  [0, 0]
+SCORES:  [18, 17]
+TIMES: [226.3324899673462, 195.55037999153137]
+GAMES: [18.0, 5.0]
+[(0, <UCTagent.UCTAgent object at 0x7f5323dff910>), (1, <MCCFRagent.MCCFRAgent object at 0x7f5323dff970>)]
+0 UCT Agent(time=60.0, exploration_constant=1.5)
+1 MCCFR Agent(time=60.0, epsilon=0.6)
+UCT MAKE MOVE IN 56.25 time
+287 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 48.75 time
+243 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 41.25 time
+227 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 33.75 time
+240 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 26.25 time
+371 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 18.75 time
+317 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 11.25 time
+428 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 3.75 time
+1299 UCT iterations in 60.0s
+turn complete
+Action sequence ---------------------------
+<monastery_road, 0, (-1, 0), MONASTERY, 0>
+<big_city, 0, (1, 0), CITY, 0>
+<city_cap_straight_road, 2, (0, 1), ROAD, 0>
+<monastery, 0, (-2, 0), MONASTERY, 0>
+<tri_road, 3, (0, -1), None, 0>
+<tri_road, 1, (-3, 0), None, 0>
+<monastery, 0, (-2, -1), None, 0>
+<tri_road, 3, (-3, 1), None, 0>
+<tri_road, 1, (0, 2), None, 0>
+<monastery, 0, (1, 2), None, 0>
+<city_cap_straight_road, 0, (-3, 2), ROAD, 0>
+<monastery_road, 0, (0, 3), None, 0>
+<monastery, 0, (2, 2), None, 0>
+<city_cap_straight_road, 2, (-3, -1), None, 0>
+<city_tunnel, 1, (-2, -2), None, 0>
+-------------------------------------------
+Cities:  5
+Roads:  11
+Farms:  7
+Free Meeples:  [0, 0]
+SCORES:  [12, 9]
+TIMES: [240.55118703842163, 210.52864623069763]
+GAMES: [19.0, 5.0]
+[(0, <UCTagent.UCTAgent object at 0x7f5323dff910>), (1, <MCCFRagent.MCCFRAgent object at 0x7f5323dff970>)]
+0 UCT Agent(time=60.0, exploration_constant=1.5)
+1 MCCFR Agent(time=60.0, epsilon=0.6)
+UCT MAKE MOVE IN 56.25 time
+324 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 48.75 time
+285 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 41.25 time
+238 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 33.75 time
+188 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 26.25 time
+165 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 18.75 time
+161 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 11.25 time
+141 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 3.75 time
+1190 UCT iterations in 60.0s
+turn complete
+Action sequence ---------------------------
+<tri_road, 2, (0, -1), ROAD, 1>
+<tri_road, 1, (-1, 0), FARM, 0>
+<big_city, 0, (1, 0), CITY, 0>
+<monastery, 0, (0, -2), MONASTERY, 0>
+<monastery, 0, (0, -3), None, 0>
+<monastery, 0, (-1, -3), None, 0>
+<monastery_road, 0, (0, 1), None, 0>
+<monastery, 0, (-1, -2), None, 0>
+<city_cap_straight_road, 3, (1, -1), ROAD, 0>
+<city_cap_straight_road, 3, (2, -1), None, 0>
+<monastery_road, 1, (3, -1), None, 0>
+<city_tunnel, 1, (2, -2), None, 0>
+<tri_road, 0, (-2, 0), ROAD, 0>
+<city_cap_straight_road, 1, (-1, -4), None, 0>
+<tri_road, 3, (-2, -4), ROAD, 1>
+-------------------------------------------
+Cities:  4
+Roads:  11
+Farms:  7
+Free Meeples:  [0, 0]
+SCORES:  [15, 6]
+TIMES: [240.44103837013245, 210.48957896232605]
+GAMES: [20.0, 5.0]
+[(0, <UCTagent.UCTAgent object at 0x7f5323dff910>), (1, <MCCFRagent.MCCFRAgent object at 0x7f5323dff970>)]
+0 UCT Agent(time=60.0, exploration_constant=1.5)
+1 MCCFR Agent(time=60.0, epsilon=0.6)
+UCT MAKE MOVE IN 56.25 time
+315 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 48.75 time
+335 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 41.25 time
+454 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 33.75 time
+454 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 26.25 time
+601 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 18.75 time
+841 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 7.5 time
+1993 UCT iterations in 60.0s
+turn complete
+[(1, <MCCFRagent.MCCFRAgent object at 0x7f5323dff9d0>), (0, <UCTagent.UCTAgent object at 0x7f5323dffa30>)]
+0 MCCFR Agent(time=60.0, epsilon=0.6)
+1 UCT Agent(time=60.0, exploration_constant=1.5)
+turn complete
+UCT MAKE MOVE IN 52.5 time
+280 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 45.0 time
+258 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 37.5 time
+221 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 30.0 time
+240 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 22.5 time
+188 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 15.0 time
+183 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 7.5 time
+1910 UCT iterations in 60.0s
+turn complete
+turn complete
+Action sequence ---------------------------
+<monastery_road, 2, (0, -1), MONASTERY, 0>
+<city_cap_straight_road, 2, (0, 1), ROAD, 0>
+<tri_road, 3, (1, -1), ROAD, 1>
+<big_city, 0, (-1, 1), CITY, 0>
+<monastery, 0, (1, 1), None, 0>
+<monastery_road, 0, (0, 2), None, 0>
+<city_cap_straight_road, 3, (2, -1), None, 0>
+<tri_road, 1, (1, -2), ROAD, 2>
+<city_cap_straight_road, 1, (3, -1), None, 0>
+<monastery, 0, (2, -2), MONASTERY, 0>
+<monastery, 0, (-1, -1), None, 0>
+<monastery, 0, (2, -3), None, 0>
+<tri_road, 1, (-2, -1), None, 0>
+<city_tunnel, 0, (-1, 2), None, 0>
+<tri_road, 2, (3, 0), None, 0>
+-------------------------------------------
+Cities:  4
+Roads:  12
+Farms:  9
+Free Meeples:  [0, 0]
+SCORES:  [8, 16]
+TIMES: [240.74709630012512, 210.57439398765564]
+GAMES: [3.0, 19.0]
+[(1, <MCCFRagent.MCCFRAgent object at 0x7f5323dff9d0>), (0, <UCTagent.UCTAgent object at 0x7f5323dffa30>)]
+0 MCCFR Agent(time=60.0, epsilon=0.6)
+1 UCT Agent(time=60.0, exploration_constant=1.5)
+turn complete
+UCT MAKE MOVE IN 52.5 time
+283 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 45.0 time
+250 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 37.5 time
+214 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 30.0 time
+135 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 22.5 time
+140 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 15.0 time
+192 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 7.5 time
+1179 UCT iterations in 60.0s
+turn complete
+turn complete
+Action sequence ---------------------------
+<tri_road, 3, (0, 1), ROAD, 0>
+<city_tunnel, 1, (1, 0), CITY, 0>
+<monastery_road, 1, (1, -1), MONASTERY, 0>
+<monastery, 0, (-1, 1), MONASTERY, 0>
+<monastery, 0, (2, -1), None, 0>
+<city_cap_straight_road, 2, (-2, 1), None, 0>
+<monastery, 0, (1, -2), None, 0>
+<big_city, 0, (-3, 1), None, 0>
+<city_cap_straight_road, 1, (1, -3), None, 0>
+<monastery, 0, (-1, 2), None, 0>
+<tri_road, 3, (0, -1), None, 0>
+<tri_road, 1, (-2, 2), None, 0>
+<tri_road, 3, (0, 2), None, 0>
+<city_cap_straight_road, 0, (-2, 0), None, 0>
+<monastery_road, 1, (-1, -1), MONASTERY, 0>
+-------------------------------------------
+Cities:  4
+Roads:  12
+Farms:  8
+Free Meeples:  [0, 0]
+SCORES:  [12, 10]
+TIMES: [240.7274866104126, 213.3457953929901]
+GAMES: [4.0, 19.0]
+[(1, <MCCFRagent.MCCFRAgent object at 0x7f5323dff9d0>), (0, <UCTagent.UCTAgent object at 0x7f5323dffa30>)]
+0 MCCFR Agent(time=60.0, epsilon=0.6)
+1 UCT Agent(time=60.0, exploration_constant=1.5)
+turn complete
+UCT MAKE MOVE IN 52.5 time
+267 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 45.0 time
+218 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 37.5 time
+273 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 30.0 time
+269 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 22.5 time
+377 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 15.0 time
+459 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 7.5 time
+2295 UCT iterations in 60.0s
+turn complete
+turn complete
+Action sequence ---------------------------
+<monastery_road, 2, (0, -1), MONASTERY, 0>
+<big_city, 0, (1, 0), CITY, 0>
+<city_cap_straight_road, 1, (1, 1), ROAD, 0>
+<monastery, 0, (-1, -1), MONASTERY, 0>
+<tri_road, 3, (0, 1), None, 0>
+<tri_road, 1, (-2, -1), None, 0>
+<monastery, 0, (1, 2), None, 0>
+<tri_road, 1, (-2, -2), None, 0>
+<tri_road, 2, (2, 1), None, 0>
+<monastery, 0, (1, 3), None, 0>
+<city_cap_straight_road, 2, (-2, 0), CITY, 0>
+<monastery_road, 2, (1, 4), None, 0>
+<monastery, 0, (0, 3), None, 0>
+<city_cap_straight_road, 3, (-3, -1), None, 0>
+<city_tunnel, 0, (1, -1), None, 0>
+-------------------------------------------
+Cities:  3
+Roads:  11
+Farms:  7
+Free Meeples:  [0, 0]
+SCORES:  [9, 11]
+TIMES: [244.535329580307, 210.59826612472534]
+GAMES: [4.0, 20.0]
+[(1, <MCCFRagent.MCCFRAgent object at 0x7f5323dff9d0>), (0, <UCTagent.UCTAgent object at 0x7f5323dffa30>)]
+0 MCCFR Agent(time=60.0, epsilon=0.6)
+1 UCT Agent(time=60.0, exploration_constant=1.5)
+turn complete
+UCT MAKE MOVE IN 52.5 time
+350 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 41.25 time
+266 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 33.75 time
+161 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 26.25 time
+191 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 18.75 time
+170 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 11.25 time
+208 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 3.75 time
+1361 UCT iterations in 60.0s
+turn complete
+Action sequence ---------------------------
+<tri_road, 3, (0, 1), ROAD, 0>
+<tri_road, 0, (1, 1), ROAD, 2>
+<monastery, 0, (-1, 1), MONASTERY, 0>
+<monastery, 0, (1, 2), MONASTERY, 0>
+<monastery, 0, (-2, 1), None, 0>
+<monastery_road, 0, (-1, 0), MONASTERY, 0>
+<monastery, 0, (2, 2), None, 0>
+<city_cap_straight_road, 1, (2, 1), None, 0>
+<city_cap_straight_road, 3, (-2, 2), None, 0>
+<monastery_road, 2, (1, 3), None, 0>
+<city_tunnel, 0, (0, 3), None, 0>
+<tri_road, 2, (-1, -1), None, 0>
+<city_cap_straight_road, 3, (3, 1), None, 0>
+<tri_road, 3, (-2, -1), None, 0>
+-------------------------------------------
+Cities:  5
+Roads:  12
+Farms:  8
+Free Meeples:  [0, 0]
+SCORES:  [7, 16]
+TIMES: [214.2864122390747, 188.02141761779785]
+GAMES: [4.0, 21.0]
+[(1, <MCCFRagent.MCCFRAgent object at 0x7f5323dff9d0>), (0, <UCTagent.UCTAgent object at 0x7f5323dffa30>)]
+0 MCCFR Agent(time=60.0, epsilon=0.6)
+1 UCT Agent(time=60.0, exploration_constant=1.5)
+turn complete
+UCT MAKE MOVE IN 52.5 time
+304 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 45.0 time
+355 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 37.5 time
+466 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 30.0 time
+554 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 22.5 time
+643 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 15.0 time
+1479 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 7.5 time
+2401 UCT iterations in 60.0s
+turn complete
+turn complete
+Action sequence ---------------------------
+<tri_road, 3, (0, 1), ROAD, 0>
+<tri_road, 2, (0, -1), ROAD, 1>
+<city_tunnel, 1, (1, 0), CITY, 0>
+<tri_road, 3, (-1, -1), ROAD, 1>
+<city_cap_straight_road, 2, (2, 0), None, 0>
+<tri_road, 2, (1, 1), FARM, 0>
+<monastery_road, 0, (-1, 0), MONASTERY, 0>
+<monastery, 0, (-1, 1), MONASTERY, 0>
+<city_cap_straight_road, 2, (-2, -1), None, 0>
+<monastery, 0, (-1, 2), None, 0>
+<city_cap_straight_road, 0, (2, -1), None, 0>
+<big_city, 0, (-3, -1), None, 0>
+<monastery, 0, (0, -2), None, 0>
+<monastery, 0, (-2, 2), None, 0>
+<monastery_road, 2, (-2, -2), None, 0>
+-------------------------------------------
+Cities:  3
+Roads:  11
+Farms:  8
+Free Meeples:  [0, 0]
+SCORES:  [14, 14]
+TIMES: [245.82597708702087, 210.16691517829895]
+GAMES: [4.5, 21.5]
+[(1, <MCCFRagent.MCCFRAgent object at 0x7f5323dff9d0>), (0, <UCTagent.UCTAgent object at 0x7f5323dffa30>)]
+0 MCCFR Agent(time=60.0, epsilon=0.6)
+1 UCT Agent(time=60.0, exploration_constant=1.5)
+turn complete
+UCT MAKE MOVE IN 52.5 time
+215 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 45.0 time
+221 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 37.5 time
+turn complete
+Action sequence ---------------------------
+<tri_road, 2, (0, -1), ROAD, 1>
+<tri_road, 1, (-1, 0), FARM, 0>
+<city_tunnel, 1, (1, 0), CITY, 0>
+<tri_road, 2, (-1, -1), ROAD, 2>
+<city_cap_straight_road, 2, (2, 0), None, 0>
+<tri_road, 1, (-1, 1), ROAD, 0>
+<monastery_road, 0, (0, 1), MONASTERY, 0>
+<monastery, 0, (0, -2), MONASTERY, 0>
+<city_cap_straight_road, 2, (-1, 2), CITY, 0>
+<monastery, 0, (0, -3), None, 0>
+<city_cap_straight_road, 0, (-2, 2), None, 0>
+<monastery, 0, (1, -2), None, 0>
+<monastery, 0, (0, 2), MONASTERY, 0>
+<monastery_road, 0, (-1, -2), None, 0>
+-------------------------------------------
+Cities:  2
+Roads:  12
+Farms:  11
+Free Meeples:  [0, 0]
+SCORES:  [24, 13]
+TIMES: [232.7997488975525, 202.77233338356018]
+GAMES: [21.0, 5.0]
+[(0, <UCTagent.UCTAgent object at 0x7f5323dff910>), (1, <MCCFRagent.MCCFRAgent object at 0x7f5323dff970>)]
+0 UCT Agent(time=60.0, exploration_constant=1.5)
+1 MCCFR Agent(time=60.0, epsilon=0.6)
+UCT MAKE MOVE IN 56.25 time
+273 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 48.75 time
+255 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 41.25 time
+227 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 33.75 time
+271 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 22.5 time
+275 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 15.0 time
+269 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 7.5 time
+1193 UCT iterations in 60.0s
+turn complete
+turn complete
+Action sequence ---------------------------
+<monastery, 0, (-1, 0), MONASTERY, 0>
+<monastery, 0, (-1, 1), MONASTERY, 0>
+<tri_road, 2, (0, -1), ROAD, 1>
+<monastery, 0, (-2, 1), MONASTERY, 0>
+<city_cap_straight_road, 0, (0, 1), None, 0>
+<city_cap_straight_road, 2, (1, 1), None, 0>
+<tri_road, 1, (0, 2), None, 0>
+<tri_road, 2, (-1, 2), None, 0>
+<city_tunnel, 1, (0, -2), None, 0>
+<monastery_road, 1, (-2, 0), None, 0>
+<city_cap_straight_road, 2, (1, 0), FARM, 1>
+<monastery, 0, (-3, 1), None, 0>
+<monastery_road, 1, (-2, -1), None, 0>
+<tri_road, 1, (1, -1), None, 0>
+-------------------------------------------
+Cities:  3
+Roads:  11
+Farms:  7
+Free Meeples:  [0, 0]
+SCORES:  [18, 14]
+TIMES: [225.39000511169434, 195.56014728546143]
+GAMES: [22.0, 5.0]
+[(0, <UCTagent.UCTAgent object at 0x7f5323dff910>), (1, <MCCFRagent.MCCFRAgent object at 0x7f5323dff970>)]
+0 UCT Agent(time=60.0, exploration_constant=1.5)
+1 MCCFR Agent(time=60.0, epsilon=0.6)
+UCT MAKE MOVE IN 56.25 time
+257 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 48.75 time
+239 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 41.25 time
+240 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 33.75 time
+234 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 26.25 time
+267 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 18.75 time
+205 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 11.25 time
+238 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 3.75 time
+1382 UCT iterations in 60.0s
+turn complete
+Action sequence ---------------------------
+<monastery_road, 2, (0, -1), MONASTERY, 0>
+<monastery, 0, (-1, -1), MONASTERY, 0>
+<monastery, 0, (-1, 0), MONASTERY, 0>
+<tri_road, 1, (-2, 0), ROAD, 2>
+<city_cap_straight_road, 2, (1, 0), None, 0>
+<city_cap_straight_road, 2, (-2, 1), None, 0>
+<monastery_road, 2, (1, -1), None, 0>
+<city_tunnel, 1, (0, -2), None, 0>
+<tri_road, 3, (0, 1), None, 0>
+<monastery, 0, (0, -3), None, 0>
+<monastery, 0, (-1, 1), None, 0>
+<big_city, 0, (-3, 1), None, 0>
+<tri_road, 0, (1, 1), None, 0>
+<tri_road, 3, (2, -1), None, 0>
+<city_cap_straight_road, 0, (-4, 1), None, 0>
+-------------------------------------------
+Cities:  3
+Roads:  12
+Farms:  9
+Free Meeples:  [0, 0]
+SCORES:  [15, 8]
+TIMES: [240.654070854187, 211.0846827030182]
+GAMES: [23.0, 5.0]
+[(0, <UCTagent.UCTAgent object at 0x7f5323dff910>), (1, <MCCFRagent.MCCFRAgent object at 0x7f5323dff970>)]
+0 UCT Agent(time=60.0, exploration_constant=1.5)
+1 MCCFR Agent(time=60.0, epsilon=0.6)
+UCT MAKE MOVE IN 56.25 time
+270 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 48.75 time
+281 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 41.25 time
+257 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 33.75 time
+228 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 26.25 time
+139 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 18.75 time
+285 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 11.25 time
+267 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 3.75 time
+1359 UCT iterations in 60.0s
+turn complete
+Action sequence ---------------------------
+<big_city, 0, (1, 0), CITY, 0>
+<city_cap_straight_road, 0, (0, -1), ROAD, 0>
+<tri_road, 1, (-1, 0), ROAD, 0>
+<tri_road, 2, (0, -2), ROAD, 2>
+<monastery, 0, (0, -3), None, 0>
+<monastery, 0, (-1, -3), None, 0>
+<monastery_road, 2, (-1, -1), None, 0>
+<monastery, 0, (-1, -4), None, 0>
+<monastery_road, 3, (-1, -2), MONASTERY, 0>
+<tri_road, 1, (0, 1), None, 0>
+<monastery, 0, (-2, -1), None, 0>
+<city_cap_straight_road, 0, (0, 2), CITY, 0>
+<city_tunnel, 0, (1, 1), None, 0>
+<tri_road, 1, (-1, 2), None, 0>
+<city_cap_straight_road, 2, (2, 0), None, 0>
+-------------------------------------------
+Cities:  3
+Roads:  12
+Farms:  9
+Free Meeples:  [0, 0]
+SCORES:  [14, 6]
+TIMES: [240.42255091667175, 210.63402557373047]
+GAMES: [24.0, 5.0]
+[(0, <UCTagent.UCTAgent object at 0x7f5323dff910>), (1, <MCCFRagent.MCCFRAgent object at 0x7f5323dff970>)]
+0 UCT Agent(time=60.0, exploration_constant=1.5)
+1 MCCFR Agent(time=60.0, epsilon=0.6)
+UCT MAKE MOVE IN 56.25 time
+271 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 48.75 time
+255 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 41.25 time
+226 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 33.75 time
+339 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 26.25 time
+422 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 18.75 time
+595 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 11.25 time
+1707 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 3.75 time
+1366 UCT iterations in 60.0s
+turn complete
+Action sequence ---------------------------
+<big_city, 0, (1, 0), CITY, 0>
+<city_cap_straight_road, 2, (0, -1), ROAD, 0>
+<city_cap_straight_road, 0, (-1, -1), CITY, 0>
+<monastery, 0, (-2, -1), MONASTERY, 0>
+<tri_road, 3, (-1, -2), ROAD, 0>
+<city_cap_straight_road, 2, (0, 1), None, 0>
+<tri_road, 1, (-1, 0), None, 0>
+<tri_road, 2, (0, -2), None, 0>
+<city_tunnel, 1, (2, 0), None, 0>
+<tri_road, 3, (0, 2), None, 0>
+<monastery, 0, (-2, -2), MONASTERY, 0>
+<monastery_road, 3, (-2, 0), MONASTERY, 0>
+<monastery, 0, (-2, -3), None, 0>
+<monastery, 0, (-2, 1), None, 0>
+<monastery_road, 0, (-3, -3), None, 0>
+-------------------------------------------
+Cities:  3
+Roads:  10
+Farms:  7
+Free Meeples:  [0, 0]
+SCORES:  [17, 16]
+TIMES: [240.34632015228271, 214.49729990959167]
+GAMES: [25.0, 5.0]
+[(0, <UCTagent.UCTAgent object at 0x7f5323dff910>), (1, <MCCFRagent.MCCFRAgent object at 0x7f5323dff970>)]
+0 UCT Agent(time=60.0, exploration_constant=1.5)
+1 MCCFR Agent(time=60.0, epsilon=0.6)
+UCT MAKE MOVE IN 56.25 time
+314 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 48.75 time
+399 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 41.25 time
+351 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 33.75 time
+353 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 26.25 time
+595 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 18.75 time
+495 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 11.25 time
+289 UCT iterations in 60.0s
+turn complete
+turn complete
+Action sequence ---------------------------
+<tri_road, 3, (0, -1), ROAD, 0>
+<tri_road, 2, (1, -1), ROAD, 0>
+<tri_road, 0, (0, 1), ROAD, 0>
+<city_tunnel, 1, (0, 2), CITY, 0>
+<city_cap_straight_road, 2, (-1, -1), CITY, 0>
+205 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 30.0 time
+206 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 22.5 time
+159 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 15.0 time
+261 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 7.5 time
+1047 UCT iterations in 60.0s
+turn complete
+turn complete
+Action sequence ---------------------------
+<monastery, 0, (-1, 0), MONASTERY, 0>
+<monastery, 0, (-1, 1), MONASTERY, 0>
+<tri_road, 3, (0, -1), FARM, 1>
+<monastery, 0, (-1, 2), MONASTERY, 0>
+<city_cap_straight_road, 2, (1, 0), None, 0>
+<city_cap_straight_road, 2, (-2, 2), None, 0>
+<tri_road, 1, (1, 1), None, 0>
+<big_city, 0, (-3, 2), None, 0>
+<tri_road, 2, (1, -1), None, 0>
+<city_tunnel, 0, (0, 2), None, 0>
+<monastery_road, 0, (-1, -1), None, 0>
+<city_cap_straight_road, 2, (-2, 1), None, 0>
+<monastery, 0, (-2, -1), None, 0>
+<monastery_road, 1, (-1, 3), None, 0>
+<tri_road, 3, (-1, -2), None, 0>
+-------------------------------------------
+Cities:  4
+Roads:  12
+Farms:  8
+Free Meeples:  [0, 0]
+SCORES:  [10, 13]
+TIMES: [240.6874451637268, 210.62065196037292]
+GAMES: [4.5, 22.5]
+[(1, <MCCFRagent.MCCFRAgent object at 0x7f5323dff9d0>), (0, <UCTagent.UCTAgent object at 0x7f5323dffa30>)]
+0 MCCFR Agent(time=60.0, epsilon=0.6)
+1 UCT Agent(time=60.0, exploration_constant=1.5)
+turn complete
+UCT MAKE MOVE IN 52.5 time
+258 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 45.0 time
+230 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 37.5 time
+215 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 30.0 time
+189 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 22.5 time
+195 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 15.0 time
+143 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 7.5 time
+1148 UCT iterations in 60.0s
+turn complete
+turn complete
+Action sequence ---------------------------
+<monastery_road, 2, (0, -1), MONASTERY, 0>
+<monastery, 0, (-1, -1), MONASTERY, 0>
+<monastery, 0, (-1, -2), MONASTERY, 0>
+<tri_road, 3, (0, 1), ROAD, 2>
+<city_cap_straight_road, 1, (-1, -3), None, 0>
+<city_cap_straight_road, 2, (1, 0), CITY, 0>
+<monastery_road, 2, (-2, -1), None, 0>
+<city_tunnel, 0, (-1, -4), CITY, 0>
+<tri_road, 3, (1, -1), None, 0>
+<monastery, 0, (2, 0), None, 0>
+<monastery, 0, (-2, -2), None, 0>
+<big_city, 0, (-1, -5), None, 0>
+<tri_road, 1, (-3, -1), None, 0>
+<tri_road, 3, (-2, 0), None, 0>
+<city_cap_straight_road, 3, (0, -3), None, 0>
+-------------------------------------------
+Cities:  3
+Roads:  13
+Farms:  10
+Free Meeples:  [0, 0]
+SCORES:  [13, 18]
+TIMES: [246.49854707717896, 210.4212303161621]
+GAMES: [4.5, 23.5]
+[(1, <MCCFRagent.MCCFRAgent object at 0x7f5323dff9d0>), (0, <UCTagent.UCTAgent object at 0x7f5323dffa30>)]
+0 MCCFR Agent(time=60.0, epsilon=0.6)
+1 UCT Agent(time=60.0, exploration_constant=1.5)
+turn complete
+UCT MAKE MOVE IN 52.5 time
+258 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 45.0 time
+297 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 37.5 time
+227 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 30.0 time
+185 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 22.5 time
+213 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 15.0 time
+175 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 7.5 time
+244 UCT iterations in 60.0s
+turn complete
+turn complete
+Action sequence ---------------------------
+<big_city, 0, (1, 0), CITY, 0>
+<city_cap_straight_road, 2, (0, -1), ROAD, 0>
+<tri_road, 1, (-1, 0), None, 0>
+<tri_road, 2, (0, -2), None, 0>
+<monastery, 0, (0, -3), MONASTERY, 0>
+<monastery, 0, (-1, -3), MONASTERY, 0>
+<monastery_road, 0, (-1, 1), None, 0>
+<monastery, 0, (-2, -3), None, 0>
+<monastery_road, 3, (-1, 2), None, 0>
+<tri_road, 3, (0, 1), None, 0>
+<monastery, 0, (1, -3), None, 0>
+<city_cap_straight_road, 0, (-1, -1), CITY, 0>
+<city_tunnel, 1, (-2, -2), None, 0>
+<tri_road, 2, (-2, 0), FARM, 2>
+<city_cap_straight_road, 0, (-3, -2), None, 0>
+-------------------------------------------
+Cities:  3
+Roads:  12
+Farms:  9
+Free Meeples:  [0, 0]
+SCORES:  [7, 16]
+TIMES: [240.70241713523865, 210.6521818637848]
+GAMES: [4.5, 24.5]
+[(1, <MCCFRagent.MCCFRAgent object at 0x7f5323dff9d0>), (0, <UCTagent.UCTAgent object at 0x7f5323dffa30>)]
+0 MCCFR Agent(time=60.0, epsilon=0.6)
+1 UCT Agent(time=60.0, exploration_constant=1.5)
+turn complete
+UCT MAKE MOVE IN 52.5 time
+259 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 45.0 time
+234 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 37.5 time
+222 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 30.0 time
+426 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 22.5 time
+619 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 15.0 time
+771 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 7.5 time
+2488 UCT iterations in 60.0s
+turn complete
+turn complete
+Action sequence ---------------------------
+<big_city, 0, (1, 0), CITY, 0>
+<city_cap_straight_road, 2, (0, -1), ROAD, 0>
+<city_cap_straight_road, 1, (1, 1), None, 0>
+<monastery, 0, (-1, 0), MONASTERY, 0>
+<tri_road, 2, (0, -2), ROAD, 2>
+<city_cap_straight_road, 2, (-2, 0), None, 0>
+<tri_road, 1, (1, -2), None, 0>
+<tri_road, 3, (0, 1), None, 0>
+<city_tunnel, 1, (2, 0), None, 0>
+<tri_road, 2, (2, 1), ROAD, 0>
+<monastery, 0, (-1, 1), MONASTERY, 0>
+<monastery_road, 0, (-2, 1), MONASTERY, 0>
+<monastery, 0, (1, 2), None, 0>
+<monastery, 0, (-3, 1), None, 0>
+<monastery_road, 0, (0, -3), None, 0>
+-------------------------------------------
+Cities:  3
+Roads:  11
+Farms:  7
+Free Meeples:  [0, 0]
+SCORES:  [13, 19]
+TIMES: [240.6002230644226, 210.60137677192688]
+GAMES: [4.5, 25.5]
+[(1, <MCCFRagent.MCCFRAgent object at 0x7f5323dff9d0>), (0, <UCTagent.UCTAgent object at 0x7f5323dffa30>)]
+0 MCCFR Agent(time=60.0, epsilon=0.6)
+1 UCT Agent(time=60.0, exploration_constant=1.5)
+turn complete
+UCT MAKE MOVE IN 52.5 time
+349 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 45.0 time
+401 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 37.5 time
+421 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 30.0 time
+630 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 22.5 time
+627 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 15.0 time
+538 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 7.5 time
+2742 UCT iterations in 60.0s
+turn complete
+turn complete
+Action sequence ---------------------------
+<tri_road, 3, (0, 1), ROAD, 0>
+<tri_road, 1, (1, 1), ROAD, 1>
+<tri_road, 3, (0, 2), ROAD, 1>
+<city_tunnel, 0, (-1, 0), CITY, 0>
+<city_cap_straight_road, 2, (1, 0), CITY, 0>
+<monastery_road, 0, (2, 0), MONASTERY, 0>
+<city_cap_straight_road, 0, (0, -1), ROAD, 0>
+<tri_road, 1, (2, -1), None, 0>
+<monastery, 0, (3, 0), None, 0>
+<monastery, 0, (3, -1), None, 0>
+<monastery, 0, (4, 0), None, 0>
+<monastery, 0, (2, 1), None, 0>
+<city_cap_straight_road, 0, (5, 0), None, 0>
+<big_city, 0, (6, 0), None, 0>
+<monastery_road, 1, (2, 2), None, 0>
+-------------------------------------------
+Cities:  4
+Roads:  12
+Farms:  8
+Free Meeples:  [0, 0]
+SCORES:  [10, 10]
+TIMES: [240.4183611869812, 212.95424509048462]
+GAMES: [5.0, 26.0]
+[(1, <MCCFRagent.MCCFRAgent object at 0x7f5323dff9d0>), (0, <UCTagent.UCTAgent object at 0x7f5323dffa30>)]
+0 MCCFR Agent(time=60.0, epsilon=0.6)
+1 UCT Agent(time=60.0, exploration_constant=1.5)
+turn complete
+UCT MAKE MOVE IN 52.5 time
+261 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 45.0 time
+281 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 37.5 time
+310 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 30.0 time
+250 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 22.5 time
+355 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 15.0 time
+729 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 7.5 time
+2734 UCT iterations in 60.0s
+<monastery_road, 0, (1, -2), MONASTERY, 0>
+<city_cap_straight_road, 0, (-2, -1), None, 0>
+<tri_road, 1, (0, -2), None, 0>
+<monastery, 0, (0, 3), MONASTERY, 0>
+<monastery, 0, (1, 3), None, 0>
+<monastery, 0, (-1, 3), None, 0>
+<monastery, 0, (2, 3), None, 0>
+<city_cap_straight_road, 1, (1, 1), None, 0>
+<monastery_road, 3, (2, -2), None, 0>
+-------------------------------------------
+Cities:  4
+Roads:  13
+Farms:  10
+Free Meeples:  [0, 0]
+SCORES:  [13, 8]
+TIMES: [237.4706790447235, 206.62107038497925]
+GAMES: [26.0, 5.0]
+[(0, <UCTagent.UCTAgent object at 0x7f5323dff910>), (1, <MCCFRagent.MCCFRAgent object at 0x7f5323dff970>)]
+0 UCT Agent(time=60.0, exploration_constant=1.5)
+1 MCCFR Agent(time=60.0, epsilon=0.6)
+UCT MAKE MOVE IN 56.25 time
+276 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 48.75 time
+270 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 41.25 time
+290 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 33.75 time
+311 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 26.25 time
+270 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 18.75 time
+351 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 11.25 time
+2398 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 3.75 time
+1209 UCT iterations in 60.0s
+turn complete
+Action sequence ---------------------------
+<monastery, 0, (-1, 0), MONASTERY, 0>
+<city_cap_straight_road, 2, (1, 0), CITY, 0>
+<tri_road, 1, (1, -1), ROAD, 2>
+<tri_road, 1, (1, -2), ROAD, 2>
+<monastery, 0, (-2, 0), None, 0>
+<tri_road, 3, (0, -2), ROAD, 1>
+<monastery, 0, (-2, 1), None, 0>
+<monastery, 0, (-3, 0), MONASTERY, 0>
+<city_cap_straight_road, 0, (1, 1), None, 0>
+<tri_road, 0, (-2, -1), FARM, 0>
+<city_tunnel, 1, (2, 1), None, 0>
+<city_cap_straight_road, 2, (-4, 0), None, 0>
+<monastery_road, 0, (1, 2), None, 0>
+<monastery_road, 2, (0, 2), None, 0>
+<big_city, 0, (3, 1), CITY, 0>
+-------------------------------------------
+Cities:  3
+Roads:  13
+Farms:  11
+Free Meeples:  [0, 0]
+SCORES:  [13, 13]
+TIMES: [240.4280207157135, 216.13976168632507]
+GAMES: [26.5, 5.5]
+[(0, <UCTagent.UCTAgent object at 0x7f5323dff910>), (1, <MCCFRagent.MCCFRAgent object at 0x7f5323dff970>)]
+0 UCT Agent(time=60.0, exploration_constant=1.5)
+1 MCCFR Agent(time=60.0, epsilon=0.6)
+UCT MAKE MOVE IN 56.25 time
+276 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 48.75 time
+216 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 41.25 time
+169 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 33.75 time
+161 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 26.25 time
+90 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 18.75 time
+117 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 11.25 time
+254 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 3.75 time
+1121 UCT iterations in 60.0s
+turn complete
+Action sequence ---------------------------
+<city_tunnel, 0, (-1, 0), None, 0>
+<monastery, 0, (-2, 0), MONASTERY, 0>
+<monastery, 0, (-3, 0), MONASTERY, 0>
+<monastery_road, 3, (-3, 1), MONASTERY, 0>
+<big_city, 0, (1, 0), CITY, 0>
+<tri_road, 1, (-4, 1), None, 0>
+<city_cap_straight_road, 2, (2, 0), None, 0>
+<monastery, 0, (-3, 2), None, 0>
+<city_cap_straight_road, 1, (1, 1), None, 0>
+<monastery, 0, (-2, 2), None, 0>
+<tri_road, 0, (-3, -1), None, 0>
+<tri_road, 2, (-3, 3), None, 0>
+<tri_road, 2, (-4, -1), None, 0>
+<city_cap_straight_road, 3, (-1, -1), None, 0>
+<monastery_road, 3, (-1, 2), None, 0>
+-------------------------------------------
+Cities:  2
+Roads:  17
+Farms:  16
+Free Meeples:  [0, 0]
+SCORES:  [11, 12]
+TIMES: [240.79561138153076, 210.5266420841217]
+GAMES: [26.5, 6.5]
+[(0, <UCTagent.UCTAgent object at 0x7f5323dff910>), (1, <MCCFRagent.MCCFRAgent object at 0x7f5323dff970>)]
+0 UCT Agent(time=60.0, exploration_constant=1.5)
+1 MCCFR Agent(time=60.0, epsilon=0.6)
+UCT MAKE MOVE IN 56.25 time
+300 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 48.75 time
+292 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 41.25 time
+268 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 33.75 time
+210 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 26.25 time
+213 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 18.75 time
+161 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 11.25 time
+113 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 3.75 time
+1231 UCT iterations in 60.0s
+turn complete
+Action sequence ---------------------------
+<city_cap_straight_road, 2, (1, 0), CITY, 0>
+<tri_road, 1, (1, -1), FARM, 2>
+<city_tunnel, 0, (-1, 0), CITY, 0>
+<monastery, 0, (2, -1), MONASTERY, 0>
+<tri_road, 1, (1, 1), ROAD, 0>
+<monastery, 0, (-2, 0), None, 0>
+<monastery_road, 3, (2, 1), MONASTERY, 0>
+<monastery_road, 2, (-3, 0), None, 0>
+<city_cap_straight_road, 1, (3, 1), None, 0>
+<big_city, 0, (-1, 1), None, 0>
+<monastery, 0, (3, 2), None, 0>
+<monastery, 0, (3, -1), None, 0>
+<city_cap_straight_road, 0, (1, 2), None, 0>
+<tri_road, 2, (4, 1), None, 0>
+<tri_road, 0, (-2, -1), None, 0>
+-------------------------------------------
+Cities:  4
+Roads:  13
+Farms:  10
+Free Meeples:  [0, 0]
+SCORES:  [16, 7]
+TIMES: [240.71983313560486, 211.58394575119019]
+GAMES: [27.5, 6.5]
+[(0, <UCTagent.UCTAgent object at 0x7f5323dff910>), (1, <MCCFRagent.MCCFRAgent object at 0x7f5323dff970>)]
+0 UCT Agent(time=60.0, exploration_constant=1.5)
+1 MCCFR Agent(time=60.0, epsilon=0.6)
+UCT MAKE MOVE IN 56.25 time
+319 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 48.75 time
+398 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 41.25 time
+340 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 33.75 time
+438 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 26.25 time
+547 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 18.75 time
+738 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 11.25 time
+1640 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 3.75 time
+1335 UCT iterations in 60.0s
+turn complete
+Action sequence ---------------------------
+<tri_road, 0, (0, 1), ROAD, 1>
+<tri_road, 3, (-1, 1), ROAD, 0>
+<tri_road, 1, (0, -1), ROAD, 0>
+<monastery_road, 1, (-2, 1), MONASTERY, 0>
+<big_city, 0, (1, 0), CITY, 0>
+<tri_road, 3, (-1, 2), None, 0>
+<monastery, 0, (-2, 2), None, 0>
+<monastery_road, 2, (-1, 0), MONASTERY, 0>
+<city_cap_straight_road, 0, (0, -2), None, 0>
+<city_cap_straight_road, 2, (-1, 3), None, 0>
+<monastery, 0, (-1, -2), None, 0>
+<monastery, 0, (-2, -2), None, 0>
+<city_tunnel, 1, (2, 0), None, 0>
+<city_cap_straight_road, 1, (2, -1), None, 0>
+<monastery, 0, (-2, -3), None, 0>
+-------------------------------------------
+Cities:  4
+Roads:  11
+Farms:  8
+Free Meeples:  [0, 0]
+SCORES:  [9, 13]
+TIMES: [240.3012411594391, 210.52413320541382]
+GAMES: [27.5, 7.5]
+[(0, <UCTagent.UCTAgent object at 0x7f5323dff910>), (1, <MCCFRagent.MCCFRAgent object at 0x7f5323dff970>)]
+0 UCT Agent(time=60.0, exploration_constant=1.5)
+1 MCCFR Agent(time=60.0, epsilon=0.6)
+UCT MAKE MOVE IN 56.25 time
+283 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 48.75 time
+229 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 41.25 time
+275 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 33.75 time
+241 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 26.25 time
+207 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 18.75 time
+237 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 11.25 time
+207 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 3.75 time
+1336 UCT iterations in 60.0s
+turn complete
+Action sequence ---------------------------
+<city_tunnel, 1, (1, 0), CITY, 0>
+<monastery, 0, (1, -1), MONASTERY, 0>
+<monastery, 0, (1, 1), MONASTERY, 0>
+<tri_road, 3, (2, -1), None, 0>
+<city_cap_straight_road, 2, (2, 0), None, 0>
+<tri_road, 3, (3, 0), ROAD, 2>
+<monastery, 0, (1, 2), MONASTERY, 0>
+turn complete
+Action sequence ---------------------------
+<monastery, 0, (-1, 0), MONASTERY, 0>
+<city_cap_straight_road, 2, (0, 1), ROAD, 0>
+<tri_road, 1, (-2, 0), ROAD, 0>
+<tri_road, 3, (0, 2), ROAD, 0>
+<monastery, 0, (-1, 2), None, 0>
+<tri_road, 1, (0, 3), None, 0>
+<monastery, 0, (1, 3), None, 0>
+<monastery, 0, (1, 1), MONASTERY, 0>
+<city_cap_straight_road, 3, (-3, 0), None, 0>
+<tri_road, 1, (0, -1), None, 0>
+<city_tunnel, 1, (-1, 1), None, 0>
+<city_cap_straight_road, 0, (-2, 1), CITY, 0>
+<monastery_road, 3, (1, 4), None, 0>
+<monastery_road, 1, (1, 2), MONASTERY, 0>
+-------------------------------------------
+Cities:  3
+Roads:  11
+Farms:  6
+Free Meeples:  [0, 0]
+SCORES:  [8, 23]
+TIMES: [239.3682508468628, 210.36628460884094]
+GAMES: [5.0, 27.0]
+[(1, <MCCFRagent.MCCFRAgent object at 0x7f5323dff9d0>), (0, <UCTagent.UCTAgent object at 0x7f5323dffa30>)]
+0 MCCFR Agent(time=60.0, epsilon=0.6)
+1 UCT Agent(time=60.0, exploration_constant=1.5)
+turn complete
+UCT MAKE MOVE IN 52.5 time
+250 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 45.0 time
+198 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 37.5 time
+178 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 30.0 time
+155 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 22.5 time
+130 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 15.0 time
+149 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 7.5 time
+1813 UCT iterations in 60.0s
+turn complete
+turn complete
+Action sequence ---------------------------
+<city_tunnel, 0, (-1, 0), None, 0>
+<monastery, 0, (-2, 0), MONASTERY, 0>
+<monastery, 0, (-2, -1), MONASTERY, 0>
+<monastery_road, 3, (-2, 1), MONASTERY, 0>
+<big_city, 0, (1, 0), CITY, 0>
+<tri_road, 1, (-3, 1), None, 0>
+<city_cap_straight_road, 3, (1, -1), None, 0>
+<monastery, 0, (-2, 2), None, 0>
+<city_cap_straight_road, 1, (-2, -2), None, 0>
+<monastery, 0, (-1, 2), None, 0>
+<tri_road, 2, (-1, -2), None, 0>
+<tri_road, 1, (-3, 0), None, 0>
+<tri_road, 2, (-4, 0), None, 0>
+<city_cap_straight_road, 1, (-1, 1), None, 0>
+<monastery_road, 0, (-3, 2), None, 0>
+-------------------------------------------
+Cities:  3
+Roads:  13
+Farms:  10
+Free Meeples:  [0, 0]
+SCORES:  [10, 16]
+TIMES: [240.83463835716248, 210.69971656799316]
+GAMES: [5.0, 28.0]
+[(1, <MCCFRagent.MCCFRAgent object at 0x7f5323dff9d0>), (0, <UCTagent.UCTAgent object at 0x7f5323dffa30>)]
+0 MCCFR Agent(time=60.0, epsilon=0.6)
+1 UCT Agent(time=60.0, exploration_constant=1.5)
+turn complete
+UCT MAKE MOVE IN 52.5 time
+308 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 45.0 time
+266 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 37.5 time
+261 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 30.0 time
+225 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 22.5 time
+218 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 15.0 time
+147 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 7.5 time
+1221 UCT iterations in 60.0s
+turn complete
+turn complete
+Action sequence ---------------------------
+<city_cap_straight_road, 2, (1, 0), CITY, 0>
+<tri_road, 1, (1, -1), ROAD, 2>
+<city_tunnel, 0, (2, 0), CITY, 0>
+<monastery, 0, (-1, 0), MONASTERY, 0>
+<tri_road, 1, (1, -2), ROAD, 2>
+<monastery, 0, (-1, -1), None, 0>
+<monastery_road, 0, (1, 1), FARM, 0>
+<monastery_road, 0, (0, 1), MONASTERY, 0>
+<city_cap_straight_road, 1, (-1, -2), None, 0>
+<big_city, 0, (-1, -3), None, 0>
+<monastery, 0, (-2, -1), None, 0>
+<monastery, 0, (-1, 1), None, 0>
+<city_cap_straight_road, 0, (3, 0), None, 0>
+<tri_road, 3, (0, -1), None, 0>
+<tri_road, 1, (1, -3), None, 0>
+-------------------------------------------
+Cities:  4
+Roads:  11
+Farms:  7
+Free Meeples:  [0, 0]
+SCORES:  [10, 16]
+TIMES: [246.49089574813843, 210.33104395866394]
+GAMES: [5.0, 29.0]
+[(1, <MCCFRagent.MCCFRAgent object at 0x7f5323dff9d0>), (0, <UCTagent.UCTAgent object at 0x7f5323dffa30>)]
+0 MCCFR Agent(time=60.0, epsilon=0.6)
+1 UCT Agent(time=60.0, exploration_constant=1.5)
+turn complete
+UCT MAKE MOVE IN 52.5 time
+349 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 45.0 time
+384 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 33.75 time
+455 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 26.25 time
+525 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 18.75 time
+686 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 11.25 time
+881 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 3.75 time
+1362 UCT iterations in 60.0s
+turn complete
+Action sequence ---------------------------
+<tri_road, 3, (0, 1), ROAD, 0>
+<tri_road, 1, (0, -1), ROAD, 2>
+<tri_road, 1, (0, -2), ROAD, 2>
+<monastery_road, 0, (1, -1), MONASTERY, 0>
+<tri_road, 0, (-1, -1), ROAD, 0>
+<monastery, 0, (-1, 0), MONASTERY, 0>
+<monastery_road, 2, (0, -3), ROAD, 0>
+<city_cap_straight_road, 0, (2, -1), None, 0>
+<city_cap_straight_road, 2, (-2, 0), CITY, 0>
+<monastery, 0, (-1, 1), None, 0>
+<monastery, 0, (0, -4), None, 0>
+<city_tunnel, 1, (1, 0), None, 0>
+<city_cap_straight_road, 1, (0, -5), None, 0>
+<monastery, 0, (-1, -3), None, 0>
+-------------------------------------------
+Cities:  4
+Roads:  13
+Farms:  9
+Free Meeples:  [0, 0]
+SCORES:  [8, 16]
+TIMES: [217.92413592338562, 198.08545327186584]
+GAMES: [5.0, 30.0]
+[(1, <MCCFRagent.MCCFRAgent object at 0x7f5323dff9d0>), (0, <UCTagent.UCTAgent object at 0x7f5323dffa30>)]
+0 MCCFR Agent(time=60.0, epsilon=0.6)
+1 UCT Agent(time=60.0, exploration_constant=1.5)
+turn complete
+UCT MAKE MOVE IN 52.5 time
+252 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 45.0 time
+220 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 37.5 time
+243 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 30.0 time
+135 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 18.75 time
+200 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 11.25 time
+138 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 3.75 time
+1219 UCT iterations in 60.0s
+turn complete
+Action sequence ---------------------------
+<city_tunnel, 1, (1, 0), CITY, 0>
+<monastery, 0, (1, -1), MONASTERY, 0>
+<monastery, 0, (-1, 0), MONASTERY, 0>
+<tri_road, 3, (2, -1), ROAD, 1>
+<city_cap_straight_road, 1, (-1, -1), None, 0>
+<tri_road, 0, (3, -1), None, 0>
+<monastery, 0, (-1, 1), None, 0>
+<city_cap_straight_road, 3, (-1, -2), CITY, 0>
+<monastery_road, 2, (-2, 0), None, 0>
+<tri_road, 3, (2, -2), ROAD, 0>
+<monastery, 0, (-1, 2), None, 0>
+<monastery_road, 1, (0, -2), MONASTERY, 0>
+<city_cap_straight_road, 3, (3, 0), None, 0>
+<tri_road, 0, (0, -3), None, 0>
+-------------------------------------------
+Cities:  3
+Roads:  15
+Farms:  13
+Free Meeples:  [0, 0]
+SCORES:  [7, 19]
+TIMES: [229.2195644378662, 199.27928376197815]
+GAMES: [5.0, 31.0]
+[(1, <MCCFRagent.MCCFRAgent object at 0x7f5323dff9d0>), (0, <UCTagent.UCTAgent object at 0x7f5323dffa30>)]
+0 MCCFR Agent(time=60.0, epsilon=0.6)
+1 UCT Agent(time=60.0, exploration_constant=1.5)
+turn complete
+UCT MAKE MOVE IN 52.5 time
+278 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 45.0 time
+300 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 37.5 time
+236 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 30.0 time
+263 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 22.5 time
+338 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 15.0 time
+2024 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 7.5 time
+2729 UCT iterations in 60.0s
+turn complete
+turn complete
+Action sequence ---------------------------
+<monastery, 0, (-1, 0), MONASTERY, 0>
+<tri_road, 1, (0, 1), ROAD, 0>
+<monastery_road, 3, (-1, 1), None, 0>
+<city_cap_straight_road, 2, (1, 0), CITY, 0>
+<monastery, 0, (-2, 1), MONASTERY, 0>
+<city_cap_straight_road, 2, (0, -1), FARM, 0>
+<monastery, 0, (-2, 0), None, 0>
+<tri_road, 3, (0, -2), None, 0>
+<tri_road, 3, (1, -1), None, 0>
+<city_cap_straight_road, 0, (1, 1), ROAD, 0>
+<city_cap_straight_road, 3, (1, 3), None, 0>
+<monastery_road, 0, (2, 1), None, 0>
+<big_city, 0, (1, 4), None, 0>
+<tri_road, 1, (0, 1), None, 0>
+<monastery, 0, (1, -2), None, 0>
+<monastery_road, 3, (2, 2), None, 0>
+<city_cap_straight_road, 3, (4, 0), None, 0>
+<tri_road, 1, (0, 2), None, 0>
+-------------------------------------------
+Cities:  3
+Roads:  13
+Farms:  8
+Free Meeples:  [0, 0]
+SCORES:  [22, 7]
+TIMES: [240.84931206703186, 214.17615389823914]
+GAMES: [28.5, 7.5]
+[(0, <UCTagent.UCTAgent object at 0x7f5323dff910>), (1, <MCCFRagent.MCCFRAgent object at 0x7f5323dff970>)]
+0 UCT Agent(time=60.0, exploration_constant=1.5)
+1 MCCFR Agent(time=60.0, epsilon=0.6)
+UCT MAKE MOVE IN 56.25 time
+271 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 48.75 time
+270 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 41.25 time
+242 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 33.75 time
+213 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 26.25 time
+417 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 18.75 time
+384 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 11.25 time
+3694 UCT iterations in 60.0s
+turn complete
+turn complete
+Action sequence ---------------------------
+<monastery, 0, (-1, 0), MONASTERY, 0>
+<tri_road, 2, (0, -1), ROAD, 1>
+<monastery_road, 2, (-1, 1), MONASTERY, 0>
+<city_cap_straight_road, 2, (1, 0), FARM, 1>
+<monastery, 0, (-2, 1), None, 0>
+<city_cap_straight_road, 0, (-1, 2), None, 0>
+<monastery, 0, (-2, 0), None, 0>
+<tri_road, 3, (0, 1), None, 0>
+<tri_road, 0, (-1, -1), None, 0>
+<city_cap_straight_road, 0, (-1, -2), FARM, 0>
+<city_tunnel, 0, (-2, -2), None, 0>
+<tri_road, 2, (-1, -3), None, 0>
+<monastery_road, 2, (-2, 2), None, 0>
+<monastery, 0, (2, 0), None, 0>
+-------------------------------------------
+Cities:  4
+Roads:  12
+Farms:  9
+Free Meeples:  [0, 0]
+SCORES:  [16, 6]
+TIMES: [236.65495586395264, 210.7595202922821]
+GAMES: [29.5, 7.5]
+[(0, <UCTagent.UCTAgent object at 0x7f5323dff910>), (1, <MCCFRagent.MCCFRAgent object at 0x7f5323dff970>)]
+0 UCT Agent(time=60.0, exploration_constant=1.5)
+1 MCCFR Agent(time=60.0, epsilon=0.6)
+UCT MAKE MOVE IN 56.25 time
+273 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 33.75 time
+222 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 26.25 time
+231 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 18.75 time
+275 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 11.25 time
+198 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 3.75 time
+1393 UCT iterations in 60.0s
+turn complete
+Action sequence ---------------------------
+<big_city, 0, (1, 0), CITY, 0>
+<tri_road, 1, (-1, 0), ROAD, 2>
+<city_cap_straight_road, 2, (0, 1), ROAD, 0>
+<tri_road, 1, (0, -1), FARM, 1>
+<city_tunnel, 0, (1, -1), None, 0>
+<city_cap_straight_road, 2, (0, -2), None, 0>
+<tri_road, 0, (0, 2), None, 0>
+<monastery_road, 0, (2, -1), None, 0>
+<monastery_road, 2, (0, -3), ROAD, 0>
+<city_cap_straight_road, 0, (-1, -2), None, 0>
+<tri_road, 3, (-1, -1), ROAD, 1>
+-------------------------------------------
+Cities:  3
+Roads:  10
+Farms:  6
+Free Meeples:  [1, 0]
+SCORES:  [13, 4]
+TIMES: [150.42815017700195, 127.65902352333069]
+GAMES: [30.5, 7.5]
+[(0, <UCTagent.UCTAgent object at 0x7f5323dff910>), (1, <MCCFRagent.MCCFRAgent object at 0x7f5323dff970>)]
+0 UCT Agent(time=60.0, exploration_constant=1.5)
+1 MCCFR Agent(time=60.0, epsilon=0.6)
+UCT MAKE MOVE IN 56.25 time
+316 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 48.75 time
+288 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 41.25 time
+235 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 33.75 time
+191 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 26.25 time
+192 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 18.75 time
+284 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 11.25 time
+187 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 3.75 time
+1197 UCT iterations in 60.0s
+turn complete
+Action sequence ---------------------------
+<tri_road, 3, (0, 1), None, 0>
+<big_city, 0, (1, 0), CITY, 0>
+<city_cap_straight_road, 2, (0, -1), ROAD, 0>
+<monastery, 0, (-1, 0), MONASTERY, 0>
+<monastery_road, 2, (0, -2), MONASTERY, 0>
+<city_tunnel, 1, (2, 0), None, 0>
+<city_cap_straight_road, 2, (0, 2), ROAD, 0>
+<monastery, 0, (-2, 0), None, 0>
+<tri_road, 3, (0, 3), None, 0>
+<tri_road, 0, (-2, -1), None, 0>
+<city_cap_straight_road, 0, (-1, 2), CITY, 0>
+<monastery, 0, (2, 1), None, 0>
+<monastery, 0, (-1, -2), MONASTERY, 0>
+<tri_road, 2, (-2, 1), None, 0>
+<monastery_road, 3, (-1, -3), None, 0>
+-------------------------------------------
+Cities:  3
+Roads:  13
+Farms:  11
+Free Meeples:  [0, 0]
+SCORES:  [20, 11]
+TIMES: [240.59798383712769, 210.63506484031677]
+GAMES: [31.5, 7.5]
+[(0, <UCTagent.UCTAgent object at 0x7f5323dff910>), (1, <MCCFRagent.MCCFRAgent object at 0x7f5323dff970>)]
+0 UCT Agent(time=60.0, exploration_constant=1.5)
+1 MCCFR Agent(time=60.0, epsilon=0.6)
+UCT MAKE MOVE IN 56.25 time
+317 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 48.75 time
+383 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 41.25 time
+335 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 33.75 time
+305 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 26.25 time
+245 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 18.75 time
+173 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 11.25 time
+405 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 3.75 time
+1297 UCT iterations in 60.0s
+turn complete
+Action sequence ---------------------------
+<tri_road, 1, (-1, 0), ROAD, 2>
+<tri_road, 2, (0, -1), ROAD, 1>
+<tri_road, 1, (-1, 1), ROAD, 1>
+<monastery_road, 3, (-2, 0), MONASTERY, 0>
+<big_city, 0, (1, 0), CITY, 0>
+<city_cap_straight_road, 2, (-3, 0), None, 0>
+<monastery, 0, (0, -2), None, 0>
+<monastery, 0, (-1, -2), None, 0>
+<monastery, 0, (-2, -2), None, 0>
+<monastery, 0, (1, -2), None, 0>
+<monastery_road, 1, (-2, -3), None, 0>
+<tri_road, 3, (0, 1), None, 0>
+<city_cap_straight_road, 1, (1, 1), None, 0>
+<city_tunnel, 1, (1, 2), CITY, 0>
+<city_cap_straight_road, 3, (1, -1), None, 0>
+-------------------------------------------
+Cities:  3
+Roads:  12
+Farms:  8
+Free Meeples:  [0, 0]
+SCORES:  [8, 8]
+TIMES: [240.51049757003784, 210.39539647102356]
+GAMES: [32.0, 8.0]
+[(0, <UCTagent.UCTAgent object at 0x7f5323dff910>), (1, <MCCFRagent.MCCFRAgent object at 0x7f5323dff970>)]
+0 UCT Agent(time=60.0, exploration_constant=1.5)
+1 MCCFR Agent(time=60.0, epsilon=0.6)
+UCT MAKE MOVE IN 56.25 time
+298 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 45.0 time
+243 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 37.5 time
+189 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 30.0 time
+200 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 22.5 time
+233 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 15.0 time
+288 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 7.5 time
+296 UCT iterations in 60.0s
+turn complete
+turn complete
+Action sequence ---------------------------
+<city_cap_straight_road, 2, (1, 0), CITY, 0>
+<city_tunnel, 0, (-1, 0), None, 0>
+<city_cap_straight_road, 0, (1, -1), ROAD, 0>
+<monastery, 0, (-2, 0), MONASTERY, 0>
+<monastery, 0, (2, 0), MONASTERY, 0>
+<tri_road, 1, (0, -1), ROAD, 2>
+<city_cap_straight_road, 2, (1, 1), None, 0>
+<monastery_road, 3, (2, 1), None, 0>
+<tri_road, 2, (1, -2), None, 0>
+<monastery, 0, (1, -3), None, 0>
+<tri_road, 1, (1, 2), None, 0>
+<monastery, 0, (2, -3), None, 0>
+<tri_road, 2, (0, 2), FARM, 0>
+<monastery_road, 0, (1, -4), None, 0>
+-------------------------------------------
+Cities:  4
+Roads:  12
+Farms:  8
+Free Meeples:  [0, 0]
+SCORES:  [17, 4]
+TIMES: [214.24321484565735, 184.08333325386047]
+GAMES: [33.0, 8.0]
+<city_tunnel, 0, (-3, 1), None, 0>
+<tri_road, 3, (1, 2), None, 0>
+<monastery_road, 2, (-4, 1), None, 0>
+<monastery, 0, (2, 0), MONASTERY, 0>
+<big_city, 0, (-3, 2), None, 0>
+-------------------------------------------
+Cities:  4
+Roads:  11
+Farms:  7
+Free Meeples:  [0, 0]
+SCORES:  [13, 19]
+TIMES: [240.5029857158661, 210.54708576202393]
+GAMES: [5.0, 32.0]
+[(1, <MCCFRagent.MCCFRAgent object at 0x7f5323dff9d0>), (0, <UCTagent.UCTAgent object at 0x7f5323dffa30>)]
+0 MCCFR Agent(time=60.0, epsilon=0.6)
+1 UCT Agent(time=60.0, exploration_constant=1.5)
+turn complete
+UCT MAKE MOVE IN 52.5 time
+284 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 45.0 time
+243 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 37.5 time
+180 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 30.0 time
+201 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 22.5 time
+165 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 15.0 time
+188 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 7.5 time
+124 UCT iterations in 60.0s
+turn complete
+turn complete
+Action sequence ---------------------------
+<big_city, 0, (1, 0), CITY, 0>
+<tri_road, 1, (0, -1), ROAD, 2>
+<monastery, 0, (-1, 0), None, 0>
+<monastery, 0, (-1, 1), MONASTERY, 0>
+<monastery, 0, (-2, 0), MONASTERY, 0>
+<monastery, 0, (-1, 2), None, 0>
+<city_cap_straight_road, 1, (1, 1), None, 0>
+<tri_road, 3, (0, 1), None, 0>
+<city_tunnel, 0, (1, -1), None, 0>
+<city_cap_straight_road, 1, (2, 1), ROAD, 0>
+<tri_road, 2, (-1, 3), None, 0>
+<monastery_road, 1, (3, 1), None, 0>
+<monastery_road, 1, (-2, -1), None, 0>
+<city_cap_straight_road, 0, (0, 2), ROAD, 0>
+<tri_road, 2, (-3, -1), None, 0>
+-------------------------------------------
+Cities:  3
+Roads:  11
+Farms:  7
+Free Meeples:  [0, 0]
+SCORES:  [10, 16]
+TIMES: [240.72872757911682, 210.69878244400024]
+GAMES: [5.0, 33.0]
+[(1, <MCCFRagent.MCCFRAgent object at 0x7f5323dff9d0>), (0, <UCTagent.UCTAgent object at 0x7f5323dffa30>)]
+0 MCCFR Agent(time=60.0, epsilon=0.6)
+1 UCT Agent(time=60.0, exploration_constant=1.5)
+turn complete
+UCT MAKE MOVE IN 52.5 time
+304 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 41.25 time
+265 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 33.75 time
+229 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 26.25 time
+224 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 18.75 time
+338 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 11.25 time
+275 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 3.75 time
+258 UCT iterations in 60.0s
+turn complete
+Action sequence ---------------------------
+<tri_road, 3, (0, 1), ROAD, 0>
+<big_city, 0, (1, 0), CITY, 0>
+<city_cap_straight_road, 2, (-1, 0), CITY, 0>
+<monastery_road, 0, (-1, 1), MONASTERY, 0>
+<city_tunnel, 0, (-2, 1), None, 0>
+<city_cap_straight_road, 1, (1, 1), None, 0>
+<monastery, 0, (-3, 1), None, 0>
+<tri_road, 2, (-1, 2), None, 0>
+<tri_road, 3, (0, -1), None, 0>
+<city_cap_straight_road, 2, (2, 0), None, 0>
+<monastery, 0, (-4, 1), None, 0>
+<monastery, 0, (-5, 1), None, 0>
+<tri_road, 1, (0, 2), None, 0>
+<monastery_road, 0, (-1, 3), None, 0>
+-------------------------------------------
+Cities:  3
+Roads:  11
+Farms:  8
+Free Meeples:  [1, 0]
+SCORES:  [3, 12]
+TIMES: [217.96622443199158, 194.68391585350037]
+GAMES: [5.0, 34.0]
+[(1, <MCCFRagent.MCCFRAgent object at 0x7f5323dff9d0>), (0, <UCTagent.UCTAgent object at 0x7f5323dffa30>)]
+0 MCCFR Agent(time=60.0, epsilon=0.6)
+1 UCT Agent(time=60.0, exploration_constant=1.5)
+turn complete
+UCT MAKE MOVE IN 52.5 time
+345 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 45.0 time
+380 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 33.75 time
+377 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 26.25 time
+256 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 18.75 time
+169 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 11.25 time
+437 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 3.75 time
+1336 UCT iterations in 60.0s
+turn complete
+Action sequence ---------------------------
+<tri_road, 3, (0, 1), ROAD, 0>
+<tri_road, 2, (0, -1), ROAD, 1>
+<tri_road, 3, (0, 2), None, 0>
+<monastery_road, 1, (1, -1), MONASTERY, 0>
+<city_cap_straight_road, 2, (0, 3), FARM, 0>
+<monastery, 0, (-1, 0), MONASTERY, 0>
+<monastery, 0, (-1, 2), FARM, 0>
+<monastery, 0, (2, -1), None, 0>
+<monastery, 0, (0, -2), None, 0>
+<monastery_road, 2, (-2, 0), None, 0>
+<tri_road, 1, (1, 1), None, 0>
+<city_cap_straight_road, 3, (2, 0), None, 0>
+<city_tunnel, 0, (1, 3), None, 0>
+<city_cap_straight_road, 1, (2, -2), None, 0>
+-------------------------------------------
+Cities:  5
+Roads:  12
+Farms:  8
+Free Meeples:  [0, 0]
+SCORES:  [2, 15]
+TIMES: [217.8563404083252, 191.59854936599731]
+GAMES: [5.0, 35.0]
+[(1, <MCCFRagent.MCCFRAgent object at 0x7f5323dff9d0>), (0, <UCTagent.UCTAgent object at 0x7f5323dffa30>)]
+0 MCCFR Agent(time=60.0, epsilon=0.6)
+1 UCT Agent(time=60.0, exploration_constant=1.5)
+turn complete
+UCT MAKE MOVE IN 52.5 time
+273 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 45.0 time
+228 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 37.5 time
+121 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 30.0 time
+177 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 22.5 time
+201 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 15.0 time
+240 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 7.5 time
+253 UCT iterations in 60.0s
+turn complete
+turn complete
+Action sequence ---------------------------
+<city_cap_straight_road, 0, (0, 1), ROAD, 0>
+<big_city, 0, (1, 0), CITY, 0>
+<city_tunnel, 0, (-1, 1), None, 0>
+<city_cap_straight_road, 2, (2, 0), ROAD, 0>
+<monastery, 0, (-2, 1), MONASTERY, 0>
+<monastery, 0, (-2, 0), None, 0>
+<tri_road, 2, (0, -1), None, 0>
+<city_cap_straight_road, 2, (2, 1), None, 0>
+<monastery_road, 1, (-3, 1), None, 0>
+<tri_road, 1, (2, -1), None, 0>
+<monastery, 0, (-3, 0), None, 0>
+<tri_road, 0, (2, 2), None, 0>
+<monastery, 0, (3, -1), None, 0>
+<tri_road, 2, (-4, 1), ROAD, 2>
+<monastery_road, 3, (-3, 2), None, 0>
+-------------------------------------------
+Cities:  4
+Roads:  12
+Farms:  9
+Free Meeples:  [0, 1]
+SCORES:  [9, 10]
+TIMES: [240.62945318222046, 210.7669243812561]
+GAMES: [5.0, 36.0]
+[(1, <MCCFRagent.MCCFRAgent object at 0x7f5323dff9d0>), (0, <UCTagent.UCTAgent object at 0x7f5323dffa30>)]
+0 MCCFR Agent(time=60.0, epsilon=0.6)
+1 UCT Agent(time=60.0, exploration_constant=1.5)
+turn complete
+UCT MAKE MOVE IN 52.5 time
+274 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 45.0 time
+289 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 37.5 time
+325 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 30.0 time
+376 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 22.5 time
+1124 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 15.0 time
+262 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 7.5 time
+2382 UCT iterations in 60.0s
+turn complete
+turn complete
+Action sequence ---------------------------
+<city_cap_straight_road, 0, (0, 1), ROAD, 0>
+<monastery, 0, (-1, 0), MONASTERY, 0>
+<tri_road, 3, (0, 2), None, 0>
+<city_cap_straight_road, 2, (1, 1), CITY, 0>
+<city_cap_straight_road, 2, (1, 0), FARM, 1>
+<tri_road, 3, (0, 3), ROAD, 2>
+<city_tunnel, 0, (2, 1), None, 0>
+<tri_road, 2, (1, 3), ROAD, 0>
+<tri_road, 3, (1, -1), None, 0>
+<monastery_road, 2, (-1, 1), MONASTERY, 0>
+<big_city, 0, (2, 2), None, 0>
+<monastery, 0, (-2, 0), None, 0>
+<monastery, 0, (-3, 0), None, 0>
+<monastery, 0, (-2, 1), None, 0>
+<monastery_road, 0, (-3, -1), None, 0>
+-------------------------------------------
+Cities:  3
+Roads:  12
+Farms:  9
+Free Meeples:  [0, 0]
+SCORES:  [9, 21]
+TIMES: [240.60323691368103, 210.87335300445557]
+GAMES: [5.0, 37.0]
+[(1, <MCCFRagent.MCCFRAgent object at 0x7f5323dff9d0>), (0, <UCTagent.UCTAgent object at 0x7f5323dffa30>)]
+0 [(0, <UCTagent.UCTAgent object at 0x7f5323dff910>), (1, <MCCFRagent.MCCFRAgent object at 0x7f5323dff970>)]
+0 UCT Agent(time=60.0, exploration_constant=1.5)
+1 MCCFR Agent(time=60.0, epsilon=0.6)
+UCT MAKE MOVE IN 56.25 time
+294 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 48.75 time
+272 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 41.25 time
+293 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 33.75 time
+338 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 26.25 time
+683 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 18.75 time
+976 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 11.25 time
+763 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 3.75 time
+1215 UCT iterations in 60.0s
+turn complete
+Action sequence ---------------------------
+<city_cap_straight_road, 2, (1, 0), CITY, 0>
+<monastery, 0, (2, 0), MONASTERY, 0>
+<tri_road, 0, (0, 1), FARM, 1>
+<city_cap_straight_road, 0, (0, -1), ROAD, 0>
+<city_cap_straight_road, 2, (1, -1), CITY, 0>
+<tri_road, 3, (0, -2), None, 0>
+<city_tunnel, 1, (0, 2), CITY, 0>
+<tri_road, 3, (0, -3), FARM, 2>
+<tri_road, 2, (0, -4), None, 0>
+<monastery_road, 0, (2, -1), None, 0>
+<big_city, 0, (-1, 2), None, 0>
+<monastery, 0, (-1, -2), None, 0>
+<monastery, 0, (0, -5), None, 0>
+<monastery, 0, (-2, -2), None, 0>
+<monastery_road, 1, (1, -3), None, 0>
+-------------------------------------------
+Cities:  3
+Roads:  11
+Farms:  8
+Free Meeples:  [0, 0]
+SCORES:  [17, 8]
+TIMES: [247.83098125457764, 210.46634197235107]
+GAMES: [34.0, 8.0]
+[(0, <UCTagent.UCTAgent object at 0x7f5323dff910>), (1, <MCCFRagent.MCCFRAgent object at 0x7f5323dff970>)]
+0 UCT Agent(time=60.0, exploration_constant=1.5)
+1 MCCFR Agent(time=60.0, epsilon=0.6)
+UCT MAKE MOVE IN 56.25 time
+295 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 48.75 time
+277 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 41.25 time
+241 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 33.75 time
+312 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 26.25 time
+206 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 18.75 time
+584 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 11.25 time
+2437 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 3.75 time
+1300 UCT iterations in 60.0s
+turn complete
+Action sequence ---------------------------
+<city_cap_straight_road, 0, (0, -1), ROAD, 0>
+<monastery, 0, (-1, -1), MONASTERY, 0>
+<tri_road, 3, (0, 1), None, 0>
+<monastery_road, 1, (-1, -2), ROAD, 0>
+<monastery_road, 1, (-1, 0), MONASTERY, 0>
+<tri_road, 0, (-2, -2), None, 0>
+<big_city, 0, (1, -1), None, 0>
+<monastery, 0, (-1, -3), MONASTERY, 0>
+<tri_road, 1, (1, 1), None, 0>
+<city_cap_straight_road, 0, (1, 2), None, 0>
+<tri_road, 3, (0, -2), None, 0>
+<monastery, 0, (-1, -4), None, 0>
+<monastery, 0, (-1, 1), MONASTERY, 0>
+<city_tunnel, 1, (2, -1), None, 0>
+<city_cap_straight_road, 2, (-2, 1), None, 0>
+-------------------------------------------
+Cities:  4
+Roads:  12
+Farms:  9
+Free Meeples:  [0, 0]
+SCORES:  [16, 14]
+TIMES: [243.76499223709106, 210.39305114746094]
+GAMES: [35.0, 8.0]
+[(0, <UCTagent.UCTAgent object at 0x7f5323dff910>), (1, <MCCFRagent.MCCFRAgent object at 0x7f5323dff970>)]
+0 UCT Agent(time=60.0, exploration_constant=1.5)
+1 MCCFR Agent(time=60.0, epsilon=0.6)
+UCT MAKE MOVE IN 56.25 time
+300 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 48.75 time
+293 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 37.5 time
+268 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 30.0 time
+257 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 22.5 time
+359 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 15.0 time
+331 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 7.5 time
+2536 UCT iterations in 60.0s
+turn complete
+turn complete
+Action sequence ---------------------------
+<city_cap_straight_road, 2, (1, 0), CITY, 0>
+<tri_road, 2, (1, -1), ROAD, 1>
+<monastery, 0, (-1, 0), MONASTERY, 0>
+<city_cap_straight_road, 2, (1, 1), FARM, 1>
+<tri_road, 3, (0, -1), ROAD, 1>
+<monastery, 0, (2, 1), None, 0>
+<city_cap_straight_road, 0, (0, 1), CITY, 0>
+<monastery_road, 0, (0, 2), None, 0>
+<tri_road, 2, (2, -1), ROAD, 0>
+<monastery, 0, (-1, -1), None, 0>
+<monastery, 0, (-1, 1), MONASTERY, 0>
+<tri_road, 2, (0, 3), None, 0>
+<city_tunnel, 0, (-2, 1), None, 0>
+<monastery_road, 1, (2, 2), None, 0>
+-------------------------------------------
+Cities:  3
+Roads:  11
+Farms:  7
+Free Meeples:  [0, 0]
+SCORES:  [25, 9]
+TIMES: [217.7850856781006, 197.5916588306427]
+GAMES: [36.0, 8.0]
+[(0, <UCTagent.UCTAgent object at 0x7f5323dff910>), (1, <MCCFRagent.MCCFRAgent object at 0x7f5323dff970>)]
+0 UCT Agent(time=60.0, exploration_constant=1.5)
+1 MCCFR Agent(time=60.0, epsilon=0.6)
+UCT MAKE MOVE IN 56.25 time
+273 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 48.75 time
+290 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 41.25 time
+354 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 30.0 time
+486 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 22.5 time
+407 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 15.0 time
+297 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 7.5 time
+779 UCT iterations in 60.0s
+turn complete
+turn complete
+Action sequence ---------------------------
+<big_city, 0, (1, 0), CITY, 0>
+<tri_road, 1, (-1, 0), ROAD, 2>
+<tri_road, 0, (-2, 0), ROAD, 0>
+<tri_road, 1, (-1, 1), ROAD, 2>
+<city_cap_straight_road, 0, (0, -1), ROAD, 0>
+<tri_road, 0, (-1, 2), ROAD, 0>
+<city_cap_straight_road, 2, (0, -2), None, 0>
+<city_tunnel, 1, (-1, -2), CITY, 0>
+<monastery, 0, (1, -2), None, 0>
+<monastery, 0, (-1, 3), None, 0>
+<monastery, 0, (-2, 3), None, 0>
+<monastery_road, 1, (0, 2), None, 0>
+<city_cap_straight_road, 2, (2, 0), None, 0>
+<monastery_road, 3, (0, 3), MONASTERY, 0>
+-------------------------------------------
+Cities:  3
+Roads:  12
+Farms:  10
+Free Meeples:  [0, 0]
+SCORES:  [9, 12]
+TIMES: [229.34446668624878, 191.58928179740906]
+GAMES: [36.0, 9.0]
+[(0, <UCTagent.UCTAgent object at 0x7f5323dff910>), (1, <MCCFRagent.MCCFRAgent object at 0x7f5323dff970>)]
+0 UCT Agent(time=60.0, exploration_constant=1.5)
+1 MCCFR Agent(time=60.0, epsilon=0.6)
+UCT MAKE MOVE IN 56.25 time
+297 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 48.75 time
+348 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 41.25 time
+442 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 33.75 time
+445 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 26.25 time
+462 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 18.75 time
+674 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 11.25 time
+3860 UCT iterations in 60.0s
+turn complete
+turn complete
+Action sequence ---------------------------
+<city_cap_straight_road, 2, (1, 0), CITY, 0>
+<tri_road, 1, (0, 1), None, 0>
+<tri_road, 2, (0, -1), ROAD, 1>
+<tri_road, 0, (-1, 1), FARM, 0>
+<city_cap_straight_road, 0, (1, 1), ROAD, 0>
+<monastery, 0, (0, -2), MONASTERY, 0>
+<tri_road, 0, (-2, 1), ROAD, 0>
+<monastery, 0, (-1, 2), None, 0>
+<city_tunnel, 1, (2, 1), CITY, 0>
+<monastery_road, 2, (-2, 0), None, 0>
+<monastery_road, 0, (1, 2), None, 0>
+<monastery, 0, (-1, -2), None, 0>
+<city_cap_straight_road, 2, (3, 1), None, 0>
+<monastery, 0, (-2, 2), None, 0>
+-------------------------------------------
+Cities:  2
+Roads:  11
+Farms:  9
+Free Meeples:  [1, 0]
+SCORES:  [18, 3]
+TIMES: [242.77327275276184, 206.45830845832825]
+GAMES: [37.0, 9.0]
+[(0, <UCTagent.UCTAgent object at 0x7f5323dff910>), (1, <MCCFRagent.MCCFRAgent object at 0x7f5323dff970>)]
+0 UCT Agent(time=60.0, exploration_constant=1.5)
+1 MCCFR Agent(time=60.0, epsilon=0.6)
+UCT MAKE MOVE IN 56.25 time
+273 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 48.75 time
+245 UCT iterations in 60.0s
+turn complete
+turn complete
+MCCFR Agent(time=60.0, epsilon=0.6)
+1 UCT Agent(time=60.0, exploration_constant=1.5)
+turn complete
+UCT MAKE MOVE IN 52.5 time
+275 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 45.0 time
+282 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 37.5 time
+288 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 30.0 time
+228 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 22.5 time
+314 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 15.0 time
+1642 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 7.5 time
+2411 UCT iterations in 60.0s
+turn complete
+turn complete
+Action sequence ---------------------------
+<city_cap_straight_road, 0, (0, 1), ROAD, 0>
+<monastery, 0, (-1, 0), MONASTERY, 0>
+<tri_road, 3, (0, 2), None, 0>
+<monastery_road, 2, (-1, 1), MONASTERY, 0>
+<monastery_road, 0, (0, 3), MONASTERY, 0>
+<tri_road, 0, (-1, -1), None, 0>
+<big_city, 0, (1, 1), None, 0>
+<monastery, 0, (-2, 1), None, 0>
+<tri_road, 2, (-2, 2), None, 0>
+<city_cap_straight_road, 1, (-2, -1), None, 0>
+<tri_road, 3, (1, 3), None, 0>
+<monastery, 0, (-2, 0), None, 0>
+<monastery, 0, (-3, 0), None, 0>
+<city_tunnel, 1, (2, 1), None, 0>
+<city_cap_straight_road, 0, (-2, 3), None, 0>
+-------------------------------------------
+Cities:  4
+Roads:  13
+Farms:  10
+Free Meeples:  [0, 0]
+SCORES:  [6, 16]
+TIMES: [250.34332418441772, 210.5326464176178]
+GAMES: [5.0, 38.0]
+[(1, <MCCFRagent.MCCFRAgent object at 0x7f5323dff9d0>), (0, <UCTagent.UCTAgent object at 0x7f5323dffa30>)]
+0 MCCFR Agent(time=60.0, epsilon=0.6)
+1 UCT Agent(time=60.0, exploration_constant=1.5)
+turn complete
+UCT MAKE MOVE IN 52.5 time
+314 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 45.0 time
+239 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 37.5 time
+282 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 30.0 time
+221 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 22.5 time
+379 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 15.0 time
+307 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 7.5 time
+2105 UCT iterations in 60.0s
+turn complete
+turn complete
+Action sequence ---------------------------
+<city_cap_straight_road, 0, (0, 1), ROAD, 0>
+<tri_road, 2, (0, -1), ROAD, 0>
+<monastery, 0, (0, -2), MONASTERY, 0>
+<big_city, 0, (1, 0), CITY, 0>
+<city_cap_straight_road, 3, (-1, -1), None, 0>
+<tri_road, 0, (-2, -1), None, 0>
+<monastery, 0, (0, -3), None, 0>
+<city_cap_straight_road, 2, (-2, -2), ROAD, 0>
+<monastery_road, 3, (1, -2), None, 0>
+<tri_road, 3, (-2, -3), None, 0>
+<monastery, 0, (-1, 1), None, 0>
+<monastery, 0, (-1, -2), MONASTERY, 0>
+<tri_road, 3, (0, 2), None, 0>
+<city_tunnel, 1, (2, 0), None, 0>
+<monastery_road, 2, (-2, 1), MONASTERY, 0>
+-------------------------------------------
+Cities:  4
+Roads:  11
+Farms:  8
+Free Meeples:  [0, 0]
+SCORES:  [12, 18]
+TIMES: [240.5980613231659, 210.49678301811218]
+GAMES: [5.0, 39.0]
+[(1, <MCCFRagent.MCCFRAgent object at 0x7f5323dff9d0>), (0, <UCTagent.UCTAgent object at 0x7f5323dffa30>)]
+0 MCCFR Agent(time=60.0, epsilon=0.6)
+1 UCT Agent(time=60.0, exploration_constant=1.5)
+turn complete
+UCT MAKE MOVE IN 52.5 time
+217 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 45.0 time
+337 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 37.5 time
+394 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 30.0 time
+488 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 22.5 time
+411 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 15.0 time
+305 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 7.5 time
+1755 UCT iterations in 60.0s
+turn complete
+turn complete
+Action sequence ---------------------------
+<big_city, 0, (1, 0), CITY, 0>
+<tri_road, 3, (0, -1), ROAD, 0>
+<tri_road, 2, (0, -2), ROAD, 1>
+<tri_road, 0, (-1, -2), ROAD, 0>
+<city_cap_straight_road, 1, (0, -3), None, 0>
+<monastery, 0, (-1, -1), MONASTERY, 0>
+<tri_road, 0, (0, 1), FARM, 0>
+<city_cap_straight_road, 3, (0, -4), CITY, 0>
+<city_tunnel, 1, (2, 0), None, 0>
+<monastery, 0, (-1, 0), MONASTERY, 0>
+<monastery, 0, (-2, 0), None, 0>
+<monastery, 0, (-2, -1), None, 0>
+<monastery_road, 2, (-3, -1), None, 0>
+<city_cap_straight_road, 1, (-2, -2), None, 0>
+<monastery_road, 1, (2, -1), None, 0>
+-------------------------------------------
+Cities:  3
+Roads:  13
+Farms:  11
+Free Meeples:  [0, 0]
+SCORES:  [6, 25]
+TIMES: [249.12601494789124, 210.28085803985596]
+GAMES: [5.0, 40.0]
+[(1, <MCCFRagent.MCCFRAgent object at 0x7f5323dff9d0>), (0, <UCTagent.UCTAgent object at 0x7f5323dffa30>)]
+0 MCCFR Agent(time=60.0, epsilon=0.6)
+1 UCT Agent(time=60.0, exploration_constant=1.5)
+turn complete
+UCT MAKE MOVE IN 52.5 time
+312 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 45.0 time
+413 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 37.5 time
+310 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 30.0 time
+482 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 22.5 time
+506 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 15.0 time
+2210 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 7.5 time
+2532 UCT iterations in 60.0s
+turn complete
+turn complete
+Action sequence ---------------------------
+<city_cap_straight_road, 0, (0, 1), ROAD, 0>
+<tri_road, 1, (-1, 1), None, 0>
+<tri_road, 1, (-1, 2), ROAD, 0>
+<tri_road, 3, (-1, 3), ROAD, 2>
+<city_cap_straight_road, 2, (1, 1), CITY, 0>
+<monastery, 0, (-2, 3), MONASTERY, 0>
+<tri_road, 0, (0, 3), ROAD, 1>
+<monastery, 0, (-2, 4), MONASTERY, 0>
+<city_tunnel, 1, (0, 4), None, 0>
+<monastery_road, 1, (-3, 3), None, 0>
+<monastery_road, 3, (0, 5), None, 0>
+<monastery, 0, (-3, 4), None, 0>
+<city_cap_straight_road, 2, (0, -1), None, 0>
+<big_city, 0, (1, 4), None, 0>
+<monastery, 0, (-3, 2), None, 0>
+-------------------------------------------
+Cities:  4
+Roads:  13
+Farms:  10
+Free Meeples:  [0, 0]
+SCORES:  [10, 14]
+TIMES: [240.40549874305725, 210.30577778816223]
+GAMES: [5.0, 41.0]
+[(1, <MCCFRagent.MCCFRAgent object at 0x7f5323dff9d0>), (0, <UCTagent.UCTAgent object at 0x7f5323dffa30>)]
+0 MCCFR Agent(time=60.0, epsilon=0.6)
+1 UCT Agent(time=60.0, exploration_constant=1.5)
+turn complete
+UCT MAKE MOVE IN 52.5 time
+261 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 45.0 time
+240 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 37.5 time
+186 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 30.0 time
+179 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 22.5 time
+319 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 15.0 time
+536 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 7.5 time
+1979 UCT iterations in 60.0s
+turn complete
+turn complete
+Action sequence ---------------------------
+<big_city, 0, (1, 0), CITY, 0>
+<city_cap_straight_road, 2, (0, -1), ROAD, 0>
+<city_tunnel, 0, (1, 1), None, 0>
+<city_cap_straight_road, 0, (-1, -1), CITY, 0>
+<monastery_road, 2, (2, 1), MONASTERY, 0>
+<monastery, 0, (-2, -1), MONASTERY, 0>
+<monastery_road, 0, (3, 1), None, 0>
+<tri_road, 1, (0, 1), None, 0>
+<tri_road, 0, (-1, 1), None, 0>
+<tri_road, 1, (0, -2), None, 0>
+<city_cap_straight_road, 2, (0, 2), None, 0>
+<monastery, 0, (-2, 0), MONASTERY, 0>
+<monastery, 0, (4, 1), None, 0>
+<monastery, 0, (-3, 0), None, 0>
+<tri_road, 1, (2, 2), None, 0>
+-------------------------------------------
+Cities:  3
+Roads:  12
+Farms:  9
+Free Meeples:  [0, 0]
+SCORES:  [9, 17]
+TIMES: [240.54810762405396, 210.7083785533905]
+GAMES: [5.0, 42.0]
+[(1, <MCCFRagent.MCCFRAgent object at 0x7f5323dff9d0>), (0, <UCTagent.UCTAgent object at 0x7f5323dffa30>)]
+0 MCCFR Agent(time=60.0, epsilon=0.6)
+1 UCT Agent(time=60.0, exploration_constant=1.5)
+turn complete
+UCT MAKE MOVE IN 52.5 time
+255 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 45.0 time
+211 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 37.5 time
+262 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 41.25 time
+220 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 33.75 time
+190 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 26.25 time
+258 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 18.75 time
+776 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 11.25 time
+2208 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 3.75 time
+1395 UCT iterations in 60.0s
+turn complete
+Action sequence ---------------------------
+<big_city, 0, (1, 0), CITY, 0>
+<city_cap_straight_road, 2, (0, -1), ROAD, 0>
+<city_tunnel, 1, (-1, -1), CITY, 0>
+<city_cap_straight_road, 0, (0, 1), FARM, 0>
+<monastery_road, 0, (-1, -2), None, 0>
+<monastery, 0, (-1, 0), None, 0>
+<monastery_road, 2, (-1, 1), None, 0>
+<tri_road, 0, (0, 2), None, 0>
+<tri_road, 3, (-1, 2), None, 0>
+<tri_road, 3, (0, -2), None, 0>
+<city_cap_straight_road, 0, (-2, -1), None, 0>
+<monastery, 0, (-2, 2), MONASTERY, 0>
+<monastery, 0, (-2, 1), MONASTERY, 0>
+<monastery, 0, (-3, 2), None, 0>
+<tri_road, 2, (-1, -3), None, 0>
+-------------------------------------------
+Cities:  3
+Roads:  11
+Farms:  7
+Free Meeples:  [0, 0]
+SCORES:  [15, 13]
+TIMES: [240.43042969703674, 210.43445372581482]
+GAMES: [38.0, 9.0]
+[(0, <UCTagent.UCTAgent object at 0x7f5323dff910>), (1, <MCCFRagent.MCCFRAgent object at 0x7f5323dff970>)]
+0 UCT Agent(time=60.0, exploration_constant=1.5)
+1 MCCFR Agent(time=60.0, epsilon=0.6)
+UCT MAKE MOVE IN 56.25 time
+274 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 48.75 time
+239 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 41.25 time
+246 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 33.75 time
+246 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 26.25 time
+227 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 18.75 time
+209 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 11.25 time
+248 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 3.75 time
+1302 UCT iterations in 60.0s
+turn complete
+Action sequence ---------------------------
+<big_city, 0, (1, 0), CITY, 0>
+<monastery_road, 2, (0, -1), ROAD, 0>
+<monastery, 0, (-1, 0), MONASTERY, 0>
+<monastery_road, 0, (0, 1), MONASTERY, 0>
+<tri_road, 1, (-2, 0), None, 0>
+<tri_road, 2, (0, 2), ROAD, 1>
+<city_cap_straight_road, 0, (-2, 1), None, 0>
+<city_cap_straight_road, 0, (0, 3), None, 0>
+<monastery, 0, (-1, -1), None, 0>
+<city_cap_straight_road, 1, (-3, 0), None, 0>
+<monastery, 0, (-1, 3), None, 0>
+<monastery, 0, (-2, 3), None, 0>
+<tri_road, 1, (-2, -1), None, 0>
+<city_tunnel, 0, (-3, 3), None, 0>
+<tri_road, 2, (-4, 0), None, 0>
+-------------------------------------------
+Cities:  5
+Roads:  11
+Farms:  8
+Free Meeples:  [0, 0]
+SCORES:  [11, 10]
+TIMES: [240.56414079666138, 210.39339089393616]
+GAMES: [39.0, 9.0]
+[(0, <UCTagent.UCTAgent object at 0x7f5323dff910>), (1, <MCCFRagent.MCCFRAgent object at 0x7f5323dff970>)]
+0 UCT Agent(time=60.0, exploration_constant=1.5)
+1 MCCFR Agent(time=60.0, epsilon=0.6)
+UCT MAKE MOVE IN 56.25 time
+283 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 48.75 time
+267 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 41.25 time
+239 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 33.75 time
+204 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 26.25 time
+245 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 18.75 time
+423 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 11.25 time
+2411 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 3.75 time
+1345 UCT iterations in 60.0s
+turn complete
+Action sequence ---------------------------
+<monastery_road, 2, (0, -1), MONASTERY, 0>
+<monastery, 0, (-1, -1), MONASTERY, 0>
+<tri_road, 1, (0, 1), ROAD, 0>
+<monastery_road, 2, (-1, 0), MONASTERY, 0>
+<monastery, 0, (0, -2), MONASTERY, 0>
+<city_tunnel, 0, (-2, -1), None, 0>
+<city_cap_straight_road, 0, (1, -2), None, 0>
+<tri_road, 3, (-1, 1), None, 0>
+<city_cap_straight_road, 0, (1, -1), None, 0>
+<city_cap_straight_road, 2, (2, -1), None, 0>
+<tri_road, 3, (1, -3), None, 0>
+<big_city, 0, (-2, -2), None, 0>
+<monastery, 0, (0, -3), None, 0>
+<tri_road, 1, (-3, -1), None, 0>
+<monastery, 0, (-1, -3), None, 0>
+-------------------------------------------
+Cities:  4
+Roads:  12
+Farms:  9
+Free Meeples:  [0, 0]
+SCORES:  [18, 14]
+TIMES: [240.45012831687927, 210.57522749900818]
+GAMES: [40.0, 9.0]
+[(0, <UCTagent.UCTAgent object at 0x7f5323dff910>), (1, <MCCFRagent.MCCFRAgent object at 0x7f5323dff970>)]
+0 UCT Agent(time=60.0, exploration_constant=1.5)
+1 MCCFR Agent(time=60.0, epsilon=0.6)
+UCT MAKE MOVE IN 56.25 time
+299 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 48.75 time
+276 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 41.25 time
+243 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 33.75 time
+212 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 26.25 time
+217 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 15.0 time
+180 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 7.5 time
+1690 UCT iterations in 60.0s
+turn complete
+turn complete
+Action sequence ---------------------------
+<city_cap_straight_road, 2, (1, 0), CITY, 0>
+<city_tunnel, 0, (2, 0), CITY, 0>
+<tri_road, 3, (1, 1), ROAD, 2>
+<monastery, 0, (-1, 0), MONASTERY, 0>
+<city_cap_straight_road, 2, (1, -1), FARM, 1>
+<monastery, 0, (-1, 1), None, 0>
+<monastery_road, 0, (1, 2), None, 0>
+<monastery, 0, (2, 2), None, 0>
+<tri_road, 2, (1, -2), None, 0>
+<monastery_road, 3, (2, 3), None, 0>
+<tri_road, 0, (0, -2), ROAD, 0>
+<tri_road, 3, (3, 0), None, 0>
+<city_cap_straight_road, 3, (-1, -2), ROAD, 0>
+<monastery, 0, (0, 2), None, 0>
+-------------------------------------------
+Cities:  4
+Roads:  12
+Farms:  9
+Free Meeples:  [0, 0]
+SCORES:  [15, 4]
+TIMES: [229.37147545814514, 199.36184549331665]
+GAMES: [41.0, 9.0]
+--------------------------------------------
+Average Points: [15.56, 9.86]
+Average Times: [235.2873097229004, 205.64811990737914]
+Average Game Duration: 441.12096000671386 seconds
+--- THREAD 0 FINISHED ---
+UCT MAKE MOVE IN 30.0 time
+279 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 22.5 time
+242 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 15.0 time
+186 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 7.5 time
+2100 UCT iterations in 60.0s
+turn complete
+turn complete
+Action sequence ---------------------------
+<big_city, 0, (1, 0), CITY, 0>
+<monastery_road, 0, (0, 1), MONASTERY, 0>
+<monastery, 0, (-1, 1), MONASTERY, 0>
+<monastery_road, 1, (-1, 0), MONASTERY, 0>
+<tri_road, 3, (-2, 0), None, 0>
+<tri_road, 1, (0, -1), None, 0>
+<city_cap_straight_road, 0, (-2, -1), None, 0>
+<city_cap_straight_road, 3, (0, 2), None, 0>
+<monastery, 0, (-3, -1), None, 0>
+<city_cap_straight_road, 3, (1, 2), None, 0>
+<monastery, 0, (-3, 0), None, 0>
+<monastery, 0, (-3, -2), None, 0>
+<tri_road, 2, (-1, 2), None, 0>
+<city_tunnel, 0, (1, 3), None, 0>
+<tri_road, 3, (0, -2), None, 0>
+-------------------------------------------
+Cities:  4
+Roads:  11
+Farms:  8
+Free Meeples:  [0, 0]
+SCORES:  [10, 15]
+TIMES: [240.66156029701233, 210.70071578025818]
+GAMES: [5.0, 43.0]
+[(1, <MCCFRagent.MCCFRAgent object at 0x7f5323dff9d0>), (0, <UCTagent.UCTAgent object at 0x7f5323dffa30>)]
+0 MCCFR Agent(time=60.0, epsilon=0.6)
+1 UCT Agent(time=60.0, exploration_constant=1.5)
+turn complete
+UCT MAKE MOVE IN 52.5 time
+267 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 45.0 time
+243 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 37.5 time
+212 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 30.0 time
+221 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 22.5 time
+244 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 15.0 time
+953 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 7.5 time
+2469 UCT iterations in 60.0s
+turn complete
+turn complete
+Action sequence ---------------------------
+<monastery_road, 2, (0, -1), MONASTERY, 0>
+<monastery, 0, (1, -1), MONASTERY, 0>
+<tri_road, 1, (0, 1), ROAD, 1>
+<monastery_road, 3, (1, 1), MONASTERY, 0>
+<monastery, 0, (1, -2), None, 0>
+<city_tunnel, 0, (-1, 0), None, 0>
+<city_cap_straight_road, 2, (-2, 0), None, 0>
+<tri_road, 2, (2, 1), None, 0>
+<city_cap_straight_road, 3, (1, 2), None, 0>
+<city_cap_straight_road, 1, (2, 0), None, 0>
+<tri_road, 0, (3, 0), None, 0>
+<big_city, 0, (-3, 0), None, 0>
+<monastery, 0, (0, -2), None, 0>
+<tri_road, 0, (2, 2), None, 0>
+<monastery, 0, (-1, -2), None, 0>
+-------------------------------------------
+Cities:  5
+Roads:  12
+Farms:  8
+Free Meeples:  [0, 0]
+SCORES:  [8, 13]
+TIMES: [240.38988399505615, 210.8062708377838]
+GAMES: [5.0, 44.0]
+[(1, <MCCFRagent.MCCFRAgent object at 0x7f5323dff9d0>), (0, <UCTagent.UCTAgent object at 0x7f5323dffa30>)]
+0 MCCFR Agent(time=60.0, epsilon=0.6)
+1 UCT Agent(time=60.0, exploration_constant=1.5)
+turn complete
+UCT MAKE MOVE IN 52.5 time
+275 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 45.0 time
+241 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 37.5 time
+220 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 30.0 time
+226 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 22.5 time
+254 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 15.0 time
+267 UCT iterations in 60.0s
+turn complete
+turn complete
+UCT MAKE MOVE IN 7.5 time
+2705 UCT iterations in 60.0s
+turn complete
+turn complete
+Action sequence ---------------------------
+<city_cap_straight_road, 0, (0, 1), ROAD, 0>
+<city_tunnel, 1, (1, 1), CITY, 0>
+<tri_road, 2, (0, -1), ROAD, 0>
+<monastery, 0, (-1, 1), MONASTERY, 0>
+<city_cap_straight_road, 3, (1, 2), None, 0>
+<monastery, 0, (-1, 0), None, 0>
+<monastery_road, 3, (-1, -1), None, 0>
+<monastery, 0, (-2, 1), None, 0>
+<tri_road, 3, (0, 2), ROAD, 1>
+<big_city, 0, (2, 1), None, 0>
+<monastery_road, 1, (-1, 2), MONASTERY, 0>
+<tri_road, 1, (1, -1), None, 0>
+<tri_road, 1, (0, 3), None, 0>
+<city_cap_straight_road, 3, (2, 0), None, 0>
+<monastery, 0, (0, -2), None, 0>
+-------------------------------------------
+Cities:  3
+Roads:  11
+Farms:  8
+Free Meeples:  [0, 0]
+SCORES:  [14, 12]
+TIMES: [240.54646182060242, 210.25891590118408]
+GAMES: [6.0, 44.0]
+--------------------------------------------
+Average Points: [9.52, 15.94]
+Average Times: [237.52205128669738, 207.58771420001983]
+Average Game Duration: 445.2975680351257 seconds
+--- THREAD 1 FINISHED ---
+[<UCTagent.UCTAgent object at 0x7f5323dfbfa0>, <MCCFRagent.MCCFRAgent object at 0x7f5323dfbfd0>]
+
+--- Full Stats --------------
+Total Points: [1575, 969]
+Total Scores: [85.0, 15.0]

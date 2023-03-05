@@ -212,7 +212,7 @@ class UCTAgent(BaseAgent):
             i += 1         
         # return best child after simulations (c=0 so one with best average reward)
         #root.print_node()
-        print(f"{i} UCT iterations in {self.time_per_turn}s")
+        #print(f"{i} UCT iterations in {self.time_per_turn}s")
         return root
 
 
@@ -223,5 +223,5 @@ class UCTAgent(BaseAgent):
         root = self.uct_search(self.game, next_tile, self.time_per_turn*progress)
         #print("Choose")
         best_action = self.best_child(root, 0).incoming_action
-        #print(best_action)
+        print(f"UCT move: {best_action}")
         self.game.make_action(best_action)

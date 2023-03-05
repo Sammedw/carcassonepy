@@ -1,5 +1,5 @@
 5
 2
-random.txt
-random
-mccfr,5,0.6
+log
+uct,10,3.5
+mccfr,10,0.6

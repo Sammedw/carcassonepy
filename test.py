@@ -13,7 +13,7 @@ from random import sample
 from multiprocessing import Process, Queue
 import sys
 
-def simulate_games(perm_num, game, game_list, players, queue):
+def simulate_games(perm_num, game, game_list, players, queue, human):
 
     scores = [0 for _ in range(len(players))]
     total_times = [0 for _ in range(len(players))]
@@ -101,11 +101,15 @@ def simulate_games(perm_num, game, game_list, players, queue):
 
     print(f"--- THREAD {perm_num} FINISHED ---")
 
-    queue.put((perm_num, out, {player:score for (player, score) in zip(players, scores)}, {player:score for (player, score) in zip(players, total_points)}))
+    if human:
+        return (perm_num, out, {player:score for (player, score) in zip(players, scores)}, {player:score for (player, score) in zip(players, total_points)})
+    else:
+        queue.put((perm_num, out, {player:score for (player, score) in zip(players, scores)}, {player:score for (player, score) in zip(players, total_points)}))
+    
 
 
 if __name__ == "__main__":
-    available_agents = {"uct": UCTAgent, "mccfr": MCCFRAgent, "random": RandomAgent}
+    available_agents = {"uct": UCTAgent, "mccfr": MCCFRAgent, "random": RandomAgent, "human": Human}
 
     if len(sys.argv) == 3 and sys.argv[1] == "-l":
         # read game config from file
@@ -194,20 +198,23 @@ if __name__ == "__main__":
     game_list = [" ".join(sample(deck, len(deck))) for _ in range(games)]
 
     processes = []
+    results = []
     queue = Queue()
     for p, permutation in enumerate(player_permutations):
-        if p <= 5:
-            process = Process(target=simulate_games, args=(p, game, game_list, permutation, queue))
+        if any(type(x) == Human for x in players):
+            results.append(simulate_games(p, game, game_list, permutation, queue, True))
+        else:
+            process = Process(target=simulate_games, args=(p, game, game_list, permutation, queue, False))
             processes.append(process)
             process.start()
 
     # empty queue and order results
-    results = []
-    while True:
-        while not queue.empty():
-            results.append(queue.get())
-        if not any(p.is_alive() for p in processes):
-            break
+    if not any(type(x) == Human for x in players):
+        while True:
+            while not queue.empty():
+                results.append(queue.get())
+            if not any(p.is_alive() for p in processes):
+                break
 
     results.sort(key = lambda x: x[0])
     batch_strings = [r[1] for r in results]

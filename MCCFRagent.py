@@ -182,8 +182,11 @@ class MCCFRAgent(BaseAgent):
         # start time 
         start = time.time()
         i = 0
+        # calculate ratio of tiles left to number at start
+        progress = self.game.deck.get_tile_count() / self.game.deck.original_deck_size
+        print(f"MCCFR MAKE MOVE IN {self.time_per_turn*progress} time")
         # simulate while within computational budget
-        while (time.time() - start) < self.time_per_turn:
+        while (time.time() - start) < self.time_per_turn*progress:
             #print(i)
             self.cfr_iteration(self.game, i, [1 for _ in range(self.game.player_count + 1)], 1, 1, next_tile)
             i += 1
