@@ -105,7 +105,7 @@ def simulate_games(perm_num, game, game_list, players, queue):
 
 
 if __name__ == "__main__":
-    available_agents = {"uct": UCTAgent, "mccfr": MCCFRAgent}
+    available_agents = {"uct": UCTAgent, "mccfr": MCCFRAgent, "random": RandomAgent}
 
     if len(sys.argv) == 3 and sys.argv[1] == "-l":
         # read game config from file

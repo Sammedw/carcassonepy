@@ -1,5 +1,5 @@
-50
+5
 2
-uct35.txt
-uct,60,3.5
-mccfr,60,0.6
+random.txt
+random
+mccfr,5,0.6
