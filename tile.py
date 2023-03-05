@@ -166,8 +166,10 @@ class Deck():
             if tile.name not in self.next_tiles:
                 self.next_tiles[tile.name] = tile
 
+        self.original_deck_size = len(self.tiles)
 
-    def get_next_tile(self) ->Optional[Tile]:
+
+    def get_next_tile(self) -> Optional[Tile]:
         if (len(self.tiles) > 0):
             next_tile = self.tiles.pop(0)
             # update tile counts
@@ -221,3 +223,6 @@ class Deck():
     # return list of tile names seperated by spaces
     def get_tile_list_string(self):
         return " ".join(self.get_tile_list())
+    
+    def get_tile_count(self):
+        return len(self.tiles)
