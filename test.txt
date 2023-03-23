@@ -1,9 +1,4 @@
 --- Game Configuration ---
 Game count: 2
-Player count: 2
-Deck: {'start': 0, 'monastery_road': 2, 'monastery': 4, 'tri_road': 4, 'city_cap_straight_road': 3, 'city_tunnel': 1, 'big_city': 1}
---- Player Configuration ---
-Player 0: UCT Agent(iterations=5, exploration_constant=3.0)
-Player 1: UCT Agent(iterations=5, exploration_constant=3.0)
------------------------------
-
+Player count: 3
+Deck: {'start': 0, 'monastery': 4, 'city_cap_straight_road': 3, 'tri_road': 4, 'monastery_road': 2, 'city_tunnel': 1, 'big_city': 1}

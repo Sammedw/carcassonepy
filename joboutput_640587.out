@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "/dcs/20/u2013334/Documents/CS310/carcassonepy/test.py", line 127, in <module>
+srun: error: emu-26: task 0: Exited with exit code 1
+    player_string = lines[3+p].strip("\n")
+IndexError: list index out of range

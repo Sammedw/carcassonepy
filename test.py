@@ -4,9 +4,11 @@ import time
 from CFRagent import CFRAgent
 from MCCFRagent import MCCFRAgent
 from UCTagent import UCTAgent
+from UCTagentmax import UCTAgentMax
 from randomagent import RandomAgent
 from game import Game
 from star1agent import Star1Agent
+from star1agenteval import Star1AgentEval
 from human import Human
 from copy import copy
 from random import sample
@@ -109,7 +111,7 @@ def simulate_games(perm_num, game, game_list, players, queue, human):
 
 
 if __name__ == "__main__":
-    available_agents = {"uct": UCTAgent, "mccfr": MCCFRAgent, "random": RandomAgent, "human": Human}
+    available_agents = {"uct": UCTAgent, "uctmax": UCTAgentMax, "star1": Star1Agent, "star1eval": Star1AgentEval, "mccfr": MCCFRAgent, "random": RandomAgent, "human": Human}
 
     if len(sys.argv) == 3 and sys.argv[1] == "-l":
         # read game config from file
