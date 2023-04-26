@@ -1,5 +1,6 @@
 50
-2
-uct4
-uct,60,4
-mccfr,60,0.6
+3
+threestarsavebench
+uct,60,2
+star1eval,30
+mccfr,60,0.4

@@ -1,0 +1,2 @@
+slurmstepd: error: *** JOB 687945 ON emu-32 CANCELLED AT 2023-04-11T14:27:29 ***
+slurmstepd: error: *** STEP 687945.0 ON emu-32 CANCELLED AT 2023-04-11T14:27:29 ***

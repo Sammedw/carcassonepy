@@ -85,7 +85,7 @@ class Star1AgentEval(BaseAgent):
                 # no actions were available so get next random tile
                 max_val = self.star1(state, alpha, beta, depth, best_actions, start_time)
             # save best action
-
+           # best_actions[state_str] = best_action
             # return value of max node
             return max_val, best_action
         else:
@@ -111,6 +111,8 @@ class Star1AgentEval(BaseAgent):
             if min_val == inf:
                 # no actions were available so get next random tile
                 min_val = self.star1(state, alpha, beta, depth, best_actions, start_time)
+            # save best action
+            #best_actions[state_str] = best_action
             # return value of min node
             return min_val, best_action
 
@@ -161,6 +163,6 @@ class Star1AgentEval(BaseAgent):
             print(f"EXPECTIMAX entering depth {depth}")
             _, action = self.minimax(self.game, next_tile, - inf, inf, depth, best_actions, start_time)
             depth += 1
-        print("STAR move finished")
+        print(f"STAR move: {action}")
             
         self.game.make_action(action)

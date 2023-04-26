@@ -219,6 +219,7 @@ class UCTAgent(BaseAgent):
     def make_move(self, next_tile: Tile):
         # calculate ratio of tiles left to number at start
         progress = self.game.deck.get_tile_count() / self.game.deck.original_deck_size
+        #progress = 1 
         print(f"UCT MAKE MOVE IN {self.time_per_turn*progress} time")
         root = self.uct_search(self.game, next_tile, self.time_per_turn*progress)
         #print("Choose")
