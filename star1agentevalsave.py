@@ -8,7 +8,7 @@ from math import inf
 
 
 
-class Star1AgentEval(BaseAgent):
+class Star1AgentEvalSave(BaseAgent):
     
     def __init__(self, player_num: int, game: Game, time_per_turn: int):
         super().__init__(player_num, game)
@@ -18,7 +18,7 @@ class Star1AgentEval(BaseAgent):
 
     @staticmethod
     def build(player_num: int, game: Game):
-        print("--- Build STAR1 EVAL agent ---")
+        print("--- Build STAR1 EVAL SAVE agent ---")
         while True:
             try:
                 time_per_turn = input("Time(s) per action: ")
@@ -26,10 +26,10 @@ class Star1AgentEval(BaseAgent):
                 break
             except:
                 print("Invalid inputs.")
-        return Star1AgentEval(player_num, game, time_per_turn)
+        return Star1AgentEvalSave(player_num, game, time_per_turn)
 
     def return_info(self):
-        return f"STAR1 EVAL Agent(time={self.time_per_turn})"
+        return f"STAR1 EVAL SAVE Agent(time={self.time_per_turn})"
 
     def eval_state(self, state: Game):
         # return difference between own virtual score and other highest virtual score
@@ -48,14 +48,17 @@ class Star1AgentEval(BaseAgent):
         # get valid actions in current state
         valid_actions = state.get_valid_actions(next_tile)
         # attempt to get best action from previous iteration
-        # state_str = state.get_state_str() + f" NEXT_TILE: {next_tile}"
-        # if state_str in best_actions:
-        #     best_action = best_actions[state_str]
-        #     # put previous best action at front if it exists
-        #     valid_actions.remove(best_action)
-        #     valid_actions.insert(0, best_action)
-        # else:
-        #     best_action = None
+        state_str = state.get_state_str() + f" NEXT_TILE: {next_tile}"
+        if state_str in best_actions:
+            best_action = best_actions[state_str]
+            # put previous best action at front if it exists
+            try:
+                valid_actions.remove(best_action)
+                valid_actions.insert(0, best_action)
+            except ValueError:
+                best_action = None
+        else:
+            best_action = None
 
         # min or max mode
         if state.current_player == self.player_num:
@@ -85,7 +88,7 @@ class Star1AgentEval(BaseAgent):
                 # no actions were available so get next random tile
                 max_val = self.star1(state, alpha, beta, depth, best_actions, start_time)
             # save best action
-           # best_actions[state_str] = best_action
+            best_actions[state_str] = best_action
             # return value of max node
             return max_val, best_action
         else:
@@ -112,7 +115,7 @@ class Star1AgentEval(BaseAgent):
                 # no actions were available so get next random tile
                 min_val = self.star1(state, alpha, beta, depth, best_actions, start_time)
             # save best action
-            #best_actions[state_str] = best_action
+            best_actions[state_str] = best_action
             # return value of min node
             return min_val, best_action
 

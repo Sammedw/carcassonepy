@@ -1,8 +1,0 @@
---- Game Configuration ---
-Game count: 50
-Player count: 3
-Deck: {'start': 0, 'monastery_road': 2, 'tri_road': 4, 'city_cap_straight_road': 3, 'monastery': 4, 'big_city': 1, 'city_tunnel': 1}
-
---- Full Stats --------------
-Total Points: [0, 0, 0]
-Total Scores: [0, 0, 0]

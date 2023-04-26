@@ -109,7 +109,7 @@ class UCTAgentMax(BaseAgent):
  
     @staticmethod
     def build(player_num: int, game: Game):
-        print("--- Build UCT agent ---")
+        print("--- Build UCT MAX agent ---")
         while True:
             try:
                 time_per_turn = input("Time(s) per action: ")
@@ -122,7 +122,7 @@ class UCTAgentMax(BaseAgent):
         return UCTAgentMax(player_num, game, time_per_turn, exploration_constant=exploration_constant)
 
     def return_info(self):
-        return f"UCT Agent(time={self.time_per_turn}, exploration_constant={self.exploration_constant})"
+        return f"UCT MAX Agent(time={self.time_per_turn}, exploration_constant={self.exploration_constant})"
 
     def expand(self, root: ChoiceNode) -> ChanceNode:
         # choose untried action from current state and remove from expandable actions

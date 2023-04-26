@@ -15,6 +15,8 @@ from random import sample
 from multiprocessing import Process, Queue
 import sys
 
+from star1agentevalsave import Star1AgentEvalSave
+
 def simulate_games(perm_num, game, game_list, players, queue, human):
 
     scores = [0 for _ in range(len(players))]
@@ -111,7 +113,7 @@ def simulate_games(perm_num, game, game_list, players, queue, human):
 
 
 if __name__ == "__main__":
-    available_agents = {"uct": UCTAgent, "uctmax": UCTAgentMax, "star1": Star1Agent, "star1eval": Star1AgentEval, "mccfr": MCCFRAgent, "random": RandomAgent, "human": Human}
+    available_agents = {"uct": UCTAgent, "uctmax": UCTAgentMax, "star1": Star1Agent, "star1eval": Star1AgentEval, "star1evalsave": Star1AgentEvalSave, "mccfr": MCCFRAgent, "random": RandomAgent, "human": Human}
 
     if len(sys.argv) == 3 and sys.argv[1] == "-l":
         # read game config from file
