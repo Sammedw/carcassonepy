@@ -1,0 +1,26 @@
+Process Process-1:
+Traceback (most recent call last):
+  File "/usr/lib64/python3.9/multiprocessing/process.py", line 315, in _bootstrap
+    self.run()
+  File "/usr/lib64/python3.9/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/dcs/20/u2013334/Documents/CS310/carcassonepy/test.py", line 51, in simulate_games
+    next_player.make_move(next_tile)
+  File "/dcs/20/u2013334/Documents/CS310/carcassonepy/MCCFRagent.py", line 191, in make_move
+    self.cfr_iteration(self.game, i, [1 for _ in range(self.game.player_count + 1)], 1, 1, next_tile)
+  File "/dcs/20/u2013334/Documents/CS310/carcassonepy/MCCFRagent.py", line 151, in cfr_iteration
+    terminal_utilities, terminal_reach_probability, sample_probability = self.cfr_iteration(next_state, iteration, list(reach_probabilities), terminal_reach_probability, sample_probability)
+  File "/dcs/20/u2013334/Documents/CS310/carcassonepy/MCCFRagent.py", line 151, in cfr_iteration
+    terminal_utilities, terminal_reach_probability, sample_probability = self.cfr_iteration(next_state, iteration, list(reach_probabilities), terminal_reach_probability, sample_probability)
+  File "/dcs/20/u2013334/Documents/CS310/carcassonepy/MCCFRagent.py", line 151, in cfr_iteration
+    terminal_utilities, terminal_reach_probability, sample_probability = self.cfr_iteration(next_state, iteration, list(reach_probabilities), terminal_reach_probability, sample_probability)
+  [Previous line repeated 11 more times]
+  File "/dcs/20/u2013334/Documents/CS310/carcassonepy/MCCFRagent.py", line 164, in cfr_iteration
+    W = (terminal_utilities[current_state.current_player] * counterfactual_reach_probability) / sample_probability
+ZeroDivisionError: float division by zero
+[(0, <MCCFRagent.MCCFRAgent object at 0x7fd55233d3d0>), (1, <star1agenteval.Star1AgentEval object at 0x7fd55233d430>)]
+0 MCCFR Agent(time=60.0, epsilon=4.0)
+1 STAR1 EVAL Agent(time=30.0)
+MCCFR MAKE MOVE IN 56.25 time
+slurmstepd: error: *** JOB 694507 ON emu-24 CANCELLED AT 2023-04-28T10:23:00 ***
+slurmstepd: error: *** STEP 694507.0 ON emu-24 CANCELLED AT 2023-04-28T10:23:00 ***

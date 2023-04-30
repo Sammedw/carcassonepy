@@ -158,9 +158,6 @@ class UCTAgent(BaseAgent):
                 return self.expand(current_node)
             else:
                 # find best child of node, max value if agent is current player otherwise minimise
-                #print(f"NEXT TILE: {current_node.next_tile}")
-                #print(f"EXPANDABLE ACTIONS: {current_node.expandable_actions}")
-                #print(f"CHILDREN: {current_node.children}")
                 is_current_player = current_node.state.current_player == self.player_num
                 return self.tree_policy(self.best_child(current_node, self.exploration_constant, is_current_player))
         else:
@@ -207,12 +204,8 @@ class UCTAgent(BaseAgent):
             payoff = self.default_policy(simulate)
             # backup reward
             self.backup(node, payoff)
-            #print("-----------------------------------------------------------------")
-            #root.print_node() 
             i += 1         
         # return best child after simulations (c=0 so one with best average reward)
-        #root.print_node()
-        #print(f"{i} UCT iterations in {self.time_per_turn}s")
         return root
 
 

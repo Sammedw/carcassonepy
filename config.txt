@@ -1,5 +1,6 @@
 50
-2
-starsavetest
+3
+bigbossfight3
+uct,60,2
+uctmax,60,1.5
 star1eval,30
-star1evalsave,30

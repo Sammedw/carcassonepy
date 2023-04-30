@@ -55,7 +55,7 @@ class Star1AgentEval(BaseAgent):
         #     valid_actions.remove(best_action)
         #     valid_actions.insert(0, best_action)
         # else:
-        #     best_action = None
+        best_action = None
 
         # min or max mode
         if state.current_player == self.player_num:

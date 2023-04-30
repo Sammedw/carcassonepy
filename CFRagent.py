@@ -77,9 +77,9 @@ class CFRAgent(BaseAgent):
             self.node_dict[state_str] = node
         # for each action, recursively call cfr
         if current_state.current_player == 0:
-            p = p0
-        else:
             p = p1
+        else:
+            p = p0
         strategy = node.get_strategy(p)
         util = []
         node_util = 0
@@ -111,12 +111,6 @@ class CFRAgent(BaseAgent):
             random.shuffle(random_state.deck.tiles)
             random_state.deck.tiles.insert(0, next_tile_obj)
             util += self.cfr(random_state, 1, 1)
-        #print(f"Average game value: {util / iterations}")
-        #for state_str, node in self.node_dict.items():
-           # print(f"State: {state_str} | Average Strategy: {node.get_average_strategy()}")
-        #root = self.node_dict[]
-        #print(list(map(str, root.actions)))
-        #print(f"Average Strategy: {root.get_average_strategy()}")
 
     def get_action(self, strategy: list[float], actions: list[Action]):
         return random.choices(actions, weights=strategy)
