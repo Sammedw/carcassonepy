@@ -1,5 +1,0 @@
-Traceback (most recent call last):
-  File "/dcs/20/u2013334/Documents/CS310/carcassonepy/test.py", line 131, in <module>
-srun: error: emu-23: task 0: Exited with exit code 1
-    players.append(available_agents[player_name](p, game, *map(float, player_params)))
-KeyError: 'stareval'

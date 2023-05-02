@@ -1,8 +1,0 @@
-Traceback (most recent call last):
-  File "/dcs/20/u2013334/Documents/CS310/carcassonepy/test.py", line 4, in <module>
-srun: error: emu-47: task 0: Exited with exit code 1
-    from CFRagent import CFRAgent
-  File "/dcs/20/u2013334/Documents/CS310/carcassonepy/CFRagent.py", line 136
-    
-    ^
-IndentationError: expected an indented block

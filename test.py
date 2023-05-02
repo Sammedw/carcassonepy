@@ -167,20 +167,6 @@ if __name__ == "__main__":
         f.write(f"Player count: {player_count}\n")
         f.write(f"Deck: {game.deck.tile_counts}\n")
         
-
-    #players = [RandomAgent(0, game), RandomAgent(1, game)] #UCTAgent(0, game)
-    #players = [RandomAgent(0, game), UCTAgent(1, game, 1000, trees = 6)]
-    #players = [RandomAgent(0, game), CFRAgent(1, game)]
-    #players = [CFRAgent(0, game), UCTAgent(1, game)]
-    #players = [Star1Agent(0, game), RandomAgent(1, game)]
-    #players = [Human(0, game), UCTAgent(1, game)]
-    #players = [Star1Agent(0, game), UCTAgent(1, game)]
-    #players = [UCTAgent(0, game, 1000), MCCFRAgent(1, game, 1000)]
-    #players = [UCTAgent(0, game, 1000), UCTAgent(1, game, 6000, trees = 6)]
-    #players = [UCTAgent(0, game, 100), UCTAgent(1, game, 100)]
-    #players = [UCTAgent(0, game, 500), MCCFRAgent(1, game, 1000), UCTAgent(2, game, 1000)]
-
-
     
     # create permutations of players
     player_permutations = list(permutations(enumerate(players)))
